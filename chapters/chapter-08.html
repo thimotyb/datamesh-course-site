@@ -28,6 +28,14 @@
             </li>
             <li>How data products use Dataflow, BigQuery, Pub/Sub, and Cloud Storage ports.</li>
             <li>
+              How BigQuery authorized views provide controlled consumption interfaces across domain
+              boundaries.
+            </li>
+            <li>
+              How streaming consumption interfaces use Pub/Sub topics and subscriptions to decouple
+              producers from consumers.
+            </li>
+            <li>
               How Dataplex supports governance, discovery, and policy enforcement across domains.
             </li>
             <li>
@@ -328,6 +336,88 @@
             </li>
           </ul>
         </section>
+        <section id="s13" class="study-section">
+          <h2>S13 - Authorized Views as Consumption Interfaces</h2>
+          <p>
+            BigQuery authorized views are an effective interface pattern for exposing a governed
+            subset of data products to consumers.
+          </p>
+          <p>
+            The producer keeps ownership of base tables while consumers query only approved views,
+            which reduces accidental overexposure and simplifies access boundaries.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Separation of concerns</strong>: producers manage source tables and interface
+              contracts; consumers access stable SQL views.
+            </li>
+            <li>
+              <strong>Controlled access</strong>: authorized datasets and authorized views grant
+              query access without direct table permissions on producer assets.
+            </li>
+            <li>
+              <strong>Versioning strategy</strong>: interfaces can evolve through dataset versioning
+              or view versioning, depending on compatibility and governance policy.
+            </li>
+            <li>
+              <strong>Operational impact</strong>: this model supports independent producer
+              evolution while minimizing consumer disruption.
+            </li>
+          </ul>
+          <p>
+            The same interface approach can be extended to externalized data through BigLake tables,
+            while maintaining SQL-based consumption contracts.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch08/fig-09-authorized-datasets.png"
+              alt="Authorized datasets and views as data product consumption interfaces"
+              class="zoomable"
+              data-caption="M08.09"
+            />
+            <figcaption>
+              M08.09 - Authorized Datasets and Views for Controlled Data Sharing
+            </figcaption>
+          </figure>
+        </section>
+        <section id="s14" class="study-section">
+          <h2>S14 - Data as Streams with Pub/Sub Interfaces</h2>
+          <p>
+            Streaming data products can be exposed through Pub/Sub topics, where each consumer
+            creates independent subscriptions based on its own processing needs.
+          </p>
+          <p>
+            This interface pattern reduces coupling between producer release cycles and consumer
+            delivery pipelines, while preserving product ownership boundaries.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Decoupled consumption</strong>: multiple consumers subscribe independently
+              without requiring custom producer-side endpoints.
+            </li>
+            <li>
+              <strong>Filtering and routing</strong>: subscription-level filtering supports
+              consumer-specific streams from the same producer topic.
+            </li>
+            <li>
+              <strong>Schema discipline</strong>: explicit schemas improve compatibility checks and
+              reduce downstream parsing failures in high-volume flows.
+            </li>
+            <li>
+              <strong>Version evolution</strong>: breaking message changes are handled through new
+              schemas and parallel subscriptions to limit disruption.
+            </li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch08/fig-10-filtering-approach.png"
+              alt="Pub/Sub data streaming interface with filtering approach"
+              class="zoomable"
+              data-caption="M08.10"
+            />
+            <figcaption>M08.10 - Data as Streams and Subscription Filtering Approach</figcaption>
+          </figure>
+        </section>
         <section class="key-takeaways">
           <h2>Key takeaways</h2>
           <ul>
@@ -345,6 +435,14 @@
             </li>
             <li>
               Service accounts are central to preserving ownership boundaries in shared services.
+            </li>
+            <li>
+              Authorized views provide stable, governed SQL interfaces that protect producer-owned
+              base tables.
+            </li>
+            <li>
+              Pub/Sub-based stream interfaces improve decoupling and scalability for near real-time
+              consumption use cases.
             </li>
             <li>
               Platform extensions can improve discoverability, quality, and governance without

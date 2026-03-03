@@ -25,6 +25,7 @@
 <li>How a Google Cloud-based data mesh balances speed of setup and team autonomy.</li>
 <li>How a minimal self-serve platform can be built with Git and Terraform templates.</li>
 <li>How data products use Dataflow, BigQuery, Pub/Sub, and Cloud Storage ports.</li>
+<li>How Dataplex supports governance, discovery, and policy enforcement across domains.</li>
 <li>How producer and consumer workflows operate in a shared cloud environment.</li>
 <li>Which optional components improve discoverability, quality, and governance.</li>
 <li>What tradeoffs apply to scalability, lock-in, and operational effort.</li>
@@ -123,14 +124,34 @@
 </section>
 
 <section id="s09" class="study-section">
-<h2>S09 - Governance and Ownership Implications</h2>
+<h2>S09 - Dataplex for Data Mesh Operations</h2>
+<p>Dataplex is a unified data management and governance service for distributed data estates on Google Cloud.</p>
+<p>In a data mesh context, Dataplex helps domain teams keep decentralized ownership while applying consistent governance policies and metadata controls.</p>
+<ul class="study-bullets">
+<li><strong>Cataloging and discovery</strong>: data assets are indexed and searchable across storage and analytics systems.</li>
+<li><strong>Governance at scale</strong>: policy management and quality controls can be enforced consistently across domains.</li>
+<li><strong>Operational visibility</strong>: metadata, lineage, and quality signals improve trust and reuse of domain data products.</li>
+<li><strong>Domain autonomy with standards</strong>: each team can manage products independently while complying with shared controls.</li>
+</ul>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-06.png" alt="Module 08 Figure 06" class="zoomable" data-caption="M08.06" />
+<figcaption>M08.06 - Dataplex in a Google Cloud Data Mesh Architecture</figcaption>
+</figure>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-07.png" alt="Module 08 Figure 07" class="zoomable" data-caption="M08.07" />
+<figcaption>M08.07 - Dataplex-Centric Data Lifecycle and Governance Flow</figcaption>
+</figure>
+</section>
+
+<section id="s10" class="study-section">
+<h2>S10 - Governance and Ownership Implications</h2>
 <p>Automated checks and catalog workflows provide a practical entry point for federated governance.</p>
 <p>Ownership remains effective only if access control and policy boundaries are enforceable.</p>
 <p>Governance automation should avoid central bottlenecks and preserve team delivery flow.</p>
 </section>
 
-<section id="s10" class="study-section">
-<h2>S10 - Architecture Fit and Tradeoffs</h2>
+<section id="s11" class="study-section">
+<h2>S11 - Architecture Fit and Tradeoffs</h2>
 <ul class="study-bullets">
 <li><strong>Strengths</strong>: low maintenance, fast integration of native services, good team autonomy.</li>
 <li><strong>Tradeoffs</strong>: cloud lock-in risk and additional effort for heterogeneous source integration.</li>
@@ -143,6 +164,7 @@
 <ul>
 <li>A template-based GCP platform can accelerate data product onboarding with limited operational overhead.</li>
 <li>Dataflow plus BigQuery supports a consistent product model with controlled producer autonomy.</li>
+<li>Dataplex can unify discovery, governance, and quality controls across domain-owned data products.</li>
 <li>Service accounts are central to preserving ownership boundaries in shared services.</li>
 <li>Platform extensions can improve discoverability, quality, and governance without redesigning the core.</li>
 </ul>

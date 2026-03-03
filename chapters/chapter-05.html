@@ -1,1 +1,1628 @@
-<!doctype html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>M05 - Data as a Product</title> <link rel="stylesheet" href="../assets/css/main.css" /> <script src="../assets/js/back-to-top.js" defer></script> </head> <body> <header id="top" class="hero"> <h1>M05 - Data as a Product</h1> </header> <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1"> <a href="../index.html">Home</a> <a href="chapter-04.html">Previous module (M04)</a> <a href="chapter-05.html" aria-current="page">M05 - Data as a Product</a> <a href="chapter-06.html">Next module (M06)</a> </nav> <main class="content"> <article> <section class="section-toc"> <h2>Content Outline</h2> <ul><li>What data as a product means in terms of value, users, and quality.</li><li>How product thinking shapes priorities and evolution of data products.</li><li>How key roles operate: data product owner and cross-functional product team.</li><li>How to design interfaces and output ports for real consumption needs.</li><li>How metadata and discoverability enable interoperability in the mesh.</li><li>How operational and contractual elements improve reliability and trust.</li></ul> </section> <section id="s01" class="study-section"> <h2>S01 - Data Product Team Structure</h2> <p>Applying design thinking to validate legitimacy of the data product candidate.</p> <p>Forming the team that will develop it.</p> </section> <section id="s02" class="study-section"> <h2>S02 - Product and Domain</h2> <p>Designing the building blocks of the data product.</p> <p>In the, when discussing the domain ownership principle, teams presented sample data products for the business capability Produce Content. Teams used the term data product without specifying what it is and how to create it.</p> <p>Often when thinking about data, the focus is on technical aspects such as schema or data relationships. However, it is necessary to remember that other related elements, such as schema description, domain description, definition of access rules, metrics, and quality checks are equally important.</p> <p>On the other hand, there are many datasets in organizations that would be valuable to have available in an easy-to-use form. Unfortunately, they are often difficult to access—for example, on a private drive, undescribed, and usually unprepared for consumption (not cleaned or standardized).</p> <p>Therefore, it makes sense to introduce the concept of thinking about data as a product: a well-defined unit tailored to user needs.</p> <p>In the, using the business capability modeling technique, teams identified data product candidates from the Produce Content domain. Is what teams have done so far enough to say that these will be the final data products?</p> </section> <section id="s03" class="study-section"> <h2>S03 - Easily and Found</h2> <p>Can be easily found.</p> <p>Are able to work together.</p> </section> <section id="s04" class="study-section"> <h2>S04 - Necessary and Make</h2> <p>It is necessary to make sure that a given dataset is worth making a product, because this activity comes at a price. Moreover, proper analysis allows teams to prioritize the work on data products.</p> </section> <section id="s05" class="study-section"> <h2>S05 - Product and Problem</h2> <p>Product thinking is a problem-solving technique focused primarily on defining a problem a user wants to solve before teams go on to create the product. The goal of this technique is to minimize the gap between user needs and the offered solution.</p> <ul class="study-bullets"><li><strong>Love the problem, not the solution</strong> Before starting to design specific aspects of a product, understand deeply who the users are and the problem the organization is trying to solve.</li><li><strong>Think in products, not features</strong> It is tempting to focus on adding new features and tailoring specific assets. It is important to think about data in terms of a product satisfying user needs.</li></ul><p>The final product should be the result of the process between the users and their needs, the team that solves the problem, and the technology that is the means to solve the problem. Therefore, before the organization start exposing a dataset, in the spirit of.</p> </section> <section id="s06" class="study-section"> <h2>S06 - Product and Strategy</h2> <p>Who will use the product?</p> <p>What is the strategy? How will the organization does it?</p> </section> <section id="s07" class="study-section"> <h2>S07 - Features and Included</h2> <p>Which features should be included?</p> <p>Of course, depending on the context and complexity of the data product, the scope of analysis and answers to these questions will vary.</p> </section> <section id="s08" class="study-section"> <h2>S08 - Product and Thinking</h2> <p>applies product thinking to the data product candidates from the: Cost Statement, Scripts, Movie Popularity, Movie Trends, and Cast.</p> <p>Sometimes the simplest cases are the hardest to define. Many times files in the organization would be worth exposing for wider use.</p> <p>In the first example, The approach considers a file with the cost breakdown of a given production run by Messflix. Because no comprehensive solution for this purpose has been implemented so far, the production costs are collected, calculated in an Excel file, and later manually.</p> <p>asks some questions in the spirit of product thinking, as shown in. Keep in mind that in this case the dataset already exists, and teams are not creating a data product entirely from scratch.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-01.png" alt="Module 05 Figure 01" class="zoomable" data-caption="M05.01" /> <figcaption>M05.01 - Product and Thinking</figcaption> </figure> </section> <section id="s09" class="study-section"> <h2>S09 - Hitchcock and System</h2> <p>Movie scripts data is part of the Hitchcock ecosystem and currently a form of microservice used through the UI. However, this data is not shared outside the system, so it cannot be easily used for purposes other than those envisioned by the Hitchcock system.</p> </section> <section id="s10" class="study-section"> <h2>S10 - Data Product Canvas</h2> <p>At Messflix, data about the popularity of movies is fetched from the paid World Movie DB via a custom-made UI in Hitchcock and used to decide which productions to make. The data is available through the UI in a form that allows only manual.</p> <p>The set of questions presented can help teams validate the data product’s value. As a next step, it is worth making a more detailed analysis of the data product, and this is where the data product canvas tool can be used.</p> <p>A recommended approach is to using a data product canvas as a supplementary tool to product thinking analysis. will apply it to the last two data products: Movie Trends and Cast.</p> </section> <section id="s11" class="study-section"> <h2>S11 - Data Product Canvas</h2> <p>The data product canvas is a tool that allows the organization to structure the data product analysis. It has the form of a visual table with individual sections on various aspects such as name, description, data product owner, and output ports.</p> </section> <section id="s12" class="study-section"> <h2>S12 - Information and Cast</h2> <p>Information for the Cast data product is shown in.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-02.png" alt="Module 05 Figure 02" class="zoomable" data-caption="M05.02" /> <figcaption>M05.02 - Information and Cast</figcaption> </figure> </section> <section id="s13" class="study-section"> <h2>S13 - Data Product Ownership</h2> <ul class="study-bullets"><li><strong>Name</strong> Data product name.</li><li><strong>Description</strong> Data product description.</li><li><strong>Data product owner</strong> Information about the data product owner.</li><li><strong>Business capability/domain/bounded context</strong> The area to which the data product belongs.</li><li><strong>System</strong> The name of the system or systems to which the data product is related.</li><li><strong>Classification</strong> The nature of the exposed data.</li><li><strong>Source aligned</strong> Data exposed directly from the source system.</li><li><strong>Consumer aligned</strong> Data transformed for meeting consumer needs, often from more than one source.</li><li><strong>Shared core</strong> Data used by many data products and/or consumers.</li><li><strong>Virtual</strong> Data offered to users and computed in the moment of usage.</li><li><strong>Materialized</strong> Data first persisted in a final form and exposed to users.</li><li><strong>Lifecycle classification</strong> The stage of the data product maturity.</li><li><strong>Experimental</strong> The data product is under development.</li><li><strong>Stable</strong> The data product is ready to use in production.</li><li><strong>Input interface</strong> An interface specifying the data needed from other sources. Its realization uses other systems or datasets to ingest the data.</li><li><strong>Output ports</strong> The form in which the data is exposed to consumers.</li><li><strong>Security</strong> Security rules applied to the data product’s usage.</li><li><strong>Inbound flow</strong> Which dataset comes into the data product.</li><li><strong>Outbound flow</strong> Which datasets come out of the data product.</li><li><strong>Volume</strong> Estimated size of data offered by the data product.</li><li><strong>Datasets</strong> Datasets constituting the data product.</li></ul></section> <section id="s14" class="study-section"> <h2>S14 - Data Product Canvas</h2> <p>Information for the Movie Trends data product is shown in.</p> <p>This product thinking analysis results in the data mesh ecosystem related to the Produce Content business capability shown in.</p> <p>Having performed the analysis with the help of product thinking and a data product canvas, the definition is five data products. Three are based on Hitchcock Movie Maker data: Production Cost Statement, Scripts, and Cast.</p> <p>Each product is used by different systems. The script recommender uses Scripts, Cast, Movie Popularity, and Movie Trends to generate automatic recommendations for scripts worth submitting to production.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-03.png" alt="Module 05 Figure 03" class="zoomable" data-caption="M05.03" /> <figcaption>M05.03 - Data Product Canvas</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-04.png" alt="Module 05 Figure 04" class="zoomable" data-caption="M05.04" /> <figcaption>M05.04 - Data Product Canvas</figcaption> </figure> </section> <section id="s15" class="study-section"> <h2>S15 - Product and Conscious</h2> <p>Teams have used the term data product many times so far but haven’t provided its definition. Referring to the generic meaning of a product in general, “an effect of a conscious action,” it is relatively easy to determine what is not a data product.</p> <p>It was not created with the intention of creating a data product, i.e., no conscious effort was made to prepare it to be a data product.</p> <p>It does not address clearly defined user needs.</p> </section> <section id="s16" class="study-section"> <h2>S16 - Product and Definition</h2> <p>The definition is data product as follows.</p> <p>A data product is an autonomous, read-optimized, standardized data unit containing at least one dataset (domain dataset), created for satisfying user needs.</p> <div class="note-box"><strong>Important note.</strong> It is also worth noting, to avoid confusion, that the term data product already exists in the data world in a different sense (outside the data mesh context). In this case, data product is defined as “an application or tool that uses data.</div> <p>reviews data products in the Produce Content domain to explain what this definition means in practice.</p> <ul class="study-bullets"><li><strong>Autonomous data unit</strong> Every data product is a self-contained system or dataset that can be treated as an independent unit. For example, Movie Popularity is a separate component built in the form of a data lake.</li><li><strong>Read-optimized data unit</strong> The form of data storage is optimized for analytical functions. In the case of the Movie Popularity data product, the data is stored in the form of files containing the ranking of movies generated every week.</li><li><strong>Standardized data unit</strong> The data product must be prepared in the right way, and must be described with metadata, use standardized protocols and ports for data sharing, and use defined vocabularies and an identifier system. The organization will find more practical examples on this topic.</li><li><strong>Node in a data mesh</strong> The data product naturally becomes part of a larger ecosystem by, among other things, posting the appropriate data catalog metadata and allowing it to be used in a self-serve manner.</li><li><strong>Containing at least one domain data set</strong> The product must have a dataset that itself has business value. Movie Popularity contains a dataset of movie rankings from a given week, Scripts contains a dataset of metadata about scripts, and Cost Statement contains a dataset.</li><li><strong>Satisfying user needs</strong> The data product was created with product thinking in mind, and it has clearly defined users. In the case of Cost Statement, these are accountants who financially control production costs.</li></ul><ul class="study-bullets"><li><strong>Satisfying user needs</strong> The data product was created with product thinking in mind, and it has clearly defined users. In the case of Cost Statement, these are accountants who financially control production costs.</li></ul> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-05.png" alt="Module 05 Figure 05" class="zoomable" data-caption="M05.05" /> <figcaption>M05.05 - Product and Definition</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-06.png" alt="Module 05 Figure 06" class="zoomable" data-caption="M05.06" /> <figcaption>M05.06 - Product and Definition</figcaption> </figure> </section> <section id="s17" class="study-section"> <h2>S17 - Product and Term</h2> <p>As the organization already know, the use of the term product in a data mesh is not accidental. It is worth contrasting it with the term project, commonly used to name various kinds of initiatives carried out in organizations.</p> <p>On the other hand, product thinking makes teams look at a data product from a long-term perspective that goes beyond just making it available. This approach also assumes it has further development, adjusting it based on the feedback gathered from users.</p> </section> <section id="s18" class="study-section"> <h2>S18 - Metadata Management</h2> <p>What could be a candidate for a data product? In general, any data representation that has value for users can be a good candidate.</p> <ul class="study-bullets"><li><strong>Raw unstructured files</strong> For example, images generated by geological sampling equipment or videos uploaded by users of a video portal. However, to be useful to end users, these files should be accompanied by sufficient metadata that describes them.</li><li><strong>Simple files</strong> For example, results of a series of measurements taken on geological samples, Excel reports, or data in CSV format exported from the application. In this case, a description in the form of metadata can also be crucial for further use of the.</li></ul><p>A dataset inside a database (or data storage in general) —Containing a read-optimized representation of data from a source system (system of records).</p> <p>A dataset built based on data retrieved from a COTS-type system (commercial, off the shelf) —For example, containing information about stock levels.</p> <ul class="study-bullets"><li><strong>REST API</strong> Data exposed from applications to read transactional data, optimized for reading, optionally supporting Hypermedia as the Engine of Application State (HATEOAS) to facilitate automated (machine-consumable) data consumption.</li></ul> <p>Data stream representing the history of changes to the application —For example, events that relate to changes made within a billing account.</p> <p>Data stream representing snapshots of data entities from a transaction system —For example, information about a system user.</p> <ul class="study-bullets"><li><strong>Data mart</strong> Representing data enabling multidimensional analysis of sales results.</li><li><strong>Denormalized table</strong> Containing search-optimized information (for example, about the rentals of a particular movie).</li><li><strong>Graph database</strong> Reflecting complex relationships between data (for example, specialized for finding movie recommendations).</li></ul><p>Local data lake or part of a bigger data lake —Used to build a view used as a basis for analysis of watching movies statistics.</p> <ul class="study-bullets"><li><strong>MDM-type database (master data management)</strong> Containing an integrated view on system users (personal information, viewing preferences, viewing time preferences, payment information, rating information, etc.).</li></ul> <p>As It is possible to see from the examples, there are many possibilities. But of course, these are just examples of the data itself, the core of a data product.</p> </section> <section id="s19" class="study-section"> <h2>S19 - Data Product Ownership</h2> <p>Having specified how to define the scope of a data product, its customers, and its business needs, teams will now take a closer look at the human side of a data product—the roles that are responsible for its development. And these are as follows.</p> <ul class="study-bullets"><li><strong>Data product owner</strong> The person responsible for the business vision and evolution of the data product. In practice, this can be a person who is also an Agile product owner or a product manager.</li><li><strong>Data product development team</strong> A team responsible for implementation, maintenance, and deployment of a data product (in contrast to a central team specialized in data processing).</li></ul><p>returns to the Messflix example. The Hitchcock system is developed by two teams, Orange and White, together comprising approximately 30 people.</p> <p>The introduction of data products changes the system landscape and requires a slightly different organization of teams. Following the principle of domain ownership, teams want to make operational teams responsible for data products related to their applications.</p> <p>Data products related directly to the Hitchcock system will be led by one data product owner, and data products related to the script recommender will be led by a second data product owner. In the s, examines the characteristics of.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-07.png" alt="Module 05 Figure 07" class="zoomable" data-caption="M05.07" /> <figcaption>M05.07 - Data Product Ownership</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-08.png" alt="Module 05 Figure 08" class="zoomable" data-caption="M05.08" /> <figcaption>M05.08 - Data Product Ownership</figcaption> </figure> </section> <section id="s20" class="study-section"> <h2>S20 - Data Product Ownership</h2> <p>The role of data product owner is a natural consequence of the data as a product principle. Data is becoming such an important resource in the organization that it requires an owner, a person who will think long-term about how to make data even.</p> <p>An example of such a need might be to extend the data provided with attributes not previously available (e.g., an additional column in the database). Another example could be adding the ability to retrieve data from any point in time, providing a new way.</p> <p>The preceding examples show that a data product has a life cycle, and that new user requirements need to be managed in a sustainable way. Moreover, having gathered the needs, it is necessary to decide which ones should be addressed first, and which should.</p> <p>The role itself is borrowed directly from Agile methods such as scrum. Detailed practices and heuristics can be found in sources describing these methods.</p> <p>The role of data product owner is extremely important, because the manner in which this role is performed will largely determine the success of implementing the data mesh approach. If assigned data product owners strategically develop products and ensure that they are of adequate.</p> </section> <section id="s21" class="study-section"> <h2>S21 - Governance Model</h2> <p>The data product owner, as the name indicates, should be the owner of the data product. This person has the last word in making decisions and setting the direction of data product evolution.</p> <ul class="study-bullets"><li><strong>Defining vision and needs</strong> Determining the purpose of creating a data product, its users, and their expectations (e.g., using the methods of product thinking).</li><li><strong>Strategic planning of product development work</strong> Creating the roadmap, defining key performance indicators (KPIs) for the data product, and ensuring appropriate SLAs.</li></ul><p>Ensuring that all requirements for the data product are satisfied— Providing a satisfying level of metadata description, as well as compliance with accepted standards and data governance rules.</p> <p>Making tactical decisions related to the management of the data product backlog— Prioritizing requirements, clarifying requirements, splitting stories, and approving implemented items.</p> <ul class="study-bullets"><li><strong>Stakeholder management</strong> Gathering information from users and management, and clarifying inconsistencies or conflicting requirements.</li><li><strong>Collaboration with the data product development team</strong> To clarify requirements and make decisions on problems that may affect the further development and implementation of the data product.</li><li><strong>Participating on the data governance team</strong> To influence the introduction of rules in the organization and provide feedback on their practical implementation.</li></ul><p>An important rule is that there should be only one data product owner for a specific data product. However, many data products can be owned by one data product owner (if data products are smaller or require less attention).</p> <p>Teams have to be aware that data products differ in size and complexity, so specific data product owner responsibilities will also differ depending on the situation. For example, someone taking care of dozens of financial spreadsheets will have other challenges and responsibilities than a.</p> </section> <section id="s22" class="study-section"> <h2>S22 - Data Product Ownership</h2> <p>Like the role of data product owner, the idea of a data product development team is borrowed from Agile methods. This cross-functional team works within the domain to which the data product belongs.</p> <ul class="study-bullets"><li><strong>Orange</strong> The team responsible for the backend and UI of the Hitchcock system, and the Cast, and Cost Statement data products. In this team, teams need the most diverse competencies: software developers, software testers, user experience (UX) specialists, system analysts, and data engineers.</li><li><strong>White</strong> The team responsible for the scripts microservice and Scripts data product. In this case, the situation is quite simple, because the data product will be exposed in the form of a REST API, and it will be just another representation of already available.</li><li><strong>Blonde</strong> The team responsible for the scripts recommender app, and the Movie Trends and Movie Popularity data products. In this case, the analytics application and related data products are planned for development, so teams need a development team supported by data engineers, data analysts.</li></ul><p>As It is possible to conclude from the previous examples, the team consists of people who have all the competencies to create a data product end to end. Such a team has characteristics similar to DevOps or DevSecOps teams found in the software development world.</p> </section> <section id="s23" class="study-section"> <h2>S23 - Data Product Interfaces</h2> <ul class="study-bullets"><li><strong>Operations engineers</strong> For infrastructure, CI/CD configuration, and integration with the platform.</li><li><strong>Software developers</strong> For more complex programming tasks, if required (e.g., exposing data in a specific REST API HATEOAS format).</li></ul></section> <section id="s24" class="study-section"> <h2>S24 - Security and Privacy</h2> <ul class="study-bullets"><li><strong>Data analysts</strong> To acquire and analyze the data that is to be the content of the data product.</li><li><strong>Security engineers</strong> To configure security rules related to the data product.</li></ul><p>This is a sample list. The competencies associated with the roles are the most important, not the roles themselves.</p> </section> <section id="s25" class="study-section"> <h2>S25 - Data Product Ownership</h2> <p>Quite naturally, the question may arise: how do the roles of product owner and data product owner relate to each other? In the case of the Hitchcock system, script recommender, and associated data products, the product owners will also be the data product owners.</p> <p>In general, however, this configuration depends quite significantly on the specific situation. It is possible to distinguish between the three situations shown in.</p> <p>Now that teams’ve defined the data product and selected skilled people, It is possible to focus on design and architectural aspects of creating a data product.</p> </section> <section id="s26" class="study-section"> <h2>S26 - Data Product Team Structure</h2> <p>teams showed how to validate and define a data product, and how to assign a product owner along with a data product development team. focuses on a high-level view of the data product structure from the perspective of.</p> <p>In, showing data products in the Produce Content domain, the key elements of the data product’s external architecture were presented: external and internal ports. An excerpt for the Cost Statement data product is shown in.</p> <p>To be fully functional, a data product requires more components to become an autonomous element of the architecture. It is advisable to consciously design the entire set of interfaces that will make up the full data product.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-09.png" alt="Module 05 Figure 09" class="zoomable" data-caption="M05.09" /> <figcaption>M05.09 - Data Product Team Structure</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-10.png" alt="Module 05 Figure 10" class="zoomable" data-caption="M05.10" /> <figcaption>M05.10 - Data Product Team Structure</figcaption> </figure> </section> <section id="s27" class="study-section"> <h2>S27 - Data Product Interfaces</h2> <ul class="study-bullets"><li><strong>REST API endpoint with OpenAPI documentation</strong> API that will allow consumers to directly use the data.</li><li><strong>Operational metrics of REST API usage</strong> REST API metrics, such as the number of active users, amount of data retrieved, and number of requests processed.</li></ul></section> <section id="s28" class="study-section"> <h2>S28 - Data Product Interfaces</h2> <ul class="study-bullets"><li><strong>Operational metrics of shared drive resource usage</strong> Metrics from the file-sharing system, including active users count, number of downloads, and number of requests processed.</li><li><strong>Data product metadata</strong> Information describing the data being shared, such as business description, contact persons, and responsible persons.</li><li><strong>Overall metrics of data product usage</strong> Metrics that are the sum of the metrics from individual ports.</li><li><strong>Data quality reports for data</strong> Reports on the quality of the data provided, such as information about the time of the update and any data gaps.</li><li><strong>Security access configuration</strong> A tool for setting up access to data, mainly exposed for a self-serve platform.</li></ul><p>The generalized external architecture of the data product is shown in.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-11.png" alt="Module 05 Figure 11" class="zoomable" data-caption="M05.11" /> <figcaption>M05.11 - Data Product Interfaces</figcaption> </figure> </section> <section id="s29" class="study-section"> <h2>S29 - Data Product Interfaces</h2> <ul class="study-bullets"><li><strong>Communication interfaces</strong> Input interfaces and output ports, which define the format and protocol in which data can be read (e.g., files, API, database, and stream).</li><li><strong>Information interfaces</strong> Interfaces that can be used by users to monitor and retrieve additional information such as metadata, lineage, current metrics, or quality indicators.</li><li><strong>Configuration interfaces</strong> Interfaces, mainly platform specific, that enable the data product to be included in the data mesh ecosystem (e.g., security options and parameters, data sharing agreement statements).</li></ul><p>Specifically, the self-serve platform uses configuration and information interfaces to configure, catalog, monitor, and visualize the relationships between data products. Interfaces must be standardized for the interoperability to be possible.</p> <p>In the next subsection, will take a closer look at external ports, which are the data product’s primary means of exposing data.</p> <p>A data product is created with the end user in mind, and as teams know, users have different needs and preferences. For example, a data scientist might prefer to have data about movies rented in Latin America in the form of a well-described file.</p> <p>A data product is not only a form in which data is stored but also the various ways that data can be accessed. In the case of a data product, teams call these ports.</p> <p>A data product can have one or more output ports, and the infrastructure should make it easy to expose the same data using different forms. Next, presents examples of output port representations.</p> </section> <section id="s30" class="study-section"> <h2>S30 - Data Product Interfaces</h2> <p>One of the primary ports that will come into play when developing data products is database-like storage, i.e., SQL databases, NoSQL databases, or data warehouse data marts. In many cases, this may be the only type of port provided by a data product.</p> <p>This type of storage can be queried with SQL language or its analog, giving basically unlimited possibilities of further processing. But, of course, they are addressed mainly to technical users who can work with this type of storage and use SQL language.</p> </section> <section id="s31" class="study-section"> <h2>S31 - Data Product Interfaces</h2> <p>The second type of port, which will be familiar to less technical users of data products, is files that can be imported into tools such as Excel, Google Sheets, or used by data scientists. It is worth remembering that data engineers often feel confident.</p> <p>Files, in the case of smaller sets, can represent the whole dataset. And for large amounts of data, in most cases, a subset of the data will first be selected, through an appropriate query or configuration of various filters and then exported to a.</p> <p>Another type of port is the REST API. This material uses HTTP REST here as an example of the protocol that is most popular at the time of writing this material.</p> <p>This type of port is mainly suitable for working on small subsets of data, because it is usually inefficient for large collections. If teams add GraphQL support to this type of port, teams get the ability to perform complex and customized queries on the.</p> <div class="note-box"><strong>Important note.</strong> GraphQL is an open source data query and manipulation language for APIs, and a run time for fulfilling queries with existing data. HATEOAS is a part of the REST specification stating that in addition to the result data, responses should include dynamic metadata.</div> <p>So this port is great for automating data processing and for relatively low-intensity analytics that do not require large amounts of data.</p> </section> <section id="s32" class="study-section"> <h2>S32 - World and Streams</h2> <p>By streams, teams mean messaging-based systems that store information as single messages (e.g., message queues). This type of port is not very popular in the world of data yet, especially as a form of sharing data, because tools for its analytical processing are.</p> <p>The second reason to consider streams in the data world is to use event sourcing, known from the software development world. Event sourcing stores the changes associated with an entity (e.g., a transaction) rather than the final state of the entity.</p> <p>It is worth noting that a stream can also be used to implement a data product—to transport the data needed to build the data product. However, it’s then considered an input interface.</p> </section> <section id="s33" class="study-section"> <h2>S33 - Port and Last</h2> <p>The last example of a port is a visualization: various kinds of charts and dashboards representing data. They can be a good resource for nontechnical users, especially if they are combined with a filtering and data selection mechanism.</p> <p>Having decided which kind of port representation to use, It is possible to focus more on detailed design of a data product.</p> </section> <section id="s34" class="study-section"> <h2>S34 - Data Product Team Structure</h2> <p>While the external architecture is fairly self-explanatory and easy to standardize, the internal architecture of a data product will depend significantly on the specifics of the data product, the way it is processed, and the technologies used.</p> <p>The data related to production costs comes from spreadsheet files, which are constantly updated by the production team according to the established rules. To enable more complex analysis of this data, it is made available in the form of a REST API and files.</p> <p>These scripts read the current form of spreadsheet files, save them in their raw form, and then perform data cleaning and transformation to the target form, which is written to the database used by the REST API and files located on the shared drive.</p> <p>s describe the main elements of the data product’s internal architecture.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-12.png" alt="Module 05 Figure 12" class="zoomable" data-caption="M05.12" /> <figcaption>M05.12 - Data Product Team Structure</figcaption> </figure> </section> <section id="s35" class="study-section"> <h2>S35 - Product and Dataset</h2> <p>One of the most obvious components of a data product is the dataset. Datasets are what ultimately constitute the essence of a data product.</p> <p>For example, the dataset may be a remote file whose size or legal aspects prevent copying. In particular, the latter may be the case when, because of licensing, the file can physically reside only within the boundaries of a geographical region.</p> </section> <section id="s36" class="study-section"> <h2>S36 - Metadata Management</h2> <p>In the data mesh approach, metadata plays a particularly important role that allows many processes to be automated. Much of the metadata, especially descriptive and configuration metadata, will be part of the internal implementation of the data product—that is, its name, business description, dataset.</p> </section> <section id="s37" class="study-section"> <h2>S37 - Product and Important</h2> <p>An important part of data product implementation will be the parts of the code that enable creation of the final product, including, among other things, the following.</p> </section> <section id="s38" class="study-section"> <h2>S38 - Pipelines and Infrastructure</h2> <ul class="study-bullets"><li><strong>Transformational pipelines</strong> ETL or ELT transformations, enrichment, and harmonization.</li><li><strong>Infrastructure as code</strong> Configuration of the container and orchestration infrastructure layers.</li><li><strong>CI/CD pipelines</strong> Processes that update the data product code after changes, verifying its correctness, and applying the changes to the production environment if the entire process went correctly.</li></ul></section> <section id="s39" class="study-section"> <h2>S39 - Product and Following</h2> <p>teams looked at designing the data product;, discusses ensuring that it is prepared to be used in the data mesh ecosystem.</p> <p>A data product should have the following characteristics.</p> <p>It can be found.</p> <p>It must be described, named, and registered in the data product registry.</p> <p>It can be understood.</p> <p>It has sufficient technical and domain descriptions for the user to inter- pret it.</p> <p>It can be uniquely identified in terms of sources from which it originated to build a data lineage (understanding where the data comes from).</p> <p>It can be addressed.</p> <p>It has a unique address that can be used to identify the data product.</p> <p>It can be accessed only by authorized entities.</p> <p>It can be used.</p> <p>It has sufficient data to be used on its own (i.e., carries sufficient domain sense on its own).</p> <p>It is possible to combine it with other data; it has metadata and references that allow the organization to combine several data products into a larger whole.</p> <p>It is accessible through publicly known and available protocols and tools.</p> <p>It is possible to tell its availability and quality through metrics, user feedback, and quality reports.</p> <p>The data product has to meet many criteria to be a full-fledged product. Metadata, which is described in the following paragraphs, plays an especially important role in this regard.</p> </section> <section id="s40" class="study-section"> <h2>S40 - Metadata Management</h2> <p>The data product should contain all the information to understand and use it. This characteristic is achieved through an appropriate set of metadata.</p> <p>In classical data management approaches, metadata is often separated from the dataset and tends to be scattered in many places. One of the fundamental properties of a data product is its autonomy.</p> </section> <section id="s41" class="study-section"> <h2>S41 - Data Product Ownership</h2> <p>Metadata is data about data. It is mainly used to provide additional information about the data so that it is easier to understand and use with greater understanding.</p> <p>Of course, this is only an example of metadata related to semantics. However, there can be many more types of metadata.</p> <p>The following is a list of some of the most relevant data product metadata types. In fact, this is not a closed list.</p> <ul class="study-bullets"><li><strong>Business metadata</strong> Describing information about the owner (data product owner), describing the domain context (e.g., abstract, assumptions), domain affiliation, organizational unit, license type, and expiration date.</li><li><strong>Technical metadata</strong> About the technical team responsible for it, physical access method, links to the data product page (if any), and links to download examples.</li><li><strong>Operational metadata</strong> Description of ports, description of access policies, and how to obtain extended access.</li><li><strong>Physical schema</strong> Description of the data product, its attributes, data types, constraints, and relationships to other elements.</li><li><strong>Semantic metadata</strong> Links of the physical model to standardized vocabularies and logical models.</li><li><strong>Local lineage</strong> Information about the direct sources of the data from which the data product was created.</li><li><strong>Full lineage</strong> Information about the overall sequence of links that shows how data was created in a given data product.</li><li><strong>Quality metrics</strong> Metrics related to data quality, the amount of correctly and incorrectly defined data, information about missing data, incorrect formats, and compliance with data governance rules.</li><li><strong>Operational metrics</strong> Information about whether the data product is available, number of users, usage statistics, and SLA metrics.</li></ul></section> <section id="s42" class="study-section"> <h2>S42 - Metadata Management</h2> <p>In classical approaches to data management, metadata is gathered in dedicated tools, most often in a data catalog, where the submitted dataset needs to be enriched with additional information. In this way, metadata is separated from the dataset, which often leads to metadata descriptions.</p> <p>The data mesh approach assumes that the data product is autonomous and self-described, in a way that the self-serve platform and end users can use it for different purposes. Therefore, it is recommended to use the metadata as code approach, which results in data.</p> <p>For example, a metadata description can be implemented using JSON notation. The data product’s metadata description file contains sections dedicated to each of its aspects.</p> </section> <section id="s43" class="study-section"> <h2>S43 - Details and Domain</h2> <p>// data product details.</p> <p>// domain dataset details.</p> <p>// dataset schema details.</p> <p>// conceptual domain model eg. OWL / RDFs.</p> <p>// data quality guarantees.</p> <p>// runtime generated metrics.</p> <p>// links to related documentation.</p> <p>examines take a look at examples of metadata related to a data product.</p> </section> <section id="s44" class="study-section"> <h2>S44 - Metadata Management</h2> <p>Metadata about a data product is mainly descriptive so users can better understand its business sense and get information for further use. It is possible to include data such as the following.</p> </section> <section id="s45" class="study-section"> <h2>S45 - Product and Description</h2> <ul class="study-bullets"><li><strong>Title</strong> Human-friendly name of the data product.</li><li><strong>Business description</strong> Domain-specific description of the data product, introduction to the domain context.</li><li><strong>Terms of use</strong> Licensing type, and description of when, how, and by whom the data product can be used.</li></ul></section> <section id="s46" class="study-section"> <h2>S46 - Data Product Ownership</h2> <ul class="study-bullets"><li><strong>Data product owner</strong> Information about the responsible person, such as name, surname, and position as well as contact details.</li><li><strong>Responsible data product developer team</strong> Information about the technical team maintaining the data product, including the technical support contact.</li></ul></section> <section id="s47" class="study-section"> <h2>S47 - Status and Collected</h2> <ul class="study-bullets"><li><strong>Status</strong> Current status of the product (e.g., experimental, active, inactive, or temporarily off).</li><li><strong>Since when collected</strong> The moment in time when data starts to be collected, not necessarily equal to the time when data starts to be exposed.</li></ul></section> <section id="s48" class="study-section"> <h2>S48 - Metadata Management</h2> <ul class="study-bullets"><li><strong>Last modified</strong> The last modification to the product (e.g., a changing data schema for underlying data).</li></ul> <p>Of course, these are just a dozen or so examples of elements that can be freely adapted, as well as adding others that are important in the context of a given organization. An example snippet of metadata defined in JSON format could look like.</p> </section> <section id="s49" class="study-section"> <h2>S49 - Metadata Management</h2> <p>"title": "Movie Production Cost Statement".</p> <p>"Cost breakdown of a production including. (much more text)".</p> <p>"name": "For internal financial related use only".</p> <p>As It is possible to see, much of the data included is dictionary-like and should come from standardized dictionaries, especially if the organization wants to be FAIR compliant. A separate topic is human-friendly support for creating this type of metadata.</p> <p>Many data product owners may not be comfortable working with a format like JSON. Even if it isn’t a problem, it can be inconvenient.</p> </section> <section id="s50" class="study-section"> <h2>S50 - Metadata Management</h2> <p>While the data product description is business oriented and different from technical details, the domain dataset part focuses on exactly that aspect, as shown in listing 5.3. This part of the metadata may include, among other things.</p> </section> <section id="s51" class="study-section"> <h2>S51 - Data Product Interfaces</h2> <ul class="study-bullets"><li><strong>Ports</strong> Specification of available ports.</li><li><strong>Name</strong> Machine-friendly name of the domain dataset.</li></ul></section> <section id="s52" class="study-section"> <h2>S52 - Download and Version</h2> <ul class="study-bullets"><li><strong>Download URL</strong> Address to download sample of the data.</li><li><strong>Version</strong> The latest version of the dataset.</li></ul></section> <section id="s53" class="study-section"> <h2>S53 - Description and Described</h2> <p>"title": "Movie Production Cost Statements".</p> <p>"description": "More detailed description of the ".</p> <p>Having described the most important parts of a data product, examines focus on additional aspects that can be described.</p> </section> <section id="s54" class="study-section"> <h2>S54 - Metadata Management</h2> <p>The data product and domain dataset metadata are just the tip of the iceberg. According to listing 5.1, analogous metadata description sections should appear for terminology, lineage, conceptual model, security, and data quality.</p> <p>One such source is a set of World Wide Web Consortium (W3C) standards that can be used directly or adapted to the needs. Teams do not describe these sections in more detail, because their specific use depends on the context of the organization.</p> <p>Although teams’ve defined the main requirements for a data product, there are several additional characteristics to consider when making guidelines for creating data products in a particular organization., examines five of these characteristics.</p> </section> <section id="s55" class="study-section"> <h2>S55 - FAIR Principles</h2> <p>Teams will first focus on FAIR (an acronym for findable, accessible, interoperable, reusable ). This set of principles was initially designed for scientific research data, to maximize its reusability and its ability to easily integrate with other data.</p> <p>However, over time, it became clear that FAIR could be helpful in other situations. For example, government agencies in Australia, Sweden, and the European Union, among others, recommend its use for shared data.</p> </section> <section id="s56" class="study-section"> <h2>S56 - Metadata Management</h2> <p>Data should be easy to find, and its metadata should be easy to use by both humans and computers. In particular, the ability of machines to interpret metadata is crucial from the perspective of FAIR.</p> <p>(Meta)data is assigned a globally unique and persistent identifier.</p> <p>Data is described with rich metadata.</p> <p>Metadata clearly and explicitly includes the identifier of the data it describes.</p> <p>(Meta)data is registered or indexed in a searchable resource.</p> <p>As an example, take a look at the following listing to see a simple REST API returning Person data. (This example can be used to see how to apply FAIR to other interfaces in order to access data like databases, files, and messages.).</p> </section> <section id="s57" class="study-section"> <h2>S57 - Metadata Management</h2> <p>The data itself is nothing special. The more important part lies in metadata that could be like the following listing.</p> <p>"description": "Person data represents.".</p> <p>//. other metadata.</p> </section> <section id="s58" class="study-section"> <h2>S58 - Metadata Management</h2> <p>ID of the person instance in listing 5.4.</p> <p>Data is described by rich metadata (principle 2) that It is possible to observe in listing 5.5. This information can include name, title, description, and schema details.</p> </section> <section id="s59" class="study-section"> <h2>S59 - Principle and Product</h2> <p>Referenced ID in listing 5.5.</p> <p>Principle 4 tells teams to put this (meta) data in some kind of searchable repository where data catalogs can be successfully used.</p> <p>According to the characteristics described earlier, virtually all four principles are consistent with the essential attributes of the data product. Therefore, only the first principle imposes very strong conditions on the data product.</p> </section> <section id="s60" class="study-section"> <h2>S60 - Metadata Management</h2> <p>For the data found, there should be clear rules for accessing the data. The metadata should clearly describe how to access the data, and the protocols used to access the data should be generally known standards.</p> <p>(Meta)data is retrievable by its identifier using a standardized communications protocol.</p> <p>The protocol is open, free, and universally implementable.</p> <p>The protocol allows for an authentication and authorization procedure, where necessary.</p> <p>Metadata is accessible, even when the data is no longer available.</p> <p>As shown the data product has an ID in the form of the URL https://dp.meshflix.com/93384349834. According to principle 1, this should be a workable URL that can be used to retrieve information about the data product.</p> <p>These accessibility principles can be seen as recommendations for creating a data product and its desirable features to facilitate its use. In particular, the permanent availability of metadata is essential if there is a need to refer to historical data (e.g., for legal reasons).</p> </section> <section id="s61" class="study-section"> <h2>S61 - FAIR Principles</h2> <p>According to FAIR, data should be easy to integrate with other data, and therefore should be defined so that data in other data products, vocabularies, and ontologies can be referenced. In this case, FAIR proposes three principles.</p> <p>(Meta)data uses a formal, accessible, shared, and broadly applicable language for knowledge representation.</p> <p>(Meta)data uses vocabularies that follow FAIR principles.</p> <p>(Meta)data includes qualified references to other (meta)data.</p> <p>To make data interpretable by others, teams have to describe the data model. It is advisable to use a well-recognized language, such as Resource Description Framework (RDF), OWL, JSON-LD, or Schema.org (principle 1).</p> <p>This is also an example for principle 3, as teams refer to external definitions in the form of a fully qualified reference (“uri”: “https://ref.meshflix.com/generic/123393ed34”). Beware that in the provided example the custom-created gender enum is used, but teams could also use https://schema.org/gender alternatively for.</p> <p>If teams want to go beyond a single data product to perform more complex analyses, teams must have the appropriate means to do so. The previous FAIR principles are quite demanding because they significantly expand the amount of information that needs to be provided.</p> </section> <section id="s62" class="study-section"> <h2>S62 - FAIR Principles</h2> <p>The last point of FAIR focuses on data reusability, or the ability to apply the same data in different contexts. The principles associated with reusability are as follows.</p> </section> <section id="s63" class="study-section"> <h2>S63 - Metadata Management</h2> <p>(Meta)data is released with a clear and accessible data usage license.</p> <p>(Meta)data is associated with detailed provenance.</p> <p>(Meta)data meets domain-relevant community standards.</p> <p>Principles 1a and 1b could be achieved by having some additional entries in metadata, as in the following modified listing.</p> </section> <section id="s64" class="study-section"> <h2>S64 - Metadata Management</h2> <p>//. other metadata.</p> <p>"name": "For internal use only".</p> <p>Here termsOfUse specifies a license for data usage, and sourceDataProducts specifies information about provenance (shortened for the sake of simplicity). The implementation of principle 1c would require using standardized domain-specific terminology and vocabulary—for example, www.iso.org/standard/53798.html for geographic information and services, and http://cfconventions.org for climate.</p> <p>These principles focus on defining clear rules for using data (by providing licenses), provenance information, and recommending standards that apply to the domain. Subsections 1a and 1b are essential components of a well-structured data product.</p> <p>If the organization is interested in more details about FAIR implementation, see the initiative site at www.go-fair.org.</p> </section> <section id="s65" class="study-section"> <h2>S65 - FAIR Principles</h2> <p>FAIR can be an excellent addition to the essential criteria for creating a data product. Another critical aspect to consider is the mutability of the data provided by the data product.</p> <p>If, for example, decisions about ingredient proportions in a drug have been made based on the analysis of scientific studies, then getting to that unmodified source data may be necessary from a regulatory perspective. Therefore, data immutability should be a desirable characteristic of a.</p> </section> <section id="s66" class="study-section"> <h2>S66 - Immutability Tradeoffs</h2> <p>One of the primary goals of introducing a data mesh is to democratize data by enabling access to the various data created within the organization. Not all data created in organizations is created with the same consumption patterns in mind (consumption of data from.</p> <p>Despite the lack of immutability, data should be generally available as it is, especially in the context of data generated by transactional systems (e.g., read-only APIs based on command query responsibility segregation, or CQRS, architecture). Therefore, teams treat immutability as a desirable feature of.</p> </section> <section id="s67" class="study-section"> <h2>S67 - Data Product Canvas</h2> <p>recalls the Cast data product teams’ve seen on the data product canvas. Take a look at.</p> <p>Imagine that John Doe builds this data product and that several teams start to consume it. A couple of months go by, and John Doe sees a decent amount of traffic on his data product.</p> <p>One day, he takes extra time and calls up a few of the downstream consumers of the data product. They tell him they are making a lot out of the Actors part of the data product.</p> <p>So he asks the consumers. The answer is shockingly simple: “Yes, teams would really like to use the Movie Roles dataset, but the organization’re providing them in a custom format teams’re not able to process further.”.</p> <p>A frustrated John goes on to iterate on his product, to incorporate a format the consumers can use. That’s how product thinking works, right?</p> <p>The reason is that consumers and producers of products enter into a mutual relationship. Company-internal product consumers, especially in the data realm, sometimes forget that.</p> <p>The product producer has responsibilities. The producer must properly care for the product and make decisions in the best interest of the product.</p> <p>The product consumer has responsibilities. The consumer must tell the producer what’s wrong, what’s good, and what’s missing.</p> <p>This mutual relationship sometimes gets lost inside the company context even though it is natural outside of it.</p> <div class="note-box"><strong>Key point.</strong> Product thinking works both ways. Products are two-way relationships.</div> <p>Data contracts and data-sharing agreements are still largely topics of ongoing discussion, but they seem to emerge as one possible tool to foster this mutual consumer- producer relationship. Teams discuss these options next and then outline how to get started with them.</p> <figure class="chapter-figure"> <img src="../assets/images/ch05/fig-13.png" alt="Module 05 Figure 13" class="zoomable" data-caption="M05.13" /> <figcaption>M05.13 - Data Product Canvas</figcaption> </figure> </section> <section id="s68" class="study-section"> <h2>S68 - Data Contracts</h2> <p>Piethein Strengholt describes data contracts as delivery or service contracts (see “Data Contracts—Ensure Robustness in The Data Mesh Architecture,” http://mng.bz/gwnE ). If teams look at the preceding Cast data product, a data contract could include information like this.</p> <p>This is a production-level dataset.</p> <p>The dataset is checked for broken records and does not contain test data.</p> <p>The interface delivers the data within one second inside the company network.</p> <p>Teams guarantee 95% uptime.</p> <p>The roadmap includes a couple of new datasets to be released over the next few months.</p> <p>The data product is currently in version 1.0.10.</p> <p>This material uses semantic versioning. That means a bump to 1.0.</p> <p>The schema of the data and any additional metadata.</p> <p>A data-sharing agreement extends on this data contract. While the data contract is still heavy on the data-producer side, the data-sharing agreement specifically targets consumers.</p> <p>The goal of sharing this dataset is to enable consumers to inject insights from the actor and role combination into other services. These might be other data products or not.</p> <p>The datasets are intended to be used together, using the standard combination mechanism of the common actor identifier to join, as is common at Messflix.</p> <p>Since the data is to be used across a wide variety of services, the goal is to have it available publicly, including the actor names, which should be fine with the security level.</p> <p>Since a lot of consumers want to analyze data historically, the data will be available with a backfill of three years.</p> <p>In this agreement, It is possible to spot a lot of collaboration and intention of usage by the consumers. This agreement helps the data product owner John Doe design the data products well from the start.</p> <p>now take a look at how Messflix as a company could help to implement such data contracts and sharing agreements across the data mesh.</p> </section> <section id="s69" class="study-section"> <h2>S69 - Data Contracts</h2> <p>Data contracts and sharing agreements, like the two outlined in the preceding section, can seem daunting to implement. They need to be stored somewhere, possibly have an automatic way of checking them, and must be up-to-date.</p> <p>Therefore, a recommended approach is to a practical step-by-step approach. In the eyes, the most important part to get started is to kick off the discussions between data producers and consumers.</p> <div class="note-box"><strong>Key point.</strong> A recommended approach is to not focusing too much on the contract-like nature of these two artifacts but rather on the mutual discussion of data consumers and producers. In particular, never let the development of a data product be slowed by a not-yet-perfect data contract.</div> <p>Messflix already has an MVP of a self-serve data platform and a few data products, including a basic data catalog. The base work is there, and some data products are as well.</p> <p>Inspired by the article by Strengholt, the Messflix federated governance body decides to use of a simple web form that can be filled out. This basic data contract is filled out by the data producer of the product.</p> <p>The output of step 1 should be that data producers get into the habit of collecting requirements, as discussed at length. Data consumers also are getting used to talking to producers.</p> <p>Once the data mesh grows and people get into the habit of communicating, it’s time to integrate the data contracts and agreements with all the metadata in the data catalog. Messflix can take this step, after it has a GUI available for data producers.</p> <p>The output of step 2 should be an integration of the contracts and agreements into the daily work of every participant.</p> <p>Start to automate parts of the contract and agreement processes. This might mean that Messflix has a simple way of providing access policies via the GUI or that Messflix calculates standard metrics for the data products that can be compared to SLAs.</p> <p>The output of step 3 should be that the contracts and agreements feel easy to use and add a benefit to the participating parties.</p> <p>As It is possible to see, with step 3, the implementation and automation blend together with the data catalog. Once the cultural shift is in place, mutual collaboration kicks in and becomes a natural part of the self-serve platform and its roadmap.</p> <p>teams presented tools and techniques to describe a data product so that it can be understood by others (metadata) and used to connect to other data products (FAIR principles). As It is possible to see, creating a useful data product requires a well-thought-out.</p> <p>Although teams’ve showed how to design and craft a data product, creating an ecosystem of data products will require standardization of rules for creating and describing those data products, which will be the responsibility of the data governance team. It will also be required.</p> </section> <section id="s70" class="study-section"> <h2>S70 - Product and Treat</h2> <p>To make data valuable, It is advisable to treat it as more than just an asset.</p> <p>To treat data as a product, teams apply product thinking to it.</p> <p>Data products should be created with users in mind.</p> <p>A data product should address clearly defined user needs.</p> <p>A data product is an autonomous, read-optimized, standardized data unit, a node in the data mesh architecture, containing at least one dataset (the domain dataset), created for satisfying user needs.</p> <p>The data product owner, with the data product development team, is responsible for creating and maintaining the data product, optimizing its usefulness for users.</p> <p>Data product data is accessible through one or more ports.</p> <p>A data product exposes information interfaces to make it findable and understandable outside the context of its creation.</p> <p>A rich metadata description enables data discovery and reusability.</p> <p>FAIR principles can be a well-defined base for standardizing data product descriptions.</p> </section> <section class="key-takeaways"> <h2>Key takeaways</h2> <ul><li>What data as a product means in terms of value, users, and quality.</li><li>How product thinking shapes priorities and evolution of data products.</li><li>How key roles operate: data product owner and cross-functional product team.</li><li>How to design interfaces and output ports for real consumption needs.</li></ul> </section> </article> </main> <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top">Back to top</a> <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript> <div class="lightbox" id="lightbox" aria-hidden="true"> <figure class="lightbox-inner"> <img id="lightbox-image" alt="Zoomed figure" /> <figcaption id="lightbox-caption"></figcaption> </figure> </div> </body> </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M05 - Data as a Product</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M05 - Data as a Product</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-04.html">Previous module (M04)</a>
+      <a href="chapter-05.html" aria-current="page">M05 - Data as a Product</a>
+      <a href="chapter-06.html">Next module (M06)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>What data as a product means in terms of value, users, and quality.</li>
+            <li>How product thinking shapes priorities and evolution of data products.</li>
+            <li>How key roles operate: data product owner and cross-functional product team.</li>
+            <li>How to design interfaces and output ports for real consumption needs.</li>
+            <li>How metadata and discoverability enable interoperability in the mesh.</li>
+            <li>How operational and contractual elements improve reliability and trust.</li>
+          </ul>
+        </section>
+        <section id="s01" class="study-section">
+          <h2>S01 - Data Product Team Structure</h2>
+          <p>Applying design thinking to validate legitimacy of the data product candidate.</p>
+          <p>Forming the team that will develop it.</p>
+        </section>
+        <section id="s02" class="study-section">
+          <h2>S02 - Product and Domain</h2>
+          <p>Designing the building blocks of the data product.</p>
+          <p>
+            In the, when discussing the domain ownership principle, teams presented sample data
+            products for the business capability Produce Content. Teams used the term data product
+            without specifying what it is and how to create it.
+          </p>
+          <p>
+            Often when thinking about data, the focus is on technical aspects such as schema or data
+            relationships. However, it is necessary to remember that other related elements, such as
+            schema description, domain description, definition of access rules, metrics, and quality
+            checks are equally important.
+          </p>
+          <p>
+            On the other hand, there are many datasets in organizations that would be valuable to
+            have available in an easy-to-use form. Unfortunately, they are often difficult to
+            access—for example, on a private drive, undescribed, and usually unprepared for
+            consumption (not cleaned or standardized).
+          </p>
+          <p>
+            Therefore, it makes sense to introduce the concept of thinking about data as a product:
+            a well-defined unit tailored to user needs.
+          </p>
+          <p>
+            In the, using the business capability modeling technique, teams identified data product
+            candidates from the Produce Content domain. Is what teams have done so far enough to say
+            that these will be the final data products?
+          </p>
+        </section>
+        <section id="s03" class="study-section">
+          <h2>S03 - Easily and Found</h2>
+          <p>Can be easily found.</p>
+          <p>Are able to work together.</p>
+        </section>
+        <section id="s04" class="study-section">
+          <h2>S04 - Necessary and Make</h2>
+          <p>
+            It is necessary to make sure that a given dataset is worth making a product, because
+            this activity comes at a price. Moreover, proper analysis allows teams to prioritize the
+            work on data products.
+          </p>
+        </section>
+        <section id="s05" class="study-section">
+          <h2>S05 - Product and Problem</h2>
+          <p>
+            Product thinking is a problem-solving technique focused primarily on defining a problem
+            a user wants to solve before teams go on to create the product. The goal of this
+            technique is to minimize the gap between user needs and the offered solution.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Love the problem, not the solution</strong> Before starting to design specific
+              aspects of a product, understand deeply who the users are and the problem the
+              organization is trying to solve.
+            </li>
+            <li>
+              <strong>Think in products, not features</strong> It is tempting to focus on adding new
+              features and tailoring specific assets. It is important to think about data in terms
+              of a product satisfying user needs.
+            </li>
+          </ul>
+          <p>
+            The final product should be the result of the process between the users and their needs,
+            the team that solves the problem, and the technology that is the means to solve the
+            problem. Therefore, before the organization start exposing a dataset, in the spirit of.
+          </p>
+        </section>
+        <section id="s06" class="study-section">
+          <h2>S06 - Product and Strategy</h2>
+          <p>Who will use the product?</p>
+          <p>What is the strategy? How will the organization does it?</p>
+        </section>
+        <section id="s07" class="study-section">
+          <h2>S07 - Features and Included</h2>
+          <p>Which features should be included?</p>
+          <p>
+            Of course, depending on the context and complexity of the data product, the scope of
+            analysis and answers to these questions will vary.
+          </p>
+        </section>
+        <section id="s08" class="study-section">
+          <h2>S08 - Product and Thinking</h2>
+          <p>
+            applies product thinking to the data product candidates from the: Cost Statement,
+            Scripts, Movie Popularity, Movie Trends, and Cast.
+          </p>
+          <p>
+            Sometimes the simplest cases are the hardest to define. Many times files in the
+            organization would be worth exposing for wider use.
+          </p>
+          <p>
+            In the first example, The approach considers a file with the cost breakdown of a given
+            production run by Messflix. Because no comprehensive solution for this purpose has been
+            implemented so far, the production costs are collected, calculated in an Excel file, and
+            later manually.
+          </p>
+          <p>
+            asks some questions in the spirit of product thinking, as shown in. Keep in mind that in
+            this case the dataset already exists, and teams are not creating a data product entirely
+            from scratch.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-01.png"
+              alt="Module 05 Figure 01"
+              class="zoomable"
+              data-caption="M05.01"
+            />
+            <figcaption>M05.01 - Product and Thinking</figcaption>
+          </figure>
+        </section>
+        <section id="s09" class="study-section">
+          <h2>S09 - Hitchcock and System</h2>
+          <p>
+            Movie scripts data is part of the Hitchcock ecosystem and currently a form of
+            microservice used through the UI. However, this data is not shared outside the system,
+            so it cannot be easily used for purposes other than those envisioned by the Hitchcock
+            system.
+          </p>
+        </section>
+        <section id="s10" class="study-section">
+          <h2>S10 - Data Product Canvas</h2>
+          <p>
+            At Messflix, data about the popularity of movies is fetched from the paid World Movie DB
+            via a custom-made UI in Hitchcock and used to decide which productions to make. The data
+            is available through the UI in a form that allows only manual.
+          </p>
+          <p>
+            The set of questions presented can help teams validate the data product’s value. As a
+            next step, it is worth making a more detailed analysis of the data product, and this is
+            where the data product canvas tool can be used.
+          </p>
+          <p>
+            A recommended approach is to using a data product canvas as a supplementary tool to
+            product thinking analysis. will apply it to the last two data products: Movie Trends and
+            Cast.
+          </p>
+        </section>
+        <section id="s11" class="study-section">
+          <h2>S11 - Data Product Canvas</h2>
+          <p>
+            The data product canvas is a tool that allows the organization to structure the data
+            product analysis. It has the form of a visual table with individual sections on various
+            aspects such as name, description, data product owner, and output ports.
+          </p>
+        </section>
+        <section id="s12" class="study-section">
+          <h2>S12 - Information and Cast</h2>
+          <p>Information for the Cast data product is shown in.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-02.png"
+              alt="Module 05 Figure 02"
+              class="zoomable"
+              data-caption="M05.02"
+            />
+            <figcaption>M05.02 - Information and Cast</figcaption>
+          </figure>
+        </section>
+        <section id="s13" class="study-section">
+          <h2>S13 - Data Product Ownership</h2>
+          <ul class="study-bullets">
+            <li><strong>Name</strong> Data product name.</li>
+            <li><strong>Description</strong> Data product description.</li>
+            <li><strong>Data product owner</strong> Information about the data product owner.</li>
+            <li>
+              <strong>Business capability/domain/bounded context</strong> The area to which the data
+              product belongs.
+            </li>
+            <li>
+              <strong>System</strong> The name of the system or systems to which the data product is
+              related.
+            </li>
+            <li><strong>Classification</strong> The nature of the exposed data.</li>
+            <li><strong>Source aligned</strong> Data exposed directly from the source system.</li>
+            <li>
+              <strong>Consumer aligned</strong> Data transformed for meeting consumer needs, often
+              from more than one source.
+            </li>
+            <li><strong>Shared core</strong> Data used by many data products and/or consumers.</li>
+            <li>
+              <strong>Virtual</strong> Data offered to users and computed in the moment of usage.
+            </li>
+            <li>
+              <strong>Materialized</strong> Data first persisted in a final form and exposed to
+              users.
+            </li>
+            <li>
+              <strong>Lifecycle classification</strong> The stage of the data product maturity.
+            </li>
+            <li><strong>Experimental</strong> The data product is under development.</li>
+            <li><strong>Stable</strong> The data product is ready to use in production.</li>
+            <li>
+              <strong>Input interface</strong> An interface specifying the data needed from other
+              sources. Its realization uses other systems or datasets to ingest the data.
+            </li>
+            <li>
+              <strong>Output ports</strong> The form in which the data is exposed to consumers.
+            </li>
+            <li><strong>Security</strong> Security rules applied to the data product’s usage.</li>
+            <li><strong>Inbound flow</strong> Which dataset comes into the data product.</li>
+            <li><strong>Outbound flow</strong> Which datasets come out of the data product.</li>
+            <li><strong>Volume</strong> Estimated size of data offered by the data product.</li>
+            <li><strong>Datasets</strong> Datasets constituting the data product.</li>
+          </ul>
+        </section>
+        <section id="s14" class="study-section">
+          <h2>S14 - Data Product Canvas</h2>
+          <p>Information for the Movie Trends data product is shown in.</p>
+          <p>
+            This product thinking analysis results in the data mesh ecosystem related to the Produce
+            Content business capability shown in.
+          </p>
+          <p>
+            Having performed the analysis with the help of product thinking and a data product
+            canvas, the definition is five data products. Three are based on Hitchcock Movie Maker
+            data: Production Cost Statement, Scripts, and Cast.
+          </p>
+          <p>
+            Each product is used by different systems. The script recommender uses Scripts, Cast,
+            Movie Popularity, and Movie Trends to generate automatic recommendations for scripts
+            worth submitting to production.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-03.png"
+              alt="Module 05 Figure 03"
+              class="zoomable"
+              data-caption="M05.03"
+            />
+            <figcaption>M05.03 - Data Product Canvas</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-04.png"
+              alt="Module 05 Figure 04"
+              class="zoomable"
+              data-caption="M05.04"
+            />
+            <figcaption>M05.04 - Data Product Canvas</figcaption>
+          </figure>
+        </section>
+        <section id="s15" class="study-section">
+          <h2>S15 - Product and Conscious</h2>
+          <p>
+            Teams have used the term data product many times so far but haven’t provided its
+            definition. Referring to the generic meaning of a product in general, “an effect of a
+            conscious action,” it is relatively easy to determine what is not a data product.
+          </p>
+          <p>
+            It was not created with the intention of creating a data product, i.e., no conscious
+            effort was made to prepare it to be a data product.
+          </p>
+          <p>It does not address clearly defined user needs.</p>
+        </section>
+        <section id="s16" class="study-section">
+          <h2>S16 - Product and Definition</h2>
+          <p>The definition is data product as follows.</p>
+          <p>
+            A data product is an autonomous, read-optimized, standardized data unit containing at
+            least one dataset (domain dataset), created for satisfying user needs.
+          </p>
+          <div class="note-box">
+            <strong>Important note.</strong> It is also worth noting, to avoid confusion, that the
+            term data product already exists in the data world in a different sense (outside the
+            data mesh context). In this case, data product is defined as “an application or tool
+            that uses data.
+          </div>
+          <p>
+            reviews data products in the Produce Content domain to explain what this definition
+            means in practice.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Autonomous data unit</strong> Every data product is a self-contained system or
+              dataset that can be treated as an independent unit. For example, Movie Popularity is a
+              separate component built in the form of a data lake.
+            </li>
+            <li>
+              <strong>Read-optimized data unit</strong> The form of data storage is optimized for
+              analytical functions. In the case of the Movie Popularity data product, the data is
+              stored in the form of files containing the ranking of movies generated every week.
+            </li>
+            <li>
+              <strong>Standardized data unit</strong> The data product must be prepared in the right
+              way, and must be described with metadata, use standardized protocols and ports for
+              data sharing, and use defined vocabularies and an identifier system. The organization
+              will find more practical examples on this topic.
+            </li>
+            <li>
+              <strong>Node in a data mesh</strong> The data product naturally becomes part of a
+              larger ecosystem by, among other things, posting the appropriate data catalog metadata
+              and allowing it to be used in a self-serve manner.
+            </li>
+            <li>
+              <strong>Containing at least one domain data set</strong> The product must have a
+              dataset that itself has business value. Movie Popularity contains a dataset of movie
+              rankings from a given week, Scripts contains a dataset of metadata about scripts, and
+              Cost Statement contains a dataset.
+            </li>
+            <li>
+              <strong>Satisfying user needs</strong> The data product was created with product
+              thinking in mind, and it has clearly defined users. In the case of Cost Statement,
+              these are accountants who financially control production costs.
+            </li>
+          </ul>
+          <ul class="study-bullets">
+            <li>
+              <strong>Satisfying user needs</strong> The data product was created with product
+              thinking in mind, and it has clearly defined users. In the case of Cost Statement,
+              these are accountants who financially control production costs.
+            </li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-05.png"
+              alt="Module 05 Figure 05"
+              class="zoomable"
+              data-caption="M05.05"
+            />
+            <figcaption>M05.05 - Product and Definition</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-06.png"
+              alt="Module 05 Figure 06"
+              class="zoomable"
+              data-caption="M05.06"
+            />
+            <figcaption>M05.06 - Product and Definition</figcaption>
+          </figure>
+        </section>
+        <section id="s17" class="study-section">
+          <h2>S17 - Product and Term</h2>
+          <p>
+            As the organization already know, the use of the term product in a data mesh is not
+            accidental. It is worth contrasting it with the term project, commonly used to name
+            various kinds of initiatives carried out in organizations.
+          </p>
+          <p>
+            On the other hand, product thinking makes teams look at a data product from a long-term
+            perspective that goes beyond just making it available. This approach also assumes it has
+            further development, adjusting it based on the feedback gathered from users.
+          </p>
+        </section>
+        <section id="s18" class="study-section">
+          <h2>S18 - Metadata Management</h2>
+          <p>
+            What could be a candidate for a data product? In general, any data representation that
+            has value for users can be a good candidate.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Raw unstructured files</strong> For example, images generated by geological
+              sampling equipment or videos uploaded by users of a video portal. However, to be
+              useful to end users, these files should be accompanied by sufficient metadata that
+              describes them.
+            </li>
+            <li>
+              <strong>Simple files</strong> For example, results of a series of measurements taken
+              on geological samples, Excel reports, or data in CSV format exported from the
+              application. In this case, a description in the form of metadata can also be crucial
+              for further use of the.
+            </li>
+          </ul>
+          <p>
+            A dataset inside a database (or data storage in general) —Containing a read-optimized
+            representation of data from a source system (system of records).
+          </p>
+          <p>
+            A dataset built based on data retrieved from a COTS-type system (commercial, off the
+            shelf) —For example, containing information about stock levels.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>REST API</strong> Data exposed from applications to read transactional data,
+              optimized for reading, optionally supporting Hypermedia as the Engine of Application
+              State (HATEOAS) to facilitate automated (machine-consumable) data consumption.
+            </li>
+          </ul>
+          <p>
+            Data stream representing the history of changes to the application —For example, events
+            that relate to changes made within a billing account.
+          </p>
+          <p>
+            Data stream representing snapshots of data entities from a transaction system —For
+            example, information about a system user.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Data mart</strong> Representing data enabling multidimensional analysis of
+              sales results.
+            </li>
+            <li>
+              <strong>Denormalized table</strong> Containing search-optimized information (for
+              example, about the rentals of a particular movie).
+            </li>
+            <li>
+              <strong>Graph database</strong> Reflecting complex relationships between data (for
+              example, specialized for finding movie recommendations).
+            </li>
+          </ul>
+          <p>
+            Local data lake or part of a bigger data lake —Used to build a view used as a basis for
+            analysis of watching movies statistics.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>MDM-type database (master data management)</strong> Containing an integrated
+              view on system users (personal information, viewing preferences, viewing time
+              preferences, payment information, rating information, etc.).
+            </li>
+          </ul>
+          <p>
+            As It is possible to see from the examples, there are many possibilities. But of course,
+            these are just examples of the data itself, the core of a data product.
+          </p>
+        </section>
+        <section id="s19" class="study-section">
+          <h2>S19 - Data Product Ownership</h2>
+          <p>
+            Having specified how to define the scope of a data product, its customers, and its
+            business needs, teams will now take a closer look at the human side of a data
+            product—the roles that are responsible for its development. And these are as follows.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Data product owner</strong> The person responsible for the business vision and
+              evolution of the data product. In practice, this can be a person who is also an Agile
+              product owner or a product manager.
+            </li>
+            <li>
+              <strong>Data product development team</strong> A team responsible for implementation,
+              maintenance, and deployment of a data product (in contrast to a central team
+              specialized in data processing).
+            </li>
+          </ul>
+          <p>
+            returns to the Messflix example. The Hitchcock system is developed by two teams, Orange
+            and White, together comprising approximately 30 people.
+          </p>
+          <p>
+            The introduction of data products changes the system landscape and requires a slightly
+            different organization of teams. Following the principle of domain ownership, teams want
+            to make operational teams responsible for data products related to their applications.
+          </p>
+          <p>
+            Data products related directly to the Hitchcock system will be led by one data product
+            owner, and data products related to the script recommender will be led by a second data
+            product owner. In the s, examines the characteristics of.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-07.png"
+              alt="Module 05 Figure 07"
+              class="zoomable"
+              data-caption="M05.07"
+            />
+            <figcaption>M05.07 - Data Product Ownership</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-08.png"
+              alt="Module 05 Figure 08"
+              class="zoomable"
+              data-caption="M05.08"
+            />
+            <figcaption>M05.08 - Data Product Ownership</figcaption>
+          </figure>
+        </section>
+        <section id="s20" class="study-section">
+          <h2>S20 - Data Product Ownership</h2>
+          <p>
+            The role of data product owner is a natural consequence of the data as a product
+            principle. Data is becoming such an important resource in the organization that it
+            requires an owner, a person who will think long-term about how to make data even.
+          </p>
+          <p>
+            An example of such a need might be to extend the data provided with attributes not
+            previously available (e.g., an additional column in the database). Another example could
+            be adding the ability to retrieve data from any point in time, providing a new way.
+          </p>
+          <p>
+            The preceding examples show that a data product has a life cycle, and that new user
+            requirements need to be managed in a sustainable way. Moreover, having gathered the
+            needs, it is necessary to decide which ones should be addressed first, and which should.
+          </p>
+          <p>
+            The role itself is borrowed directly from Agile methods such as scrum. Detailed
+            practices and heuristics can be found in sources describing these methods.
+          </p>
+          <p>
+            The role of data product owner is extremely important, because the manner in which this
+            role is performed will largely determine the success of implementing the data mesh
+            approach. If assigned data product owners strategically develop products and ensure that
+            they are of adequate.
+          </p>
+        </section>
+        <section id="s21" class="study-section">
+          <h2>S21 - Governance Model</h2>
+          <p>
+            The data product owner, as the name indicates, should be the owner of the data product.
+            This person has the last word in making decisions and setting the direction of data
+            product evolution.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Defining vision and needs</strong> Determining the purpose of creating a data
+              product, its users, and their expectations (e.g., using the methods of product
+              thinking).
+            </li>
+            <li>
+              <strong>Strategic planning of product development work</strong> Creating the roadmap,
+              defining key performance indicators (KPIs) for the data product, and ensuring
+              appropriate SLAs.
+            </li>
+          </ul>
+          <p>
+            Ensuring that all requirements for the data product are satisfied— Providing a
+            satisfying level of metadata description, as well as compliance with accepted standards
+            and data governance rules.
+          </p>
+          <p>
+            Making tactical decisions related to the management of the data product backlog—
+            Prioritizing requirements, clarifying requirements, splitting stories, and approving
+            implemented items.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Stakeholder management</strong> Gathering information from users and
+              management, and clarifying inconsistencies or conflicting requirements.
+            </li>
+            <li>
+              <strong>Collaboration with the data product development team</strong> To clarify
+              requirements and make decisions on problems that may affect the further development
+              and implementation of the data product.
+            </li>
+            <li>
+              <strong>Participating on the data governance team</strong> To influence the
+              introduction of rules in the organization and provide feedback on their practical
+              implementation.
+            </li>
+          </ul>
+          <p>
+            An important rule is that there should be only one data product owner for a specific
+            data product. However, many data products can be owned by one data product owner (if
+            data products are smaller or require less attention).
+          </p>
+          <p>
+            Teams have to be aware that data products differ in size and complexity, so specific
+            data product owner responsibilities will also differ depending on the situation. For
+            example, someone taking care of dozens of financial spreadsheets will have other
+            challenges and responsibilities than a.
+          </p>
+        </section>
+        <section id="s22" class="study-section">
+          <h2>S22 - Data Product Ownership</h2>
+          <p>
+            Like the role of data product owner, the idea of a data product development team is
+            borrowed from Agile methods. This cross-functional team works within the domain to which
+            the data product belongs.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Orange</strong> The team responsible for the backend and UI of the Hitchcock
+              system, and the Cast, and Cost Statement data products. In this team, teams need the
+              most diverse competencies: software developers, software testers, user experience (UX)
+              specialists, system analysts, and data engineers.
+            </li>
+            <li>
+              <strong>White</strong> The team responsible for the scripts microservice and Scripts
+              data product. In this case, the situation is quite simple, because the data product
+              will be exposed in the form of a REST API, and it will be just another representation
+              of already available.
+            </li>
+            <li>
+              <strong>Blonde</strong> The team responsible for the scripts recommender app, and the
+              Movie Trends and Movie Popularity data products. In this case, the analytics
+              application and related data products are planned for development, so teams need a
+              development team supported by data engineers, data analysts.
+            </li>
+          </ul>
+          <p>
+            As It is possible to conclude from the previous examples, the team consists of people
+            who have all the competencies to create a data product end to end. Such a team has
+            characteristics similar to DevOps or DevSecOps teams found in the software development
+            world.
+          </p>
+        </section>
+        <section id="s23" class="study-section">
+          <h2>S23 - Data Product Interfaces</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Operations engineers</strong> For infrastructure, CI/CD configuration, and
+              integration with the platform.
+            </li>
+            <li>
+              <strong>Software developers</strong> For more complex programming tasks, if required
+              (e.g., exposing data in a specific REST API HATEOAS format).
+            </li>
+          </ul>
+        </section>
+        <section id="s24" class="study-section">
+          <h2>S24 - Security and Privacy</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Data analysts</strong> To acquire and analyze the data that is to be the
+              content of the data product.
+            </li>
+            <li>
+              <strong>Security engineers</strong> To configure security rules related to the data
+              product.
+            </li>
+          </ul>
+          <p>
+            This is a sample list. The competencies associated with the roles are the most
+            important, not the roles themselves.
+          </p>
+        </section>
+        <section id="s25" class="study-section">
+          <h2>S25 - Data Product Ownership</h2>
+          <p>
+            Quite naturally, the question may arise: how do the roles of product owner and data
+            product owner relate to each other? In the case of the Hitchcock system, script
+            recommender, and associated data products, the product owners will also be the data
+            product owners.
+          </p>
+          <p>
+            In general, however, this configuration depends quite significantly on the specific
+            situation. It is possible to distinguish between the three situations shown in.
+          </p>
+          <p>
+            Now that teams’ve defined the data product and selected skilled people, It is possible
+            to focus on design and architectural aspects of creating a data product.
+          </p>
+        </section>
+        <section id="s26" class="study-section">
+          <h2>S26 - Data Product Team Structure</h2>
+          <p>
+            teams showed how to validate and define a data product, and how to assign a product
+            owner along with a data product development team. focuses on a high-level view of the
+            data product structure from the perspective of.
+          </p>
+          <p>
+            In, showing data products in the Produce Content domain, the key elements of the data
+            product’s external architecture were presented: external and internal ports. An excerpt
+            for the Cost Statement data product is shown in.
+          </p>
+          <p>
+            To be fully functional, a data product requires more components to become an autonomous
+            element of the architecture. It is advisable to consciously design the entire set of
+            interfaces that will make up the full data product.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-09.png"
+              alt="Module 05 Figure 09"
+              class="zoomable"
+              data-caption="M05.09"
+            />
+            <figcaption>M05.09 - Data Product Team Structure</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-10.png"
+              alt="Module 05 Figure 10"
+              class="zoomable"
+              data-caption="M05.10"
+            />
+            <figcaption>M05.10 - Data Product Team Structure</figcaption>
+          </figure>
+        </section>
+        <section id="s27" class="study-section">
+          <h2>S27 - Data Product Interfaces</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>REST API endpoint with OpenAPI documentation</strong> API that will allow
+              consumers to directly use the data.
+            </li>
+            <li>
+              <strong>Operational metrics of REST API usage</strong> REST API metrics, such as the
+              number of active users, amount of data retrieved, and number of requests processed.
+            </li>
+          </ul>
+        </section>
+        <section id="s28" class="study-section">
+          <h2>S28 - Data Product Interfaces</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Operational metrics of shared drive resource usage</strong> Metrics from the
+              file-sharing system, including active users count, number of downloads, and number of
+              requests processed.
+            </li>
+            <li>
+              <strong>Data product metadata</strong> Information describing the data being shared,
+              such as business description, contact persons, and responsible persons.
+            </li>
+            <li>
+              <strong>Overall metrics of data product usage</strong> Metrics that are the sum of the
+              metrics from individual ports.
+            </li>
+            <li>
+              <strong>Data quality reports for data</strong> Reports on the quality of the data
+              provided, such as information about the time of the update and any data gaps.
+            </li>
+            <li>
+              <strong>Security access configuration</strong> A tool for setting up access to data,
+              mainly exposed for a self-serve platform.
+            </li>
+          </ul>
+          <p>The generalized external architecture of the data product is shown in.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-11.png"
+              alt="Module 05 Figure 11"
+              class="zoomable"
+              data-caption="M05.11"
+            />
+            <figcaption>M05.11 - Data Product Interfaces</figcaption>
+          </figure>
+        </section>
+        <section id="s29" class="study-section">
+          <h2>S29 - Data Product Interfaces</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Communication interfaces</strong> Input interfaces and output ports, which
+              define the format and protocol in which data can be read (e.g., files, API, database,
+              and stream).
+            </li>
+            <li>
+              <strong>Information interfaces</strong> Interfaces that can be used by users to
+              monitor and retrieve additional information such as metadata, lineage, current
+              metrics, or quality indicators.
+            </li>
+            <li>
+              <strong>Configuration interfaces</strong> Interfaces, mainly platform specific, that
+              enable the data product to be included in the data mesh ecosystem (e.g., security
+              options and parameters, data sharing agreement statements).
+            </li>
+          </ul>
+          <p>
+            Specifically, the self-serve platform uses configuration and information interfaces to
+            configure, catalog, monitor, and visualize the relationships between data products.
+            Interfaces must be standardized for the interoperability to be possible.
+          </p>
+          <p>
+            In the next subsection, will take a closer look at external ports, which are the data
+            product’s primary means of exposing data.
+          </p>
+          <p>
+            A data product is created with the end user in mind, and as teams know, users have
+            different needs and preferences. For example, a data scientist might prefer to have data
+            about movies rented in Latin America in the form of a well-described file.
+          </p>
+          <p>
+            A data product is not only a form in which data is stored but also the various ways that
+            data can be accessed. In the case of a data product, teams call these ports.
+          </p>
+          <p>
+            A data product can have one or more output ports, and the infrastructure should make it
+            easy to expose the same data using different forms. Next, presents examples of output
+            port representations.
+          </p>
+        </section>
+        <section id="s30" class="study-section">
+          <h2>S30 - Data Product Interfaces</h2>
+          <p>
+            One of the primary ports that will come into play when developing data products is
+            database-like storage, i.e., SQL databases, NoSQL databases, or data warehouse data
+            marts. In many cases, this may be the only type of port provided by a data product.
+          </p>
+          <p>
+            This type of storage can be queried with SQL language or its analog, giving basically
+            unlimited possibilities of further processing. But, of course, they are addressed mainly
+            to technical users who can work with this type of storage and use SQL language.
+          </p>
+        </section>
+        <section id="s31" class="study-section">
+          <h2>S31 - Data Product Interfaces</h2>
+          <p>
+            The second type of port, which will be familiar to less technical users of data
+            products, is files that can be imported into tools such as Excel, Google Sheets, or used
+            by data scientists. It is worth remembering that data engineers often feel confident.
+          </p>
+          <p>
+            Files, in the case of smaller sets, can represent the whole dataset. And for large
+            amounts of data, in most cases, a subset of the data will first be selected, through an
+            appropriate query or configuration of various filters and then exported to a.
+          </p>
+          <p>
+            Another type of port is the REST API. This material uses HTTP REST here as an example of
+            the protocol that is most popular at the time of writing this material.
+          </p>
+          <p>
+            This type of port is mainly suitable for working on small subsets of data, because it is
+            usually inefficient for large collections. If teams add GraphQL support to this type of
+            port, teams get the ability to perform complex and customized queries on the.
+          </p>
+          <div class="note-box">
+            <strong>Important note.</strong> GraphQL is an open source data query and manipulation
+            language for APIs, and a run time for fulfilling queries with existing data. HATEOAS is
+            a part of the REST specification stating that in addition to the result data, responses
+            should include dynamic metadata.
+          </div>
+          <p>
+            So this port is great for automating data processing and for relatively low-intensity
+            analytics that do not require large amounts of data.
+          </p>
+        </section>
+        <section id="s32" class="study-section">
+          <h2>S32 - World and Streams</h2>
+          <p>
+            By streams, teams mean messaging-based systems that store information as single messages
+            (e.g., message queues). This type of port is not very popular in the world of data yet,
+            especially as a form of sharing data, because tools for its analytical processing are.
+          </p>
+          <p>
+            The second reason to consider streams in the data world is to use event sourcing, known
+            from the software development world. Event sourcing stores the changes associated with
+            an entity (e.g., a transaction) rather than the final state of the entity.
+          </p>
+          <p>
+            It is worth noting that a stream can also be used to implement a data product—to
+            transport the data needed to build the data product. However, it’s then considered an
+            input interface.
+          </p>
+        </section>
+        <section id="s33" class="study-section">
+          <h2>S33 - Port and Last</h2>
+          <p>
+            The last example of a port is a visualization: various kinds of charts and dashboards
+            representing data. They can be a good resource for nontechnical users, especially if
+            they are combined with a filtering and data selection mechanism.
+          </p>
+          <p>
+            Having decided which kind of port representation to use, It is possible to focus more on
+            detailed design of a data product.
+          </p>
+        </section>
+        <section id="s34" class="study-section">
+          <h2>S34 - Data Product Team Structure</h2>
+          <p>
+            While the external architecture is fairly self-explanatory and easy to standardize, the
+            internal architecture of a data product will depend significantly on the specifics of
+            the data product, the way it is processed, and the technologies used.
+          </p>
+          <p>
+            The data related to production costs comes from spreadsheet files, which are constantly
+            updated by the production team according to the established rules. To enable more
+            complex analysis of this data, it is made available in the form of a REST API and files.
+          </p>
+          <p>
+            These scripts read the current form of spreadsheet files, save them in their raw form,
+            and then perform data cleaning and transformation to the target form, which is written
+            to the database used by the REST API and files located on the shared drive.
+          </p>
+          <p>s describe the main elements of the data product’s internal architecture.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-12.png"
+              alt="Module 05 Figure 12"
+              class="zoomable"
+              data-caption="M05.12"
+            />
+            <figcaption>M05.12 - Data Product Team Structure</figcaption>
+          </figure>
+        </section>
+        <section id="s35" class="study-section">
+          <h2>S35 - Product and Dataset</h2>
+          <p>
+            One of the most obvious components of a data product is the dataset. Datasets are what
+            ultimately constitute the essence of a data product.
+          </p>
+          <p>
+            For example, the dataset may be a remote file whose size or legal aspects prevent
+            copying. In particular, the latter may be the case when, because of licensing, the file
+            can physically reside only within the boundaries of a geographical region.
+          </p>
+        </section>
+        <section id="s36" class="study-section">
+          <h2>S36 - Metadata Management</h2>
+          <p>
+            In the data mesh approach, metadata plays a particularly important role that allows many
+            processes to be automated. Much of the metadata, especially descriptive and
+            configuration metadata, will be part of the internal implementation of the data
+            product—that is, its name, business description, dataset.
+          </p>
+        </section>
+        <section id="s37" class="study-section">
+          <h2>S37 - Product and Important</h2>
+          <p>
+            An important part of data product implementation will be the parts of the code that
+            enable creation of the final product, including, among other things, the following.
+          </p>
+        </section>
+        <section id="s38" class="study-section">
+          <h2>S38 - Pipelines and Infrastructure</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Transformational pipelines</strong> ETL or ELT transformations, enrichment,
+              and harmonization.
+            </li>
+            <li>
+              <strong>Infrastructure as code</strong> Configuration of the container and
+              orchestration infrastructure layers.
+            </li>
+            <li>
+              <strong>CI/CD pipelines</strong> Processes that update the data product code after
+              changes, verifying its correctness, and applying the changes to the production
+              environment if the entire process went correctly.
+            </li>
+          </ul>
+        </section>
+        <section id="s39" class="study-section">
+          <h2>S39 - Product and Following</h2>
+          <p>
+            teams looked at designing the data product;, discusses ensuring that it is prepared to
+            be used in the data mesh ecosystem.
+          </p>
+          <p>A data product should have the following characteristics.</p>
+          <p>It can be found.</p>
+          <p>It must be described, named, and registered in the data product registry.</p>
+          <p>It can be understood.</p>
+          <p>It has sufficient technical and domain descriptions for the user to inter- pret it.</p>
+          <p>
+            It can be uniquely identified in terms of sources from which it originated to build a
+            data lineage (understanding where the data comes from).
+          </p>
+          <p>It can be addressed.</p>
+          <p>It has a unique address that can be used to identify the data product.</p>
+          <p>It can be accessed only by authorized entities.</p>
+          <p>It can be used.</p>
+          <p>
+            It has sufficient data to be used on its own (i.e., carries sufficient domain sense on
+            its own).
+          </p>
+          <p>
+            It is possible to combine it with other data; it has metadata and references that allow
+            the organization to combine several data products into a larger whole.
+          </p>
+          <p>It is accessible through publicly known and available protocols and tools.</p>
+          <p>
+            It is possible to tell its availability and quality through metrics, user feedback, and
+            quality reports.
+          </p>
+          <p>
+            The data product has to meet many criteria to be a full-fledged product. Metadata, which
+            is described in the following paragraphs, plays an especially important role in this
+            regard.
+          </p>
+        </section>
+        <section id="s40" class="study-section">
+          <h2>S40 - Metadata Management</h2>
+          <p>
+            The data product should contain all the information to understand and use it. This
+            characteristic is achieved through an appropriate set of metadata.
+          </p>
+          <p>
+            In classical data management approaches, metadata is often separated from the dataset
+            and tends to be scattered in many places. One of the fundamental properties of a data
+            product is its autonomy.
+          </p>
+        </section>
+        <section id="s41" class="study-section">
+          <h2>S41 - Data Product Ownership</h2>
+          <p>
+            Metadata is data about data. It is mainly used to provide additional information about
+            the data so that it is easier to understand and use with greater understanding.
+          </p>
+          <p>
+            Of course, this is only an example of metadata related to semantics. However, there can
+            be many more types of metadata.
+          </p>
+          <p>
+            The following is a list of some of the most relevant data product metadata types. In
+            fact, this is not a closed list.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Business metadata</strong> Describing information about the owner (data
+              product owner), describing the domain context (e.g., abstract, assumptions), domain
+              affiliation, organizational unit, license type, and expiration date.
+            </li>
+            <li>
+              <strong>Technical metadata</strong> About the technical team responsible for it,
+              physical access method, links to the data product page (if any), and links to download
+              examples.
+            </li>
+            <li>
+              <strong>Operational metadata</strong> Description of ports, description of access
+              policies, and how to obtain extended access.
+            </li>
+            <li>
+              <strong>Physical schema</strong> Description of the data product, its attributes, data
+              types, constraints, and relationships to other elements.
+            </li>
+            <li>
+              <strong>Semantic metadata</strong> Links of the physical model to standardized
+              vocabularies and logical models.
+            </li>
+            <li>
+              <strong>Local lineage</strong> Information about the direct sources of the data from
+              which the data product was created.
+            </li>
+            <li>
+              <strong>Full lineage</strong> Information about the overall sequence of links that
+              shows how data was created in a given data product.
+            </li>
+            <li>
+              <strong>Quality metrics</strong> Metrics related to data quality, the amount of
+              correctly and incorrectly defined data, information about missing data, incorrect
+              formats, and compliance with data governance rules.
+            </li>
+            <li>
+              <strong>Operational metrics</strong> Information about whether the data product is
+              available, number of users, usage statistics, and SLA metrics.
+            </li>
+          </ul>
+        </section>
+        <section id="s42" class="study-section">
+          <h2>S42 - Metadata Management</h2>
+          <p>
+            In classical approaches to data management, metadata is gathered in dedicated tools,
+            most often in a data catalog, where the submitted dataset needs to be enriched with
+            additional information. In this way, metadata is separated from the dataset, which often
+            leads to metadata descriptions.
+          </p>
+          <p>
+            The data mesh approach assumes that the data product is autonomous and self-described,
+            in a way that the self-serve platform and end users can use it for different purposes.
+            Therefore, it is recommended to use the metadata as code approach, which results in
+            data.
+          </p>
+          <p>
+            For example, a metadata description can be implemented using JSON notation. The data
+            product’s metadata description file contains sections dedicated to each of its aspects.
+          </p>
+        </section>
+        <section id="s43" class="study-section">
+          <h2>S43 - Details and Domain</h2>
+          <p>// data product details.</p>
+          <p>// domain dataset details.</p>
+          <p>// dataset schema details.</p>
+          <p>// conceptual domain model eg. OWL / RDFs.</p>
+          <p>// data quality guarantees.</p>
+          <p>// runtime generated metrics.</p>
+          <p>// links to related documentation.</p>
+          <p>examines take a look at examples of metadata related to a data product.</p>
+        </section>
+        <section id="s44" class="study-section">
+          <h2>S44 - Metadata Management</h2>
+          <p>
+            Metadata about a data product is mainly descriptive so users can better understand its
+            business sense and get information for further use. It is possible to include data such
+            as the following.
+          </p>
+        </section>
+        <section id="s45" class="study-section">
+          <h2>S45 - Product and Description</h2>
+          <ul class="study-bullets">
+            <li><strong>Title</strong> Human-friendly name of the data product.</li>
+            <li>
+              <strong>Business description</strong> Domain-specific description of the data product,
+              introduction to the domain context.
+            </li>
+            <li>
+              <strong>Terms of use</strong> Licensing type, and description of when, how, and by
+              whom the data product can be used.
+            </li>
+          </ul>
+        </section>
+        <section id="s46" class="study-section">
+          <h2>S46 - Data Product Ownership</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Data product owner</strong> Information about the responsible person, such as
+              name, surname, and position as well as contact details.
+            </li>
+            <li>
+              <strong>Responsible data product developer team</strong> Information about the
+              technical team maintaining the data product, including the technical support contact.
+            </li>
+          </ul>
+        </section>
+        <section id="s47" class="study-section">
+          <h2>S47 - Status and Collected</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Status</strong> Current status of the product (e.g., experimental, active,
+              inactive, or temporarily off).
+            </li>
+            <li>
+              <strong>Since when collected</strong> The moment in time when data starts to be
+              collected, not necessarily equal to the time when data starts to be exposed.
+            </li>
+          </ul>
+        </section>
+        <section id="s48" class="study-section">
+          <h2>S48 - Metadata Management</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Last modified</strong> The last modification to the product (e.g., a changing
+              data schema for underlying data).
+            </li>
+          </ul>
+          <p>
+            Of course, these are just a dozen or so examples of elements that can be freely adapted,
+            as well as adding others that are important in the context of a given organization. An
+            example snippet of metadata defined in JSON format could look like.
+          </p>
+        </section>
+        <section id="s49" class="study-section">
+          <h2>S49 - Metadata Management</h2>
+          <p>"title": "Movie Production Cost Statement".</p>
+          <p>"Cost breakdown of a production including. (much more text)".</p>
+          <p>"name": "For internal financial related use only".</p>
+          <p>
+            As It is possible to see, much of the data included is dictionary-like and should come
+            from standardized dictionaries, especially if the organization wants to be FAIR
+            compliant. A separate topic is human-friendly support for creating this type of
+            metadata.
+          </p>
+          <p>
+            Many data product owners may not be comfortable working with a format like JSON. Even if
+            it isn’t a problem, it can be inconvenient.
+          </p>
+        </section>
+        <section id="s50" class="study-section">
+          <h2>S50 - Metadata Management</h2>
+          <p>
+            While the data product description is business oriented and different from technical
+            details, the domain dataset part focuses on exactly that aspect, as shown in listing
+            5.3. This part of the metadata may include, among other things.
+          </p>
+        </section>
+        <section id="s51" class="study-section">
+          <h2>S51 - Data Product Interfaces</h2>
+          <ul class="study-bullets">
+            <li><strong>Ports</strong> Specification of available ports.</li>
+            <li><strong>Name</strong> Machine-friendly name of the domain dataset.</li>
+          </ul>
+        </section>
+        <section id="s52" class="study-section">
+          <h2>S52 - Download and Version</h2>
+          <ul class="study-bullets">
+            <li><strong>Download URL</strong> Address to download sample of the data.</li>
+            <li><strong>Version</strong> The latest version of the dataset.</li>
+          </ul>
+        </section>
+        <section id="s53" class="study-section">
+          <h2>S53 - Description and Described</h2>
+          <p>"title": "Movie Production Cost Statements".</p>
+          <p>"description": "More detailed description of the ".</p>
+          <p>
+            Having described the most important parts of a data product, examines focus on
+            additional aspects that can be described.
+          </p>
+        </section>
+        <section id="s54" class="study-section">
+          <h2>S54 - Metadata Management</h2>
+          <p>
+            The data product and domain dataset metadata are just the tip of the iceberg. According
+            to listing 5.1, analogous metadata description sections should appear for terminology,
+            lineage, conceptual model, security, and data quality.
+          </p>
+          <p>
+            One such source is a set of World Wide Web Consortium (W3C) standards that can be used
+            directly or adapted to the needs. Teams do not describe these sections in more detail,
+            because their specific use depends on the context of the organization.
+          </p>
+          <p>
+            Although teams’ve defined the main requirements for a data product, there are several
+            additional characteristics to consider when making guidelines for creating data products
+            in a particular organization., examines five of these characteristics.
+          </p>
+        </section>
+        <section id="s55" class="study-section">
+          <h2>S55 - FAIR Principles</h2>
+          <p>
+            Teams will first focus on FAIR (an acronym for findable, accessible, interoperable,
+            reusable ). This set of principles was initially designed for scientific research data,
+            to maximize its reusability and its ability to easily integrate with other data.
+          </p>
+          <p>
+            However, over time, it became clear that FAIR could be helpful in other situations. For
+            example, government agencies in Australia, Sweden, and the European Union, among others,
+            recommend its use for shared data.
+          </p>
+        </section>
+        <section id="s56" class="study-section">
+          <h2>S56 - Metadata Management</h2>
+          <p>
+            Data should be easy to find, and its metadata should be easy to use by both humans and
+            computers. In particular, the ability of machines to interpret metadata is crucial from
+            the perspective of FAIR.
+          </p>
+          <p>(Meta)data is assigned a globally unique and persistent identifier.</p>
+          <p>Data is described with rich metadata.</p>
+          <p>Metadata clearly and explicitly includes the identifier of the data it describes.</p>
+          <p>(Meta)data is registered or indexed in a searchable resource.</p>
+          <p>
+            As an example, take a look at the following listing to see a simple REST API returning
+            Person data. (This example can be used to see how to apply FAIR to other interfaces in
+            order to access data like databases, files, and messages.).
+          </p>
+        </section>
+        <section id="s57" class="study-section">
+          <h2>S57 - Metadata Management</h2>
+          <p>
+            The data itself is nothing special. The more important part lies in metadata that could
+            be like the following listing.
+          </p>
+          <p>"description": "Person data represents.".</p>
+          <p>//. other metadata.</p>
+        </section>
+        <section id="s58" class="study-section">
+          <h2>S58 - Metadata Management</h2>
+          <p>ID of the person instance in listing 5.4.</p>
+          <p>
+            Data is described by rich metadata (principle 2) that It is possible to observe in
+            listing 5.5. This information can include name, title, description, and schema details.
+          </p>
+        </section>
+        <section id="s59" class="study-section">
+          <h2>S59 - Principle and Product</h2>
+          <p>Referenced ID in listing 5.5.</p>
+          <p>
+            Principle 4 tells teams to put this (meta) data in some kind of searchable repository
+            where data catalogs can be successfully used.
+          </p>
+          <p>
+            According to the characteristics described earlier, virtually all four principles are
+            consistent with the essential attributes of the data product. Therefore, only the first
+            principle imposes very strong conditions on the data product.
+          </p>
+        </section>
+        <section id="s60" class="study-section">
+          <h2>S60 - Metadata Management</h2>
+          <p>
+            For the data found, there should be clear rules for accessing the data. The metadata
+            should clearly describe how to access the data, and the protocols used to access the
+            data should be generally known standards.
+          </p>
+          <p>
+            (Meta)data is retrievable by its identifier using a standardized communications
+            protocol.
+          </p>
+          <p>The protocol is open, free, and universally implementable.</p>
+          <p>
+            The protocol allows for an authentication and authorization procedure, where necessary.
+          </p>
+          <p>Metadata is accessible, even when the data is no longer available.</p>
+          <p>
+            As shown the data product has an ID in the form of the URL
+            https://dp.meshflix.com/93384349834. According to principle 1, this should be a workable
+            URL that can be used to retrieve information about the data product.
+          </p>
+          <p>
+            These accessibility principles can be seen as recommendations for creating a data
+            product and its desirable features to facilitate its use. In particular, the permanent
+            availability of metadata is essential if there is a need to refer to historical data
+            (e.g., for legal reasons).
+          </p>
+        </section>
+        <section id="s61" class="study-section">
+          <h2>S61 - FAIR Principles</h2>
+          <p>
+            According to FAIR, data should be easy to integrate with other data, and therefore
+            should be defined so that data in other data products, vocabularies, and ontologies can
+            be referenced. In this case, FAIR proposes three principles.
+          </p>
+          <p>
+            (Meta)data uses a formal, accessible, shared, and broadly applicable language for
+            knowledge representation.
+          </p>
+          <p>(Meta)data uses vocabularies that follow FAIR principles.</p>
+          <p>(Meta)data includes qualified references to other (meta)data.</p>
+          <p>
+            To make data interpretable by others, teams have to describe the data model. It is
+            advisable to use a well-recognized language, such as Resource Description Framework
+            (RDF), OWL, JSON-LD, or Schema.org (principle 1).
+          </p>
+          <p>
+            This is also an example for principle 3, as teams refer to external definitions in the
+            form of a fully qualified reference (“uri”:
+            “https://ref.meshflix.com/generic/123393ed34”). Beware that in the provided example the
+            custom-created gender enum is used, but teams could also use https://schema.org/gender
+            alternatively for.
+          </p>
+          <p>
+            If teams want to go beyond a single data product to perform more complex analyses, teams
+            must have the appropriate means to do so. The previous FAIR principles are quite
+            demanding because they significantly expand the amount of information that needs to be
+            provided.
+          </p>
+        </section>
+        <section id="s62" class="study-section">
+          <h2>S62 - FAIR Principles</h2>
+          <p>
+            The last point of FAIR focuses on data reusability, or the ability to apply the same
+            data in different contexts. The principles associated with reusability are as follows.
+          </p>
+        </section>
+        <section id="s63" class="study-section">
+          <h2>S63 - Metadata Management</h2>
+          <p>(Meta)data is released with a clear and accessible data usage license.</p>
+          <p>(Meta)data is associated with detailed provenance.</p>
+          <p>(Meta)data meets domain-relevant community standards.</p>
+          <p>
+            Principles 1a and 1b could be achieved by having some additional entries in metadata, as
+            in the following modified listing.
+          </p>
+        </section>
+        <section id="s64" class="study-section">
+          <h2>S64 - Metadata Management</h2>
+          <p>//. other metadata.</p>
+          <p>"name": "For internal use only".</p>
+          <p>
+            Here termsOfUse specifies a license for data usage, and sourceDataProducts specifies
+            information about provenance (shortened for the sake of simplicity). The implementation
+            of principle 1c would require using standardized domain-specific terminology and
+            vocabulary—for example, www.iso.org/standard/53798.html for geographic information and
+            services, and http://cfconventions.org for climate.
+          </p>
+          <p>
+            These principles focus on defining clear rules for using data (by providing licenses),
+            provenance information, and recommending standards that apply to the domain. Subsections
+            1a and 1b are essential components of a well-structured data product.
+          </p>
+          <p>
+            If the organization is interested in more details about FAIR implementation, see the
+            initiative site at www.go-fair.org.
+          </p>
+        </section>
+        <section id="s65" class="study-section">
+          <h2>S65 - FAIR Principles</h2>
+          <p>
+            FAIR can be an excellent addition to the essential criteria for creating a data product.
+            Another critical aspect to consider is the mutability of the data provided by the data
+            product.
+          </p>
+          <p>
+            If, for example, decisions about ingredient proportions in a drug have been made based
+            on the analysis of scientific studies, then getting to that unmodified source data may
+            be necessary from a regulatory perspective. Therefore, data immutability should be a
+            desirable characteristic of a.
+          </p>
+        </section>
+        <section id="s66" class="study-section">
+          <h2>S66 - Immutability Tradeoffs</h2>
+          <p>
+            One of the primary goals of introducing a data mesh is to democratize data by enabling
+            access to the various data created within the organization. Not all data created in
+            organizations is created with the same consumption patterns in mind (consumption of data
+            from.
+          </p>
+          <p>
+            Despite the lack of immutability, data should be generally available as it is,
+            especially in the context of data generated by transactional systems (e.g., read-only
+            APIs based on command query responsibility segregation, or CQRS, architecture).
+            Therefore, teams treat immutability as a desirable feature of.
+          </p>
+        </section>
+        <section id="s67" class="study-section">
+          <h2>S67 - Data Product Canvas</h2>
+          <p>
+            recalls the Cast data product teams’ve seen on the data product canvas. Take a look at.
+          </p>
+          <p>
+            Imagine that John Doe builds this data product and that several teams start to consume
+            it. A couple of months go by, and John Doe sees a decent amount of traffic on his data
+            product.
+          </p>
+          <p>
+            One day, he takes extra time and calls up a few of the downstream consumers of the data
+            product. They tell him they are making a lot out of the Actors part of the data product.
+          </p>
+          <p>
+            So he asks the consumers. The answer is shockingly simple: “Yes, teams would really like
+            to use the Movie Roles dataset, but the organization’re providing them in a custom
+            format teams’re not able to process further.”.
+          </p>
+          <p>
+            A frustrated John goes on to iterate on his product, to incorporate a format the
+            consumers can use. That’s how product thinking works, right?
+          </p>
+          <p>
+            The reason is that consumers and producers of products enter into a mutual relationship.
+            Company-internal product consumers, especially in the data realm, sometimes forget that.
+          </p>
+          <p>
+            The product producer has responsibilities. The producer must properly care for the
+            product and make decisions in the best interest of the product.
+          </p>
+          <p>
+            The product consumer has responsibilities. The consumer must tell the producer what’s
+            wrong, what’s good, and what’s missing.
+          </p>
+          <p>
+            This mutual relationship sometimes gets lost inside the company context even though it
+            is natural outside of it.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> Product thinking works both ways. Products are two-way
+            relationships.
+          </div>
+          <p>
+            Data contracts and data-sharing agreements are still largely topics of ongoing
+            discussion, but they seem to emerge as one possible tool to foster this mutual consumer-
+            producer relationship. Teams discuss these options next and then outline how to get
+            started with them.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch05/fig-13.png"
+              alt="Module 05 Figure 13"
+              class="zoomable"
+              data-caption="M05.13"
+            />
+            <figcaption>M05.13 - Data Product Canvas</figcaption>
+          </figure>
+        </section>
+        <section id="s68" class="study-section">
+          <h2>S68 - Data Contracts</h2>
+          <p>
+            Piethein Strengholt describes data contracts as delivery or service contracts (see “Data
+            Contracts—Ensure Robustness in The Data Mesh Architecture,” http://mng.bz/gwnE ). If
+            teams look at the preceding Cast data product, a data contract could include information
+            like this.
+          </p>
+          <p>This is a production-level dataset.</p>
+          <p>The dataset is checked for broken records and does not contain test data.</p>
+          <p>The interface delivers the data within one second inside the company network.</p>
+          <p>Teams guarantee 95% uptime.</p>
+          <p>
+            The roadmap includes a couple of new datasets to be released over the next few months.
+          </p>
+          <p>The data product is currently in version 1.0.10.</p>
+          <p>This material uses semantic versioning. That means a bump to 1.0.</p>
+          <p>The schema of the data and any additional metadata.</p>
+          <p>
+            A data-sharing agreement extends on this data contract. While the data contract is still
+            heavy on the data-producer side, the data-sharing agreement specifically targets
+            consumers.
+          </p>
+          <p>
+            The goal of sharing this dataset is to enable consumers to inject insights from the
+            actor and role combination into other services. These might be other data products or
+            not.
+          </p>
+          <p>
+            The datasets are intended to be used together, using the standard combination mechanism
+            of the common actor identifier to join, as is common at Messflix.
+          </p>
+          <p>
+            Since the data is to be used across a wide variety of services, the goal is to have it
+            available publicly, including the actor names, which should be fine with the security
+            level.
+          </p>
+          <p>
+            Since a lot of consumers want to analyze data historically, the data will be available
+            with a backfill of three years.
+          </p>
+          <p>
+            In this agreement, It is possible to spot a lot of collaboration and intention of usage
+            by the consumers. This agreement helps the data product owner John Doe design the data
+            products well from the start.
+          </p>
+          <p>
+            now take a look at how Messflix as a company could help to implement such data contracts
+            and sharing agreements across the data mesh.
+          </p>
+        </section>
+        <section id="s69" class="study-section">
+          <h2>S69 - Data Contracts</h2>
+          <p>
+            Data contracts and sharing agreements, like the two outlined in the preceding section,
+            can seem daunting to implement. They need to be stored somewhere, possibly have an
+            automatic way of checking them, and must be up-to-date.
+          </p>
+          <p>
+            Therefore, a recommended approach is to a practical step-by-step approach. In the eyes,
+            the most important part to get started is to kick off the discussions between data
+            producers and consumers.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A recommended approach is to not focusing too much on the
+            contract-like nature of these two artifacts but rather on the mutual discussion of data
+            consumers and producers. In particular, never let the development of a data product be
+            slowed by a not-yet-perfect data contract.
+          </div>
+          <p>
+            Messflix already has an MVP of a self-serve data platform and a few data products,
+            including a basic data catalog. The base work is there, and some data products are as
+            well.
+          </p>
+          <p>
+            Inspired by the article by Strengholt, the Messflix federated governance body decides to
+            use of a simple web form that can be filled out. This basic data contract is filled out
+            by the data producer of the product.
+          </p>
+          <p>
+            The output of step 1 should be that data producers get into the habit of collecting
+            requirements, as discussed at length. Data consumers also are getting used to talking to
+            producers.
+          </p>
+          <p>
+            Once the data mesh grows and people get into the habit of communicating, it’s time to
+            integrate the data contracts and agreements with all the metadata in the data catalog.
+            Messflix can take this step, after it has a GUI available for data producers.
+          </p>
+          <p>
+            The output of step 2 should be an integration of the contracts and agreements into the
+            daily work of every participant.
+          </p>
+          <p>
+            Start to automate parts of the contract and agreement processes. This might mean that
+            Messflix has a simple way of providing access policies via the GUI or that Messflix
+            calculates standard metrics for the data products that can be compared to SLAs.
+          </p>
+          <p>
+            The output of step 3 should be that the contracts and agreements feel easy to use and
+            add a benefit to the participating parties.
+          </p>
+          <p>
+            As It is possible to see, with step 3, the implementation and automation blend together
+            with the data catalog. Once the cultural shift is in place, mutual collaboration kicks
+            in and becomes a natural part of the self-serve platform and its roadmap.
+          </p>
+          <p>
+            teams presented tools and techniques to describe a data product so that it can be
+            understood by others (metadata) and used to connect to other data products (FAIR
+            principles). As It is possible to see, creating a useful data product requires a
+            well-thought-out.
+          </p>
+          <p>
+            Although teams’ve showed how to design and craft a data product, creating an ecosystem
+            of data products will require standardization of rules for creating and describing those
+            data products, which will be the responsibility of the data governance team. It will
+            also be required.
+          </p>
+        </section>
+        <section id="s70" class="study-section">
+          <h2>S70 - Product and Treat</h2>
+          <p>To make data valuable, It is advisable to treat it as more than just an asset.</p>
+          <p>To treat data as a product, teams apply product thinking to it.</p>
+          <p>Data products should be created with users in mind.</p>
+          <p>A data product should address clearly defined user needs.</p>
+          <p>
+            A data product is an autonomous, read-optimized, standardized data unit, a node in the
+            data mesh architecture, containing at least one dataset (the domain dataset), created
+            for satisfying user needs.
+          </p>
+          <p>
+            The data product owner, with the data product development team, is responsible for
+            creating and maintaining the data product, optimizing its usefulness for users.
+          </p>
+          <p>Data product data is accessible through one or more ports.</p>
+          <p>
+            A data product exposes information interfaces to make it findable and understandable
+            outside the context of its creation.
+          </p>
+          <p>A rich metadata description enables data discovery and reusability.</p>
+          <p>
+            FAIR principles can be a well-defined base for standardizing data product descriptions.
+          </p>
+        </section>
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>What data as a product means in terms of value, users, and quality.</li>
+            <li>How product thinking shapes priorities and evolution of data products.</li>
+            <li>How key roles operate: data product owner and cross-functional product team.</li>
+            <li>How to design interfaces and output ports for real consumption needs.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

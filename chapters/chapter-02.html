@@ -1,1 +1,1160 @@
-<!doctype html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>M02 - Adoption Drivers and Decision Criteria</title> <link rel="stylesheet" href="../assets/css/main.css" /> <script src="../assets/js/back-to-top.js" defer></script> </head> <body> <header id="top" class="hero"> <h1>M02 - Adoption Drivers and Decision Criteria</h1> </header> <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1"> <a href="../index.html">Home</a> <a href="chapter-01.html">Previous module (M01)</a> <a href="chapter-02.html" aria-current="page">M02 - Adoption Drivers and Decision Criteria</a> <a href="chapter-03.html">Next module (M03)</a> </nav> <main class="content"> <article> <section class="section-toc"> <h2>Content Outline</h2> <ul><li>How to assess business drivers that justify a data mesh initiative.</li><li>Decision criteria for determining organizational readiness.</li><li>How data maturity and socio-technical complexity affect feasibility.</li><li>How data mesh compares with and complements other data architectures.</li><li>How to frame a business case with measurable expected outcomes.</li><li>How to structure a phased and testable adoption path.</li></ul> </section> <section id="s01" class="study-section"> <h2>S01 - Introducing and Comparing</h2> <p>Introducing the data mesh to the organization.</p> <p>Comparing the data mesh to other popular data architectures.</p> </section> <section id="s02" class="study-section"> <h2>S02 - Explained and Implementing</h2> <p>Previously, teams explained the meaning of data mesh. Teams also explained why the company should consider implementing it.</p> <p>How much effort does it take to implement a data mesh (i.e., would the benefits outweigh the effort of its implementation)?</p> <p>The presence of the first question may surprise the organization in the context of this material. Data mesh has become one of the hottest buzzwords in the industry.</p> <p>The second part of focuses on implementing a data mesh. presents the possible steps toward this goal and how all the skills and knowledge the organization will learn in subsequent modules fit together.</p> </section> <section id="s03" class="study-section"> <h2>S03 - Business Case and Drivers</h2> <p>To decide whether a data mesh is the right choice for the organization, it is necessary to analyze the decision drivers behind architecture selection. These drivers are split into three categories.</p> <p>starts with the most crucial aspect: business reasons.</p> <p>The analysis should start from the business side. If It is not possible to find a suitable business reason to start the data mesh journey, stop there.</p> </section> <section id="s04" class="study-section"> <h2>S04 - Company and Level</h2> <p>Look at the business strategy at the company level or, in the case of big corporations, at the unit level. Search for the answers to questions like these.</p> <p>Are teams defining the company as data driven or planning to shift the strategy to be more data driven?</p> <p>Do teams have objectives and key results (OKRs), or any goal-setting methodology, that requires data to be met?</p> <div class="note-box"><strong>Important note.</strong> OKRs is a methodology used to define goals for the company (and on the individual level). This methodology is often used as a tool to implement business strategies.</div> <p>If the answer to these questions is yes, A deeper analysis can identify the specific business cases requiring data (which teams cover in the next step). If the answer is no, the work is going to be more challenging.</p> </section> <section id="s05" class="study-section"> <h2>S05 - Business Case and Drivers</h2> <p>To build a viable business case for data mesh, start with answering the following questions.</p> <p>Do the organization has specific business processes that are starting or ongoing with complex data needs?</p> </section> <section id="s06" class="study-section"> <h2>S06 - Business Case and Drivers</h2> <p>By complex data needs, teams mean multidimensional analysis (ad hoc, AI/ML, reporting) running on top of the data coming from multiple sources. If the answers to these questions are positive, the organization might have a compelling business case.</p> <div class="note-box"><strong>Key point.</strong> A data mesh requires a business case and is useful when there are related complex data needs.</div> <p>reviews the examples of business cases and their data needs.</p> </section> <section id="s07" class="study-section"> <h2>S07 - Described and Candace</h2> <p>In the example described in.</p> <p>Candace realized that she combined too many business processes into one data flow. In this way, she lost the data context.</p> <p>Adam and Eve had no way of supplementing raw data with their knowledge and experience.</p> <p>Bob operated detached from his actual stakeholders.</p> <p>The business case for a data mesh-ization of Candace’s shoveling business could improve demand forecasting for shovel ordering.</p> </section> <section id="s08" class="study-section"> <h2>S08 - Nonfictional and Fast-moving</h2> <p>A nonfictional fast-moving consumer goods (FMCG) company realizes that its R&amp;D efforts across brands are disconnected. Each R&amp;D team produces its data and stores this in a silo.</p> <p>The initial effort of developing a data warehouse is stopped when the central data team fails to develop a harmonized data model. The lack of a common language (and often contradictory requirements) make it impossible.</p> </section> <section id="s09" class="study-section"> <h2>S09 - Business Case and Drivers</h2> <p>The bottleneck of the central data team’s need to cooperate with all the domains is removed. This team focuses on developing the data exchange platform and providing necessary metadata management tools.</p> <p>The domain teams no longer have to modify their data structures to multiple other domains. They put their effort into developing extensive documentation of their sources.</p> <p>After decentralizing the effort, domain teams (having fully documented metadata concerning other datasets) can use to their advantage historical data produced by their counterparts. A spillover benefit also arises.</p> <p>As It is possible to see, the business case can range from the strategy-level company-wide cleanup to a single business process improvement. The approach and expected journey scale will differ, but the critical factor (business improvement) needs to be identified and quantified.</p> </section> <section id="s10" class="study-section"> <h2>S10 - Organizational Drivers</h2> <p>Organizational drivers are situations, or the state of the business environment, in which the nature of the organization itself becomes a bottleneck. Implementing a data mesh should help remove these by shaking up the organizational structures and culture.</p> </section> <section id="s11" class="study-section"> <h2>S11 - Complex and Socio-technically</h2> <p>A socio-technically complex organization owns numerous systems producing and consuming data. These systems have been developed by multiple teams, units, or individuals belonging to different chains of command.</p> <p>Socio-technically complex organizations could also have a few, but enormous, teams struggling with internal communication (for example, not colocated and without a good remote work culture). It is generally accepted that socio-technical complexity along with complex data needs are the main reasons to implement a data.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for socio-technically complex organizations with complex data needs.</div> </section> <section id="s12" class="study-section"> <h2>S12 - Maturity Assessment</h2> <p>For data maturity classification, teams find the Gartner Analytics Ascendancy Model handy ( www.gartner.com/en/documents/1964015 ). This model describes four stages of data maturity.</p> <ul class="study-bullets"><li><strong>Descriptive</strong> Teams record what already happened.</li><li><strong>Diagnostic</strong> Teams know why it happened.</li><li><strong>Predictive</strong> Teams predict what will happen.</li><li><strong>Prescriptive</strong> Teams know what It is advisable to do to take advantage of what will happen.</li></ul><p>A company introducing a data mesh should at least be scorable using this scale (i.e., it should have data collection, storage systems, and culture, thus enabling reliable access to historical data). If this is not the case, the company should start gradually learning how.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for companies with a certain level of data maturity.</div> </section> <section id="s13" class="study-section"> <h2>S13 - Transformation and Following</h2> <p>A data mesh is a socio-technical change in company operations. As much as teams emphasize the sociological part of the transformation, the technological part needs to be on par with it.</p> <p>The following list is not comprehensive. However, for a good overview of the general state of the teams that will carry the brunt of the transformation, It is recommended to be considering the following.</p> </section> <section id="s14" class="study-section"> <h2>S14 - Security and Privacy</h2> <p>Development operations ( DevOps ) culture.</p> <p>Level of embedding security factors into the development process.</p> </section> <section id="s15" class="study-section"> <h2>S15 - Organizational Drivers</h2> <p>If these concepts are not the bread and butter for the development teams, implementing good data products will be difficult for them. It could be advisable to focus on improving the engineering maturity before beginning a data mesh transformation.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for companies with a high level of software engineering maturity.</div> <p>It is necessary to consider a few more organizational-related drivers when deciding whether a data mesh is right for the company. presents them separately in because their weight is much lower than the drivers presented in this and the s.</p> <p>It’s important to keep in mind that none of these drivers represent the necessity or sufficiency of a data mesh implementation. now discuss equally important data-driven drivers.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-01.png" alt="Module 02 Figure 01" class="zoomable" data-caption="M02.01" /> <figcaption>M02.01 - Organizational Drivers</figcaption> </figure> </section> <section id="s16" class="study-section"> <h2>S16 - Domain Data Drivers</h2> <p>Domain-data drivers focus on data produced at the domain level. If it’s not clear what a domain is, please refer to for a quick explanation, or to for methods of defining domain boundaries.</p> </section> <section id="s17" class="study-section"> <h2>S17 - Complex and Modeling</h2> <p>Data models for complex business cases are difficult to develop and maintain. Proper modeling requires expertise in both data modeling and the subject matter.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for companies with complex domains.</div> <p>The solution is the decentralization of data ownership. It is recommended to consider the implementation of a data mesh because domain-focused data ownership is one of its pillars.</p> </section> <section id="s18" class="study-section"> <h2>S18 - Metadata Management</h2> <p>Harmonization problems often plague companies operating with data of varied formats and from multiple sources (e.g., a combination of structured, unstructured, and semi-structured sources; or as events, files, graphs, relational and NoSQL databases, etc.). Each new data format and source in parallel increases the.</p> <p>The other often-encountered problem is ensuring that the data can be found and accessed. Keeping the metadata repository up-to-date becomes a challenge.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for companies with diverse data sources.</div> <p>Suppose the company struggles with consistency, harmonization, and abundant data sources. In that case, a data mesh may be a viable solution because of its focus on data productization, loosening the data coupling, and domain-focused shift in ownership.</p> </section> <section id="s19" class="study-section"> <h2>S19 - Organizational Drivers</h2> <p>Companies working with high volumes of data may experience bottlenecks in cost and time as data is transformed and transferred. These bottlenecks are harrowing in the case of centralized architectures, as data needs to be imported from all the sources into a central lake.</p> <p>If the company operations require time minimization between data generation and analysis or consumption (that is scalable and near real time), then ownership decentralization and data productization may work for more-efficient high-volume data processing. depicts the summary of domain-data drivers for a data mesh.</p> <p>It’s important to remember that these drivers, even in combination with organizational drivers presented in, represent neither necessity nor sufficiency of a data mesh implementation. To make the consideration even more thorough, It is recommended to take into account other additional minor drivers.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-02.png" alt="Module 02 Figure 02" class="zoomable" data-caption="M02.02" /> <figcaption>M02.02 - Organizational Drivers</figcaption> </figure> </section> <section id="s20" class="study-section"> <h2>S20 - Organizational Drivers</h2> <p>Minor organizational drivers are not critical for the journey (but could be considered when evaluating how costly the journey would be If the organization decides to start it). It is generally accepted that the data mesh is the next stage in architecture evolution.</p> <p>If these areas in the company are underdeveloped, but the major drivers described in sections 2.1.2 and 2.1.3 still push the organization toward a data mesh, then It is necessary to consider the additional effort of required cultural change management. The following factors influence estimating costs.</p> </section> <section id="s21" class="study-section"> <h2>S21 - Maturity Assessment</h2> <p>One of the pillars of the data mesh is federated data governance, which describes in detail in. Irrespective of the current data governance model, the higher the data governance maturity level, the easier the transformation will be.</p> <p>To evaluate the data governance maturity, teams propose using the Gartner Data Governance Maturity Model, not to be confused with the Analytics Ascendency Model teams referred to in (see http://mng.bz/XZl6 ). It divides governance maturity into six tiers.</p> </section> <section id="s22" class="study-section"> <h2>S22 - Governance Model</h2> <ul class="study-bullets"><li><strong>Aware</strong> Project-oriented strategy, efforts to document the data-related risks begun, siloed information consolidation.</li><li><strong>Reactive</strong> Formalized objectives for information sharing, localized integrations, and point-to-point interfaces.</li><li><strong>Proactive</strong> The data governance team established, data-related policies adhered to, locally maintained data models aligned with central architecture guidance.</li><li><strong>Managed</strong> Cross-functional information problems addressed by the data governance body, enterprise-level approach to information needs.</li></ul></section> <section id="s23" class="study-section"> <h2>S23 - Maturity Assessment</h2> <p>If the company is at early maturity stages (e.g., either aware or not), implementing federated data governance may require a lot of time and effort.</p> <div class="note-box"><strong>Key point.</strong> Data mesh is easier to implement in companies of high data governance maturity.</div> </section> <section id="s24" class="study-section"> <h2>S24 - Self-Serve Platform Design</h2> <p>Even if the software development teams are mature, their world is separated from the world of data in many companies. In such a case, the (mis)communication between these worlds often creates bottlenecks in data operations.</p> <p>Suppose the company already hires apt data engineers. The organization will still need to develop a strong platform team to prepare a user-friendly environment for joint software and data development teams to form.</p> <p>If the software development team has insufficient experience working with data, and the organization also lack experienced data engineers, It may be appropriate to need to consider recruiting data-savvy engineers. This cost can be added to the calculations.</p> <div class="note-box"><strong>Key point.</strong> Data mesh is easier to implement in companies in which software is developed in close cooperation with data experts.</div> </section> <section id="s25" class="study-section"> <h2>S25 - Domain and Core</h2> <p>Domain orientation is at the core of data mesh. Even if the teams do not consciously use the domain-driven design approach, the organization might consider how closely they follow its principles in their day-to-day operations.</p> <p>How close are they to the core of the domain? How closely does their work follow domain logic?</p> </section> <section id="s26" class="study-section"> <h2>S26 - Domain Data Drivers</h2> <p>Do they collaborate with domain experts?</p> <p>Teams covered some of these questions separately when considering other drivers. However, putting them together may provide a clear picture of the difficulty in implementing the domain ownership principle in the organization.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is easier to implement in companies that are following a domain-driven design approach.</div> <p>None of the described drivers, alone or in combination, give the organization a clear go/no-go answer as to when It is recommended to start the data mesh journey (neither does their combination). To understand whether a data mesh is the right path for the organization (or even.</p> </section> <section id="s27" class="study-section"> <h2>S27 - Business Case and Drivers</h2> <p>It is necessary to ask yourself one critical question: is the current socio-technical architecture capable of supporting the current and planned business operations sufficiently? That is why, at the beginning of, teams encouraged the organization to consider the business case.</p> <p>The operations are slowed by data not being easily findable or accessible by consumers.</p> <p>The data consumers spend too long aligning with software and/or data engineering teams.</p> <p>The central data team has an arm-long backlog of problems to deal with (e.g., maintenance of data models and catalogs, deciding on access rights, or costs of to-and-fro data transfer).</p> <p>If any of these issues apply (but only to a minor degree; or if the inconveniences they cause are not significant), data mesh is less likely to be a worthwhile investment. However, suppose that the organization observe any combination of the previously mentioned problems in.</p> </section> <section id="s28" class="study-section"> <h2>S28 - Solutions and Alternatives</h2> <p>Solutions described can be considered as either complements or alternatives to a data mesh. This depends on whether teams look at them as technology or socio-technical architecture, respectively.</p> <p>Teams hope that this discussion will help the organization decides whether any of these solutions is sufficient for the organization’s needs. It is also possible to select them as technologies to be used as elements of the data mesh.</p> <div class="note-box"><strong>Important note.</strong> A data warehouse, lake, lakehouse, or fabric can be complementary solutions. These architectures are not necessarily alternatives, but they could be treated as complementary solutions.</div> <p>Each architecture describes here comes in many flavors. In each organization, they undergo many tweaks, adjustments, and improvements.</p> </section> <section id="s29" class="study-section"> <h2>S29 - Warehouse and Central</h2> <p>The enterprise data warehouse is an approach to storing data in the central data repository that the central data team owns. Data is ingested to the data warehouse by using the extract, transform, load (ETL) or extract, load, transform (ELT) approach, usually directly from.</p> <p>In the example data warehouse in, It is possible to see that teams A, B, and C are producing data and do not own the pipelines used to extract data from their sources. A central data team owns the pipelines.</p> <p>The following illustrates when It is recommended to consider implementing an enterprise data warehouse instead of a data mesh.</p> <p>Most of the sources of the data are structured.</p> <p>The current data use cases are well known and not likely to expand or evolve.</p> <p>The organization extract value from data using mainly BI, reporting, and data analysis.</p> <p>The organization rely on a small number of unchanging source systems.</p> <p>Sources are owned by a small number of teams.</p> <p>The central data team has expertise in data warehouse technologies.</p> <p>As teams stated in the beginning, the enterprise data warehouse is a socio-technical approach, but a data warehouse is an underlying technology. The technology itself is not an alternative to a data mesh.</p> <p>The following shows when It is recommended to consider using a data warehouse in addition to a data mesh.</p> <p>At least one of the domains has mostly structured data sources.</p> <p>The organization is extracting value from that domain’s data by using BI, reporting, and data analysis.</p> <p>The data engineers have expertise in data warehouse technologies.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-03.png" alt="Module 02 Figure 03" class="zoomable" data-caption="M02.03" /> <figcaption>M02.03 - Warehouse and Central</figcaption> </figure> </section> <section id="s30" class="study-section"> <h2>S30 - Metadata Management</h2> <p>Teams mentioned data lakes in. Here will go into greater detail.</p> <p>A data lake has numerous zones (e.g., process zones used to store data already processed but not yet ready for production or accessed by end users; or access zones, with data already curated and ready to be accessed by consumers; see ). A data.</p> <p>A data lake is often described as more than a storage pattern. It also offers many related capabilities (ingestion mechanisms, security, metadata, catalog, processing engines, access mechanisms, and many others).</p> <p>The common socio-technical architecture of the data lake is almost the same as the enterprise data warehouse. As shown in, all data-related components are owned by the central data team.</p> <p>The organization deal with big data (volume, velocity, and variety).</p> <p>The organization has structured, semi-structured, and unstructured sources of data.</p> <p>It is hard to foresee all the data use cases.</p> <p>Data sources are owned by a small number of teams.</p> <p>Consumption patterns are not yet established.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-04.png" alt="Module 02 Figure 04" class="zoomable" data-caption="M02.04" /> <figcaption>M02.04 - Metadata Management</figcaption> </figure> </section> <section id="s31" class="study-section"> <h2>S31 - Lake and Lakehouse</h2> <p>A data lakehouse is a combination of a data warehouse and data lake. It is built on top of data lake with added features like these.</p> </section> <section id="s32" class="study-section"> <h2>S32 - Governance Model</h2> <p>Schema enforcement and governance.</p> <p>As It is possible to see in, the socio-technical architecture is the same as the one described for a data warehouse and data lake. The following are examples of when It is recommended to consider implementing a data lakehouse.</p> <p>Some use cases are well known and rely on structured data.</p> <p>The organization is extracting value from data by using BI, reporting, and data analysis.</p> <p>The organization has structured, semi-structured, and unstructured sources of the data.</p> <p>It is hard to foresee most of the data use cases.</p> <p>The organization is dealing with big data.</p> <p>Sources are owned by a small number of teams.</p> <p>Consumption patterns are not entirely established.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-05.png" alt="Module 02 Figure 05" class="zoomable" data-caption="M02.05" /> <figcaption>M02.05 - Governance Model</figcaption> </figure> </section> <section id="s33" class="study-section"> <h2>S33 - Self-Serve Platform Design</h2> <p>Data lakes, warehouses, and lakehouses, in their standard implementation, rely heavily on a central data team. In the experience, this is their fundamental weakness when the company has a lot of data sources and complex usage patterns.</p> <p>From a purely technical point of view, these three architectures may pose an excellent computational environment for a data mesh. This is because the elements of a data mesh may be constructed with existing infrastructure.</p> <p>A data mesh will not require the organization to replace the technology into which the company has already invested millions. A data mesh will ensure that organizational inefficiencies of over-centralization do not throttle down the platform’s potential.</p> <p>The three previously described solutions have a common element—namely, the centralized data team. The next solution is on the other extreme of the centralization scale.</p> </section> <section id="s34" class="study-section"> <h2>S34 - Governance Model</h2> <p>A data fabric is a technology-centric solution for data management. It provides a low-code or no-code platform to connect data sources with consumers alongside governance applied on top of it.</p> <p>Data fabric solutions utilize AI/ML and knowledge graphs in addition to metadata to make an integration and delivery process as automated as possible. A data fabric is a vague concept, and, unfortunately, it is next to impossible to find a precise definition.</p> <p>By definition, a data fabric has no implicit socio-technical architecture. This is why it is hard to consider it as a data mesh alternative.</p> <p>The organization has structured, semi-structured, and unstructured data sources.</p> <p>The organization is dealing with big data.</p> <p>There are many data sources, and they are owned by many teams.</p> <p>The organization is dealing with many different ways to consume the data.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-06.png" alt="Module 02 Figure 06" class="zoomable" data-caption="M02.06" /> <figcaption>M02.06 - Governance Model</figcaption> </figure> </section> <section id="s35" class="study-section"> <h2>S35 - Complex and Summarized</h2> <p>Teams’ve summarized the comparison between popular data architectures and the data mesh in. This Venn diagram uses bubbles previously described in sections 2.2.1, 2.2.2, and 2.2.3.</p> <p>As It is possible to see, a data mesh is a solution for complex organizations from both a socio-technical and data needs perspective. If the data is diverse, a data mesh is also a good fit.</p> <p>The main conclusion from can be summarized as the following key point.</p> <div class="note-box"><strong>Key point.</strong> A data mesh is for socio-technically complex organizations with complex data needs.</div> <p>If the organization decides that the socio-technical and data complexities in the organization may justify giving data mesh a shot, the will show what takes to implement one.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-07.png" alt="Module 02 Figure 07" class="zoomable" data-caption="M02.07" /> <figcaption>M02.07 - Complex and Summarized</figcaption> </figure> </section> <section id="s36" class="study-section"> <h2>S36 - Whether and Performed</h2> <p>If the organization performed the driver analysis described in, It is recommended to know whether the implementation of a data mesh would bring value to the organization. Now is the right time to consider the requirements to make it happen and whether they are worth the.</p> <p>will not get into details of technological solutions and their associated costs. There are simply too many possibilities to list them all here.</p> </section> <section id="s37" class="study-section"> <h2>S37 - Business Case and Drivers</h2> <p>In the experience, a data mesh implementation works best if its development is similar to CI/CD-based software development. Small steps taken in cycles ensure quick wins, rapid feedback and correction ability, and flexibility in reaction to changes.</p> <p>Before the organization jump headlong into the transformation, It is recommended to prepare foundations for the change. focuses on elements of the preparatory phase.</p> <p>Teams previously discussed the importance of the business case, which will serve as a reference for all other decisions. The second element of the preparatory work is ensuring that the organization has enabling structures in place.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-08.png" alt="Module 02 Figure 08" class="zoomable" data-caption="M02.08" /> <figcaption>M02.08 - Business Case and Drivers</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-09.png" alt="Module 02 Figure 09" class="zoomable" data-caption="M02.09" /> <figcaption>M02.09 - Business Case and Drivers</figcaption> </figure> </section> <section id="s38" class="study-section"> <h2>S38 - Business Case and Drivers</h2> <p>The latter two are optional and will depend heavily on the setup. To learn more about these topics, read chapters 6 and 7, respectively.</p> <p>With an initial structure in place, It is possible to start the development cycle. focuses on elements of the development cycle.</p> <p>The cycle should always start from a business case that can be enabled with data. Choose the business goal with clear measures of success.</p> <p>On the other hand, the modification of enabling structures should take place at the cycle’s end. This is when all misalignments or inadequacies are well defined.</p> <p>The development of data products needed to solve the business case is at the core of the data mesh development cycle. details the data product development cycle.</p> <p>It is recommended to start with a good understanding of consumer needs. This results from the business case.</p> <p>With the business case solved, the data product in place, and enabling structures modified (if needed!), rinse and repeat. All elements of a data mesh development are presented in.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-10.png" alt="Module 02 Figure 10" class="zoomable" data-caption="M02.10" /> <figcaption>M02.10 - Business Case and Drivers</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-11.png" alt="Module 02 Figure 11" class="zoomable" data-caption="M02.11" /> <figcaption>M02.11 - Business Case and Drivers</figcaption> </figure> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-12.png" alt="Module 02 Figure 12" class="zoomable" data-caption="M02.12" /> <figcaption>M02.12 - Business Case and Drivers</figcaption> </figure> </section> <section id="s39" class="study-section"> <h2>S39 - Business Case and Drivers</h2> <p>Previously, teams described how Candace introduced a data mesh into her organization’s work.</p> <p>She identified the business case: profits were low, and data utilization was overly complicated and inefficient.</p> <p>She prepared for the project.</p> <p>She appointed herself as an enabler and read Data Mesh in Action from cover to cover.</p> <p>She divided her business into domains and pushed ownership of data, information, and some decisions to the main domains of her operations. Instead of collecting their raw data to later transform and analyze, she presented domain owners the problem.</p> <p>It’s worth noting that she profited even before the first development cycle started! The next year, the team went through the first development iteration.</p> <p>The business goal was developed to improve the procurement forecast.</p> <p>The data products were defined: Adam’s and Eve’s shovel use estimations.</p> <p>The data products were developed: online spreadsheets for Adam and Eve.</p> <p>She reviewed the results and planned the next cycle iteration.</p> <p>As It is possible to see, the first data mesh implementation cycle doesn’t have to be long or strenuous, or encompass all the data mesh properties to bring the business value. will expand on this topic in.</p> </section> <section id="s40" class="study-section"> <h2>S40 - Person and Implementation</h2> <p>Irrespective of the scope and range of the planned data mesh implementation, It is necessary to ensure that there is a person responsible and accountable for its progress. Because the data mesh boundary encompasses both data and software worlds, identifying the right person to lead.</p> <p>Considering the nature of the data mesh implementation drivers, teams expect that a data mesh will usually be implemented in high socio-technical complex environments. This means one person almost surely will not be enough.</p> </section> <section id="s41" class="study-section"> <h2>S41 - Governance Model</h2> <p>The organization may or may not have a governance structure. If it suffices to achieve the goal, It may be appropriate to choose to let sleeping dogs lie for the first iteration.</p> </section> <section id="s42" class="study-section"> <h2>S42 - Enabling and Support</h2> <p>The enabling team needs to support domains in developing its data products. The team members should facilitate cooperation between subject-matter experts, data engineers, and software developers.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-13.png" alt="Module 02 Figure 13" class="zoomable" data-caption="M02.13" /> <figcaption>M02.13 - Enabling and Support</figcaption> </figure> </section> <section id="s43" class="study-section"> <h2>S43 - Data Product Team Structure</h2> <p>The enabling team must be able to support the platform team (should one be developed). This means the enabling team will have to conceptually align data product teams’ requirements and the platform’s capabilities.</p> <p>The platform team should provide its services by using the X-as-a-service pattern (anything as a service), and so it might be PaaS, SaaS, or IaaS. When a platform team is developing new platform features, it should collaborate with one of the other teams to.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-14.png" alt="Module 02 Figure 14" class="zoomable" data-caption="M02.14" /> <figcaption>M02.14 - Data Product Team Structure</figcaption> </figure> </section> <section id="s44" class="study-section"> <h2>S44 - Maturity Assessment</h2> <p>Depending on the organization’s governance model and maturity level, facilitating governance can be the most challenging part of enabling teamwork. A data governance team needs to have the gravitas to carry out its duties.</p> <p>The key to success is to clarify the governance role and area of responsibility in the data mesh. Parties leaning strongly toward extreme governance centralization or decentralization will have to understand the benefits of a federated model before being ready to accept it as.</p> <p>Teams list the main advantages of federated governance in. It would assist the enabling team to know them well before approaching potential governance team candidates.</p> <p>As It is possible to see, the enabling team will be extremely busy throughout the transformation. reviews the development cycle this team will support.</p> <figure class="chapter-figure"> <img src="../assets/images/ch02/fig-15.png" alt="Module 02 Figure 15" class="zoomable" data-caption="M02.15" /> <figcaption>M02.15 - Maturity Assessment</figcaption> </figure> </section> <section id="s45" class="study-section"> <h2>S45 - Governance Model</h2> <p>The data mesh development cycle is focused on achieving business goals by using data. The cycle includes a definition of the goal, data required to achieve it, development itself, and, if the situation requires it, adjustment of the data governance environment or central platform.</p> <p>It probably won’t be the case in the early data mesh development stages, but when the data mesh spans multiple domains, each domain will have its own development cycle. These domains will, however, have to align their development with the works of central teams.</p> </section> <section id="s46" class="study-section"> <h2>S46 - Goal and Required</h2> <p>Teams described the drivers, which may help the organization identify the pain points It may be appropriate to wish to remove when using a data mesh. However, just naming them may not be enough.</p> <p>First, It is necessary to explain why the organization think it is even worth achieving the goal. What is the added value to the business?</p> <p>Second, It is necessary to make sure the goal is presented in the context of the work required to achieve it. And teams are not talking only about balancing the benefits of achieving the goal and the effort needed to achieve it.</p> <p>Third, the business goal should have an associated responsibility assignment matrix—such as RACI (responsible, accountable, consulted, and informed), PARIS (participant, accountable, review required, input required, sign-off required), or one of the scores of other similar participation models. Having a matrix will ensure that the.</p> </section> <section id="s47" class="study-section"> <h2>S47 - Goal and Work</h2> <p>Teams mentioned earlier that the goal needs to be presented in the context of the work required to achieve it. Now it’s time to dig deeper into one of these work areas: defining what data is critical to achieving the goal and how it.</p> <p>Teams propose the organization start with identifying data use cases. This can be done quickly and efficiently by answering these questions.</p> <p>Who are the actors critical in achieving the goal? (If the organization described the goal correctly, answering this question should not be hard.).</p> </section> <section id="s48" class="study-section"> <h2>S48 - Sources and Access</h2> <p>What is the data they use?</p> <p>Where is the actual source of data they use?</p> <p>It is recommended to end up with a list of data sources and their access systems. The knowledge and techniques presented in could be used to identify which of these sources could belong to the same domains.</p> <p>The other problem is the data access systems used by the actors. They can be combined or transformed into consumer-oriented data products.</p> </section> <section id="s49" class="study-section"> <h2>S49 - Business Case and Drivers</h2> <p>Whatever method the organization will use to define their boundaries, will help the organization turn data sources into data products. Developing data products does not differ much from developing any other IT product, except that software engineers, domain experts, and data engineers are engaged in the whole.</p> <p>This step is essential for the long-term success of the initiative (second only to the business case selection). Even If the organization make errors in the data product design or implementation, they can be corrected with good feedback loops.</p> <p>The most important thing for the organization to remember is that in the feedback collection, It is necessary to put the same emphasis on discovering the pain points of two distinct, but at this stage, equally important, groups.</p> </section> <section id="s50" class="study-section"> <h2>S50 - Feedback and Methods</h2> <p>The importance of understanding the needs of data consumers (actors responsible for delivering business value) is, hopefully, obvious. However, it doesn’t mean that the problems encountered by developers are any less important.</p> <p>If the organization’re unsure how to collect the feedback, It may be appropriate to use any combination of the following methods and their variations.</p> <ul class="study-bullets"><li><strong>Email and chat</strong> Both methods are equally convenient for feedback givers but unwieldy and require manual processing of results by the feedback collector.</li><li><strong>Team meetings</strong> These allow the organization to chain questions and clarify answers but might be hard to organize and considered an unappreciated distraction from work. Also, some of the feedback content may be forgotten by stakeholders between meetings.</li><li><strong>Feedback reports</strong> These provide a convenient way of collecting structured qualitative and quantitative feedback but at the risk of losing details of atypical situations.</li></ul><p>Or It is possible to try one of the feedback collection platforms, designed to extract and aggregate the required information, but which come at the cost (financial and time) required for stakeholder training. It is recommended to look at the feedback data and search for repeating problems and.</p> </section> <section id="s51" class="study-section"> <h2>S51 - Best and Policies</h2> <p>It is recommended to always ensure that identified problems are solved systemically. Occasionally, the development and dissemination of best practices will suffice.</p> <p>In the experience, this is a drastic measure. Devising policies for each and every minor concern leads to either paralysis or, in the best case, a slowdown of operations and possibly the quiet disregard of policies.</p> </section> <section id="s52" class="study-section"> <h2>S52 - Business Case and Drivers</h2> <p>This step of developing the platform depends on the specifics of the business case and the nature of the data environment. If the derivation of business value requires modifying the existing platform or building a new one, now is a good time to undertake.</p> <p>Keep in mind that throughout the whole data mesh development cycle, the platform in a data mesh should be treated as a product that can enable two things.</p> </section> <section id="s53" class="study-section"> <h2>S53 - Governance Model</h2> <p>Automating the implementation of governance policies.</p> <p>Before the round of data product development and feedback collection, it is next to impossible to decide on the required scope of work on the platform. The platform development team will be properly equipped to plan its work for the next development cycle with.</p> <p>the organization learned about the business context of a data mesh and the groundwork required for a successful kickoff of a transformation project. The will show how It is possible to prove the assumptions related to a data mesh business value with a quick MVP.</p> </section> <section id="s54" class="study-section"> <h2>S54 - Business Case and Drivers</h2> <p>A data mesh is not a business goal. What is the company’s strategy?</p> <p>Identify the business case with complex data needs. Next, consider whether a data mesh would help solve otherwise persistent problems, and then work from there.</p> <p>There are alternatives more suitable for different business needs. A data mesh should work well in an environment with high socio-technical complexity, complex data needs, and diverse data.</p> <p>Identify all transformation drivers: organizational (e.g., socio-technical complexity and data and software development maturities); as well as related to domain data (e.g., the complexity of domains and their data, and data diversity and volume).</p> <p>Lay the groundwork of the data mesh (i.e., develop the business case and set up governance and enabling teams). Also, ensure that data products, data governance, and central platform development will be sufficiently supported and facilitated.</p> <p>Develop the data mesh in cycles built around adding new data products to the mesh and collecting and analyzing feedback, and modify platform and governance only if needed.</p> </section> <section id="s55" class="study-section"> <h2>S55 - Core Concept</h2> <p>1 The what and why of the data mesh.</p> </section> <section class="key-takeaways"> <h2>Key takeaways</h2> <ul><li>How to assess business drivers that justify a data mesh initiative.</li><li>Decision criteria for determining organizational readiness.</li><li>How data maturity and socio-technical complexity affect feasibility.</li><li>How data mesh compares with and complements other data architectures.</li></ul> </section> </article> </main> <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top">Back to top</a> <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript> <div class="lightbox" id="lightbox" aria-hidden="true"> <figure class="lightbox-inner"> <img id="lightbox-image" alt="Zoomed figure" /> <figcaption id="lightbox-caption"></figcaption> </figure> </div> </body> </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M02 - Adoption Drivers and Decision Criteria</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M02 - Adoption Drivers and Decision Criteria</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-01.html">Previous module (M01)</a>
+      <a href="chapter-02.html" aria-current="page">M02 - Adoption Drivers and Decision Criteria</a>
+      <a href="chapter-03.html">Next module (M03)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>How to assess business drivers that justify a data mesh initiative.</li>
+            <li>Decision criteria for determining organizational readiness.</li>
+            <li>How data maturity and socio-technical complexity affect feasibility.</li>
+            <li>How data mesh compares with and complements other data architectures.</li>
+            <li>How to frame a business case with measurable expected outcomes.</li>
+            <li>How to structure a phased and testable adoption path.</li>
+          </ul>
+        </section>
+        <section id="s01" class="study-section">
+          <h2>S01 - Introducing and Comparing</h2>
+          <p>Introducing the data mesh to the organization.</p>
+          <p>Comparing the data mesh to other popular data architectures.</p>
+        </section>
+        <section id="s02" class="study-section">
+          <h2>S02 - Explained and Implementing</h2>
+          <p>
+            Previously, teams explained the meaning of data mesh. Teams also explained why the
+            company should consider implementing it.
+          </p>
+          <p>
+            How much effort does it take to implement a data mesh (i.e., would the benefits outweigh
+            the effort of its implementation)?
+          </p>
+          <p>
+            The presence of the first question may surprise the organization in the context of this
+            material. Data mesh has become one of the hottest buzzwords in the industry.
+          </p>
+          <p>
+            The second part of focuses on implementing a data mesh. presents the possible steps
+            toward this goal and how all the skills and knowledge the organization will learn in
+            subsequent modules fit together.
+          </p>
+        </section>
+        <section id="s03" class="study-section">
+          <h2>S03 - Business Case and Drivers</h2>
+          <p>
+            To decide whether a data mesh is the right choice for the organization, it is necessary
+            to analyze the decision drivers behind architecture selection. These drivers are split
+            into three categories.
+          </p>
+          <p>starts with the most crucial aspect: business reasons.</p>
+          <p>
+            The analysis should start from the business side. If It is not possible to find a
+            suitable business reason to start the data mesh journey, stop there.
+          </p>
+        </section>
+        <section id="s04" class="study-section">
+          <h2>S04 - Company and Level</h2>
+          <p>
+            Look at the business strategy at the company level or, in the case of big corporations,
+            at the unit level. Search for the answers to questions like these.
+          </p>
+          <p>
+            Are teams defining the company as data driven or planning to shift the strategy to be
+            more data driven?
+          </p>
+          <p>
+            Do teams have objectives and key results (OKRs), or any goal-setting methodology, that
+            requires data to be met?
+          </p>
+          <div class="note-box">
+            <strong>Important note.</strong> OKRs is a methodology used to define goals for the
+            company (and on the individual level). This methodology is often used as a tool to
+            implement business strategies.
+          </div>
+          <p>
+            If the answer to these questions is yes, A deeper analysis can identify the specific
+            business cases requiring data (which teams cover in the next step). If the answer is no,
+            the work is going to be more challenging.
+          </p>
+        </section>
+        <section id="s05" class="study-section">
+          <h2>S05 - Business Case and Drivers</h2>
+          <p>
+            To build a viable business case for data mesh, start with answering the following
+            questions.
+          </p>
+          <p>
+            Do the organization has specific business processes that are starting or ongoing with
+            complex data needs?
+          </p>
+        </section>
+        <section id="s06" class="study-section">
+          <h2>S06 - Business Case and Drivers</h2>
+          <p>
+            By complex data needs, teams mean multidimensional analysis (ad hoc, AI/ML, reporting)
+            running on top of the data coming from multiple sources. If the answers to these
+            questions are positive, the organization might have a compelling business case.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh requires a business case and is useful when
+            there are related complex data needs.
+          </div>
+          <p>reviews the examples of business cases and their data needs.</p>
+        </section>
+        <section id="s07" class="study-section">
+          <h2>S07 - Described and Candace</h2>
+          <p>In the example described in.</p>
+          <p>
+            Candace realized that she combined too many business processes into one data flow. In
+            this way, she lost the data context.
+          </p>
+          <p>
+            Adam and Eve had no way of supplementing raw data with their knowledge and experience.
+          </p>
+          <p>Bob operated detached from his actual stakeholders.</p>
+          <p>
+            The business case for a data mesh-ization of Candace’s shoveling business could improve
+            demand forecasting for shovel ordering.
+          </p>
+        </section>
+        <section id="s08" class="study-section">
+          <h2>S08 - Nonfictional and Fast-moving</h2>
+          <p>
+            A nonfictional fast-moving consumer goods (FMCG) company realizes that its R&amp;D
+            efforts across brands are disconnected. Each R&amp;D team produces its data and stores
+            this in a silo.
+          </p>
+          <p>
+            The initial effort of developing a data warehouse is stopped when the central data team
+            fails to develop a harmonized data model. The lack of a common language (and often
+            contradictory requirements) make it impossible.
+          </p>
+        </section>
+        <section id="s09" class="study-section">
+          <h2>S09 - Business Case and Drivers</h2>
+          <p>
+            The bottleneck of the central data team’s need to cooperate with all the domains is
+            removed. This team focuses on developing the data exchange platform and providing
+            necessary metadata management tools.
+          </p>
+          <p>
+            The domain teams no longer have to modify their data structures to multiple other
+            domains. They put their effort into developing extensive documentation of their sources.
+          </p>
+          <p>
+            After decentralizing the effort, domain teams (having fully documented metadata
+            concerning other datasets) can use to their advantage historical data produced by their
+            counterparts. A spillover benefit also arises.
+          </p>
+          <p>
+            As It is possible to see, the business case can range from the strategy-level
+            company-wide cleanup to a single business process improvement. The approach and expected
+            journey scale will differ, but the critical factor (business improvement) needs to be
+            identified and quantified.
+          </p>
+        </section>
+        <section id="s10" class="study-section">
+          <h2>S10 - Organizational Drivers</h2>
+          <p>
+            Organizational drivers are situations, or the state of the business environment, in
+            which the nature of the organization itself becomes a bottleneck. Implementing a data
+            mesh should help remove these by shaking up the organizational structures and culture.
+          </p>
+        </section>
+        <section id="s11" class="study-section">
+          <h2>S11 - Complex and Socio-technically</h2>
+          <p>
+            A socio-technically complex organization owns numerous systems producing and consuming
+            data. These systems have been developed by multiple teams, units, or individuals
+            belonging to different chains of command.
+          </p>
+          <p>
+            Socio-technically complex organizations could also have a few, but enormous, teams
+            struggling with internal communication (for example, not colocated and without a good
+            remote work culture). It is generally accepted that socio-technical complexity along
+            with complex data needs are the main reasons to implement a data.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for socio-technically complex organizations
+            with complex data needs.
+          </div>
+        </section>
+        <section id="s12" class="study-section">
+          <h2>S12 - Maturity Assessment</h2>
+          <p>
+            For data maturity classification, teams find the Gartner Analytics Ascendancy Model
+            handy ( www.gartner.com/en/documents/1964015 ). This model describes four stages of data
+            maturity.
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Descriptive</strong> Teams record what already happened.</li>
+            <li><strong>Diagnostic</strong> Teams know why it happened.</li>
+            <li><strong>Predictive</strong> Teams predict what will happen.</li>
+            <li>
+              <strong>Prescriptive</strong> Teams know what It is advisable to do to take advantage
+              of what will happen.
+            </li>
+          </ul>
+          <p>
+            A company introducing a data mesh should at least be scorable using this scale (i.e., it
+            should have data collection, storage systems, and culture, thus enabling reliable access
+            to historical data). If this is not the case, the company should start gradually
+            learning how.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for companies with a certain level of data
+            maturity.
+          </div>
+        </section>
+        <section id="s13" class="study-section">
+          <h2>S13 - Transformation and Following</h2>
+          <p>
+            A data mesh is a socio-technical change in company operations. As much as teams
+            emphasize the sociological part of the transformation, the technological part needs to
+            be on par with it.
+          </p>
+          <p>
+            The following list is not comprehensive. However, for a good overview of the general
+            state of the teams that will carry the brunt of the transformation, It is recommended to
+            be considering the following.
+          </p>
+        </section>
+        <section id="s14" class="study-section">
+          <h2>S14 - Security and Privacy</h2>
+          <p>Development operations ( DevOps ) culture.</p>
+          <p>Level of embedding security factors into the development process.</p>
+        </section>
+        <section id="s15" class="study-section">
+          <h2>S15 - Organizational Drivers</h2>
+          <p>
+            If these concepts are not the bread and butter for the development teams, implementing
+            good data products will be difficult for them. It could be advisable to focus on
+            improving the engineering maturity before beginning a data mesh transformation.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for companies with a high level of software
+            engineering maturity.
+          </div>
+          <p>
+            It is necessary to consider a few more organizational-related drivers when deciding
+            whether a data mesh is right for the company. presents them separately in because their
+            weight is much lower than the drivers presented in this and the s.
+          </p>
+          <p>
+            It’s important to keep in mind that none of these drivers represent the necessity or
+            sufficiency of a data mesh implementation. now discuss equally important data-driven
+            drivers.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-01.png"
+              alt="Module 02 Figure 01"
+              class="zoomable"
+              data-caption="M02.01"
+            />
+            <figcaption>M02.01 - Organizational Drivers</figcaption>
+          </figure>
+        </section>
+        <section id="s16" class="study-section">
+          <h2>S16 - Domain Data Drivers</h2>
+          <p>
+            Domain-data drivers focus on data produced at the domain level. If it’s not clear what a
+            domain is, please refer to for a quick explanation, or to for methods of defining domain
+            boundaries.
+          </p>
+        </section>
+        <section id="s17" class="study-section">
+          <h2>S17 - Complex and Modeling</h2>
+          <p>
+            Data models for complex business cases are difficult to develop and maintain. Proper
+            modeling requires expertise in both data modeling and the subject matter.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for companies with complex domains.
+          </div>
+          <p>
+            The solution is the decentralization of data ownership. It is recommended to consider
+            the implementation of a data mesh because domain-focused data ownership is one of its
+            pillars.
+          </p>
+        </section>
+        <section id="s18" class="study-section">
+          <h2>S18 - Metadata Management</h2>
+          <p>
+            Harmonization problems often plague companies operating with data of varied formats and
+            from multiple sources (e.g., a combination of structured, unstructured, and
+            semi-structured sources; or as events, files, graphs, relational and NoSQL databases,
+            etc.). Each new data format and source in parallel increases the.
+          </p>
+          <p>
+            The other often-encountered problem is ensuring that the data can be found and accessed.
+            Keeping the metadata repository up-to-date becomes a challenge.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for companies with diverse data sources.
+          </div>
+          <p>
+            Suppose the company struggles with consistency, harmonization, and abundant data
+            sources. In that case, a data mesh may be a viable solution because of its focus on data
+            productization, loosening the data coupling, and domain-focused shift in ownership.
+          </p>
+        </section>
+        <section id="s19" class="study-section">
+          <h2>S19 - Organizational Drivers</h2>
+          <p>
+            Companies working with high volumes of data may experience bottlenecks in cost and time
+            as data is transformed and transferred. These bottlenecks are harrowing in the case of
+            centralized architectures, as data needs to be imported from all the sources into a
+            central lake.
+          </p>
+          <p>
+            If the company operations require time minimization between data generation and analysis
+            or consumption (that is scalable and near real time), then ownership decentralization
+            and data productization may work for more-efficient high-volume data processing. depicts
+            the summary of domain-data drivers for a data mesh.
+          </p>
+          <p>
+            It’s important to remember that these drivers, even in combination with organizational
+            drivers presented in, represent neither necessity nor sufficiency of a data mesh
+            implementation. To make the consideration even more thorough, It is recommended to take
+            into account other additional minor drivers.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-02.png"
+              alt="Module 02 Figure 02"
+              class="zoomable"
+              data-caption="M02.02"
+            />
+            <figcaption>M02.02 - Organizational Drivers</figcaption>
+          </figure>
+        </section>
+        <section id="s20" class="study-section">
+          <h2>S20 - Organizational Drivers</h2>
+          <p>
+            Minor organizational drivers are not critical for the journey (but could be considered
+            when evaluating how costly the journey would be If the organization decides to start
+            it). It is generally accepted that the data mesh is the next stage in architecture
+            evolution.
+          </p>
+          <p>
+            If these areas in the company are underdeveloped, but the major drivers described in
+            sections 2.1.2 and 2.1.3 still push the organization toward a data mesh, then It is
+            necessary to consider the additional effort of required cultural change management. The
+            following factors influence estimating costs.
+          </p>
+        </section>
+        <section id="s21" class="study-section">
+          <h2>S21 - Maturity Assessment</h2>
+          <p>
+            One of the pillars of the data mesh is federated data governance, which describes in
+            detail in. Irrespective of the current data governance model, the higher the data
+            governance maturity level, the easier the transformation will be.
+          </p>
+          <p>
+            To evaluate the data governance maturity, teams propose using the Gartner Data
+            Governance Maturity Model, not to be confused with the Analytics Ascendency Model teams
+            referred to in (see http://mng.bz/XZl6 ). It divides governance maturity into six tiers.
+          </p>
+        </section>
+        <section id="s22" class="study-section">
+          <h2>S22 - Governance Model</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Aware</strong> Project-oriented strategy, efforts to document the data-related
+              risks begun, siloed information consolidation.
+            </li>
+            <li>
+              <strong>Reactive</strong> Formalized objectives for information sharing, localized
+              integrations, and point-to-point interfaces.
+            </li>
+            <li>
+              <strong>Proactive</strong> The data governance team established, data-related policies
+              adhered to, locally maintained data models aligned with central architecture guidance.
+            </li>
+            <li>
+              <strong>Managed</strong> Cross-functional information problems addressed by the data
+              governance body, enterprise-level approach to information needs.
+            </li>
+          </ul>
+        </section>
+        <section id="s23" class="study-section">
+          <h2>S23 - Maturity Assessment</h2>
+          <p>
+            If the company is at early maturity stages (e.g., either aware or not), implementing
+            federated data governance may require a lot of time and effort.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> Data mesh is easier to implement in companies of high data
+            governance maturity.
+          </div>
+        </section>
+        <section id="s24" class="study-section">
+          <h2>S24 - Self-Serve Platform Design</h2>
+          <p>
+            Even if the software development teams are mature, their world is separated from the
+            world of data in many companies. In such a case, the (mis)communication between these
+            worlds often creates bottlenecks in data operations.
+          </p>
+          <p>
+            Suppose the company already hires apt data engineers. The organization will still need
+            to develop a strong platform team to prepare a user-friendly environment for joint
+            software and data development teams to form.
+          </p>
+          <p>
+            If the software development team has insufficient experience working with data, and the
+            organization also lack experienced data engineers, It may be appropriate to need to
+            consider recruiting data-savvy engineers. This cost can be added to the calculations.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> Data mesh is easier to implement in companies in which
+            software is developed in close cooperation with data experts.
+          </div>
+        </section>
+        <section id="s25" class="study-section">
+          <h2>S25 - Domain and Core</h2>
+          <p>
+            Domain orientation is at the core of data mesh. Even if the teams do not consciously use
+            the domain-driven design approach, the organization might consider how closely they
+            follow its principles in their day-to-day operations.
+          </p>
+          <p>
+            How close are they to the core of the domain? How closely does their work follow domain
+            logic?
+          </p>
+        </section>
+        <section id="s26" class="study-section">
+          <h2>S26 - Domain Data Drivers</h2>
+          <p>Do they collaborate with domain experts?</p>
+          <p>
+            Teams covered some of these questions separately when considering other drivers.
+            However, putting them together may provide a clear picture of the difficulty in
+            implementing the domain ownership principle in the organization.
+          </p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is easier to implement in companies that are
+            following a domain-driven design approach.
+          </div>
+          <p>
+            None of the described drivers, alone or in combination, give the organization a clear
+            go/no-go answer as to when It is recommended to start the data mesh journey (neither
+            does their combination). To understand whether a data mesh is the right path for the
+            organization (or even.
+          </p>
+        </section>
+        <section id="s27" class="study-section">
+          <h2>S27 - Business Case and Drivers</h2>
+          <p>
+            It is necessary to ask yourself one critical question: is the current socio-technical
+            architecture capable of supporting the current and planned business operations
+            sufficiently? That is why, at the beginning of, teams encouraged the organization to
+            consider the business case.
+          </p>
+          <p>
+            The operations are slowed by data not being easily findable or accessible by consumers.
+          </p>
+          <p>
+            The data consumers spend too long aligning with software and/or data engineering teams.
+          </p>
+          <p>
+            The central data team has an arm-long backlog of problems to deal with (e.g.,
+            maintenance of data models and catalogs, deciding on access rights, or costs of
+            to-and-fro data transfer).
+          </p>
+          <p>
+            If any of these issues apply (but only to a minor degree; or if the inconveniences they
+            cause are not significant), data mesh is less likely to be a worthwhile investment.
+            However, suppose that the organization observe any combination of the previously
+            mentioned problems in.
+          </p>
+        </section>
+        <section id="s28" class="study-section">
+          <h2>S28 - Solutions and Alternatives</h2>
+          <p>
+            Solutions described can be considered as either complements or alternatives to a data
+            mesh. This depends on whether teams look at them as technology or socio-technical
+            architecture, respectively.
+          </p>
+          <p>
+            Teams hope that this discussion will help the organization decides whether any of these
+            solutions is sufficient for the organization’s needs. It is also possible to select them
+            as technologies to be used as elements of the data mesh.
+          </p>
+          <div class="note-box">
+            <strong>Important note.</strong> A data warehouse, lake, lakehouse, or fabric can be
+            complementary solutions. These architectures are not necessarily alternatives, but they
+            could be treated as complementary solutions.
+          </div>
+          <p>
+            Each architecture describes here comes in many flavors. In each organization, they
+            undergo many tweaks, adjustments, and improvements.
+          </p>
+        </section>
+        <section id="s29" class="study-section">
+          <h2>S29 - Warehouse and Central</h2>
+          <p>
+            The enterprise data warehouse is an approach to storing data in the central data
+            repository that the central data team owns. Data is ingested to the data warehouse by
+            using the extract, transform, load (ETL) or extract, load, transform (ELT) approach,
+            usually directly from.
+          </p>
+          <p>
+            In the example data warehouse in, It is possible to see that teams A, B, and C are
+            producing data and do not own the pipelines used to extract data from their sources. A
+            central data team owns the pipelines.
+          </p>
+          <p>
+            The following illustrates when It is recommended to consider implementing an enterprise
+            data warehouse instead of a data mesh.
+          </p>
+          <p>Most of the sources of the data are structured.</p>
+          <p>The current data use cases are well known and not likely to expand or evolve.</p>
+          <p>
+            The organization extract value from data using mainly BI, reporting, and data analysis.
+          </p>
+          <p>The organization rely on a small number of unchanging source systems.</p>
+          <p>Sources are owned by a small number of teams.</p>
+          <p>The central data team has expertise in data warehouse technologies.</p>
+          <p>
+            As teams stated in the beginning, the enterprise data warehouse is a socio-technical
+            approach, but a data warehouse is an underlying technology. The technology itself is not
+            an alternative to a data mesh.
+          </p>
+          <p>
+            The following shows when It is recommended to consider using a data warehouse in
+            addition to a data mesh.
+          </p>
+          <p>At least one of the domains has mostly structured data sources.</p>
+          <p>
+            The organization is extracting value from that domain’s data by using BI, reporting, and
+            data analysis.
+          </p>
+          <p>The data engineers have expertise in data warehouse technologies.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-03.png"
+              alt="Module 02 Figure 03"
+              class="zoomable"
+              data-caption="M02.03"
+            />
+            <figcaption>M02.03 - Warehouse and Central</figcaption>
+          </figure>
+        </section>
+        <section id="s30" class="study-section">
+          <h2>S30 - Metadata Management</h2>
+          <p>Teams mentioned data lakes in. Here will go into greater detail.</p>
+          <p>
+            A data lake has numerous zones (e.g., process zones used to store data already processed
+            but not yet ready for production or accessed by end users; or access zones, with data
+            already curated and ready to be accessed by consumers; see ). A data.
+          </p>
+          <p>
+            A data lake is often described as more than a storage pattern. It also offers many
+            related capabilities (ingestion mechanisms, security, metadata, catalog, processing
+            engines, access mechanisms, and many others).
+          </p>
+          <p>
+            The common socio-technical architecture of the data lake is almost the same as the
+            enterprise data warehouse. As shown in, all data-related components are owned by the
+            central data team.
+          </p>
+          <p>The organization deal with big data (volume, velocity, and variety).</p>
+          <p>The organization has structured, semi-structured, and unstructured sources of data.</p>
+          <p>It is hard to foresee all the data use cases.</p>
+          <p>Data sources are owned by a small number of teams.</p>
+          <p>Consumption patterns are not yet established.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-04.png"
+              alt="Module 02 Figure 04"
+              class="zoomable"
+              data-caption="M02.04"
+            />
+            <figcaption>M02.04 - Metadata Management</figcaption>
+          </figure>
+        </section>
+        <section id="s31" class="study-section">
+          <h2>S31 - Lake and Lakehouse</h2>
+          <p>
+            A data lakehouse is a combination of a data warehouse and data lake. It is built on top
+            of data lake with added features like these.
+          </p>
+        </section>
+        <section id="s32" class="study-section">
+          <h2>S32 - Governance Model</h2>
+          <p>Schema enforcement and governance.</p>
+          <p>
+            As It is possible to see in, the socio-technical architecture is the same as the one
+            described for a data warehouse and data lake. The following are examples of when It is
+            recommended to consider implementing a data lakehouse.
+          </p>
+          <p>Some use cases are well known and rely on structured data.</p>
+          <p>
+            The organization is extracting value from data by using BI, reporting, and data
+            analysis.
+          </p>
+          <p>
+            The organization has structured, semi-structured, and unstructured sources of the data.
+          </p>
+          <p>It is hard to foresee most of the data use cases.</p>
+          <p>The organization is dealing with big data.</p>
+          <p>Sources are owned by a small number of teams.</p>
+          <p>Consumption patterns are not entirely established.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-05.png"
+              alt="Module 02 Figure 05"
+              class="zoomable"
+              data-caption="M02.05"
+            />
+            <figcaption>M02.05 - Governance Model</figcaption>
+          </figure>
+        </section>
+        <section id="s33" class="study-section">
+          <h2>S33 - Self-Serve Platform Design</h2>
+          <p>
+            Data lakes, warehouses, and lakehouses, in their standard implementation, rely heavily
+            on a central data team. In the experience, this is their fundamental weakness when the
+            company has a lot of data sources and complex usage patterns.
+          </p>
+          <p>
+            From a purely technical point of view, these three architectures may pose an excellent
+            computational environment for a data mesh. This is because the elements of a data mesh
+            may be constructed with existing infrastructure.
+          </p>
+          <p>
+            A data mesh will not require the organization to replace the technology into which the
+            company has already invested millions. A data mesh will ensure that organizational
+            inefficiencies of over-centralization do not throttle down the platform’s potential.
+          </p>
+          <p>
+            The three previously described solutions have a common element—namely, the centralized
+            data team. The next solution is on the other extreme of the centralization scale.
+          </p>
+        </section>
+        <section id="s34" class="study-section">
+          <h2>S34 - Governance Model</h2>
+          <p>
+            A data fabric is a technology-centric solution for data management. It provides a
+            low-code or no-code platform to connect data sources with consumers alongside governance
+            applied on top of it.
+          </p>
+          <p>
+            Data fabric solutions utilize AI/ML and knowledge graphs in addition to metadata to make
+            an integration and delivery process as automated as possible. A data fabric is a vague
+            concept, and, unfortunately, it is next to impossible to find a precise definition.
+          </p>
+          <p>
+            By definition, a data fabric has no implicit socio-technical architecture. This is why
+            it is hard to consider it as a data mesh alternative.
+          </p>
+          <p>The organization has structured, semi-structured, and unstructured data sources.</p>
+          <p>The organization is dealing with big data.</p>
+          <p>There are many data sources, and they are owned by many teams.</p>
+          <p>The organization is dealing with many different ways to consume the data.</p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-06.png"
+              alt="Module 02 Figure 06"
+              class="zoomable"
+              data-caption="M02.06"
+            />
+            <figcaption>M02.06 - Governance Model</figcaption>
+          </figure>
+        </section>
+        <section id="s35" class="study-section">
+          <h2>S35 - Complex and Summarized</h2>
+          <p>
+            Teams’ve summarized the comparison between popular data architectures and the data mesh
+            in. This Venn diagram uses bubbles previously described in sections 2.2.1, 2.2.2, and
+            2.2.3.
+          </p>
+          <p>
+            As It is possible to see, a data mesh is a solution for complex organizations from both
+            a socio-technical and data needs perspective. If the data is diverse, a data mesh is
+            also a good fit.
+          </p>
+          <p>The main conclusion from can be summarized as the following key point.</p>
+          <div class="note-box">
+            <strong>Key point.</strong> A data mesh is for socio-technically complex organizations
+            with complex data needs.
+          </div>
+          <p>
+            If the organization decides that the socio-technical and data complexities in the
+            organization may justify giving data mesh a shot, the will show what takes to implement
+            one.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-07.png"
+              alt="Module 02 Figure 07"
+              class="zoomable"
+              data-caption="M02.07"
+            />
+            <figcaption>M02.07 - Complex and Summarized</figcaption>
+          </figure>
+        </section>
+        <section id="s36" class="study-section">
+          <h2>S36 - Whether and Performed</h2>
+          <p>
+            If the organization performed the driver analysis described in, It is recommended to
+            know whether the implementation of a data mesh would bring value to the organization.
+            Now is the right time to consider the requirements to make it happen and whether they
+            are worth the.
+          </p>
+          <p>
+            will not get into details of technological solutions and their associated costs. There
+            are simply too many possibilities to list them all here.
+          </p>
+        </section>
+        <section id="s37" class="study-section">
+          <h2>S37 - Business Case and Drivers</h2>
+          <p>
+            In the experience, a data mesh implementation works best if its development is similar
+            to CI/CD-based software development. Small steps taken in cycles ensure quick wins,
+            rapid feedback and correction ability, and flexibility in reaction to changes.
+          </p>
+          <p>
+            Before the organization jump headlong into the transformation, It is recommended to
+            prepare foundations for the change. focuses on elements of the preparatory phase.
+          </p>
+          <p>
+            Teams previously discussed the importance of the business case, which will serve as a
+            reference for all other decisions. The second element of the preparatory work is
+            ensuring that the organization has enabling structures in place.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-08.png"
+              alt="Module 02 Figure 08"
+              class="zoomable"
+              data-caption="M02.08"
+            />
+            <figcaption>M02.08 - Business Case and Drivers</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-09.png"
+              alt="Module 02 Figure 09"
+              class="zoomable"
+              data-caption="M02.09"
+            />
+            <figcaption>M02.09 - Business Case and Drivers</figcaption>
+          </figure>
+        </section>
+        <section id="s38" class="study-section">
+          <h2>S38 - Business Case and Drivers</h2>
+          <p>
+            The latter two are optional and will depend heavily on the setup. To learn more about
+            these topics, read chapters 6 and 7, respectively.
+          </p>
+          <p>
+            With an initial structure in place, It is possible to start the development cycle.
+            focuses on elements of the development cycle.
+          </p>
+          <p>
+            The cycle should always start from a business case that can be enabled with data. Choose
+            the business goal with clear measures of success.
+          </p>
+          <p>
+            On the other hand, the modification of enabling structures should take place at the
+            cycle’s end. This is when all misalignments or inadequacies are well defined.
+          </p>
+          <p>
+            The development of data products needed to solve the business case is at the core of the
+            data mesh development cycle. details the data product development cycle.
+          </p>
+          <p>
+            It is recommended to start with a good understanding of consumer needs. This results
+            from the business case.
+          </p>
+          <p>
+            With the business case solved, the data product in place, and enabling structures
+            modified (if needed!), rinse and repeat. All elements of a data mesh development are
+            presented in.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-10.png"
+              alt="Module 02 Figure 10"
+              class="zoomable"
+              data-caption="M02.10"
+            />
+            <figcaption>M02.10 - Business Case and Drivers</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-11.png"
+              alt="Module 02 Figure 11"
+              class="zoomable"
+              data-caption="M02.11"
+            />
+            <figcaption>M02.11 - Business Case and Drivers</figcaption>
+          </figure>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-12.png"
+              alt="Module 02 Figure 12"
+              class="zoomable"
+              data-caption="M02.12"
+            />
+            <figcaption>M02.12 - Business Case and Drivers</figcaption>
+          </figure>
+        </section>
+        <section id="s39" class="study-section">
+          <h2>S39 - Business Case and Drivers</h2>
+          <p>
+            Previously, teams described how Candace introduced a data mesh into her organization’s
+            work.
+          </p>
+          <p>
+            She identified the business case: profits were low, and data utilization was overly
+            complicated and inefficient.
+          </p>
+          <p>She prepared for the project.</p>
+          <p>
+            She appointed herself as an enabler and read Data Mesh in Action from cover to cover.
+          </p>
+          <p>
+            She divided her business into domains and pushed ownership of data, information, and
+            some decisions to the main domains of her operations. Instead of collecting their raw
+            data to later transform and analyze, she presented domain owners the problem.
+          </p>
+          <p>
+            It’s worth noting that she profited even before the first development cycle started! The
+            next year, the team went through the first development iteration.
+          </p>
+          <p>The business goal was developed to improve the procurement forecast.</p>
+          <p>The data products were defined: Adam’s and Eve’s shovel use estimations.</p>
+          <p>The data products were developed: online spreadsheets for Adam and Eve.</p>
+          <p>She reviewed the results and planned the next cycle iteration.</p>
+          <p>
+            As It is possible to see, the first data mesh implementation cycle doesn’t have to be
+            long or strenuous, or encompass all the data mesh properties to bring the business
+            value. will expand on this topic in.
+          </p>
+        </section>
+        <section id="s40" class="study-section">
+          <h2>S40 - Person and Implementation</h2>
+          <p>
+            Irrespective of the scope and range of the planned data mesh implementation, It is
+            necessary to ensure that there is a person responsible and accountable for its progress.
+            Because the data mesh boundary encompasses both data and software worlds, identifying
+            the right person to lead.
+          </p>
+          <p>
+            Considering the nature of the data mesh implementation drivers, teams expect that a data
+            mesh will usually be implemented in high socio-technical complex environments. This
+            means one person almost surely will not be enough.
+          </p>
+        </section>
+        <section id="s41" class="study-section">
+          <h2>S41 - Governance Model</h2>
+          <p>
+            The organization may or may not have a governance structure. If it suffices to achieve
+            the goal, It may be appropriate to choose to let sleeping dogs lie for the first
+            iteration.
+          </p>
+        </section>
+        <section id="s42" class="study-section">
+          <h2>S42 - Enabling and Support</h2>
+          <p>
+            The enabling team needs to support domains in developing its data products. The team
+            members should facilitate cooperation between subject-matter experts, data engineers,
+            and software developers.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-13.png"
+              alt="Module 02 Figure 13"
+              class="zoomable"
+              data-caption="M02.13"
+            />
+            <figcaption>M02.13 - Enabling and Support</figcaption>
+          </figure>
+        </section>
+        <section id="s43" class="study-section">
+          <h2>S43 - Data Product Team Structure</h2>
+          <p>
+            The enabling team must be able to support the platform team (should one be developed).
+            This means the enabling team will have to conceptually align data product teams’
+            requirements and the platform’s capabilities.
+          </p>
+          <p>
+            The platform team should provide its services by using the X-as-a-service pattern
+            (anything as a service), and so it might be PaaS, SaaS, or IaaS. When a platform team is
+            developing new platform features, it should collaborate with one of the other teams to.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-14.png"
+              alt="Module 02 Figure 14"
+              class="zoomable"
+              data-caption="M02.14"
+            />
+            <figcaption>M02.14 - Data Product Team Structure</figcaption>
+          </figure>
+        </section>
+        <section id="s44" class="study-section">
+          <h2>S44 - Maturity Assessment</h2>
+          <p>
+            Depending on the organization’s governance model and maturity level, facilitating
+            governance can be the most challenging part of enabling teamwork. A data governance team
+            needs to have the gravitas to carry out its duties.
+          </p>
+          <p>
+            The key to success is to clarify the governance role and area of responsibility in the
+            data mesh. Parties leaning strongly toward extreme governance centralization or
+            decentralization will have to understand the benefits of a federated model before being
+            ready to accept it as.
+          </p>
+          <p>
+            Teams list the main advantages of federated governance in. It would assist the enabling
+            team to know them well before approaching potential governance team candidates.
+          </p>
+          <p>
+            As It is possible to see, the enabling team will be extremely busy throughout the
+            transformation. reviews the development cycle this team will support.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch02/fig-15.png"
+              alt="Module 02 Figure 15"
+              class="zoomable"
+              data-caption="M02.15"
+            />
+            <figcaption>M02.15 - Maturity Assessment</figcaption>
+          </figure>
+        </section>
+        <section id="s45" class="study-section">
+          <h2>S45 - Governance Model</h2>
+          <p>
+            The data mesh development cycle is focused on achieving business goals by using data.
+            The cycle includes a definition of the goal, data required to achieve it, development
+            itself, and, if the situation requires it, adjustment of the data governance environment
+            or central platform.
+          </p>
+          <p>
+            It probably won’t be the case in the early data mesh development stages, but when the
+            data mesh spans multiple domains, each domain will have its own development cycle. These
+            domains will, however, have to align their development with the works of central teams.
+          </p>
+        </section>
+        <section id="s46" class="study-section">
+          <h2>S46 - Goal and Required</h2>
+          <p>
+            Teams described the drivers, which may help the organization identify the pain points It
+            may be appropriate to wish to remove when using a data mesh. However, just naming them
+            may not be enough.
+          </p>
+          <p>
+            First, It is necessary to explain why the organization think it is even worth achieving
+            the goal. What is the added value to the business?
+          </p>
+          <p>
+            Second, It is necessary to make sure the goal is presented in the context of the work
+            required to achieve it. And teams are not talking only about balancing the benefits of
+            achieving the goal and the effort needed to achieve it.
+          </p>
+          <p>
+            Third, the business goal should have an associated responsibility assignment matrix—such
+            as RACI (responsible, accountable, consulted, and informed), PARIS (participant,
+            accountable, review required, input required, sign-off required), or one of the scores
+            of other similar participation models. Having a matrix will ensure that the.
+          </p>
+        </section>
+        <section id="s47" class="study-section">
+          <h2>S47 - Goal and Work</h2>
+          <p>
+            Teams mentioned earlier that the goal needs to be presented in the context of the work
+            required to achieve it. Now it’s time to dig deeper into one of these work areas:
+            defining what data is critical to achieving the goal and how it.
+          </p>
+          <p>
+            Teams propose the organization start with identifying data use cases. This can be done
+            quickly and efficiently by answering these questions.
+          </p>
+          <p>
+            Who are the actors critical in achieving the goal? (If the organization described the
+            goal correctly, answering this question should not be hard.).
+          </p>
+        </section>
+        <section id="s48" class="study-section">
+          <h2>S48 - Sources and Access</h2>
+          <p>What is the data they use?</p>
+          <p>Where is the actual source of data they use?</p>
+          <p>
+            It is recommended to end up with a list of data sources and their access systems. The
+            knowledge and techniques presented in could be used to identify which of these sources
+            could belong to the same domains.
+          </p>
+          <p>
+            The other problem is the data access systems used by the actors. They can be combined or
+            transformed into consumer-oriented data products.
+          </p>
+        </section>
+        <section id="s49" class="study-section">
+          <h2>S49 - Business Case and Drivers</h2>
+          <p>
+            Whatever method the organization will use to define their boundaries, will help the
+            organization turn data sources into data products. Developing data products does not
+            differ much from developing any other IT product, except that software engineers, domain
+            experts, and data engineers are engaged in the whole.
+          </p>
+          <p>
+            This step is essential for the long-term success of the initiative (second only to the
+            business case selection). Even If the organization make errors in the data product
+            design or implementation, they can be corrected with good feedback loops.
+          </p>
+          <p>
+            The most important thing for the organization to remember is that in the feedback
+            collection, It is necessary to put the same emphasis on discovering the pain points of
+            two distinct, but at this stage, equally important, groups.
+          </p>
+        </section>
+        <section id="s50" class="study-section">
+          <h2>S50 - Feedback and Methods</h2>
+          <p>
+            The importance of understanding the needs of data consumers (actors responsible for
+            delivering business value) is, hopefully, obvious. However, it doesn’t mean that the
+            problems encountered by developers are any less important.
+          </p>
+          <p>
+            If the organization’re unsure how to collect the feedback, It may be appropriate to use
+            any combination of the following methods and their variations.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Email and chat</strong> Both methods are equally convenient for feedback
+              givers but unwieldy and require manual processing of results by the feedback
+              collector.
+            </li>
+            <li>
+              <strong>Team meetings</strong> These allow the organization to chain questions and
+              clarify answers but might be hard to organize and considered an unappreciated
+              distraction from work. Also, some of the feedback content may be forgotten by
+              stakeholders between meetings.
+            </li>
+            <li>
+              <strong>Feedback reports</strong> These provide a convenient way of collecting
+              structured qualitative and quantitative feedback but at the risk of losing details of
+              atypical situations.
+            </li>
+          </ul>
+          <p>
+            Or It is possible to try one of the feedback collection platforms, designed to extract
+            and aggregate the required information, but which come at the cost (financial and time)
+            required for stakeholder training. It is recommended to look at the feedback data and
+            search for repeating problems and.
+          </p>
+        </section>
+        <section id="s51" class="study-section">
+          <h2>S51 - Best and Policies</h2>
+          <p>
+            It is recommended to always ensure that identified problems are solved systemically.
+            Occasionally, the development and dissemination of best practices will suffice.
+          </p>
+          <p>
+            In the experience, this is a drastic measure. Devising policies for each and every minor
+            concern leads to either paralysis or, in the best case, a slowdown of operations and
+            possibly the quiet disregard of policies.
+          </p>
+        </section>
+        <section id="s52" class="study-section">
+          <h2>S52 - Business Case and Drivers</h2>
+          <p>
+            This step of developing the platform depends on the specifics of the business case and
+            the nature of the data environment. If the derivation of business value requires
+            modifying the existing platform or building a new one, now is a good time to undertake.
+          </p>
+          <p>
+            Keep in mind that throughout the whole data mesh development cycle, the platform in a
+            data mesh should be treated as a product that can enable two things.
+          </p>
+        </section>
+        <section id="s53" class="study-section">
+          <h2>S53 - Governance Model</h2>
+          <p>Automating the implementation of governance policies.</p>
+          <p>
+            Before the round of data product development and feedback collection, it is next to
+            impossible to decide on the required scope of work on the platform. The platform
+            development team will be properly equipped to plan its work for the next development
+            cycle with.
+          </p>
+          <p>
+            the organization learned about the business context of a data mesh and the groundwork
+            required for a successful kickoff of a transformation project. The will show how It is
+            possible to prove the assumptions related to a data mesh business value with a quick
+            MVP.
+          </p>
+        </section>
+        <section id="s54" class="study-section">
+          <h2>S54 - Business Case and Drivers</h2>
+          <p>A data mesh is not a business goal. What is the company’s strategy?</p>
+          <p>
+            Identify the business case with complex data needs. Next, consider whether a data mesh
+            would help solve otherwise persistent problems, and then work from there.
+          </p>
+          <p>
+            There are alternatives more suitable for different business needs. A data mesh should
+            work well in an environment with high socio-technical complexity, complex data needs,
+            and diverse data.
+          </p>
+          <p>
+            Identify all transformation drivers: organizational (e.g., socio-technical complexity
+            and data and software development maturities); as well as related to domain data (e.g.,
+            the complexity of domains and their data, and data diversity and volume).
+          </p>
+          <p>
+            Lay the groundwork of the data mesh (i.e., develop the business case and set up
+            governance and enabling teams). Also, ensure that data products, data governance, and
+            central platform development will be sufficiently supported and facilitated.
+          </p>
+          <p>
+            Develop the data mesh in cycles built around adding new data products to the mesh and
+            collecting and analyzing feedback, and modify platform and governance only if needed.
+          </p>
+        </section>
+        <section id="s55" class="study-section">
+          <h2>S55 - Core Concept</h2>
+          <p>1 The what and why of the data mesh.</p>
+        </section>
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>How to assess business drivers that justify a data mesh initiative.</li>
+            <li>Decision criteria for determining organizational readiness.</li>
+            <li>How data maturity and socio-technical complexity affect feasibility.</li>
+            <li>How data mesh compares with and complements other data architectures.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

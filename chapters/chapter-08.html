@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>M08 - Data Mesh on Google Cloud</title>
+<link rel="stylesheet" href="../assets/css/main.css" />
+<script src="../assets/js/back-to-top.js" defer></script>
+</head>
+<body>
+<header id="top" class="hero">
+<h1>M08 - Data Mesh on Google Cloud</h1>
+</header>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+<a href="../index.html">Home</a>
+<a href="chapter-07.html">Previous module (M07)</a>
+<a href="chapter-08.html" aria-current="page">M08 - Data Mesh on Google Cloud</a>
+<a href="chapter-09.html">Next module (M09)</a>
+</nav>
+<main class="content">
+<article>
+<section class="section-toc">
+<h2>Content Outline</h2>
+<ul>
+<li>How a Google Cloud-based data mesh balances speed of setup and team autonomy.</li>
+<li>How a minimal self-serve platform can be built with Git and Terraform templates.</li>
+<li>How data products use Dataflow, BigQuery, Pub/Sub, and Cloud Storage ports.</li>
+<li>How producer and consumer workflows operate in a shared cloud environment.</li>
+<li>Which optional components improve discoverability, quality, and governance.</li>
+<li>What tradeoffs apply to scalability, lock-in, and operational effort.</li>
+</ul>
+</section>
+
+<section id="s01" class="study-section">
+<h2>S01 - Platform Context and Objectives</h2>
+<p>This module presents a practical Google Cloud architecture for a self-serve data mesh platform.</p>
+<p>The design targets a middle ground between quick onboarding and meaningful domain autonomy.</p>
+<p>The operating model includes data-producing teams, a platform team, and data-consuming roles.</p>
+</section>
+
+<section id="s02" class="study-section">
+<h2>S02 - Core Team Structure</h2>
+<ul class="study-bullets">
+<li><strong>Black team</strong> maintains source-aligned data products.</li>
+<li><strong>White team</strong> produces and consumes analytical data products.</li>
+<li><strong>Gray team</strong> owns the platform template and enablement workflow.</li>
+<li><strong>Analysts and recommendation engine</strong> consume curated datasets.</li>
+</ul>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-01.png" alt="Module 08 Figure 01" class="zoomable" data-caption="M08.01" />
+<figcaption>M08.01 - Google Cloud Data Mesh Technical Architecture</figcaption>
+</figure>
+</section>
+
+<section id="s03" class="study-section">
+<h2>S03 - Technology Building Blocks</h2>
+<ul class="study-bullets">
+<li><strong>BigQuery</strong> provides scalable analytical storage and SQL access.</li>
+<li><strong>Dataflow</strong> powers batch and streaming transformation pipelines.</li>
+<li><strong>Pub/Sub</strong> supports event-driven ingestion and decoupled producers.</li>
+<li><strong>Cloud Storage</strong> enables object-based upload and file input patterns.</li>
+<li><strong>Service accounts</strong> enforce access boundaries at product level.</li>
+</ul>
+<div class="note-box"><strong>Important note.</strong> Service-account design is critical when multiple products share platform services.</div>
+</section>
+
+<section id="s04" class="study-section">
+<h2>S04 - Minimal Platform Design</h2>
+<p>The platform interface is a versioned repository containing documentation and reusable templates.</p>
+<p>The platform kernel is a configurable Terraform template used to provision product stacks.</p>
+<p>This baseline keeps maintenance overhead low while still giving producers repeatable setup paths.</p>
+</section>
+
+<section id="s05" class="study-section">
+<h2>S05 - Data Product Pattern</h2>
+<p>Each data product is implemented as a pipeline and an owned BigQuery dataset with controlled access.</p>
+<p>A Dataflow pipeline can ingest from Pub/Sub, BigQuery, Cloud Storage, or upstream products.</p>
+<p>Output permissions are scoped so each consumer receives only the required data surfaces.</p>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-02.png" alt="Module 08 Figure 02" class="zoomable" data-caption="M08.02" />
+<figcaption>M08.02 - Black Team Data Product on GCP</figcaption>
+</figure>
+</section>
+
+<section id="s06" class="study-section">
+<h2>S06 - Push and Pull Ingestion Modes</h2>
+<p>The architecture supports push ingestion through file uploads and pull ingestion through pipelines.</p>
+<p>Push input can start from a Cloud Storage bucket with validated schemas and transformation rules.</p>
+<p>Pull input can combine upstream datasets and events to produce derived analytical products.</p>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-03.png" alt="Module 08 Figure 03" class="zoomable" data-caption="M08.03" />
+<figcaption>M08.03 - White Team Push Ingestion with Cloud Storage</figcaption>
+</figure>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-04.png" alt="Module 08 Figure 04" class="zoomable" data-caption="M08.04" />
+<figcaption>M08.04 - Recommendation Engine Data Product Interaction</figcaption>
+</figure>
+</section>
+
+<section id="s07" class="study-section">
+<h2>S07 - Producer and Consumer Workflows</h2>
+<ul class="study-bullets">
+<li>Producers retrieve the latest template, provision a stack, and configure pipeline sources.</li>
+<li>Producers define service-account policies for approved consumers and systems.</li>
+<li>Consumers discover products via SQL browsing and request additional access from owners.</li>
+</ul>
+<p>This flow enables fast delivery while keeping ownership and authorization explicit.</p>
+</section>
+
+<section id="s08" class="study-section">
+<h2>S08 - Platform Extensions</h2>
+<p>The baseline platform can be expanded incrementally without replacing the core provisioning model.</p>
+<ul class="study-bullets">
+<li>Catalog integration can improve product discoverability and metadata quality.</li>
+<li>Log-derived usage metrics can surface popular datasets and frequent access patterns.</li>
+<li>Central quality checks can publish results to improve trust in product consumption.</li>
+<li>A lightweight GUI can simplify onboarding metadata and reduce manual errors.</li>
+</ul>
+<figure class="chapter-figure">
+<img src="../assets/images/ch08/fig-05.png" alt="Module 08 Figure 05" class="zoomable" data-caption="M08.05" />
+<figcaption>M08.05 - Optional GCP Platform Extensions</figcaption>
+</figure>
+</section>
+
+<section id="s09" class="study-section">
+<h2>S09 - Governance and Ownership Implications</h2>
+<p>Automated checks and catalog workflows provide a practical entry point for federated governance.</p>
+<p>Ownership remains effective only if access control and policy boundaries are enforceable.</p>
+<p>Governance automation should avoid central bottlenecks and preserve team delivery flow.</p>
+</section>
+
+<section id="s10" class="study-section">
+<h2>S10 - Architecture Fit and Tradeoffs</h2>
+<ul class="study-bullets">
+<li><strong>Strengths</strong>: low maintenance, fast integration of native services, good team autonomy.</li>
+<li><strong>Tradeoffs</strong>: cloud lock-in risk and additional effort for heterogeneous source integration.</li>
+<li><strong>Best fit</strong>: small-to-medium organizations needing fast platform enablement.</li>
+</ul>
+</section>
+
+<section class="key-takeaways">
+<h2>Key takeaways</h2>
+<ul>
+<li>A template-based GCP platform can accelerate data product onboarding with limited operational overhead.</li>
+<li>Dataflow plus BigQuery supports a consistent product model with controlled producer autonomy.</li>
+<li>Service accounts are central to preserving ownership boundaries in shared services.</li>
+<li>Platform extensions can improve discoverability, quality, and governance without redesigning the core.</li>
+</ul>
+</section>
+</article>
+</main>
+<a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top">Back to top</a>
+<noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<figure class="lightbox-inner">
+<img id="lightbox-image" alt="Zoomed figure" />
+<figcaption id="lightbox-caption"></figcaption>
+</figure>
+</div>
+</body>
+</html>

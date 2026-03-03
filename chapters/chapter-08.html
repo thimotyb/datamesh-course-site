@@ -26,6 +26,7 @@
 <li>How a minimal self-serve platform can be built with Git and Terraform templates.</li>
 <li>How data products use Dataflow, BigQuery, Pub/Sub, and Cloud Storage ports.</li>
 <li>How Dataplex supports governance, discovery, and policy enforcement across domains.</li>
+<li>How official data mesh architecture principles map to platform and product responsibilities.</li>
 <li>How producer and consumer workflows operate in a shared cloud environment.</li>
 <li>Which optional components improve discoverability, quality, and governance.</li>
 <li>What tradeoffs apply to scalability, lock-in, and operational effort.</li>
@@ -148,14 +149,26 @@
 </section>
 
 <section id="s10" class="study-section">
-<h2>S10 - Governance and Ownership Implications</h2>
+<h2>S10 - Data Mesh Core Concepts on Google Cloud</h2>
+<p>The Google Cloud data mesh reference architecture emphasizes decentralized ownership with standardized interoperability.</p>
+<ul class="study-bullets">
+<li><strong>Domain-oriented ownership</strong>: each domain team owns its data products end to end, including quality and lifecycle.</li>
+<li><strong>Data as a product</strong>: products must be discoverable, understandable, accessible, and governed for reuse.</li>
+<li><strong>Self-service platform</strong>: shared capabilities reduce repeated engineering effort across domains.</li>
+<li><strong>Federated governance</strong>: common policies are centrally defined and computationally enforced.</li>
+</ul>
+<p>In practice, Dataplex supports this model by combining cataloging, governance, metadata management, and policy-driven controls.</p>
+</section>
+
+<section id="s11" class="study-section">
+<h2>S11 - Governance and Ownership Implications</h2>
 <p>Automated checks and catalog workflows provide a practical entry point for federated governance.</p>
 <p>Ownership remains effective only if access control and policy boundaries are enforceable.</p>
 <p>Governance automation should avoid central bottlenecks and preserve team delivery flow.</p>
 </section>
 
-<section id="s11" class="study-section">
-<h2>S11 - Architecture Fit and Tradeoffs</h2>
+<section id="s12" class="study-section">
+<h2>S12 - Architecture Fit and Tradeoffs</h2>
 <ul class="study-bullets">
 <li><strong>Strengths</strong>: low maintenance, fast integration of native services, good team autonomy.</li>
 <li><strong>Tradeoffs</strong>: cloud lock-in risk and additional effort for heterogeneous source integration.</li>

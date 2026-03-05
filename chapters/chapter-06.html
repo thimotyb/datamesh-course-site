@@ -1,1376 +1,340 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M06 - Federated Computational Governance</title>
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <script src="../assets/js/back-to-top.js" defer></script>
-  </head>
-  <body>
-    <header id="top" class="hero">
-      <h1>M06 - Federated Computational Governance</h1>
-    </header>
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
-      <a href="../index.html">Home</a>
-      <a href="chapter-05.html">Previous module (M05)</a>
-      <a href="chapter-06.html" aria-current="page">M06 - Federated Computational Governance</a>
-      <a href="chapter-07.html">Next module (M07)</a>
-    </nav>
-    <main class="content">
-      <article>
-        <section class="section-toc">
-          <h2>Content Outline</h2>
-          <ul>
-            <li>What governance foundations are required in a data mesh context.</li>
-            <li>How to balance central standards with local domain autonomy.</li>
-            <li>How to define policies, accountabilities, and control mechanisms.</li>
-            <li>How to progressively automate governance through computational controls.</li>
-            <li>How to manage quality, security, compliance, and lineage expectations.</li>
-            <li>How to implement sustainable governance with pragmatic rollout steps.</li>
-          </ul>
-        </section>
-        <section id="s01" class="study-section">
-          <h2>S01 - Governance Model</h2>
-          <p>Understanding the definition of data governance.</p>
-          <p>Defining the expected deliverables of data governance.</p>
-        </section>
-        <section id="s02" class="study-section">
-          <h2>S02 - Governance Model</h2>
-          <p>
-            In, teams kick-started the data mesh and included a lot of governance work right from
-            the start. dives deeper into how to perform this crucial step.
-          </p>
-          <div class="note-box">
-            <strong>Important note.</strong> While teams understand that It may be appropriate to
-            want to get straight to the implementation of data governance, this would be
-            counterproductive. This topic can be approached in too many ways.
-          </div>
-          <p>
-            First, discusses what data governance is and paint a broad picture of what it means to
-            federate it and make it computational.
-          </p>
-          <p>
-            Second, explains why implementing data governance is a good idea. At the beginning of
-            this material, teams indicated that the organization could implement the principles with
-            varying levels of detail.
-          </p>
-          <p>
-            Third, presents multiple data governance models. presents the extremes of the
-            responsibility distribution—the centralized data governance model and the decentralized
-            data governance model—and follow with the federated Governance model, which takes the
-            best from both approaches and minimizes the downsides.
-          </p>
-          <p>
-            Teams finish by showing the organization the range of possible data governance
-            automation levels. After reading, the organization will be able to do the following.
-          </p>
-        </section>
-        <section id="s03" class="study-section">
-          <h2>S03 - Governance Model</h2>
-          <p>Split responsibilities among data governance actors.</p>
-          <p>starts by presenting a general overview of data governance.</p>
-        </section>
-        <section id="s04" class="study-section">
-          <h2>S04 - Governance Model</h2>
-          <p>
-            Before continuing, teams must warn the organization that data governance is a vast
-            concept, with many often incompatible implementations and interpretations. describes
-            some of these extremes in.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> Data governance is a collection of information-related processes, roles (with
-            a strong emphasis on decision rights and accountabilities), policies, standards, and
-            metrics oriented to maximize the effectiveness of deriving business value from data.
-          </div>
-          <p>
-            As It is possible to see, data governance describes an environment in which data can be
-            transformed into information, information to knowledge, and so on, up to the business
-            value.
-          </p>
-          <p>
-            The first and most important point to understand about data governance is that it’s a
-            continuous process, not a state. Putting it in motion may be a project, but it needs to
-            become the modus operandi of the company data environment to be effective.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> According to the Data Management Body of Knowledge (
-            www.dama.org/cpages/body-of-knowledge ), data governance is one of 11 data management
-            knowledge areas. Data management deals with all aspects of data handling, from
-            acquisition to architectures to policies.
-          </div>
-          <div class="definition-box">
-            <strong>Definition</strong> Architecture governance processes identify, manage, audit, and disseminate
-            all information related to architecture management, contracts, and implementation. For
-            companies dealing with a smaller diversity of data sources and a limited number of
-            systems, the two topics may be overlapping so much that it.
-          </div>
-          <p>
-            Remember Candace and her snow-shoveling business? After reading Data Mesh in Action,
-            Candace realized the value of being data driven.
-          </p>
-          <p>
-            In year 4, Candace extends Adam’s and Eve’s teams. They now head a small group of 5–10
-            snow shovelers.
-          </p>
-          <p>
-            But the year doesn’t end as expected, little has improved, and Adam and Eve seem
-            unhappy. They can’t make sense of the data Candace prescribed them to use.
-          </p>
-          <p>
-            Adam and Eve are probably the best people to decide which data to use. So before year 5,
-            Candace sits down with Adam and Eve and they decide the following together.
-          </p>
-          <p>
-            They want to use more data to inform their decisions; they all agree it’s necessary at
-            this size.
-          </p>
-          <p>Adam and Eve decide for themselves which data pieces they collect.</p>
-          <p>Year 5 ends with another nice profit. The two decisions here display why that is.</p>
-          <div class="definition-box">
-            <strong>Definition</strong> Federated data governance is a data governance model. Enterprise-scale
-            decisions are made by the central governing body, and decentralized units are autonomous
-            decision-makers within their domains for all other affairs.
-          </div>
-          <ul class="study-bullets">
-            <li>
-              <strong>This is federated governance in action</strong> a balance between central
-              decisions and local freedom to maximize the local value. But it’s not enough for
-              Candace.
-            </li>
-          </ul>
-          <p>
-            Local teams can collect data and put the Excel files onto Candace’s Dropbox for sharing
-            and to extract some value together.
-          </p>
-          <p>
-            For Adam and Eve, this turns out well. They’ve been working together for a long time,
-            and Eve collects her metrics on driveway lengths and shovel breakdowns that Adam uses to
-            optimize his prices.
-          </p>
-          <p>
-            But the other 18 team leads aren’t so happy. They have no idea how to read Eve’s Excel
-            sheet.
-          </p>
-          <p>Shared data pieces have to carry a description explaining the columns and the data.</p>
-          <p>
-            It turns out this also enables the other 18 teams to share more data, such as data on
-            the performance of their employees, pricing information for certain city parts, and the
-            like. Unfortunately, sometimes people forget to put up the description with the flood.
-          </p>
-          <p>
-            Because the data is sharable and each team can combine it with their data now, profits
-            soar, and Candace ends year 6 swimming in money, surrounded by dozens of happy
-            employees.
-          </p>
-          <p>
-            In year 6, a lot has happened. First, the business stakeholders realize the value of
-            sharing and combining data.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> Federated computational data governance is a data governance model in which
-            policies are translated into algorithms and enforced automatically by the IT
-            infrastructure wherever feasible.
-          </div>
-          <p>
-            now try to convince the organization why It is recommended to consider data governance a
-            good investment rather than the collateral cost of data mesh development.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-01.png"
-              alt="Module 06 Figure 01"
-              class="zoomable"
-              data-caption="M06.01"
-            />
-            <figcaption>M06.01 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s05" class="study-section">
-          <h2>S05 - Governance Model</h2>
-          <p>
-            The problem with describing the benefits of any high-level solution is that they tend to
-            reflect an ideal world. reviews some of the data governance benefit categories and
-            discuss the underlying assumptions required for the benefit to occur.
-          </p>
-          <p>
-            This should help the organization form the own opinion about the amount of effort the
-            organization will want to invest in this topic. Also, it will help facilitate
-            discussions with the stakeholders the organization decides to involve.
-          </p>
-        </section>
-        <section id="s06" class="study-section">
-          <h2>S06 - Governance Model</h2>
-          <p>
-            considers the significance of data governance on decision-making processes in the
-            company. There is a common belief that a decision-maker who has access to a relatively
-            large volume of data should feel well equipped to make decisions.
-          </p>
-          <p>
-            First, it’s easy to get to the point of information overload. A high volume of data may
-            lead someone to the conclusion that they have “more than enough” data.
-          </p>
-          <p>
-            Second, the data may not be adequate regarding the time it represents. examines imagine
-            someone making budgeting decisions based on the quarterly results of their team, and
-            they usually do it after the data for the previous quarter is provided to them.
-          </p>
-          <p>
-            Finally, the data may be inconclusive. If the analysis is appropriately designed, one of
-            the expected and valid outcomes should be the answer “based on the collected data, teams
-            cannot distinguish between two options.” Without access to additional data, the usual
-            approach, summarized with.
-          </p>
-          <p>
-            It all comes down to the known truth: having the data is not equal to having insight.
-            The data governance in this situation may help by ensuring that users have access to
-            well-described metadata, revealing the actual information content of the data used.
-          </p>
-          <p>
-            Data governance also enables the effective use of data to derive business value,
-            ensuring that users have a deeper comprehension of the meaning behind numbers stored in
-            tables. It is made possible thanks to the governed terminology directories, master data
-            management, cooperation between the.
-          </p>
-          <p>
-            It is easy to find a straight path to a declaration that data governance, via the
-            improved understanding of the organization’s business models and data-driven
-            decision-making, leads to enhanced business planning and increased operational
-            efficiency.
-          </p>
-        </section>
-        <section id="s07" class="study-section">
-          <h2>S07 - Governance Model</h2>
-          <p>
-            Data governance can also add value to the business from the data usability perspective.
-            Working with data in a large organizations often comes with four main questions that
-            quickly turn into full-blown problems.
-          </p>
-        </section>
-        <section id="s08" class="study-section">
-          <h2>S08 - Governance Model</h2>
-          <p>Where is this data?</p>
-          <p>What is the quality of this data?</p>
-          <p>
-            Data governance helps answer these questions by assigning responsibilities and metrics
-            related to data findability, availability, and usability. Well-designed data governance
-            will ensure that a known and accountable entity, responsible for the development and
-            maintenance of a continuously updated data catalog, offers insight into.
-          </p>
-          <p>
-            Data governance also covers concerns related to data security and safety, including
-            access rights and permissions. Again, data governance clearly indicates who is
-            responsible for each bit of data, who can by default use it, and the allowed access
-            protocols.
-          </p>
-          <p>
-            Similarly, data governance means assigning responsibility for metadata management. It
-            means there should be a clear definition of data quality metrics, and a clear indication
-            of parties and tools ensuring availability of accurate metadata for each data asset.
-          </p>
-          <p>
-            The conclusion is obvious: data governance done right offers all means for data to
-            become FAIR, a cornerstone of wide usability.
-          </p>
-        </section>
-        <section id="s09" class="study-section">
-          <h2>S09 - Governance Model</h2>
-          <p>
-            Teams operate in an era of a constant struggle, as companies and parties are willing to
-            go to great lengths to profit from illegal acquisition of company data or to prove in
-            court that data was mishandled or misused by the company. As a.
-          </p>
-          <p>
-            However, data governance does not stop at pointing fingers. Instead, it helps data
-            owners become or stay compliant with internal and external regulations by doing the
-            following.
-          </p>
-          <p>
-            Clearly stating the demands imposed by regulations such as the GDPR, California Consumer
-            Privacy Act (CCPA), or HIPAA.
-          </p>
-        </section>
-        <section id="s10" class="study-section">
-          <h2>S10 - Governance Model</h2>
-          <p>
-            The difference between people doing what they might and data governance offering a
-            coherent way of addressing all questions related to data oversight may equal tens of
-            millions of dollars saved.
-          </p>
-          <p>
-            Yet again, as a process, data governance is not about creating a glossary of terms or a
-            repository of regulations. Instead, it’s supposed to evolve its policies, add codes of
-            conduct, and review best practices.
-          </p>
-          <p>
-            An essential element of increasing business value derived from data (or preventing the
-            losses), by enforcing transparency of data assets’ contents.
-          </p>
-          <p>
-            A way to maximize usability of data assets, by developing clearly defined roles of
-            responsibility and accountability for data, as well as ensuring that data assets and
-            their access points are mapped and available to data users.
-          </p>
-          <p>
-            Critical for control over data assets and compliance with internal and external
-            regulations, by having the authority and access to expertise allowing development of
-            actionable policies.
-          </p>
-        </section>
-        <section id="s11" class="study-section">
-          <h2>S11 - Governance Model</h2>
-          <p>Define the deliverables the organization expect from the data governance bodies.</p>
-          <p>
-            Decide how the organization will distribute responsibilities and accountability for
-            various governance aspects.
-          </p>
-          <p>
-            Ensure that the governance protocols don’t introduce bottlenecks and that the
-            administrative overhead won’t slow development.
-          </p>
-          <p>
-            will guide the organization through a possible solution in the s, starting with helping
-            the organization manage the expectations and setting proper governance outcomes.
-          </p>
-        </section>
-        <section id="s12" class="study-section">
-          <h2>S12 - Governance Model</h2>
-          <p>
-            Data governance is a process involving multiple people across the organization. If the
-            organization wish to create a data governance framework, It is necessary to ensure that
-            the people the organization engage are well informed about what is expected of them.
-          </p>
-          <p>
-            It will provide a clear vision of what’s to be achieved to all the stakeholders and will
-            manage their expectations.
-          </p>
-          <p>
-            It will focus on goals rather than processes and make it easier for the organization to
-            design a framework fitting the organization’s needs.
-          </p>
-          <p>To understand this better, returns to the adventure at Messflix.</p>
-          <p>
-            showed the organization how to set up an initial data governance body for the MVP. To
-            better understand the flow of the data governance process, the organization ask the
-            participants to model steps they would take to transition the general strategic
-            direction into actionable pieces of.
-          </p>
-          <p>
-            The exercise starts with two strategic goals. One is sales improvement, and the other is
-            ensuring security of Messflix data.
-          </p>
-          <p>
-            As It is possible to see, one goal requires six steps, and the other requires five.
-            reviews how such a breakdown can be generalized and how It is possible to assign
-            responsibilities to the levels to ensure control over and the governance of the whole
-            process.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-02.png"
-              alt="Module 06 Figure 02"
-              class="zoomable"
-              data-caption="M06.02"
-            />
-            <figcaption>M06.02 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s13" class="study-section">
-          <h2>S13 - Governance Model</h2>
-          <p>
-            The data governance process can be efficiently designed if teams understand its
-            deliverables. These can be split into three general strata, related to three levels of
-            data governance operations.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Strategic</strong> Outcomes bidirectionally related to the company’s strategic
-              direction and environment. Outcomes should reflect a clear translation of strategic
-              goals into data-related actions, usually through policy development.
-            </li>
-            <li>
-              <strong>Tactical</strong> Dealing with practicalities of policies’ requirements,
-              thereby aligning expectations with the company’s technical and organizational
-              environment.
-            </li>
-            <li>
-              <strong>Implementation</strong> The shop floor actions ensuring that the policies are
-              not just on-paper solutions.
-            </li>
-          </ul>
-          <p>
-            Setting up a complete system that allows end-to-end data governance ensures that the
-            design follows a hierarchy of more and more detailed guidelines.
-          </p>
-          <p>
-            This process all starts with the business strategy. The business strategy may result in
-            a set of strategic objectives, each of which can be described with its expected key
-            results.
-          </p>
-          <p>
-            In the, describes how the responsibility for each layer can be distributed among
-            parties, depending on the assumed governance structure.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-03.png"
-              alt="Module 06 Figure 03"
-              class="zoomable"
-              data-caption="M06.03"
-            />
-            <figcaption>M06.03 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s14" class="study-section">
-          <h2>S14 - Governance Model</h2>
-          <p>
-            Data governance at the strategic level needs to provide links between company strategy
-            and expectations derived from industry standards and internal workings of data
-            operations. The two main tools teams propose here are value statements and policies.
-          </p>
-          <p>
-            It is recommended to expect the governance team working at this level to provide the
-            rest of the company with information on the right things to do.
-          </p>
-        </section>
-        <section id="s15" class="study-section">
-          <h2>S15 - Business and Value</h2>
-          <p>
-            Teams touched upon the value statement in. Teams explained it’s an assertion of
-            causality between a business action and the resulting business value.
-          </p>
-          <p>
-            A value statement is an important link between business strategy and business actions.
-            These statements do not translate directly into policies or implementation, but serve as
-            a reference point for them.
-          </p>
-        </section>
-        <section id="s16" class="study-section">
-          <h2>S16 - Value and Statement</h2>
-          <p>
-            reviews a real-life example. A data scientist proposes a communication test to improve
-            customer understanding: nothing fancy, just A/B testing composed of two messages.
-          </p>
-          <p>
-            The data scientist cannot convince that manager to send two types of messages, with one
-            likely to perform worse than the other. He is instead expected to come back with just
-            the better ones, but with no testing!
-          </p>
-          <p>
-            A clear data-related value statement justifying a locally suboptimal action that
-            promises better future performance would be of great help.
-          </p>
-          <p>
-            It may be appropriate to find a definition indicating that a value statement is supposed
-            to show what the company “believes in.” However, it is hard to imagine what “the
-            company” believes. So instead, think of a value statement as a list of the company’s
-            highest priorities.
-          </p>
-          <p>
-            In, teams presented a general value statement structure, as provided by Robert S. Seiner
-            in Non-Invasive Data Governance.
-          </p>
-          <p>Organizations that [take some action], demonstrate [business value improvement].</p>
-          <p>
-            In practice, this means that If the organization plan to take an action directly related
-            to a value statement, It is recommended to be able to end any discussion undermining the
-            necessity of this action by using the following argument.
-          </p>
-          <p>
-            It is advisable to take this action, because according to the value statement, it will
-            bring this benefit.
-          </p>
-          <p>
-            This is, of course, the ultimate argument for the need to take an action. It cannot end
-            the discussion on, for example, a timeline or a budget for such an action.
-          </p>
-          <p>
-            It is worth remembering that data value statements will be based on the company
-            strategy. So, for example, the statement “Organizations transparently sharing data with
-            the world are perceived as trustworthy” may be true in some cases.
-          </p>
-          <p>
-            Don’t aim to create overly sophisticated or vague statements. Instead, use them as a
-            codification of common sense.
-          </p>
-          <p>
-            The statement “Organizations that put effort into proper data documentation demonstrate
-            a lower cost of deploying new machine learning models” may be used as an argument in a
-            discussion with the data owner, who considers its documentation a waste of time.
-            However, the data.
-          </p>
-          <p>
-            Overly vague or unclear statements like “Organizations that make a brouhaha about data
-            demonstrate high income” are not nearly as helpful.
-          </p>
-        </section>
-        <section id="s17" class="study-section">
-          <h2>S17 - Governance Model</h2>
-          <p>
-            Policies are the primary tool in the central governance body’s toolbox. They enable
-            consistency of data solutions across the organization and ensure interoperability of
-            data products.
-          </p>
-          <p>
-            In appendix B, presents as an example the metadata management policy developed at
-            Messflix. (This policy is based on a metadata policy prepared by the UK Office for
-            National Statistics, http://mng.bz/e76v, and published under Open Government License
-            3.0, http://mng.bz/pOe8 ).
-          </p>
-          <p>
-            This particular example of a policy is specific in terms of accountability of the
-            metadata, but from the technical perspective, it specifies only the location of the
-            central metadata repository. It also links to the retention policy as a source of
-            additional information.
-          </p>
-          <p>
-            The following list presents some policy elements that It may be appropriate to use to
-            create a policy frame.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Information card</strong> Metadata of the policy, presenting information such
-              as the owner of the policy, contact details, and version info.
-            </li>
-            <li>
-              <strong>Purpose</strong> A short explanation of the expected outcome of setting up
-              this policy. It can be clarification of procedures, consistency of behaviors,
-              outlining standards, etc.
-            </li>
-            <li>
-              <strong>Scope</strong> The definition of context in which a given policy will be used.
-              It may relate to groups, locations, project types, periods, etc.
-            </li>
-            <li>
-              <strong>Goals</strong> Identification of expected effects on the organization. The
-              related KPIs may accompany it.
-            </li>
-            <li>
-              <strong>Responsibilities</strong> Clearly defined persons with assigned
-              responsibilities outlined in the policy.
-            </li>
-            <li>
-              <strong>Technical guidelines</strong> If applicable, the required/promoted technology
-              stack will be identified and listed.
-            </li>
-            <li>
-              <strong>Reporting requirements</strong> If the actions driven by the given policy
-              require reporting, the reporting schedule should be clearly stated. If the reporting
-              parties were not defined in the Responsibilities section, they should also be
-              identified here.
-            </li>
-          </ul>
-          <p>
-            When preparing consistent data governance policies in the organization, It is necessary
-            to think about legal and industry-specific requirements for the data the organization
-            work with. However, to give the organization a starting point, reviews key policy types
-            the data governance body will have to.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Data collection</strong> Specifying, for example, the purpose of data
-              collection, related data acquisition processes, and routines.
-            </li>
-            <li>
-              <strong>Data inventory</strong> Specifying timelines and life cycles of data, security
-              and safety technologies, and rules for destroying the data.
-            </li>
-            <li>
-              <strong>Data access</strong> Specifying data sensitivity and access levels, to ensure
-              that data users will be given appropriate access to the data.
-            </li>
-            <li>
-              <strong>Data quality</strong> Specifying roles responsible for ensuring data quality,
-              and tools and processes allowing them to serve this purpose.
-            </li>
-          </ul>
-        </section>
-        <section id="s18" class="study-section">
-          <h2>S18 - Security and Privacy</h2>
-          <ul class="study-bullets">
-            <li>
-              <strong>Data integrity</strong> Specifying ways to ensure the consistency,
-              reliability, and trustworthiness of the company’s data at each access point.
-            </li>
-            <li>
-              <strong>Data security</strong> Specifying all the measures the company implements to
-              prevent data loss and misuse.
-            </li>
-          </ul>
-          <p>
-            Each of these topics may require more than one policy. To get a bit more specific,
-            reviews a few policies related to data security.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Employee requirements policy</strong> Clarifying employee behaviors associated
-              with dealing with data.
-            </li>
-          </ul>
-        </section>
-        <section id="s19" class="study-section">
-          <h2>S19 - Governance Model</h2>
-          <ul class="study-bullets">
-            <li>
-              <strong>Encryption policy</strong> Defining recommended encryption technologies used
-              to secure the data.
-            </li>
-          </ul>
-          <p>
-            Teams realize that data governance seems a daunting task. However, It is recommended to
-            remember that, like the rest of data mesh, it’s not a task the organization’re expected
-            to do yourself.
-          </p>
-        </section>
-        <section id="s20" class="study-section">
-          <h2>S20 - Governance Model</h2>
-          <p>
-            The topic, which should be approached at the policy level with extreme caution, relates
-            to the technology stack. There is a fine line between the central data governance body
-            having a say in choosing the strategic direction of the technology stack and being
-            overburdened.
-          </p>
-          <p>
-            All these tools aim to standardize elements of operations shared by all development
-            teams, not affecting the details of product development itself.
-          </p>
-          <p>
-            The central governance body needs to clearly distinguish what tools it wants to support
-            centrally, using, for example, the economy of scale, to ensure cost-effectiveness, or to
-            avoid problems with compatibility. Within this category, the body should again
-            distinguish what tool will be mandatory.
-          </p>
-          <p>
-            The central governance body could decide on a cloud infrastructure provider (if the
-            governance body negotiated preferential prices), or on a logging solution (to simplify
-            maintenance of a critical functionality). For codebase maintainability, central
-            governance could also decide to limit a list of tools.
-          </p>
-          <p>
-            The tools not requiring central support nor affecting the interoperability of the teams
-            should be left at the discretion of data product owners.
-          </p>
-        </section>
-        <section id="s21" class="study-section">
-          <h2>S21 - Governance Model</h2>
-          <p>
-            Tactical-level governance means ensuring the feasibility of the proposed solutions. The
-            strategic level of data governance focuses on doing the right things, whereas
-            tactical-level governance focuses on doing things right.
-          </p>
-        </section>
-        <section id="s22" class="study-section">
-          <h2>S22 - Governance Model</h2>
-          <p>
-            Designing a policy that can be implemented requires a good knowledge of the environment.
-            examines take as an example a policy related to data security.
-          </p>
-          <p>
-            Teams could think that a policy requiring biometric scanning as an authentication method
-            for access to the company’s laptops would increase the safety of data. examines assume
-            that such a solution would indeed increase security, but what if most of the company’s
-            equipment is.
-          </p>
-          <p>
-            A data security policy could also define other implementation-driving factors. The
-            principles may define which types of data have to always be encrypted, such as PII or
-            the company’s financial data.
-          </p>
-          <p>
-            Discussing the feasibility of proposed policies is a good measure, preventing actors at
-            a high level of governance from operating from an ivory tower. To implement this
-            discussion in the company, the organization will need to develop robust mechanisms for a
-            bilateral communication of policymakers with.
-          </p>
-        </section>
-        <section id="s23" class="study-section">
-          <h2>S23 - Governance Model</h2>
-          <p>
-            The primary goal of the data governance process is to ensure accountability for each bit
-            of the company’s data. Therefore, it is the most critical element to keep in mind,
-            independently of which path to data governance It may be appropriate to take.
-          </p>
-          <p>
-            Similar to nonfunctional requirements, this part of governance requires the know-how of
-            a company’s operations and needs to reflect the realities of data use. To achieve
-            clarity in terms of data accountability, It is recommended to ask the governance body to
-            answer a set of questions.
-          </p>
-          <p>
-            Who? To properly execute accountability, make sure the organization always knows the
-            following.
-          </p>
-        </section>
-        <section id="s24" class="study-section">
-          <h2>S24 - Approves and Given</h2>
-          <p>Who approves the given bit of data to use, and who decides its access rights?</p>
-          <p>Who is responsible for compliance with data regulations?</p>
-        </section>
-        <section id="s25" class="study-section">
-          <h2>S25 - Governance Model</h2>
-          <p>
-            What? This indicates the precise definition of the kinds of data the organization
-            processes, and who should have access to each type of data.
-          </p>
-          <p>
-            When? If time constraints are placed on data availability (e.g., imposed by
-            regulations), they should be taken into consideration by the data governance and clearly
-            defined as to what kind of data access is time dependent for whom.
-          </p>
-          <p>Where? This question is critical from a data security point of view.</p>
-          <p>Why? Multiple constraints exist on data usage, whether legal or ethical.</p>
-          <p>
-            Knowing all that will give the company a good understanding of the responsibilities of
-            each person who has access to any bit of the company’s data.
-          </p>
-          <p>
-            One thing to remember: as with most other data governance activities, answering these
-            questions is not a one-off exercise. The data governance team needs to ensure that data
-            assets are reviewed periodically (with the period depending on the nature of the data
-            contained in.
-          </p>
-        </section>
-        <section id="s26" class="study-section">
-          <h2>S26 - Governance Model</h2>
-          <p>
-            The implementation level is where the hard work occurs, where data is generated,
-            maintained, processed, and accessed. Without ensuring that all the policies are actually
-            taken into account when implementation decisions are being made, the whole governance
-            process is just a massive waste of.
-          </p>
-          <p>
-            What can the organization does to help the development teams go beyond the apparent
-            expectation that each employee will stick to the rules defined in policies? Teams
-            propose the organization think of implementation-level governance in two categories.
-          </p>
-        </section>
-        <section id="s27" class="study-section">
-          <h2>S27 - Governance Model</h2>
-          <p>
-            Domains are the default granularity of data ownership in a data mesh. What should the
-            organization expect data product owners to provide in the context of data governance?
-          </p>
-          <p>
-            The essential role of data owners in data governance is their input into metadata
-            management. They need to design, deploy, and manage data models for their internal use
-            and connect them to centrally governed metamodels and ontologies of the company’s data.
-          </p>
-          <p>
-            Responsibility for the development of data models implies understanding the definitions
-            of data and providing data users with a point of contact for their questions and
-            requests. If data is generated and managed at the domain level, the first line of data
-            quality control.
-          </p>
-          <p>
-            With the domain level as the main access point to data, as in the case of
-            domain-oriented data products, the domain governance body has the responsibility for
-            implementing data access policies.
-          </p>
-        </section>
-        <section id="s28" class="study-section">
-          <h2>S28 - Governance Model</h2>
-          <p>
-            In, when describing the implementation of the Messflix MVP, teams mentioned the
-            principle of self-serve infrastructure as a platform, defined as the central platform.
-            Teams expand on this topic in chapters 7 and 8.
-          </p>
-          <p>
-            What would be expected from the team responsible for implementing such a platform from
-            the data governance perspective? First and foremost, the team members should help
-            formulate technical details of data access policies.
-          </p>
-          <p>
-            Second, they should develop a clear set of quality metrics used for data product
-            evaluation. And third, they should provide standards of data documentation.
-          </p>
-          <p>
-            Now that teams know the outcomes It is recommended to expect from data governance,
-            reviews how data governance can be structured.
-          </p>
-        </section>
-        <section id="s29" class="study-section">
-          <h2>S29 - Maturity Assessment</h2>
-          <p>
-            Data governance spans a company’s entire structure, starting with C-level executives and
-            ending with intern developers who write code for software solutions. However, as much as
-            each level of personnel needs to have a role in the governance process, teams generally
-            distinguish two primary.
-          </p>
-          <p>
-            Depending on the organizational structure, the details may differ. Still, a rule of
-            thumb is that central governance is responsible for decisions spanning the entire
-            organization.
-          </p>
-          <p>
-            In the case described in, the central governance setup at Messflix is embodied by the
-            data governance team. Depending on the data governance’s maturity level, It may be
-            appropriate to encounter a data governance council, data governance partners, data
-            governance office, etc.
-          </p>
-          <p>
-            On the other hand, there are people responsible for day-to-day data operations. In some
-            cases, they may be called data stewards (or domain data stewards); sometimes this role
-            will be performed by product owners who are responsible for developing IT systems.
-          </p>
-          <p>
-            describes how responsibilities for various layers of data governance can be distributed.
-          </p>
-        </section>
-        <section id="s30" class="study-section">
-          <h2>S30 - Governance Model</h2>
-          <p>
-            The two extremes of data governance are the centralized operating model and
-            decentralized operating model. The former assumes full decision-making capability in the
-            hands of a central governing body, with respective teams left with just the
-            implementation of decided solutions.
-          </p>
-          <p>
-            The federated model aims to find a balance between the long-term perspective and
-            big-picture view offered by the central governance body, and the dynamics and
-            flexibility of development ensured by a high level of autonomy of empowered product
-            owners.
-          </p>
-          <p>
-            There is no one-size-fits-all solution. Depending on the specifics of the organization,
-            different centralization levels may be optimal.
-          </p>
-          <p>
-            Are the data product owners capable of defining nonfunctional requirements for policies?
-            Let them do it.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-04.png"
-              alt="Module 06 Figure 04"
-              class="zoomable"
-              data-caption="M06.04"
-            />
-            <figcaption>M06.04 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s31" class="study-section">
-          <h2>S31 - Governance Model</h2>
-          <p>
-            As teams previously mentioned, depending on the organization’s needs, the governance
-            model could be positioned on a scale between centralized data governance and
-            decentralized data governance. reviews these models in a bit more detail, because to
-            design any hybrid solution, the organization will.
-          </p>
-          <p>
-            As teams mentioned previously, a top-down management model is at one extreme of data
-            governance. In this case, a single governance body or even a single person makes
-            decisions and shapes all data governance.
-          </p>
-          <p>
-            This approach has some benefits. For example, decision-making in smaller environments
-            may be highly time-effective.
-          </p>
-          <p>
-            The most obvious cons of this approach are the rigidity of the whole setup and stripping
-            freedom of choice from the development level. While this approach may be a viable option
-            for a smaller organization, but with an increased number of data sources and.
-          </p>
-        </section>
-        <section id="s32" class="study-section">
-          <h2>S32 - Governance Model</h2>
-          <p>
-            It is possible to implement decentralized governance in two ways. One is leaving data
-            ownership to software system product owners, and the other is regulating data governance
-            with all kinds of data committees, guilds, or councils.
-          </p>
-          <p>
-            Such empowerment of product owners has some benefits. For one, each system can be
-            quickly changed and adapted.
-          </p>
-          <p>
-            However, this garden of roses does not come without a thorn or three. First, each system
-            team working independently on its infrastructure protocols may cause major
-            disconnections, and the big picture of owned data may be lost.
-          </p>
-        </section>
-        <section id="s33" class="study-section">
-          <h2>S33 - Governance Model</h2>
-          <p>
-            As title suggests, a federated data governance model is the one that the data mesh
-            proposes as a way to combine the strengths of two extreme models and eliminate their
-            weaknesses. If this model is well executed, its main benefit results from combined
-            strengths.
-          </p>
-          <p>
-            How do the organization does a federated data governance right? In an October 2019
-            Gartner report, Saul Judah lists seven foundations for good data governance (see “Best
-            Practices for a Modern Data and Analytics Governance,” http://mng.bz/Oo0R ).
-          </p>
-        </section>
-        <section id="s34" class="study-section">
-          <h2>S34 - Governance Model</h2>
-          <p>reviews how federated data governance can help the organization lay them.</p>
-          <p>
-            The decision space in this context is the decision-making environment, including
-            decision points, supporting data, possible decisions, and their quantified outcomes
-            (e.g., within a risk management framework). If well designed, this focus ensures that
-            decisions are consciously made and well informed.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>A focus on business value and organizational outcomes</strong> It is necessary
-              to ensure that the data product owners indeed work closely with their business
-              domains. This focus will offer them a deep understanding of the immediate business
-              needs of business units.
-            </li>
-          </ul>
-          <p>
-            Transparent decision-making that hews to a set of ethical principles —The ultimate acid
-            test for each decision is its adherence to value statements, described in. Ensure that
-            the value statement developed by the central governance body agrees with the company’s
-            ethics.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Internal agreement on data accountability and decision rights</strong> It is
-              recommended to design the federated data governance with a good understanding of
-              various levels of responsibility and accountability and their distribution. As
-              mentioned in, the split of responsibilities between the central governance body and
-              data.
-            </li>
-          </ul>
-        </section>
-        <section id="s35" class="study-section">
-          <h2>S35 - Governance Model</h2>
-          <p>
-            In this context, the governance structure is the design framework and implementation of
-            rules and policies aimed at ensuring proper handling of the company’s data. On the one
-            hand, it should be as transparent as possible, not imposing any unnecessary work related
-            to maintenance.
-          </p>
-          <p>
-            A trust-based governance model that relies on data lineage and curation —Ensure that the
-            complete log of data lineage is among the responsibilities of the central governance
-            team and is automatically executed within the central platform. The organization then
-            need to trust the data product.
-          </p>
-          <p>
-            Risk management and data security included as core governance components —Such problems
-            require broad, expensive-to-acquire expertise and careful local implementation. Ensuring
-            proper resourcing of the central governance body can allow them cost-effective
-            acquisition of said expertise.
-          </p>
-        </section>
-        <section id="s36" class="study-section">
-          <h2>S36 - Governance Model</h2>
-          <p>
-            The effectiveness of any system is dependent on its the adoption by intended users. In
-            this context, it’s the people who make governance efficient and fit for purpose.
-          </p>
-          <p>
-            Ongoing education and training, with mechanisms to monitor their effectiveness —As in
-            the case of risk management and security, well-provided central governance may develop a
-            second line of control by, for example, monitoring data product owners’ training and
-            skills, and supporting their learning wherever.
-          </p>
-          <p>
-            Collaborative culture and governance process that encourages broad participation —If the
-            organization ensure clear communication channels connecting the central governance body
-            with data product owners, the dynamic nature of federated governance will manifest
-            itself. The empowered position of data product owners has collaboration and
-            participation.
-          </p>
-          <p>
-            At Messflix, the organization opt for three separate central governance bodies and a
-            far-reaching autonomy of data product owners.
-          </p>
-        </section>
-        <section id="s37" class="study-section">
-          <h2>S37 - Governance Model</h2>
-          <p>
-            As pictured in, the primary role of the data governance council at Messflix is to
-            monitor the business strategy and make sure that data initiatives are aligned with it.
-            The tools at the data governance council’s disposal are at the policy level.
-          </p>
-          <p>
-            It is also worth mentioning that the data governance council’s responsibility is to
-            ensure that the data mesh meets the business needs and requirements.
-          </p>
-          <div class="note-box">
-            <strong>Important note.</strong> The data governance council in this setup could be
-            compared to the legislative arm of the government. It decides what should happen, but
-            not necessarily how it should happen.
-          </div>
-          <p>
-            Another prerogative of the data governance council is appointing and dismissing the data
-            governance steering committee members.
-          </p>
-          <p>
-            The data governance council is composed of people not directly involved in software
-            development. This measure distances central governance from the operations.
-          </p>
-          <p>
-            Such strict disconnection is not necessary. However, it may prevent the imbalance
-            introduced by strong-willed data product owners who could effectively turn such a setup
-            into centralized governance under their rule.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-05.png"
-              alt="Module 06 Figure 05"
-              class="zoomable"
-              data-caption="M06.05"
-            />
-            <figcaption>M06.05 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s38" class="study-section">
-          <h2>S38 - Governance Model</h2>
-          <p>
-            The Messflix data governance steering committee is set up to work closer to governance
-            execution than the data governance council. Its members, appointed by the data
-            governance council, are subject-matter experts either recruited from existing
-            development teams or hired from the outside to fill.
-          </p>
-          <p>
-            The team’s role in the Messflix governance structure is two-fold. One task is to monitor
-            legal and industrial environments, and translate the observed changes into standards and
-            requirements presented in policies.
-          </p>
-          <p>
-            This body works on the details of master and metadata management, security, and
-            solutions, allowing communication between data products and automation of
-            technology-based policies. They are also responsible for oversight of the work of the
-            central platform team.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-06.png"
-              alt="Module 06 Figure 06"
-              class="zoomable"
-              data-caption="M06.06"
-            />
-            <figcaption>M06.06 - Governance Model</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-07.png"
-              alt="Module 06 Figure 07"
-              class="zoomable"
-              data-caption="M06.07"
-            />
-            <figcaption>M06.07 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s39" class="study-section">
-          <h2>S39 - Self-Serve Platform Design</h2>
-          <p>
-            The central platform team is tasked with developing the self-serve data infrastructure
-            as a platform for Messflix. This development team is built around the former Data team.
-          </p>
-          <p>
-            On the one hand, The team’s responsibility is to monitor policies related to operations
-            of the central platform and to make sure the implementation meets the requirements. On
-            the other hand, team members are to be actively engaged in policy development and tasked
-            with.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-08.png"
-              alt="Module 06 Figure 08"
-              class="zoomable"
-              data-caption="M06.08"
-            />
-            <figcaption>M06.08 - Self-Serve Platform Design</figcaption>
-          </figure>
-        </section>
-        <section id="s40" class="study-section">
-          <h2>S40 - Data Product Ownership</h2>
-          <p>
-            Messflix data product owners have complete control over the operations of their team.
-            However, their freedom of operations is restricted by the principles, constraints, and
-            standards described in the nonfunctional requirements.
-          </p>
-          <p>
-            However, a substantial change, a data ownership element, distinguishes their new data
-            product owner position from a previous product owner’s. They now have complete control
-            over data models and schema used within their domains but have to meet precise criteria
-            for all the data.
-          </p>
-          <p>
-            Knowing what needs to happen is a necessity. However, to put this knowledge into action,
-            it’s good to have a process turning a group of concerned stakeholders into a
-            well-functioning team.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch06/fig-09.png"
-              alt="Module 06 Figure 09"
-              class="zoomable"
-              data-caption="M06.09"
-            />
-            <figcaption>M06.09 - Data Product Ownership</figcaption>
-          </figure>
-        </section>
-        <section id="s41" class="study-section">
-          <h2>S41 - Governance Model</h2>
-          <p>
-            Here presents steps for governance implementation, as presented by the Business
-            Application Research Center (BARC).
-          </p>
-          <p>
-            Define goals and understand the benefits. This step is critical from the perspective of
-            being able to convince the appropriate stakeholders.
-          </p>
-          <p>
-            Analyze the current state and delta analysis. This is another critical element of
-            communication.
-          </p>
-          <p>
-            Derive a roadmap. This is another method of building the proposed solution’s viability
-            and a prerequisite of expectation management.
-          </p>
-          <p>Convince stakeholders and plan the project budget. This is a must-have.</p>
-          <p>
-            Develop and plan the data governance program. This is what teams’re helping the
-            organization with.
-          </p>
-          <p>Implement the data governance program. This is the hard work.</p>
-          <p>
-            Monitor and control. In this critical yet often overlooked element, the data governance
-            council, or its equivalent, should decide on quality metrics early and ensure their
-            implementation.
-          </p>
-          <p>
-            At this stage, the organization will have clearly defined responsibilities and
-            accountability for different aspects of the data assets, from adherence to regulatory
-            requirements, to data ownership, to monitoring of data-quality metrics. When describing
-            the central governance model, teams warned about bottlenecks and overhead resulting.
-          </p>
-        </section>
-        <section id="s42" class="study-section">
-          <h2>S42 - Governance Model</h2>
-          <p>
-            explains what computational means and why making data governance computational is
-            necessary from the very beginning of the journey.
-          </p>
-          <p>
-            Making governance policies entirely computational requires two steps. Step 1 is to
-            convert the policy into a form that can be automated, and step 2 is to automate the
-            execution.
-          </p>
-          <p>
-            The starting point is an understanding of the policies, which It is advisable now have
-            in a written form. They could read, for instance, as follows.
-          </p>
-          <p>No personalized information is allowed to be shared without strict access control.</p>
-          <p>All data should contain metadata that identifies its business domain.</p>
-          <p>
-            The first policy is meant to help implement privacy regulations. In contrast, the second
-            one aims to make data more FAIR by using the company’s pool of ubiquitous language for
-            business domains.
-          </p>
-          <p>
-            Neither example is a must-have policy. Indeed, the second one might be too tight for the
-            average company, but for Messflix, both do fit.
-          </p>
-          <p>
-            Computational data governance is necessary from the very beginning of the data mesh to
-            utilize the mesh character itself. Without governance, it is not possible to consume or
-            combine nodes of the data mesh in a self-serve manner.
-          </p>
-        </section>
-        <section id="s43" class="study-section">
-          <h2>S43 - Governance Model</h2>
-          <p>Making a policy computational means turning it into an algorithm.</p>
-          <p>
-            definition It is possible to loosely define an algorithm as a set of steps that can be
-            automatically followed, possibly having an input and an output.
-          </p>
-          <p>
-            Turning a policy into an algorithm sounds like something a developer would do. But
-            that’s not recommended at all.
-          </p>
-          <p>
-            At the same time, the governance team will also have to think about how deep it wants to
-            go by enforcing a particular policy. reviews two examples to understand this.
-          </p>
-        </section>
-        <section id="s44" class="study-section">
-          <h2>S44 - Governance Model</h2>
-          <p>The policy for this example is as follows.</p>
-          <p>All data should contain metadata that identifies its business domain.</p>
-          <p>
-            From the MVP, the governance team can turn this policy into an algorithm pretty easily,
-            as shown here.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Input</strong> Metadata for a domain data product from the central registry.
-            </li>
-          </ul>
-          <p>Retrieve the business unit key in the metadata.</p>
-          <p>Compare it to the list of business units.</p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Output</strong> True if the business unit is contained in the list, False
-              otherwise.
-            </li>
-          </ul>
-          <p>
-            The governance team members will quickly realize that at this point, they will have to
-            actually define the list of business units someplace. They might choose to ignore
-            specific units, choose a standardized spelling, or simply refer to an already existing
-            source of truth.
-          </p>
-          <p>
-            Whatever they do will affect the actual policy and slightly change it. The second
-            example is a bit deeper.
-          </p>
-        </section>
-        <section id="s45" class="study-section">
-          <h2>S45 - Governance Model</h2>
-          <p>Here’s the policy for example 2.</p>
-          <p>No personalized information is allowed to be shared without strict access control.</p>
-          <p>
-            The governance team will likely have a hard time putting this policy into an algorithm,
-            and so would teams. The last policy applied to only one specific metadata field, whereas
-            this policy regards all of the data contents.
-          </p>
-        </section>
-        <section id="s46" class="study-section">
-          <h2>S46 - Policies and Actual</h2>
-          <ul class="study-bullets">
-            <li><strong>Input</strong> Data of one actual domain data product.</li>
-          </ul>
-          <p>
-            Check whether the data is in the form of First Name Last Name or X@Y.Z or typical IP
-            addresses.
-          </p>
-          <p>If that is not the case, return True; otherwise, return False.</p>
-          <p>
-            The key takeaway is that the algorithmic policies will differ from the actual policies
-            teams want to enforce. That is fine as long as teams keep that in mind and update the
-            algorithmic policies whenever needed.
-          </p>
-        </section>
-        <section id="s47" class="study-section">
-          <h2>S47 - Make and Rule</h2>
-          <p>
-            To make the rule automatic, teams have a lot of freedom. The six levels of vehicle
-            autonomy ( http://mng.bz/YGBB ) can serve as a good guideline for slowly iterating
-            through stages of automation.
-          </p>
-          <p>
-            For Messflix and these two examples, teams don’t think it’s necessary to turn them into
-            wholly automated policies. As the organization saw doing so is pretty hard.
-          </p>
-        </section>
-        <section id="s48" class="study-section">
-          <h2>S48 - Level and Automation</h2>
-          <ul class="study-bullets">
-            <li><strong>Level 0</strong> No automation at all. Someone operates everything.</li>
-            <li>
-              <strong>Level 1</strong> Assistance system, providing some kind of help, such as
-              monitoring/ alerting, like a speed monitor or a distance monitor.
-            </li>
-            <li>
-              <strong>Level 2</strong> This level describes partial automation of a part of the
-              system the organization want to automate. But the operator still has to do other
-              things.
-            </li>
-            <li>
-              <strong>Levels 3 to 5</strong> Fully autonomous operation, although in steps. Teams
-              won’t need the details; teams will just call it autonomous.
-            </li>
-          </ul>
-          <p>
-            applies these levels to the policy-checking system. If teams keep the system at level 0,
-            teams don’t get any automatically enforced policies.
-          </p>
-          <p>
-            However, will need some kind of automation from the beginning for the personalized
-            information policy if The approach considers this policy truly important. The human
-            resources will not be able to go through vast amounts of data.
-          </p>
-          <p>
-            If teams keep the first policy at level 0, a person from the Yellow team will need to go
-            through the JSON files and validate them. So keeps that for now.
-          </p>
-          <p>
-            What would a level-1 system for the personalized information policy look like? Every
-            time new data is pushed into the corresponding Git repository, a script launches and
-            goes through the data, searching for a couple of predefined patterns.
-          </p>
-          <p>
-            Once the Yellow team feels confident with its script, the team members could decide to
-            turn it into a level 2 system by advancing with partial automation. That means they
-            would install it, for instance, as a pre-commit Git hook inside the repositories where.
-          </p>
-          <p>
-            Of course, because checking for personalized data isn’t easy, this automated script
-            could still be faulty. So the Yellow team would provide an override option on its first
-            try.
-          </p>
-          <p>
-            A level 3+ autonomous system for this part would have an improved policy-checking script
-            and no override option, possibly applying automated transformations to the personalized
-            data to not stop the flow of the emitting team. This could include a pseudonymizer or a
-            white-out function.
-          </p>
-          <p>
-            As It is possible to see, it’s easily possible to iterate through the stages quickly,
-            have various checks at different levels depending on where the human bottleneck is, and
-            consider the severity of governance rule breaks.
-          </p>
-        </section>
-        <section id="s49" class="study-section">
-          <h2>S49 - Governance Model</h2>
-          <p>
-            Data governance aims to clarify processes, roles, policies, standards, and metrics,
-            enabling effective derivation of business value from data.
-          </p>
-          <p>
-            Data governance outcomes can be organized into a hierarchical structure, from strategic
-            outcomes influencing the enterprise as a whole, to outcomes affecting local decisions.
-          </p>
-          <p>
-            Data governance outcomes can be decided on centrally or locally, or the responsibility
-            can be divided between central and local authorities. Moving the bulk of
-            responsibilities toward either end of the spectrum has pros and cons.
-          </p>
-          <p>
-            A data mesh assumes that the responsibilities for data governance will be split between
-            central and local authorities. One method to divide these responsibilities is to use the
-            hierarchical structure of outcomes, and choose a threshold dividing central and local
-            governance authorities’ areas of.
-          </p>
-          <p>
-            The model most often fitting the data mesh is one where policies are decided on the
-            central level, but data product owners have operational freedom and independence of
-            their implementation.
-          </p>
-          <p>In many cases, policy enforcement can be embedded into the central platform.</p>
-        </section>
-        <section id="s50" class="study-section">
-          <h2>S50 - Product</h2>
-          <p>5 Data as a product.</p>
-        </section>
-        <section class="key-takeaways">
-          <h2>Key takeaways</h2>
-          <ul>
-            <li>What governance foundations are required in a data mesh context.</li>
-            <li>How to balance central standards with local domain autonomy.</li>
-            <li>How to define policies, accountabilities, and control mechanisms.</li>
-            <li>How to progressively automate governance through computational controls.</li>
-          </ul>
-        </section>
-      </article>
-    </main>
-    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
-      >Back to top</a
-    >
-    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <figure class="lightbox-inner">
-        <img id="lightbox-image" alt="Zoomed figure" />
-        <figcaption id="lightbox-caption"></figcaption>
-      </figure>
-    </div>
-  </body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   M06 - Federated Computational Governance
+  </title>
+  <link href="../assets/css/main.css" rel="stylesheet"/>
+  <script defer="" src="../assets/js/back-to-top.js">
+  </script>
+ </head>
+ <body>
+  <header class="hero" id="top">
+   <h1>
+    M06 - Federated Computational Governance
+   </h1>
+  </header>
+  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="chapter-05.html">
+    Previous module (M05)
+   </a>
+   <a aria-current="page" href="chapter-06.html">
+    M06 - Federated Computational Governance
+   </a>
+   <a href="chapter-07.html">
+    Next module (M07)
+   </a>
+  </nav>
+  <main class="content">
+   <article>
+    <section class="section-toc">
+     <h2>
+      Content Outline
+     </h2>
+     <ul>
+      <li>
+       1 Foundations of Federated Computational Governance
+      </li>
+      <li>
+       1.1 Why Federation Balances Control and Autonomy
+      </li>
+      <li>
+       1.2 Governance Value in Decision Quality
+      </li>
+      <li>
+       2 Measuring Governance Outcomes
+      </li>
+      <li>
+       2.1 Governance Policies and Decision Rights
+      </li>
+      <li>
+       2.2 Roles of the Central Governance Body
+      </li>
+      <li>
+       3 Domain Responsibilities in Governance
+      </li>
+      <li>
+       3.1 Governance Operating Models
+      </li>
+      <li>
+       3.2 Design Foundations for Computational Governance
+      </li>
+      <li>
+       4 Governance Team Competencies
+      </li>
+      <li>
+       4.1 Policy as Code and Automation Logic
+      </li>
+      <li>
+       4.2 Governance Automation Levels and Adoption Path
+      </li>
+     </ul>
+    </section>
+    <section class="study-section" id="s01">
+     <h2>
+      1 Foundations of Federated Computational Governance
+     </h2>
+     <p>
+      In data mesh, governance is not a one-time setup but a continuous operating mechanism linked to business outcomes and product evolution.
+     </p>
+     <p>
+      Its purpose is to combine governance rigor with delivery speed by turning high-level rules into operational practices that scale.
+     </p>
+     <p>
+      Federated computational governance defines how organizations coordinate data decisions across domains while preserving local execution autonomy.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 01" class="zoomable" data-caption="M06.01" src="../assets/images/ch06/fig-01.png"/>
+      <figcaption>
+       M06.01 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s02">
+     <h2>
+      1.1 Why Federation Balances Control and Autonomy
+     </h2>
+     <p>
+      Federation balances both sides by assigning enterprise-wide guardrails centrally and domain-level decisions locally within those guardrails.
+     </p>
+     <p>
+      Pure decentralization can accelerate local delivery but frequently fragments standards, accountability, and interoperability across teams.
+     </p>
+     <p>
+      Pure centralization often fails in heterogeneous domains because central bodies cannot maintain sufficient local context for every decision.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 02" class="zoomable" data-caption="M06.02" src="../assets/images/ch06/fig-02.png"/>
+      <figcaption>
+       M06.02 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s03">
+     <h2>
+      1.2 Governance Value in Decision Quality
+     </h2>
+     <p>
+      With governed metadata, shared terminology, and quality controls, decision-makers gain clearer signals and lower analytical ambiguity.
+     </p>
+     <p>
+      Without governance, organizations face information overload, ambiguous semantics, and inconsistent assumptions that degrade planning accuracy.
+     </p>
+     <p>
+      Governance improves decision quality by ensuring that data is interpretable, timely, and fit for the decision context, not only abundant.
+     </p>
+    </section>
+    <section class="study-section" id="s04">
+     <h2>
+      2 Measuring Governance Outcomes
+     </h2>
+     <p>
+      A layered model from strategic intent to tactical rules to implementation checks helps convert governance into executable work.
+     </p>
+     <p>
+      Outcome planning aligns stakeholders on expected value, required controls, and practical delivery constraints before implementation begins.
+     </p>
+     <p>
+      Governance effectiveness should be measured through explicit outcomes rather than through the volume of policies or meetings.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 03" class="zoomable" data-caption="M06.03" src="../assets/images/ch06/fig-03.png"/>
+      <figcaption>
+       M06.03 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s05">
+     <h2>
+      2.1 Governance Policies and Decision Rights
+     </h2>
+     <p>
+      Value statements support policy coherence by linking governance actions to intended business impact and prioritization criteria.
+     </p>
+     <p>
+      Decision rights must be explicit so product teams know where they are autonomous and where centralized standards are mandatory.
+     </p>
+     <p>
+      Policies are the main governance instrument for translating strategic intent into enforceable operating rules.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 04" class="zoomable" data-caption="M06.04" src="../assets/images/ch06/fig-04.png"/>
+      <figcaption>
+       M06.04 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s06">
+     <h2>
+      2.2 Roles of the Central Governance Body
+     </h2>
+     <p>
+      This body should also coordinate expertise for security, compliance, and cross-domain interoperability where economies of scale matter.
+     </p>
+     <p>
+      Its role is to define minimum common standards and oversee their evolution without absorbing every local implementation decision.
+     </p>
+     <p>
+      The central governance body is responsible for enterprise-level consistency, regulatory interpretation, and long-term data strategy alignment.
+     </p>
+    </section>
+    <section class="study-section" id="s07">
+     <h2>
+      3 Domain Responsibilities in Governance
+     </h2>
+     <p>
+      Effective federation requires local responsibility to be paired with transparent reporting and shared verification mechanisms.
+     </p>
+     <p>
+      This ownership model moves accountability to execution points where data is produced, transformed, and exposed.
+     </p>
+     <p>
+      Domain teams own implementation of governance rules within their products, including data quality controls, interface conformance, and policy evidence.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 05" class="zoomable" data-caption="M06.05" src="../assets/images/ch06/fig-05.png"/>
+      <figcaption>
+       M06.05 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s08">
+     <h2>
+      3.1 Governance Operating Models
+     </h2>
+     <p>
+      A practical design uses clear responsibility boundaries by governance layer instead of ad hoc case-by-case negotiations.
+     </p>
+     <p>
+      The appropriate split depends on organizational scale, risk profile, team maturity, and regulatory exposure.
+     </p>
+     <p>
+      Governance operating models can be positioned along a spectrum from centralized to decentralized, with federation as a deliberate hybrid.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 06" class="zoomable" data-caption="M06.06" src="../assets/images/ch06/fig-06.png"/>
+      <figcaption>
+       M06.06 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s09">
+     <h2>
+      3.2 Design Foundations for Computational Governance
+     </h2>
+     <p>
+      The design foundation is explicit policy semantics, measurable control objectives, and platform support for automated verification.
+     </p>
+     <p>
+      This approach reduces manual bottlenecks and improves consistency by enforcing repeatable rules across products and domains.
+     </p>
+     <p>
+      Computational governance extends federation by translating selected policies into automatable checks and control flows.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 07" class="zoomable" data-caption="M06.07" src="../assets/images/ch06/fig-07.png"/>
+      <figcaption>
+       M06.07 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s10">
+     <h2>
+      4 Governance Team Competencies
+     </h2>
+     <p>
+      Strong collaboration capability is essential because governance quality depends on continuous interaction with domain and platform teams.
+     </p>
+     <p>
+      Competency coverage should include both policy design and implementation awareness so rules remain realistic and enforceable.
+     </p>
+     <p>
+      Governance teams need interdisciplinary competence spanning data management, architecture, security, legal constraints, and organizational change.
+     </p>
+    </section>
+    <section class="study-section" id="s11">
+     <h2>
+      4.1 Policy as Code and Automation Logic
+     </h2>
+     <p>
+      The key is semantic traceability: automated checks must remain aligned with policy intent as rules and business context evolve.
+     </p>
+     <p>
+      Not every policy should be fully automated at once; automation depth should follow risk, feasibility, and maturity.
+     </p>
+     <p>
+      Policy as code converts written governance intent into executable logic that platforms and products can validate automatically.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 08" class="zoomable" data-caption="M06.08" src="../assets/images/ch06/fig-08.png"/>
+      <figcaption>
+       M06.08 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s12">
+     <h2>
+      4.2 Governance Automation Levels and Adoption Path
+     </h2>
+     <p>
+      This incremental approach keeps governance adaptable while steadily increasing scalability, consistency, and auditability.
+     </p>
+     <p>
+      A maturity path allows organizations to move from advisory controls to partially automated enforcement and then to broader autonomous verification.
+     </p>
+     <p>
+      Automation should be introduced progressively, starting from high-value checks that remove repetitive manual effort and reduce operational risk.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 06 Figure 09" class="zoomable" data-caption="M06.09" src="../assets/images/ch06/fig-09.png"/>
+      <figcaption>
+       M06.09 - Data Product Ownership
+      </figcaption>
+     </figure>
+    </section>
+    <section class="key-takeaways">
+     <h2>
+      Key takeaways
+     </h2>
+     <ul>
+      <li>
+       Federated governance balances centralized standards with domain-level autonomy.
+      </li>
+      <li>
+       Governance quality must be measured through explicit outcomes and decision accountability.
+      </li>
+      <li>
+       Domain teams are responsible for applying governance rules in executable product operations.
+      </li>
+      <li>
+       Computational governance scales enforcement by translating policies into automation.
+      </li>
+      <li>
+       Incremental automation paths improve consistency without blocking early delivery progress.
+      </li>
+     </ul>
+    </section>
+   </article>
+  </main>
+  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
+   Back to top
+  </a>
+  <noscript>
+   <a class="back-to-top-fallback" href="#top">
+    Back to top
+   </a>
+  </noscript>
+  <div aria-hidden="true" class="lightbox" id="lightbox">
+   <figure class="lightbox-inner">
+    <img alt="Zoomed figure" id="lightbox-image"/>
+    <figcaption id="lightbox-caption">
+    </figcaption>
+   </figure>
+  </div>
+ </body>
 </html>

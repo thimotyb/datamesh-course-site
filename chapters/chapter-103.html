@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M103 - Build Data Products in a Data Mesh</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M103 - Build Data Products in a Data Mesh</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-102.html">Previous module (M102)</a>
+      <a href="chapter-103.html" aria-current="page">M103 - Build Data Products in a Data Mesh</a>
+      <a href="chapter-104.html">Next module (M104)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>How domain warehouses become reusable data products.</li>
+            <li>How consumption interfaces are selected by latency and scale needs.</li>
+            <li>How authorized views and datasets enforce controlled SQL access.</li>
+            <li>How interface versioning reduces breaking changes for consumers.</li>
+            <li>How stream-based interfaces support near real-time use cases.</li>
+            <li>How interface discoverability and metadata improve product reuse.</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>Domain Warehouses as Product Foundations</h2>
+          <p>
+            Data products are commonly built from domain-owned repositories such as domain
+            warehouses or lakes.
+          </p>
+          <p>
+            The core distinction is not storage technology but the explicit exposure of governed
+            consumption interfaces for other teams.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> A data repository becomes a product when ownership,
+            interfaces, and usage guarantees are defined and maintained.
+          </div>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>Consumption Interface Selection</h2>
+          <p>
+            Producers should expose multiple interface types based on concrete consumer
+            requirements, instead of forcing a single access pattern.
+          </p>
+          <ul class="study-bullets">
+            <li>Use SQL interfaces for analytical querying at scale.</li>
+            <li>Use streaming interfaces for near real-time processing.</li>
+            <li>Use API interfaces for controlled application-centric access.</li>
+            <li>Use file-based interfaces for batch interoperability scenarios.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Interface choice is driven by consumer workload
+            patterns, not by producer convenience.
+          </div>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>Authorized Views and Datasets</h2>
+          <p>
+            Authorized views allow consumers to query a curated subset of producer-owned data
+            without direct access to base tables.
+          </p>
+          <p>
+            Authorized datasets simplify permission management and strengthen separation between
+            producer internals and consumer contracts.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-01-authorized-datasets.png"
+              alt="Authorized datasets as consumption interfaces"
+              class="zoomable"
+              data-caption="M103.01"
+            />
+            <figcaption>
+              M103.01 - Authorized Datasets and Views as Consumption Interfaces
+            </figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Authorized views preserve product boundaries while
+            supporting controlled cross-domain SQL consumption.
+          </div>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>Interface Versioning Strategies</h2>
+          <p>
+            Versioning can be implemented at dataset level or view level, depending on compatibility
+            constraints and governance policy.
+          </p>
+          <ul class="study-bullets">
+            <li>Dataset versioning isolates incompatible schema evolution.</li>
+            <li>View versioning minimizes dataset proliferation.</li>
+            <li>Compatibility policy should define when major version increments are required.</li>
+            <li>Deprecation windows should be explicit to avoid consumer disruption.</li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-02-primary-versioning.png"
+              alt="Dataset and view versioning strategies"
+              class="zoomable"
+              data-caption="M103.02"
+            />
+            <figcaption>M103.02 - Dataset and View Versioning Approaches</figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Explicit versioning is essential to scale independent
+            producer and consumer release cycles.
+          </div>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>Direct Read and Specialized Interfaces</h2>
+          <p>
+            Some use cases require direct-read interfaces optimized for large-scale processing,
+            machine learning, or low-overhead data extraction.
+          </p>
+          <p>
+            These interfaces complement SQL views when workload characteristics demand different
+            performance profiles.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-03-use-cases.png"
+              alt="Use-case mapping for direct read interfaces"
+              class="zoomable"
+              data-caption="M103.03"
+            />
+            <figcaption>M103.03 - Use Cases for Direct Read Consumption Interfaces</figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> A mature product can expose multiple interfaces tuned to
+            different consumer execution models.
+          </div>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>Data as Streams</h2>
+          <p>
+            Streaming interfaces use Pub/Sub topics and subscriptions to decouple producer
+            publishing from consumer processing pipelines.
+          </p>
+          <p>
+            Subscription-level filtering and schema governance improve flexibility while preserving
+            control.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-04-filtering-approach.png"
+              alt="Streaming consumption with subscription filtering"
+              class="zoomable"
+              data-caption="M103.04"
+            />
+            <figcaption>M103.04 - Streaming Interface with Subscription Filtering</figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Stream interfaces are effective for event-driven and
+            near real-time use cases across domains.
+          </div>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>Discoverability and Exposure</h2>
+          <p>
+            Consumption interfaces must be discoverable in catalog services with clear metadata,
+            ownership details, and usage guidance.
+          </p>
+          <ul class="study-bullets">
+            <li>Register interfaces with consistent product metadata.</li>
+            <li>Provide documentation for semantics, quality, and SLAs.</li>
+            <li>Annotate location and regional constraints for query planning.</li>
+            <li>Publish governance labels that support policy automation.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Discoverability determines whether data products are
+            actually reused beyond their source domain.
+          </div>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Data products should expose stable, governed interfaces designed for real consumer
+              needs.
+            </li>
+            <li>
+              Authorized views and datasets provide controlled SQL sharing without exposing base
+              tables.
+            </li>
+            <li>Versioning policies are necessary to evolve interfaces safely at scale.</li>
+            <li>
+              Streaming interfaces complement analytical interfaces for low-latency consumption
+              patterns.
+            </li>
+            <li>
+              Catalog registration and metadata quality are critical for cross-domain
+              discoverability.
+            </li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://docs.cloud.google.com/architecture/build-data-products-data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/architecture/build-data-products-data-mesh</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

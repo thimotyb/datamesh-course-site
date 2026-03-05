@@ -1,0 +1,114 @@
+[
+  {
+    "module_idx": 1,
+    "source_idx": 3,
+    "page": 4,
+    "file": "fig-01.jpeg",
+    "w": 1000,
+    "h": 728
+  },
+  {
+    "module_idx": 2,
+    "source_idx": 4,
+    "page": 4,
+    "file": "fig-02.jpeg",
+    "w": 1000,
+    "h": 728
+  },
+  {
+    "module_idx": 3,
+    "source_idx": 5,
+    "page": 5,
+    "file": "fig-03.jpeg",
+    "w": 1000,
+    "h": 655
+  },
+  {
+    "module_idx": 4,
+    "source_idx": 6,
+    "page": 5,
+    "file": "fig-04.jpeg",
+    "w": 1638,
+    "h": 1030
+  },
+  {
+    "module_idx": 5,
+    "source_idx": 7,
+    "page": 6,
+    "file": "fig-05.jpeg",
+    "w": 1086,
+    "h": 1114
+  },
+  {
+    "module_idx": 6,
+    "source_idx": 8,
+    "page": 7,
+    "file": "fig-06.jpeg",
+    "w": 1000,
+    "h": 503
+  },
+  {
+    "module_idx": 7,
+    "source_idx": 9,
+    "page": 8,
+    "file": "fig-07.jpeg",
+    "w": 1000,
+    "h": 489
+  },
+  {
+    "module_idx": 8,
+    "source_idx": 10,
+    "page": 9,
+    "file": "fig-08.jpeg",
+    "w": 1000,
+    "h": 489
+  },
+  {
+    "module_idx": 9,
+    "source_idx": 18,
+    "page": 11,
+    "file": "fig-09.jpeg",
+    "w": 2048,
+    "h": 2045
+  },
+  {
+    "module_idx": 10,
+    "source_idx": 28,
+    "page": 14,
+    "file": "fig-10.jpeg",
+    "w": 1064,
+    "h": 776
+  },
+  {
+    "module_idx": 11,
+    "source_idx": 62,
+    "page": 16,
+    "file": "fig-11.jpeg",
+    "w": 1008,
+    "h": 1008
+  },
+  {
+    "module_idx": 12,
+    "source_idx": 66,
+    "page": 17,
+    "file": "fig-12.jpeg",
+    "w": 774,
+    "h": 561
+  },
+  {
+    "module_idx": 13,
+    "source_idx": 67,
+    "page": 17,
+    "file": "fig-13.jpeg",
+    "w": 774,
+    "h": 405
+  },
+  {
+    "module_idx": 14,
+    "source_idx": 68,
+    "page": 17,
+    "file": "fig-14.jpeg",
+    "w": 774,
+    "h": 405
+  }
+]

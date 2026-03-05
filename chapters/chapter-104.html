@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M104 - Discover and Consume Data Products</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M104 - Discover and Consume Data Products</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-103.html">Previous module (M103)</a>
+      <a href="chapter-104.html" aria-current="page">M104 - Discover and Consume Data Products</a>
+      <a href="chapter-105.html">Next module (M105)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>How data consumers discover products through a central catalog.</li>
+            <li>How metadata quality drives trust and product selection.</li>
+            <li>How interface contracts guide consumption choices.</li>
+            <li>How product documentation supports onboarding and reuse.</li>
+            <li>How consumer feedback improves product lifecycle decisions.</li>
+            <li>How cross-domain consumption patterns reduce data duplication.</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>Discovery in a Data Mesh</h2>
+          <p>
+            Data product consumption starts with discoverability. Consumers need a unified entry
+            point to identify relevant products across domains.
+          </p>
+          <p>
+            A catalog-centric workflow enables search by business meaning, ownership, quality
+            signals, and interface type.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Discoverability is a core capability of a data mesh, not
+            an optional documentation activity.
+          </div>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>Metadata as a Consumption Enabler</h2>
+          <p>
+            Consumers evaluate candidate products through metadata that explains semantics,
+            freshness, lineage, access requirements, and expected service levels.
+          </p>
+          <ul class="study-bullets">
+            <li>Business definitions and ownership context reduce interpretation errors.</li>
+            <li>Operational metadata supports reliability and suitability checks.</li>
+            <li>Policy metadata clarifies access and governance constraints.</li>
+            <li>Lineage metadata improves traceability and impact analysis.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> High-quality metadata lowers onboarding cost and
+            improves confidence in product reuse.
+          </div>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>Interface-Oriented Consumption</h2>
+          <p>
+            Consumers select products through explicit interfaces aligned with their use cases, such
+            as analytical SQL access, streaming pipelines, or API-based retrieval.
+          </p>
+          <p>
+            Interface clarity helps consumers compare alternatives and choose the least-coupled path
+            for long-term integration.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch104/fig-01-interfaces.png"
+              alt="Discovery and consumption interfaces in a data mesh"
+              class="zoomable"
+              data-caption="M104.01"
+            />
+            <figcaption>M104.01 - Discovery and Consumption Interfaces in a Data Mesh</figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Consumers rely on interface contracts to balance
+            performance, coupling, and governance requirements.
+          </div>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>Product Evaluation and Selection</h2>
+          <p>
+            Multiple products can satisfy similar needs. Selection requires comparing quality,
+            reliability, ownership maturity, and compatibility with target workflows.
+          </p>
+          <ul class="study-bullets">
+            <li>Assess fit against analytical or operational consumption patterns.</li>
+            <li>Review SLA expectations and historical reliability signals.</li>
+            <li>Validate governance and access feasibility early.</li>
+            <li>Prefer products with clear lifecycle and support commitments.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Product selection should be criteria-driven and visible,
+            not based on informal team knowledge.
+          </div>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>Consumer Integration Patterns</h2>
+          <p>
+            Consumer teams often combine multiple domain products to build cross-domain analytics,
+            reporting, and derived products.
+          </p>
+          <p>
+            Integration patterns should preserve upstream ownership boundaries while keeping
+            consumer pipelines maintainable.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Cross-domain integration is sustainable when interfaces
+            are stable and product contracts are explicit.
+          </div>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>Feedback and Product Lifecycle Signals</h2>
+          <p>
+            Consumption telemetry and consumer feedback guide product evolution, interface
+            deprecation, and service-level improvements.
+          </p>
+          <ul class="study-bullets">
+            <li>Track usage by interface and consumer segment.</li>
+            <li>Collect quality issues and improvement requests systematically.</li>
+            <li>Publish change and deprecation notices with clear lead times.</li>
+            <li>Use adoption metrics to prioritize platform and product investments.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Feedback loops connect discovery and consumption to
+            measurable product lifecycle governance.
+          </div>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Discoverability requires a catalog, rich metadata, and clear ownership signals.</li>
+            <li>
+              Consumers choose products through explicit interface contracts and quality criteria.
+            </li>
+            <li>
+              Cross-domain reuse depends on stable interfaces and reliable product documentation.
+            </li>
+            <li>Consumer feedback and usage telemetry should drive product evolution decisions.</li>
+            <li>
+              Discovery and consumption are core operational capabilities of a mature data mesh.
+            </li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://docs.cloud.google.com/architecture/discover-consume-data-products-data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/architecture/discover-consume-data-products-data-mesh</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

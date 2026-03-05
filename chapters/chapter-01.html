@@ -1,1021 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M01 - Data Mesh Fundamentals</title>
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <script src="../assets/js/back-to-top.js" defer></script>
-  </head>
-  <body>
-    <header id="top" class="hero">
-      <h1>M01 - Data Mesh Fundamentals</h1>
-    </header>
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
-      <a href="../index.html">Home</a>
-      <a href="chapter-01.html" aria-current="page">M01 - Data Mesh Fundamentals</a>
-      <a href="chapter-02.html">Next module (M02)</a>
-    </nav>
-    <main class="content">
-      <article>
-        <section class="section-toc">
-          <h2>Content Outline</h2>
-          <ul>
-            <li>Why data mesh emerged and which limits of centralized models it addresses.</li>
-            <li>How decentralized domain ownership changes accountability for data.</li>
-            <li>How raw data, information, and decision value connect in operational contexts.</li>
-            <li>The four data mesh principles and their practical impact.</li>
-            <li>How federated governance and a self-serve platform support domain teams.</li>
-            <li>Key organizational and technical tradeoffs to evaluate during adoption.</li>
-          </ul>
-        </section>
-        <section id="s01" class="study-section">
-          <h2>S01 - Centralized Data Ownership</h2>
-          <p>
-            The data mesh paradigm in this context is all about decentralizing responsibility. For
-            instance, say the development team for the customer registration component of a company
-            also creates a dataset to analyze registered customers.
-          </p>
-          <p>
-            But this deceptively simple definition has major implications because, in many
-            companies, data is treated as a by-product. It is typically stored first, then moved
-            into central data technology by a centralized data team, and only later consumed by
-            decentralized actors such as analysts, recommendation engines, and frontend
-            applications.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-01.png"
-              alt="Module 01 Figure 01"
-              class="zoomable"
-              data-caption="M01.01"
-            />
-            <figcaption>M01.01 - Centralized Data Ownership</figcaption>
-          </figure>
-        </section>
-        <section id="s02" class="study-section">
-          <h2>S02 - Decentralized Data Ownership</h2>
-          <p>
-            The centralized technology in the form of storage and the usual data engineering/ data
-            science machinery.
-          </p>
-          <p>
-            Since the development team considers the data a by-product, the ownership is implicitly
-            assigned to the data team. But such central teams usually cannot keep up with the
-            business knowledge specific to multiple areas of operations.
-          </p>
-          <p>
-            The data mesh paradigm shift calls for decentralization of the responsibility for
-            data—to consider it an actual product. The situation depicted in can turn into a data
-            mesh if, for example, the development team provides the data product straight to the
-            analysts through a.
-          </p>
-          <p>
-            A platform team could help provide a simple technology as a service to be used by
-            development teams to quickly deploy such data products, including the data ports. Data
-            producers focus on developing data products, which, together with data consumers, start
-            to.
-          </p>
-          <p>
-            Even in the small example, the analysis shows a significant operational paradigm change.
-            It encompasses both a shift in the ownership responsibility (from a central data team to
-            the development teams) and the technical challenge of making the new setup work.
-          </p>
-          <p>
-            Introducing changes in the operational paradigm will result in ripples affecting many
-            areas of the business. To prevent these ripples from becoming chaos, clear guiding
-            principles are required.
-          </p>
-          <p>
-            The data mesh definition aims to be broad and functional and emphasizes decentralized
-            efforts.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> Data mesh is a decentralization paradigm. It decentralizes the ownership of
-            data, the transformation of data into information, and data serving.
-          </div>
-          <p>
-            The goal of implementing a data mesh is to extract more value from the company’s data
-            assets. That is also the reason this definition remains so lightweight and inclusive in
-            relation to the level at which each principle is followed.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-02.png"
-              alt="Module 01 Figure 02"
-              class="zoomable"
-              data-caption="M01.02"
-            />
-            <figcaption>M01.02 - Decentralized Data Ownership</figcaption>
-          </figure>
-        </section>
-        <section id="s03" class="study-section">
-          <h2>S03 - Why Centralization Becomes a Bottleneck</h2>
-          <p>Three main reasons explain why decentralization is needed in data work.</p>
-          <p>
-            With the proliferation of data sources and data consumers, a central team in between
-            creates an organizational bottleneck.
-          </p>
-          <p>
-            With multiple data-emitting and -consuming technologies, a central monolithic data
-            storage in between creates a technological bottleneck, which loses a lot of the
-            information in this step in the middle.
-          </p>
-          <p>
-            Both data quality and data ownership are only implicitly assigned, which causes
-            confusion and a lack of control over both.
-          </p>
-          <p>
-            Over the past 30 years, most data architectures were designed to integrate multiple data
-            sources; that is, central data teams merged data from all kinds of source systems and
-            provided harmonized sets to users, who in turn tried to use them to drive business.
-          </p>
-          <p>
-            Some approaches simply seem to not work out. Dozens of reports and dashboards seem to be
-            of no use compared to the costs of creating and maintaining them.
-          </p>
-          <p>
-            One of the reasons for the scalability problem is the proliferation of data sources and
-            data consumers. An obvious bottleneck emerges when one central team manages and owns
-            data along its whole journey: from ingestion through transformation and harmonization to
-            serving it to all.
-          </p>
-          <p>
-            The other problem arises from the monolithic nature of data platforms, such as
-            warehouses and lakes. They often lack the diversity to reflect the reality encoded in
-            data derived from sources and domain-specific structures.
-          </p>
-          <p>
-            This problem is commonly observed in real projects. A car parts manufacturing company
-            was buying data related to failures of various parts.
-          </p>
-          <p>
-            Two more interwoven factors exacerbate the problems described earlier. One is unclear
-            data ownership structure; the other is the responsibility for data quality.
-          </p>
-          <p>
-            Similar challenges in software engineering led to domain-driven design and
-            microservices. Applying comparable principles to data engineering contributed to the
-            data mesh model.
-          </p>
-        </section>
-        <section id="s04" class="study-section">
-          <h2>S04 - Centralized and Technology-Centric Alternatives</h2>
-          <p>
-            There are two main alternatives to decentralized data ownership; the following summary
-            outlines both.
-          </p>
-          <p>
-            The first option is the centralization of both people and technology. This is the
-            default setup for any startup.
-          </p>
-          <div class="note-box">
-            <strong>Key point.</strong> Centralization is a sensible default option for both
-            organizational and technical data work. Decentralization does carry costs, and
-            centralization can mitigate those.
-          </div>
-          <p>
-            The second option splits up the work not by business domains, as data mesh suggests, but
-            by technology. This usually results in one core data engineering team being responsible
-            mostly for ingesting data and provisioning a data storage infrastructure.
-          </p>
-          <p>
-            There is nothing wrong with these two approaches. They might be reasonable default
-            options, but both fail to align with value creation, which is deeply tied to business
-            domains.
-          </p>
-          <p>
-            So, one way or another, both of these alternatives will hit a wall at some point: adding
-            the next data source or data science project will feel extremely complex and costly
-            compared to earlier ones. That’s the point where organizations typically consider
-            decentralized alternatives.
-          </p>
-        </section>
-        <section id="s05" class="study-section">
-          <h2>S05 - Data Mesh and Central Storage Compatibility</h2>
-          <p>
-            There is a misconception about the data mesh. It is sometimes perceived as an exclusive
-            alternative to the central data lake or the central data warehouse.
-          </p>
-          <p>
-            That still leaves the option to have central data storage and decentralized units
-            working and owning the data. Indeed, that is a common implementation in companies that
-            don’t need complete flexibility on the data producers’ side.
-          </p>
-          <p>
-            Data meshes make heavy use of both data lakes and data warehouses in various formats.
-            Data meshes, in general, do not try to focus on any specific technology.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-03.png"
-              alt="Module 01 Figure 03"
-              class="zoomable"
-              data-caption="M01.03"
-            />
-            <figcaption>M01.03 - Data Mesh and Central Storage Compatibility</figcaption>
-          </figure>
-        </section>
-        <section id="s06" class="study-section">
-          <h2>S06 - Business and Technical Value of Data Mesh</h2>
-          <p>
-            analyzes the potential of a data mesh implementation from two perspectives: through the
-            eyes of the business decision-makers and the technologist.
-          </p>
-          <p>
-            From a business perspective, raw data alone has limited value and introduces storage and
-            management costs.
-          </p>
-          <p>
-            A good approximation of this phenomenon is the DIKW pyramid, derived from The Rock, a
-            play written by T.S. Eliot in 1934.
-          </p>
-          <p>
-            Data in isolation is only a set of values. Value emerges when context is added to
-            support informed decisions.
-          </p>
-          <p>
-            As established earlier, raw data alone is insufficient for decision-making. Local
-            downloads do not resolve context and quality issues.
-          </p>
-          <p>To download the data, it needs to be accessible.</p>
-          <p>
-            To ensure the value of any performed analysis, data needs to be as complete as possible.
-          </p>
-          <p>
-            Data mesh emphasizes access quality: data must be accessible, findable, interoperable,
-            and reusable.
-          </p>
-          <p>
-            Completeness of the data is another concern where data mesh shines. Unlike most data
-            warehouse or data lake architectures, data products and their data models are not
-            developed by IT specialists apart from the business.
-          </p>
-          <p>
-            Data mesh increases value at higher decision layers by enabling rapid access to
-            interoperable data sources.
-          </p>
-          <p>
-            In theory, similar access could be enabled through a data lake. In practice, central
-            bottlenecks in access and transfer management often limit responsiveness.
-          </p>
-        </section>
-        <section id="s07" class="study-section">
-          <h2>S07 - Scalability, Ownership, and Delivery Speed</h2>
-          <p>
-            From a technical perspective, a key benefit is preserving delivery speed as
-            organizational complexity grows. The data mesh is meant to address the shortcomings of
-            other data.
-          </p>
-          <p>
-            The other benefit of data mesh is the clarity of data ownership right from the point of
-            its creation. This approach flattens the data management structure, leaving just a thin
-            layer of a federated governance team.
-          </p>
-          <p>
-            The speedup of development also comes from empowering the implementation teams. Since
-            producing and maintaining the data products rests on their shoulders, the speed of
-            change is not limited by a single central integrations team’s backlog of tasks.
-          </p>
-          <p>
-            The other factor worth mentioning is data environment stability. With data products
-            offering access to contracted versions of their datasets, pipelines built on them are
-            much more robust and require much less maintenance.
-          </p>
-        </section>
-        <section id="s08" class="study-section">
-          <h2>S08 - Candace Scenario: Central vs Decentralized Flow</h2>
-          <p>
-            Candace operates a snow-shoveling business. She is a proud businesswoman who started the
-            business shoveling snow herself every winter.
-          </p>
-          <p>
-            Adam and Eve are responsible for operations and client acquisition in their respective
-            areas.
-          </p>
-          <p>
-            In the previous year, Candace asked Adam and Eve to record working times and houses
-            cleared, then consolidated the data in a spreadsheet to set prices.
-          </p>
-          <p>
-            In this model, Candace converted data from Adam and Eve into operational information and
-            then into pricing decisions. She also requested rough estimates to support planning.
-          </p>
-          <p>
-            Adam and Eve provided raw data to Candace. She then aggregated it into information and
-            handed it over to Bob to turn the data into decisions and business value.
-          </p>
-          <p>However, the outcome was unsatisfactory and margins remained weak.</p>
-          <p>
-            In the next cycle, Candace experiments with a decentralized operating model and
-            introduces the foundations of a data mesh.
-          </p>
-          <p>
-            Candace stops collecting the times and instead asks Adam and Eve to record their times
-            themselves in any way they see fit.
-          </p>
-          <p>Adam and Eve will set the pricing for their streets.</p>
-          <p>
-            When Eve increased prices on Oak Street and Adam reduced prices on Pine Road, results
-            reflected stronger local knowledge than centralized pricing assumptions.
-          </p>
-          <p>
-            With end-to-end ownership of data, information, and pricing decisions, Adam and Eve
-            improve local outcomes. As profits increase, Candace extends the approach.
-          </p>
-          <p>
-            To avoid confusion and to-and-fro emails, Adam and Eve create a spreadsheet. They update
-            it regularly, so if current conditions or weather forecasts change their estimations,
-            their information is timely.
-          </p>
-          <p>
-            In the data flow, Adam and Eve now keep both data and information in their domains. They
-            try to supply Bob with a proper set of information, not just the raw data they were
-            asked to collect, so he can make the procurement decisions.
-          </p>
-          <p>
-            An unexpected business benefit of shortening the data flow emerges. In the past, Adam
-            and Eve usually presented Candace with pessimistic approximations because they did not
-            want to be left without shovels.
-          </p>
-          <p>
-            Because the estimates were unreliable, Bob frequently adjusted procurement decisions
-            with manual judgment, increasing operational risk.
-          </p>
-          <p>
-            Candace sees improved profit through lower costs and clearer responsibilities. The key
-            factor is redesigning the data-to-decision pipeline.
-          </p>
-          <p>
-            This mechanism improves outcomes by decentralizing decisions where local domain
-            knowledge is strongest.
-          </p>
-          <p>
-            A subsequent step is lightweight governance, such as update-frequency rules and access
-            controls for shared planning data.
-          </p>
-          <p>
-            The next sections define the four principles that frame practical data mesh
-            implementation.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-04.png"
-              alt="Module 01 Figure 04"
-              class="zoomable"
-              data-caption="M01.04"
-            />
-            <figcaption>M01.04 - Candace Scenario: Central vs Decentralized Flow</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-05.png"
-              alt="Module 01 Figure 05"
-              class="zoomable"
-              data-caption="M01.05"
-            />
-            <figcaption>M01.05 - Candace Scenario: Central vs Decentralized Flow</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-06.png"
-              alt="Module 01 Figure 06"
-              class="zoomable"
-              data-caption="M01.06"
-            />
-            <figcaption>M01.06 - Candace Scenario: Central vs Decentralized Flow</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-07.png"
-              alt="Module 01 Figure 07"
-              class="zoomable"
-              data-caption="M01.07"
-            />
-            <figcaption>M01.07 - Candace Scenario: Central vs Decentralized Flow</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-08.png"
-              alt="Module 01 Figure 08"
-              class="zoomable"
-              data-caption="M01.08"
-            />
-            <figcaption>M01.08 - Candace Scenario: Central vs Decentralized Flow</figcaption>
-          </figure>
-        </section>
-        <section id="s09" class="study-section">
-          <h2>S09 - Principle 1: Domain Ownership</h2>
-          <p>
-            Dehghani first described the current incarnation of the data mesh concept as a set of
-            four principles. the focus is on their implementation details.
-          </p>
-          <p>
-            The first principle states that data and related components must be owned and maintained
-            by the domain closest to the source and meaning of that data.
-          </p>
-          <p>
-            Domain teams are responsible for exposing interfaces that let analysts, data scientists,
-            and application teams consume domain data safely and effectively.
-          </p>
-          <p>
-            Data ownership must be explicit and assigned to the domain closest to data creation and
-            usage.
-          </p>
-          <p>
-            The domain is an area or part of the business. It is a way of slicing and decomposing
-            the company.
-          </p>
-          <p>
-            The domain ownership principle says that each team or unit owning a domain should also
-            own the data that has been created inside that domain. So, the team developing software
-            to support content production is also responsible for content production data.
-          </p>
-          <p>
-            Being responsible for data means hosting and serving datasets to other parts of the
-            organization (to other domains). The team is the owner of the data, and it also should
-            be responsible for pipelines, software, cleansing, deduplicating, or enriching the data.
-          </p>
-          <p>
-            As in agile delivery, ownership is effective only when paired with autonomy. This is why
-            teams should be able to release and deploy their operational and analytical data systems
-            autonomously.
-          </p>
-          <p>
-            As shown in the Messflix example, every business consists of many domains. Each domain
-            can usually be further split into subdomains.
-          </p>
-          <p>
-            In such a mesh of interconnected domains and subdomains, only the people close to the
-            data know it well enough to actually work with it. Take an example from earlier: does
-            the word content mean the same in all three domains?
-          </p>
-          <p>
-            For example, a developer in the Distribute Content domain may misinterpret terms from
-            Produce Content without direct domain context.
-          </p>
-          <p>
-            However, people outside this domain will not even know that these are important pieces
-            of data. This will make the people inside the domain the only people truly able to work
-            with this kind of data.
-          </p>
-          <p>
-            Source data domains usually serve data and information that represent facts about the
-            business. Data should be exposed to other domains to serve operational purposes (like
-            the REST API) and analytical purposes.
-          </p>
-          <p>
-            Consumer data domains are aligned closely with consumption. An excellent example of such
-            a domain could be Provide Management Reporting and Predictions.
-          </p>
-          <p>
-            Parts of the data between data domains can be duplicated. Still, because that data is
-            serving a different purpose, it will also be modeled differently.
-          </p>
-          <p>
-            Shared data responsibility increases scalability and maintainability; adding datasets
-            becomes the addition of autonomous nodes.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch01/fig-09.png"
-              alt="Module 01 Figure 09"
-              class="zoomable"
-              data-caption="M01.09"
-            />
-            <figcaption>M01.09 - Principle 1: Domain Ownership</figcaption>
-          </figure>
-        </section>
-        <section id="s10" class="study-section">
-          <h2>S10 - Principle 2: Data as a Product</h2>
-          <p>
-            The second principle is that data must be viewed as a product. This calls for an
-            introduction of product thinking (integrated into data management).
-          </p>
-          <p>
-            Usually, when discussions about data, the first thing that comes to mind is either a
-            file or a table in a database. practitioners often envision a spreadsheet or a series of
-            rows in a file with named columns.
-          </p>
-          <p>
-            Without a proper set of descriptions, even the best prepared set of data will not be
-            found and thus no value prepared from it. If it is unknown how current or complete the
-            data might be, this could render it completely useless.
-          </p>
-          <p>
-            In the experience, data offered by a data team should follow typical product features
-            like these.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Viable quality</strong> This quality can be ensured by specialized domain
-              experts.
-            </li>
-            <li>
-              <strong>Anticipation of user needs</strong> The team offering the data to the outside
-              world should understand the enterprise’s business environment. For example, present
-              the data in a format easily digested by existing data pipelines to ensure its
-              availability and effortless usefulness.
-            </li>
-            <li>
-              <strong>Secured availability</strong> The team should ensure availability of the
-              product whenever users need it.
-            </li>
-            <li>
-              <strong>Focus on user goals</strong> The data team’s focus on its own domain should
-              not mean a lack of communication with other users; on the contrary, the search for
-              synergies and shared toolsets should create an opportunity to understand each other’s
-              needs better.
-            </li>
-            <li>
-              <strong>Findable</strong> Any data product should be discoverable by a simple means,
-              something a random table in a database lacks.
-            </li>
-            <li>
-              <strong>Interoperable</strong> Different data products should be combinable in a way
-              that increases their value.
-            </li>
-          </ul>
-        </section>
-        <section id="s11" class="study-section">
-          <h2>S11 - Product Thinking Applied to Data</h2>
-          <p>
-            In everyday contexts, many products are used. A product might be defined as, in general,
-            the result of a conscious action.
-          </p>
-          <p>
-            It should also meet some standards to ensure that a pair of jeans will not break down
-            after a few hours of use and is made of a safe material. In addition, there should be
-            someone responsible for this product: for example, its quality.
-          </p>
-          <p>
-            Treating data as a product will mean that someone has consciously designed the product,
-            created and released it, is responsible for it, and is mainly responsible for its
-            quality. In the context of a data mesh, this will be the responsibility of the data.
-          </p>
-        </section>
-        <section id="s12" class="study-section">
-          <h2>S12 - Designing for Data Product Usability</h2>
-          <p>
-            Treating data as a product requires more than exposure; it requires high usability for
-            downstream users.
-          </p>
-          <p>
-            Referring to the Messflix example, It is possible to imagine a few exemplary data
-            products in the Produce Content domain.
-          </p>
-        </section>
-        <section id="s13" class="study-section">
-          <h2>S13 - Core Characteristics of Data Products</h2>
-          <p>
-            Treating data as a product requires starting from user problems and designing around
-            them.
-          </p>
-          <p>
-            Data as a product also implies a degree of standardization that allows a single element
-            to be incorporated into a larger data mesh ecosystem. To call a given set of data a data
-            product, it should have the following characteristics.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Self-described and discoverable</strong> Data should be described, and this
-              description should be an integral part of the data product. The data product should be
-              able to register itself in the data mesh ecosystem, and, as a result, should be
-              discoverable.
-            </li>
-            <li>
-              <strong>Addressable</strong> It should have a unique address (e.g., in the form of a
-              URI address), so that it can be referred to and relationships between data products
-              can be created.
-            </li>
-            <li>
-              <strong>Interoperable</strong> A data product should be made according to predefined
-              standards, concerned with the form of data sharing, standardized formats,
-              vocabularies, terminology or identifiers, security, and trustworthiness. A data
-              product should meet the established and declared service-level agreement (SLA), and
-              should enable controlled access.
-            </li>
-          </ul>
-        </section>
-        <section id="s14" class="study-section">
-          <h2>S14 - Technical Building Blocks of a Data Product</h2>
-          <p>
-            While fulfilling the previously established conditions, a data product should at the
-            same time constitute an autonomous component, so that it can be independently developed
-            by the team responsible for it. From the point of view of a technical solution, It is
-            possible to observe a.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Input logic and output ports</strong> Form and protocols used to ingest from
-              the source and expose data to consumers.
-            </li>
-            <li>
-              <strong>Operational metrics</strong> Number of users, throughput, amount of data
-              fetched, etc.
-            </li>
-            <li>
-              <strong>Data quality reports</strong> Quantity of incomplete data, format
-              incompatibilities, statistical measures of outliers, etc.
-            </li>
-            <li>
-              <strong>Metadata</strong> Specification and description of the data schema, domain
-              description, business ownership, etc.
-            </li>
-            <li>
-              <strong>Configuration endpoint</strong> Means to configure the data product in run
-              time (e.g., setting the security rules).
-            </li>
-          </ul>
-          <p>
-            These are a few examples of what can constitute a data product as a technical component.
-          </p>
-        </section>
-        <section id="s15" class="study-section">
-          <h2>S15 - Principle 3: Federated Computational Governance</h2>
-          <p>
-            The third principle is to federate and automate data governance across all participants
-            of the data mesh. This principle aims to provide a unified framework and
-            interoperability to the ecosystem of largely independent data products.
-          </p>
-          <p>
-            Federated computational governance requires two inseparable elements: the governing body
-            and a means of rule enforcement. Overarching rules and regulations should be agreed upon
-            by a body composed of data product owners, a self-serve data infrastructure platform
-            team, security specialists, and CDO/CIO/CTO representatives.
-          </p>
-          <p>
-            Effective data governance is crucial, as data security is one of the main concerns of
-            CDOs/CIOs in companies covering all sectors and sizes. Also, most large enterprises need
-            to introduce controls on data security and governance that are enforced by governmental
-            or business regulations.
-          </p>
-        </section>
-        <section id="s16" class="study-section">
-          <h2>S16 - Balancing Local Autonomy and Central Rules</h2>
-          <p>
-            At first glance, the data mesh is an additional layer of complexity in an already vast
-            scope of data governance that now also needs to address a shift of responsibilities to
-            data products. Each data product, in turn, needs to be equipped with processes.
-          </p>
-          <p>
-            There is no universal formula for balancing central governance and local autonomy. The
-            approach will always depend on the specifics of the organization.
-          </p>
-          <p>
-            Another set of policies is required to ensure interoperability of data products and the
-            ability of data consumers to join them together readily. Finally, the procedures need to
-            provide the compatibility of various data products without explicitly enforcing an
-            overarching data model.
-          </p>
-          <p>
-            The data mesh tries to answer that need with federalization of data governance.
-            Federalization in this context means having a governing structure operating at parity at
-            distinct levels—central and local.
-          </p>
-          <p>
-            Data product teams, led by data product owners, are responsible for developing their
-            products with a high degree of autonomy, deciding on all technical and procedural
-            problems (within boundaries of the enterprise technology stack). There is no
-            silver-bullet solution as to the precise division.
-          </p>
-        </section>
-        <section id="s17" class="study-section">
-          <h2>S17 - What Federated Computational Governance Means</h2>
-          <p>
-            Federated computational governance combines shared cross-domain policy with automated
-            enforcement in platform capabilities.
-          </p>
-          <p>
-            Data governance elements, which can be automated and embedded into a data platform,
-            include but are not limited to the following.
-          </p>
-        </section>
-        <section id="s18" class="study-section">
-          <h2>S18 - Shared Master and Reference Data</h2>
-          <p>Catalog, reference, and master data.</p>
-          <p>
-            Once again, no silver-bullet solution exists for deciding which of these should be
-            automated. It will require the teams’ hard work to identify which data governance tasks
-            create bottlenecks in data mesh development in the organization and to automate them.
-          </p>
-        </section>
-        <section id="s19" class="study-section">
-          <h2>S19 - Principle 4: Self-Serve Data Platform</h2>
-          <p>
-            The fourth principle is to extract the duplicated efforts of the data mesh into a
-            platform. This principle calls for the application of platform thinking to the data
-            context.
-          </p>
-          <p>
-            As shared cloud services reduce duplicated infrastructure effort, an internal self-serve
-            data platform reduces duplicated data-platform effort across domains.
-          </p>
-          <p>
-            It may be appropriate to start with the requirements of the first data product owners
-            and iteratively build the setup up to meet the organization’s needs. The infrastructural
-            support can be offered as on-premises computing power or in the cloud, depending on the
-            enterprise policies.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Governability</strong> All data computation related to data governance
-              processes needs to be incorporated and automatically enforced on every data product
-              connected to the data infrastructure.
-            </li>
-            <li>
-              <strong>Security</strong> The infrastructure solution should ensure that all data
-              products offer freedom of operation for users whose access allows them to meet their
-              information requirements and ensure safety from unauthorized access. To do that, a set
-              of ready-to-use processes, tools, and procedures should be.
-            </li>
-            <li>
-              <strong>Flexibility, adaptability, and elasticity</strong> The infrastructure needs to
-              support multiple types of business domain data. This means enabling various data
-              storage solutions; extract, transform, load (ETL) and query operations; deployments;
-              data processing engines; and pipelines.
-            </li>
-            <li>
-              <strong>Resilience</strong> Smooth operation of data-driven businesses requires high
-              availability of data. Therefore, the infrastructure should ensure redundancies and
-              disaster-recovery protocols at the design level of each infrastructural element.
-            </li>
-            <li>
-              <strong>Process automation</strong> From injecting metadata at the data product
-              registry to ensuring access control, the data flow through the central infrastructure
-              needs to be fully automated—possibly using machine learning (ML) and artificial
-              intelligence (AI) to ensure efficient data processing, quality, and monitoring.
-            </li>
-          </ul>
-          <p>revisits Candace's case to evaluate alignment with the four principles.</p>
-        </section>
-        <section id="s20" class="study-section">
-          <h2>S20 - Domain Types in a Business Context</h2>
-          <p>
-            In Candace’s business, several domains can be identified, including procurement and the
-            two street-level operating areas.
-          </p>
-          <p>
-            In the first year, local teams operated their domains but did not own decision-ready
-            data products, and governance remained informal.
-          </p>
-          <p>
-            In Candace’s second year, she makes a key change. She gives Adam and Eve data ownership
-            in their domains.
-          </p>
-          <p>
-            In the third year, Adam and Eve treated their outputs as data products for downstream
-            consumers such as Bob, improving procurement quality.
-          </p>
-          <p>
-            In summary, Candace focuses mostly on the principle of decentralized data ownership and
-            data product thinking. Since her operation is small, she doesn’t need to do much
-            governance besides talking with her employees about using data in decision-making.
-          </p>
-          <div class="note-box">
-            <strong>Key point.</strong> The primary value driver is decentralization of ownership
-            aligned to domain responsibility.
-          </div>
-          <p>
-            Data mesh adoption can begin in organizations of any size when decentralization pressure
-            becomes operationally significant.
-          </p>
-          <div class="note-box">
-            <strong>Key point.</strong> Data meshes are for companies of all sizes. The data mesh is
-            a possible tool for companies of all sizes.
-          </div>
-          <p>This illustrates why decentralization pressure emerges over time.</p>
-        </section>
-        <section id="s21" class="study-section">
-          <h2>S21 - Data Mesh as Organizational Architecture</h2>
-          <p>
-            The data mesh is not a technical solution for data problems. The data mesh solves these
-            problems by using a socio -technical architecture, or a socio-technical system design.
-          </p>
-          <p>
-            First, it is necessary to understand what it means, how it originated, and most
-            importantly, the underpinning laws behind it. For that, Conway’s law to understand why
-            it is not possible to change technology just on its own.
-          </p>
-        </section>
-        <section id="s22" class="study-section">
-          <h2>S22 - Conway's Law</h2>
-          <p>Conway’s law is defined as follows.</p>
-          <p>
-            Organizations tend to produce system designs that mirror their communication structures.
-          </p>
-          <p>
-            Melvin Conway described this effect in 1968; in practice, the coupling between
-            communication structure and system design is consistently strong.
-          </p>
-          <p>
-            A common analogy is Aikido, where strategy emphasizes redirecting existing motion rather
-            than opposing it directly.
-          </p>
-        </section>
-        <section id="s23" class="study-section">
-          <h2>S23 - How Organization Shapes Data Architecture</h2>
-          <p>
-            Conway’s law explains why a 'central data warehouse' usually implies operation by a
-            central data team.
-          </p>
-          <p>
-            Conway’s law highlights alignment between organizational structure and technical
-            architecture; technology-only changes are usually insufficient.
-          </p>
-        </section>
-        <section id="s24" class="study-section">
-          <h2>S24 - Socio-Technical Co-Design</h2>
-          <p>
-            In a socio-technical approach, organizational design and technical architecture are
-            co-designed so constraints and tradeoffs are addressed from the start.
-          </p>
-          <p>
-            Team Topologies is a widely adopted method for socio-technical design focused on
-            optimizing flow and team interaction patterns.
-          </p>
-          <p>
-            Team Topologies helps organizations align team boundaries with desired architecture and
-            delivery flow.
-          </p>
-        </section>
-        <section id="s25" class="study-section">
-          <h2>S25 - Cognitive Load and Team Boundaries</h2>
-          <p>
-            Cognitive load is the amount of mental effort required to perform a task; keeping it
-            manageable is essential for sustained delivery performance.
-          </p>
-          <p>
-            Teams should be designed so cognitive load stays within sustainable limits and is
-            focused on value-creating work.
-          </p>
-          <p>
-            Data mesh performance improves when platform and tooling choices match team capability
-            and reduce unnecessary complexity.
-          </p>
-          <p>
-            All of the data mesh principles are influenced by socio-technical ways of thinking.
-            Domain-oriented decentralized data ownership and architecture reduce the load by
-            decentralizing responsibility for domains and corresponding data.
-          </p>
-          <p>
-            Data as a product reduces collaboration between teams to access data by making data
-            findable, accessible, interoperable, and reusable. It limits the load by exposing data
-            in an expected and known format and ports by consuming teams.
-          </p>
-          <p>
-            Federated computational governance makes collaboration between teams easier by enforcing
-            common standards and patterns. It enables team members’ transfers by reducing the
-            possible technology stack within the company.
-          </p>
-          <p>
-            Each principle reflects socio-technical design, where organizational structure and
-            technical architecture evolve together.
-          </p>
-        </section>
-        <section id="s26" class="study-section">
-          <h2>S26 - Data Mesh Tradeoffs and Limits</h2>
-          <p>
-            Data mesh is neither a silver bullet nor a plug-and-play solution. Instead, its
-            successful implementation requires overcoming an array of challenges.
-          </p>
-        </section>
-        <section id="s27" class="study-section">
-          <h2>S27 - Tooling as a Core Enabler</h2>
-          <p>
-            The most crucial technological challenge of data mesh implementation is ensuring that
-            proper tooling is available to both domain-focused and central platform data teams.
-            Providing only data discoverability and links between domains may prevent the whole
-            ecosystem from becoming a siloed world.
-          </p>
-          <p>
-            The other challenge is ensuring that the tooling developed locally can be shared across
-            domains. The flexibility and autonomy of teams should not lead to inefficiencies at the
-            company level and reduced synergy.
-          </p>
-          <p>
-            With a plethora of distributed, semi-independent data products, the development of
-            consistent monitoring, alerting, and logging procedures becomes a challenge. As a
-            result, both central platform and domain teams need to collaborate closely to ensure
-            continuous insight and control over data quality and security.
-          </p>
-        </section>
-        <section id="s28" class="study-section">
-          <h2>S28 - Interoperability and Data Management Challenges</h2>
-          <p>
-            Like the first technological challenge, the critical data-management-related challenge
-            is ensuring that data is easy to locate and comprehensively documented. The importance
-            of a data catalog cannot be overestimated.
-          </p>
-          <p>
-            Another challenge is ensuring control over the duplication of data across domains. With
-            each new business domain needing to be served with repurposed data, redundancy may
-            emerge.
-          </p>
-          <p>
-            The third challenge is not specific to data mesh; however, it is necessary to remember
-            it when embarking on a data mesh journey. It lies in cross-domain analytics.
-          </p>
-        </section>
-        <section id="s29" class="study-section">
-          <h2>S29 - Organizational Challenges to Adoption</h2>
-          <p>
-            Organizational challenges in the data mesh context can be divided into three categories:
-            scope, data practices, and culture. The first organizational challenge is the scope of
-            such a paradigm shift.
-          </p>
-          <p>
-            Second, it does require a level of maturity in the handling of data by multiple parties.
-            Centralized parties, data creators, managers, and users will need to learn to handle
-            data with a certain level of proficiency.
-          </p>
-          <p>
-            Third, in most enterprises, going from data as a by-product to data as a product will be
-            a substantial cultural shift. This shift will involve not only data engineers and IT
-            departments, but also product, management, marketing, and sales departments, and most
-            other departments.
-          </p>
-          <p>
-            Decentralizing the decision-making process, shaping data product owner positions,
-            developing multiple cross-functional teams, and shifting responsibilities requires a
-            significant restructuring of existing organizational charts. Moreover, such changes come
-            with costs in time, brainpower, and finances.
-          </p>
-          <p>
-            Federated governance requires the development of novel procedures; this extends from
-            decision-making to communication methods. These responsibilities and principles have to
-            be appropriately identified and federated.
-          </p>
-          <p>
-            At this stage, data mesh can be evaluated as a socio-technical operating model with
-            explicit principles, benefits, and tradeoffs.
-          </p>
-        </section>
-        <section id="s30" class="study-section">
-          <h2>S30 - Decentralization as the Core Design Choice</h2>
-          <ul class="study-bullets">
-            <li>
-              <strong>The cornerstone of the data mesh is decentralization</strong> moving ownership
-              and responsibility for data closer to its source. This approach aims to keep data in
-              sync with the subject matter, removing bottlenecks caused by long data pipes and
-              central team inefficiencies.
-            </li>
-          </ul>
-          <p>
-            The data mesh is a socio-technical architecture paradigm based on principles of
-            domain-oriented data ownership, treatment of data as a product, federated computational
-            governance, and self-serve data infrastructure as a platform.
-          </p>
-          <p>
-            Domain-oriented data ownership means the data and its relevant components should be
-            owned, maintained, and developed by the people closest to it (the people inside the
-            data’s domain).
-          </p>
-          <p>
-            Treating data as a product means a conscious design of the outcome presented to the
-            outside environment, clearly assigned roles for ensuring that outcome availability and
-            quality, and autonomy of development required to produce that outcome.
-          </p>
-          <p>
-            Federated computational governance means two things. First, the responsibility for data
-            governance is split between the central body responsible for company-wide policies and
-            standards and the owners of highly autonomous units, usually domain-oriented,
-            responsible for the development of actual systems.
-          </p>
-          <p>
-            Self-serve data infrastructure means extracting the duplicated efforts of the data mesh
-            into a platform; thus it is done only once but offered as a service to others.
-          </p>
-          <p>
-            The data mesh is not a precisely defined solution. The extent of application of each
-            principle differs widely from application to application, and it will vary depending on
-            the business case.
-          </p>
-          <p>
-            When considering the data mesh implementation, the organization must take into account
-            major technological, data-management-related, and organizational challenges.
-          </p>
-        </section>
-        <section class="key-takeaways">
-          <h2>Key takeaways</h2>
-          <ul>
-            <li>Why data mesh emerged and which limits of centralized models it addresses.</li>
-            <li>How decentralized domain ownership changes accountability for data.</li>
-            <li>How raw data, information, and decision value connect in operational contexts.</li>
-            <li>The four data mesh principles and their practical impact.</li>
-          </ul>
-        </section>
-      </article>
-    </main>
-    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
-      >Back to top</a
-    >
-    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <figure class="lightbox-inner">
-        <img id="lightbox-image" alt="Zoomed figure" />
-        <figcaption id="lightbox-caption"></figcaption>
-      </figure>
-    </div>
-  </body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   M01 - Data Mesh Fundamentals
+  </title>
+  <link href="../assets/css/main.css" rel="stylesheet"/>
+  <script defer="" src="../assets/js/back-to-top.js">
+  </script>
+ </head>
+ <body>
+  <header class="hero" id="top">
+   <h1>
+    M01 - Data Mesh Fundamentals
+   </h1>
+  </header>
+  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
+   <a href="../index.html">
+    Home
+   </a>
+   <a aria-current="page" href="chapter-01.html">
+    M01 - Data Mesh Fundamentals
+   </a>
+   <a href="chapter-02.html">
+    Next module (M02)
+   </a>
+  </nav>
+  <main class="content">
+   <article>
+    <section class="section-toc">
+     <h2>
+      Content Outline
+     </h2>
+     <ul>
+      <li>
+       1 Foundations and Paradigm Shift
+      </li>
+      <li>
+       1.1 Value Proposition and Four Principles
+      </li>
+      <li>
+       1.2 Centralization Limits and Alternative Models
+      </li>
+      <li>
+       2 Business Value, Accessibility, and Decision-Making
+      </li>
+      <li>
+       2.1 Candace Scenario: Centralized Baseline
+      </li>
+      <li>
+       2.2 Candace Scenario: Distributed Responsibility
+      </li>
+      <li>
+       3 Principle 1: Domain Ownership
+      </li>
+      <li>
+       3.1 Principle 2: Data as a Product
+      </li>
+      <li>
+       3.2 Principle 3: Federated Computational Governance
+      </li>
+      <li>
+       4 Principle 4: Self-Serve Platform
+      </li>
+      <li>
+       4.1 Socio-Technical Design and Team Topologies
+      </li>
+      <li>
+       4.2 Adoption Challenges and Practical Guidance
+      </li>
+     </ul>
+    </section>
+    <section class="study-section" id="s01">
+     <h2>
+      1 Foundations and Paradigm Shift
+     </h2>
+     <p>
+      The model emphasizes people, responsibilities, and operating design, not only tools, because data quality and decision speed depend on organizational structure as much as on technology.
+     </p>
+     <p>
+      Its primary objective is to remove organizational and technical bottlenecks in the data value stream so business teams can turn data into decisions faster and with clearer accountability.
+     </p>
+     <p>
+      Data mesh is a socio-technical operating model that decentralizes ownership of data, data transformation, and data serving to domain teams.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 01" class="zoomable" data-caption="M01.01" src="../assets/images/ch01/fig-01.png"/>
+      <figcaption>
+       M01.01 - Centralized Data Ownership
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s02">
+     <h2>
+      1.1 Value Proposition and Four Principles
+     </h2>
+     <p>
+      In practice, successful adoption depends on balancing local autonomy with shared standards, so teams can move quickly without fragmenting the overall data ecosystem.
+     </p>
+     <p>
+      These principles are applied pragmatically: organizations can adopt them incrementally, but they must preserve the core goal of decentralized value creation from data.
+     </p>
+     <p>
+      The approach is implemented through four complementary principles: domain ownership, data as a product, federated computational governance, and a self-serve platform.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 02" class="zoomable" data-caption="M01.02" src="../assets/images/ch01/fig-02.png"/>
+      <figcaption>
+       M01.02 - Decentralized Data Ownership
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s03">
+     <h2>
+      1.2 Centralization Limits and Alternative Models
+     </h2>
+     <p>
+      Data mesh differs by aligning ownership with business domains, so each domain can evolve data products independently while still contributing to an interoperable ecosystem.
+     </p>
+     <p>
+      Alternative models that split work only by technical layers can improve throughput, yet they still separate data responsibilities from business ownership and value outcomes.
+     </p>
+     <p>
+      Centralized data teams and platforms are often effective at early scale, but they eventually create delivery bottlenecks, weak domain context, and slow response to local business changes.
+     </p>
+    </section>
+    <section class="study-section" id="s04">
+     <h2>
+      2 Business Value, Accessibility, and Decision-Making
+     </h2>
+     <p>
+      This reduces delays in analytics and delivery because consumers can discover trusted data products with explicit context, interfaces, and quality expectations.
+     </p>
+     <p>
+      Domain-owned data products improve findability, interoperability, and decision quality by keeping data meaning close to the teams that generate and use it.
+     </p>
+     <p>
+      Business value emerges when data is accessible, understandable, and complete enough to support decisions, not when data is only stored in centralized repositories.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 03" class="zoomable" data-caption="M01.03" src="../assets/images/ch01/fig-03.png"/>
+      <figcaption>
+       M01.03 - Data Mesh and Central Storage Compatibility
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s05">
+     <h2>
+      2.1 Candace Scenario: Centralized Baseline
+     </h2>
+     <p>
+      This baseline highlights a typical anti-pattern: a central coordinator becomes the bottleneck for both information quality and business responsiveness.
+     </p>
+     <p>
+      As data moves across multiple handoffs, context is weakened and decisions become dependent on one overloaded coordinator.
+     </p>
+     <p>
+      In the initial operating model, operational data flows through a single central decision point, creating delays and recurring mistakes in planning and procurement.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 04" class="zoomable" data-caption="M01.04" src="../assets/images/ch01/fig-04.png"/>
+      <figcaption>
+       M01.04 - Candace Scenario: Central vs Decentralized Flow
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s06">
+     <h2>
+      2.2 Candace Scenario: Distributed Responsibility
+     </h2>
+     <p>
+      This shift demonstrates the practical effect of decentralization: improved autonomy at the edge while maintaining consistency across teams.
+     </p>
+     <p>
+      The same work can be coordinated through shared rules and interfaces while preserving domain-level execution speed.
+     </p>
+     <p>
+      When ownership is delegated to domain actors, local teams manage their own operational data and decision loops with faster feedback and clearer responsibility.
+     </p>
+    </section>
+    <section class="study-section" id="s07">
+     <h2>
+      3 Principle 1: Domain Ownership
+     </h2>
+     <p>
+      It also enables scalable growth: each domain evolves its own data assets without forcing every change through a single central queue.
+     </p>
+     <p>
+      Teams with direct domain knowledge can evolve datasets and semantics with less translation loss than central teams serving many unrelated domains.
+     </p>
+     <p>
+      Domain ownership assigns data responsibility to the teams closest to business context, so definitions, quality controls, and changes reflect real operational needs.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 05" class="zoomable" data-caption="M01.05" src="../assets/images/ch01/fig-05.png"/>
+      <figcaption>
+       M01.05 - Candace Scenario: Central vs Decentralized Flow
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s08">
+     <h2>
+      3.1 Principle 2: Data as a Product
+     </h2>
+     <p>
+      This product mindset improves reuse and trust because consumers can evaluate fitness, availability, and contractual behavior before adoption.
+     </p>
+     <p>
+      A data product requires explicit ownership for lifecycle, reliability, and usability, including metadata, access patterns, and service expectations.
+     </p>
+     <p>
+      Treating data as a product means defining clear consumers, quality expectations, discoverability, and stable interfaces rather than exposing raw datasets without context.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 06" class="zoomable" data-caption="M01.06" src="../assets/images/ch01/fig-06.png"/>
+      <figcaption>
+       M01.06 - Candace Scenario: Central vs Decentralized Flow
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s09">
+     <h2>
+      3.2 Principle 3: Federated Computational Governance
+     </h2>
+     <p>
+      Computational governance operationalizes these standards through automation, so policies are enforced consistently across products without excessive manual control.
+     </p>
+     <p>
+      Governance decisions are distributed across a central body and domain teams, with clear decision rights and accountability boundaries.
+     </p>
+     <p>
+      Federated governance balances central guardrails and local autonomy by defining shared standards for security, interoperability, and compliance.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 07" class="zoomable" data-caption="M01.07" src="../assets/images/ch01/fig-07.png"/>
+      <figcaption>
+       M01.07 - Candace Scenario: Central vs Decentralized Flow
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s10">
+     <h2>
+      4 Principle 4: Self-Serve Platform
+     </h2>
+     <p>
+      This reduces onboarding friction, shortens delivery time, and lets product teams focus on domain value instead of rebuilding common infrastructure.
+     </p>
+     <p>
+      Typical capabilities include provisioning patterns, security controls, metadata and catalog workflows, and integration accelerators for producers and consumers.
+     </p>
+     <p>
+      A self-serve platform extracts repeated technical work from domain teams and provides reusable capabilities as services.
+     </p>
+    </section>
+    <section class="study-section" id="s11">
+     <h2>
+      4.1 Socio-Technical Design and Team Topologies
+     </h2>
+     <p>
+      Applying socio-technical principles helps keep cognitive load manageable while aligning team interactions with system design.
+     </p>
+     <p>
+      When communication paths and ownership boundaries are explicit, delivery flow improves and operational ambiguity decreases.
+     </p>
+     <p>
+      Data architecture and organizational structure co-evolve; therefore platform and governance decisions must be designed together with team boundaries and responsibilities.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 08" class="zoomable" data-caption="M01.08" src="../assets/images/ch01/fig-08.png"/>
+      <figcaption>
+       M01.08 - Candace Scenario: Central vs Decentralized Flow
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s12">
+     <h2>
+      4.2 Adoption Challenges and Practical Guidance
+     </h2>
+     <p>
+      Long-term success depends on iterative platform and governance evolution so teams can increase autonomy without losing operational coherence.
+     </p>
+     <p>
+      A practical rollout starts with constrained scope, validates measurable outcomes quickly, and then scales patterns that prove value.
+     </p>
+     <p>
+      Adoption requires explicit tradeoffs among autonomy, standardization, and control, especially in security, data quality, and cross-domain interoperability.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 01 Figure 09" class="zoomable" data-caption="M01.09" src="../assets/images/ch01/fig-09.png"/>
+      <figcaption>
+       M01.09 - Principle 1: Domain Ownership
+      </figcaption>
+     </figure>
+    </section>
+    <section class="key-takeaways">
+     <h2>
+      Key takeaways
+     </h2>
+     <ul>
+      <li>
+       Data mesh is a socio-technical decentralization model focused on improving value flow from data.
+      </li>
+      <li>
+       The four principles must be applied together to balance autonomy, interoperability, and control.
+      </li>
+      <li>
+       Domain ownership and product thinking increase data quality, trust, and reuse at scale.
+      </li>
+      <li>
+       Federated computational governance enables enforceable shared standards without central bottlenecks.
+      </li>
+      <li>
+       A self-serve platform reduces repeated effort and accelerates delivery across data domains.
+      </li>
+     </ul>
+    </section>
+   </article>
+  </main>
+  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
+   Back to top
+  </a>
+  <noscript>
+   <a class="back-to-top-fallback" href="#top">
+    Back to top
+   </a>
+  </noscript>
+  <div aria-hidden="true" class="lightbox" id="lightbox">
+   <figure class="lightbox-inner">
+    <img alt="Zoomed figure" id="lightbox-image"/>
+    <figcaption id="lightbox-caption">
+    </figcaption>
+   </figure>
+  </div>
+ </body>
 </html>

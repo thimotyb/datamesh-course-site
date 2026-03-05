@@ -1,1076 +1,376 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M07 - Self-Serve Platform Design</title>
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <script src="../assets/js/back-to-top.js" defer></script>
-  </head>
-  <body>
-    <header id="top" class="hero">
-      <h1>M07 - Self-Serve Platform Design</h1>
-    </header>
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
-      <a href="../index.html">Home</a>
-      <a href="chapter-06.html">Previous module (M06)</a>
-      <a href="chapter-07.html" aria-current="page">M07 - Self-Serve Platform Design</a>
-      <a href="chapter-08.html">Next module (M08)</a>
-    </nav>
-    <main class="content">
-      <article>
-        <section class="section-toc">
-          <h2>Content Outline</h2>
-          <ul>
-            <li>Why a self-serve platform reduces duplication and delivery bottlenecks.</li>
-            <li>How platform thinking applies to producer and consumer workflows.</li>
-            <li>Which minimum services the platform should expose to domain teams.</li>
-            <li>How platform architecture evolves as scale and needs increase.</li>
-            <li>How platform capabilities align with governance and shared standards.</li>
-            <li>How to improve team autonomy without losing interoperability and control.</li>
-          </ul>
-        </section>
-        <section id="s01" class="study-section">
-          <h2>S01 - Self-Serve Platform Design</h2>
-          <p>Understanding how the MVP fits into a self-serve data platform.</p>
-          <p>Working with the modular plane architecture.</p>
-          <p>
-            In the first part of this material, the organization learned all the basics of the data
-            mesh. That included building a data mesh MVP for Messflix within a month in.
-          </p>
-          <p>
-            After Messflix starts to build data product after data product, a lot of duplication of
-            efforts happens in terms of ingestion tooling and other data-related technologies. These
-            data-related skills are specialized.
-          </p>
-          <p>
-            The purpose of a self-serve platform is to take the duplicated and specialized skills
-            out of the many development teams and put them into one platform. Because the platform
-            will be used by many teams, teams usually strive to make it self-serve, meaning.
-          </p>
-          <div class="note-box">
-            <strong>Key point.</strong> Platforms reduce duplicate effort. A self-serve platform is
-            a key to the data mesh, because a lot of data mesh skills are quite specialized.
-          </div>
-          <p>
-            focuses on exactly that: how to build a proper self-serve data platform and a handful of
-            concepts that come in handy for doing it right the first time around. will do so by
-            first recalling the minimal platform from.
-          </p>
-          <p>
-            In the first section, the organization will learn a definition of platform. Teams will
-            also dive into platform thinking.
-          </p>
-          <p>
-            In the second section, the organization will learn about X as a service and apply this
-            collaboration mode to make the data consumers’ work easier.
-          </p>
-          <p>
-            In the third section, the organization will learn about modular plane architectures in
-            the context of platforms, as well as the architecture of a generic platform. Teams will
-            apply that to make the data producers’ life easier.
-          </p>
-          <p>
-            will take another round of inspiration from the previously learned concepts and apply
-            them to increase the value for the data producers by a lot.
-          </p>
-          <p>
-            To make life easier for the organization, shows the concepts the organization will learn
-            as well as an overview of the three iterations of the self-serve platform.
-          </p>
-          <p>
-            The topic of federated computational governance, with an emphasis on computational
-            (which the organization discovered in the preceding chapter), is of particular
-            importance. highlights it again in each iteration.
-          </p>
-        </section>
-        <section id="s02" class="study-section">
-          <h2>S02 - Built and Consists</h2>
-          <p>In, teams built an MVP for the data mesh. It consists of the following.</p>
-          <p>
-            A simple scripted mechanism that allows for checking in a configuration JSON file
-            containing a data product definition.
-          </p>
-        </section>
-        <section id="s03" class="study-section">
-          <h2>S03 - Governance Model</h2>
-          <p>
-            A wiki page explaining how to use this Git repository from both a data consumer and a
-            data producer perspective.
-          </p>
-          <p>
-            In the MVP, teams deploy a registration script. This registration script validates the
-            provided JSON and checks for simple governance policies.
-          </p>
-          <p>
-            The result of the computational check is then played back to the data product owner who
-            registers the product so they have a chance to correct possible mistakes. This is a
-            simple version of federated computational governance.
-          </p>
-          <p>
-            But what exactly is a platform in general, and why did this one emerge as the first
-            solution?
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-01.png"
-              alt="Module 07 Figure 01"
-              class="zoomable"
-              data-caption="M07.01"
-            />
-            <figcaption>M07.01 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s04" class="study-section">
-          <h2>S04 - Self-Serve Platform Design</h2>
-          <p>
-            will use a generic definition of platform that unifies many current definitions.
-            Economists tend to define platforms this way.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> A platform mediates between different parties. Its purpose
-            is to make interaction faster, easier, better, more valuable, and more frictionless.
-          </div>
-        </section>
-        <section id="s05" class="study-section">
-          <h2>S05 - Self-Serve Platform Design</h2>
-          <p>Which parties are mediated between?</p>
-          <p>How does each party interact with the platform? How does the “mediation” work?</p>
-          <p>answers these questions for the MVP platform.</p>
-        </section>
-        <section id="s06" class="study-section">
-          <h2>S06 - Data Product Team Structure</h2>
-          <p>
-            If teams look at the platform MVP in the architecture diagrams, it is possible to
-            observe quickly interactions. However, the platform already abstracts a few things away.
-          </p>
-          <p>
-            Which parties are interacting with the platform? Teams have data product owners and
-            developer teams, which It is possible to group into data producers, albeit the two
-            subgroups will have different requirements that It is recommended to consider
-            separately.
-          </p>
-          <p>
-            Teams have analysts and other development teams as the data consumers. Again, teams have
-            two very different kinds of consumers with different requirements.
-          </p>
-          <p>
-            Finally, teams have a lot of data products. Considering data products as a party is a
-            big advantage.
-          </p>
-          <p>
-            So the second interest of data consumers is to communicate with the data producers. In
-            the data mesh, teams aim to have that communication automatic because any personal
-            communication does not scale into the mesh.
-          </p>
-          <p>
-            Communication through the data catalog is simple: data producers provide metadata, lots
-            of it, and it’s well maintained. Data consumers read and consume the metadata.
-          </p>
-          <div class="note-box">
-            <strong>Important note.</strong> Including “things” like data products as parties in a
-            platform’s description might seem weird. But it enables teams to fit almost all kinds of
-            platforms into the platform definition: developer platforms, deployment platforms, and
-            basically all platforms where the main interaction is between.
-          </div>
-          <p>
-            Whether the organization want to consider data products as a platform feature as well is
-            the choice. There is no right or wrong answer to this question, but It is recommended to
-            at least have one answer that the organization bases the work on.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-02.png"
-              alt="Module 07 Figure 02"
-              class="zoomable"
-              data-caption="M07.02"
-            />
-            <figcaption>M07.02 - Data Product Team Structure</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-03.png"
-              alt="Module 07 Figure 03"
-              class="zoomable"
-              data-caption="M07.03"
-            />
-            <figcaption>M07.03 - Data Product Team Structure</figcaption>
-          </figure>
-        </section>
-        <section id="s07" class="study-section">
-          <h2>S07 - Self-Serve Platform Design</h2>
-          <p>
-            To understand the idea behind platform thinking, teams find it easier to use a
-            nonsoftware example. Imagine a woodworking shop.
-          </p>
-          <p>
-            What usually happens in woodworking is that people start to make a few customized tools.
-            That could be a simple dovetail guardrail; it could be a special chisel or a carving
-            tool.
-          </p>
-          <p>
-            Now, the workshop owner could just buy a bunch of special-purpose tools. But to truly
-            make this useful, he would need a huge inventory of them and a decent catalog to find
-            the right tool.
-          </p>
-          <p>
-            Instead, he could provide something else: a special station for making special-purpose
-            tools, including a few measurement instruments, a drawing board, possibly some
-            metalworking instruments, and the like. Additionally, he could organize a short meetup
-            on Wednesday evenings to let people showcase their special-purpose.
-          </p>
-          <p>
-            What the workshop owner would be utilizing as an alternative to stocking a lot of
-            specialist tools is product thinking —providing people with the tools they need. In the
-            second alternative, however, he is leveraging another idea called platform thinking.
-          </p>
-          <p>
-            The workshop owner is providing a platform: the special-purpose tool station that
-            enables others via self-service to easily increase their output flow of high-quality
-            furniture. He is utilizing the analysis of the flow of work, the sequence of steps the
-            individual woodworkers are taking.
-          </p>
-          <p>
-            Platform thinking is not an alternative to product thinking. The approach considers it
-            simply a second lens through which to view things.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-04.png"
-              alt="Module 07 Figure 04"
-              class="zoomable"
-              data-caption="M07.04"
-            />
-            <figcaption>M07.04 - Self-Serve Platform Design</figcaption>
-          </figure>
-        </section>
-        <section id="s08" class="study-section">
-          <h2>S08 - Self-service and Keep</h2>
-          <p>
-            Can be used in self-service, to keep the unit’s autonomy and ability to react to change.
-          </p>
-          <p>
-            In the woodworking example, this is exactly what teams have. Every woodworker can go on
-            as desired.
-          </p>
-        </section>
-        <section id="s09" class="study-section">
-          <h2>S09 - Self-Serve Platform Design</h2>
-          <p>
-            The word platform makes some CIO/CTOs shiver because a lot of platforms do not support
-            the idea of platform thinking. If the “platform” is a fancy deployment machine that
-            requires every development team to have an expert who can use that fancy deployment
-            machine.
-          </p>
-          <p>
-            The platforms that emerge out of platform thinking are lean and thin. These platforms
-            are never launched as big and comprehensive pieces.
-          </p>
-          <p>
-            In fact, the larger the participant base becomes, the leaner the platform should become,
-            in a sense. With more participants, the friction points grow, and it is necessary to
-            avoid friction at all costs; otherwise, teams slow the flow, instead of enhancing it.
-          </p>
-          <p>Next, applies platform thinking to the MVP platform.</p>
-        </section>
-        <section id="s10" class="study-section">
-          <h2>S10 - Self-Serve Platform Design</h2>
-          <p>
-            Initially, Messflix has analysts and development teams. The development teams are data
-            producers, while the analysts and possibly other teams in the example are data
-            consumers.
-          </p>
-          <p>
-            The initial MVP platform focuses mostly on the data consumers in applying platform
-            thinking. examines explore the workflows to understand why.
-          </p>
-        </section>
-        <section id="s11" class="study-section">
-          <h2>S11 - Self-Serve Platform Design</h2>
-          <p>Finding the right dataset.</p>
-          <p>Possibly combining it with others.</p>
-          <p>
-            The MVP platform allows a data analyst to combine almost all of these steps into one or
-            two. Browsing and finding the right dataset as well as understanding it can all be done
-            by reading the data catalog.
-          </p>
-          <p>
-            The MVP platform thus saves a substantial amount of time for data analysts each time
-            they go through their Problem &gt; Solution cycle.
-          </p>
-          <p>
-            For data producers, not much has changed. The data producer workflow usually involves
-            capturing the data, then moving it to a storage location and exposing it to data
-            producers.
-          </p>
-          <p>
-            The MVP platform produces a common set of tools for describing, storing, and exposing
-            data, but doesn’t make it much easier than what the data producers did before in most
-            cases.
-          </p>
-          <div class="note-box">
-            <strong>Important note.</strong> Platforms have one problem: their value is intrinsic,
-            meaning it applies only to parts already connected to the platform. In the example, the
-            data analyst has an easier time browsing and exploring datasets only after at least two
-            datasets are on the platform.
-          </div>
-          <p>
-            Teams picked the analyst’s workflow because browsing and exploring datasets are also
-            common tasks for development teams that want to use other teams’ data, for data
-            scientists, and for ML engineers. As It is possible to see, though, the workflow for
-            data consumers still takes a.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-05.png"
-              alt="Module 07 Figure 05"
-              class="zoomable"
-              data-caption="M07.05"
-            />
-            <figcaption>M07.05 - Self-Serve Platform Design</figcaption>
-          </figure>
-        </section>
-        <section id="s12" class="study-section">
-          <h2>S12 - Metadata Management</h2>
-          <p>
-            Messflix decides to form a small team to take care of the platform for now. Two veteran
-            data engineers start to maintain and develop the platform.
-          </p>
-          <p>
-            The data analysts responsible for reporting really enjoy the new data mesh and are
-            excited about the new datasets that the Green and Yellow teams provide. Both teams keep
-            on growing their number of datasets and products.
-          </p>
-          <p>
-            However, a couple of data scientists and machine learners who look at the data only from
-            time to time to identify necessary datasets are having trouble with it. They are having
-            a hard time digging through the CSV-based metadata catalog.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> When referring to lineage or data lineage, teams typically
-            mean a representation of where the individual pieces of data came from. If the
-            organization has a dataset that consists of revenues per customer, two base sources will
-            likely be involved: the payments of.
-          </div>
-          <p>
-            So people do what they usually do and call up the two engineers on the data team and ask
-            them to help them dig through the catalog. If the platform is successful and has lots of
-            data, the central team will end up doing.
-          </p>
-          <p>
-            But that leaves them with no time to work on the platform, and it won’t scale. So
-            reviews X as a service to understand how platform teams can improve their communication
-            with others.
-          </p>
-        </section>
-        <section id="s13" class="study-section">
-          <h2>S13 - Framework and Topologies</h2>
-          <p>
-            Team Topologies is a framework created by Matthew Skelton and Manuel Pais for modern
-            technology organizations. Described in their material Team Topologies: Organizing
-            Business and Technology Teams for Fast Flow (IT Revolution, 2019), this framework helps
-            to design teams and their interactions in a.
-          </p>
-          <p>
-            As such, it is a great example of socio-technical architecture. In the framework,
-            teams’re considering only three ways teams can interact, and one of them is X as a
-            service.
-          </p>
-          <p>
-            will give the organization a better definition of this in a minute, but teams would like
-            to return to the wood workshop example once more.
-          </p>
-        </section>
-        <section id="s14" class="study-section">
-          <h2>S14 - Station and Build</h2>
-          <p>
-            The tool-building station is becoming well adopted by a wide variety of woodworkers. But
-            Bill, the owner of the workshop and the maintainer of the station, would like to drive
-            up its adoption because he thinks it’s a great thing!
-          </p>
-          <p>
-            So the next day, he’s at the station and simply starts to talk to everyone who walks by.
-            He’s giving a hand to people, helping them build a few new tools.
-          </p>
-          <p>
-            However, the next day he realizes that all these different kinds of woodworkers still
-            aren’t able to build the tools themselves, so he changes his approach. On the second
-            day, he’s merely assisting, teaching, and educating people about how to build tools and
-            how.
-          </p>
-          <p>
-            Quite pleased with himself, Bill continues like this for a while. After a week, he
-            starts to add a few things to the station.
-          </p>
-          <p>
-            The next day, Bob decides to use yet another strategy: he starts to redesign the
-            complete station. This time, he tries to make it as self-explanatory as possible.
-          </p>
-          <p>
-            Sketch out the tool on the left side by using the paper and pencils beneath the station.
-          </p>
-          <p>Use the saws and other tools located to the left to make the tool.</p>
-          <p>Try out the tool on the sample wood located to the right.</p>
-          <p>He also puts up labels and reorganizes things again.</p>
-          <p>The next week something incredible happens. Nothing.</p>
-        </section>
-        <section id="s15" class="study-section">
-          <h2>S15 - Self-Serve Platform Design</h2>
-          <p>
-            As It is possible to see from this tool-building example, this collaboration model of X
-            as a service fits quite well with a product like a platform. The other interaction modes
-            in the Team Topologies framework are called collaboration and facilitation.
-          </p>
-          <p>
-            In their material, Skelton and Pais define X as a service as “consuming or providing
-            something with minimal collaboration.” X as a service should be the default operation
-            mode when a platform team interacts with other teams through their platform.
-          </p>
-          <p>
-            The idea behind a platform team is that it provides an internal product to the other
-            teams that are producing value. The analysts who, for example, help the product people
-            make important decisions are producing value, together with the product managers, and
-            the development.
-          </p>
-          <p>
-            The key point is that many such value-producing teams exist. Almost all teams (or units)
-            should produce value.
-          </p>
-          <p>
-            If each team runs its own CI system, that is totally fine for one dev team, for two dev
-            teams, and maybe for three dev teams. But beyond a certain number, the costs of
-            duplication simply are much larger than creating a team to.
-          </p>
-          <p>
-            But note that a platform team cannot operate well if it has any kind of friction. It has
-            to provide the service without becoming a bottleneck.
-          </p>
-          <p>
-            In the previous example, It is recommended to see right away that human communication
-            simply won’t scale and thus becomes a bottleneck. If the data engineers spend their days
-            understanding lineage, they won’t have time to speed up the platform.
-          </p>
-        </section>
-        <section id="s16" class="study-section">
-          <h2>S16 - Self-Serve Platform Design</h2>
-          <p>
-            The difference between collaboration/facilitation and X as a service might be quite
-            familiar to the organization. Teams have seen a lot of data organizations try to switch
-            to an X as a service collaboration model lately.
-          </p>
-          <p>
-            These data organizations have data teams that are centralized and tasked with both
-            ingesting data sources as well as modeling them out and providing reports and dashboards
-            on top of them. Usually, the collaboration between report requesters and the central
-            data team is one.
-          </p>
-          <p>
-            However, reporting and dashboarding simply don’t scale for some of these organizations.
-            They then try to make the data team into a platform team with a bunch of analysts and
-            analytics engineers spread out across the company.
-          </p>
-          <p>
-            The central data team becomes a “platform team” by focusing on just the data ingestion
-            part and possibly on modeling a few key data pieces. On the other side, then, analysts
-            and analytics engineers will pick up this data and produce reports and dashboards.
-          </p>
-          <p>
-            The interaction model here changes substantially. The central data team will have to do
-            some serious product management by ingesting and providing datasets that are commonly
-            used across the user base and align with the future direction of the company.
-          </p>
-          <p>
-            However, as the organization might’ve guessed, this collaboration mode, which is typical
-            for a platform team, also requires a certain level of matureness, especially in terms of
-            product management. So take this as a caveat when approaching the creation of the
-            platform team.
-          </p>
-          <p>
-            Now it’s the turn to remove this communication bottleneck and turn the collaboration
-            mode into X as a service for the company, Messflix.
-          </p>
-        </section>
-        <section id="s17" class="study-section">
-          <h2>S17 - Data Product Interfaces</h2>
-          <p>
-            To make the platform scalable, it is necessary to remove the people’s need for calling
-            up the Data team. In the example, they are having problems in the discovery phase.
-          </p>
-          <p>
-            Teams’re still using the JSON files to offer backward compatibility to the data
-            producers. But teams map the values of the JSON into the DataHub.
-          </p>
-          <p>
-            Keep the JSON files, and expand them to include additional values relevant to additional
-            features in DataHub.
-          </p>
-          <p>
-            Scrap the JSONs, and allow data product owners to modify metadata via the API right
-            inside DataHub.
-          </p>
-          <p>
-            The second option is more centralized than the first. The first option keeps the
-            metadata close to the data product and “discovers it,” whereas the second option means
-            more centralization.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-06.png"
-              alt="Module 07 Figure 06"
-              class="zoomable"
-              data-caption="M07.06"
-            />
-            <figcaption>M07.06 - Data Product Interfaces</figcaption>
-          </figure>
-        </section>
-        <section id="s18" class="study-section">
-          <h2>S18 - Governance Model</h2>
-          <p>
-            Data consumers at Messflix are having trouble understanding data products and are
-            particularly worried about lineage. A centralist way of ensuring that lineage data
-            exists is to simply enforce a policy checking for lineage information in the data
-            product registration.
-          </p>
-          <p>
-            But for the governance team members at Messflix, that does not seem right at all. They
-            come up with a better solution with the data platform team.
-          </p>
-          <p>
-            The data platform team, however, implements a simple script that does a bit of automatic
-            lineage calculation based on SQL and Python code that uses other common interfaces and
-            endpoints at Messflix. This way, teams Yellow and Green are encouraged to simply write
-            good.
-          </p>
-          <p>
-            The new workflow for data consumers becomes pretty quick when using the advanced
-            functionality of DataHub. It is advisable now be able to remove the human dependency on
-            the Data team.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-07.png"
-              alt="Module 07 Figure 07"
-              class="zoomable"
-              data-caption="M07.07"
-            />
-            <figcaption>M07.07 - Governance Model</figcaption>
-          </figure>
-        </section>
-        <section id="s19" class="study-section">
-          <h2>S19 - Data Product Team Structure</h2>
-          <p>
-            Teams Yellow and Green are quite happy with the current self-serve platform. But the ML
-            engineers are requesting data from team Gray now, responsible for the Advertise
-            capability.
-          </p>
-          <p>
-            The machine learners are already big fans of the DataHub data catalog, but team Gray
-            isn’t at all a fan of pushing CSVs into some repository. They are big fans of PostgreSQL
-            databases because their data product is huge and will contain many datasets.
-          </p>
-          <p>The data platform team decides to make that possible. But how exactly?</p>
-        </section>
-        <section id="s20" class="study-section">
-          <h2>S20 - Self-Serve Platform Design</h2>
-          <p>
-            Carliss Baldwin and C. Jason Woodard, in “The Architecture of Platforms: A Unified View”
-            ( http://mng.bz/XaWp ), shine a different light on platforms that teams will explore.
-          </p>
-          <p>
-            But the architecture of any kind of platform is surprisingly constant. It is possible to
-            find the same kind of architectural components inside developer platforms, self-serve
-            data platforms, a brick-and-mortar marketplace, or even Stripe.
-          </p>
-          <p>
-            Take the central town square as an example. In many small towns, it hosts a farmers
-            market, usually at a fixed time.
-          </p>
-        </section>
-        <section id="s21" class="study-section">
-          <h2>S21 - Self-Serve Platform Design</h2>
-          <p>The buyers and the farmers are the complements, or participants, of the platform.</p>
-          <p>
-            The town square (place) and the fixed time together become the platform interface,
-            everything required for buyers and farmers to interact much more easily.
-          </p>
-          <p>
-            Everything on the town square and everything around it, possibly the processes around it
-            such as charges for renting a space at the market, make up the platform kernel. This
-            component includes everything that provides value, such as water taps and electricity
-            for.
-          </p>
-          <ul class="study-bullets">
-            <li>
-              <strong>Turns out, these three components</strong> complements, platform interface,
-              and platform kernel—can be found in any platform. The latter two architectural
-              components have the following goals.
-            </li>
-          </ul>
-          <p>
-            The platform interface is supposed to be kept as fixed as possible to ensure maximal
-            platform activity. Once the organization change the day of the market, things will go
-            pretty crazy.
-          </p>
-          <p>
-            The platform kernel is constantly changed to optimize the platforms’ value to the
-            participants. The pricing is optimized, possibly tents are provided, the power sources
-            are upgraded to include other sellers, or maybe Christmas decorations can be provided to
-            make the farmers market a.
-          </p>
-          <div class="note-box">
-            <strong>Important note.</strong> In the preceding section, teams decided to map the
-            checked-in JSON files into the DataHub and not let people use the DataHub directly. Why?
-          </div>
-        </section>
-        <section id="s22" class="study-section">
-          <h2>S22 - Self-Serve Platform Design</h2>
-          <p>
-            If teams revisit the architecture sketch from the preceding section, It is possible to
-            highlight the complements, the different parts that make up the interface, and the
-            platform kernel with some effort. Teams’ve depicted them for the organization in.
-          </p>
-          <p>
-            Leaving out parts of the interface is troublesome because If the organization change a
-            part, the organization will cause serious value deterioration to the platform. For
-            instance, if teams decide to not use the Git repository anymore, teams Green and Yellow
-            will have to redo a.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-08.png"
-              alt="Module 07 Figure 08"
-              class="zoomable"
-              data-caption="M07.08"
-            />
-            <figcaption>M07.08 - Self-Serve Platform Design</figcaption>
-          </figure>
-        </section>
-        <section id="s23" class="study-section">
-          <h2>S23 - Data Product Interfaces</h2>
-          <p>
-            The word interface is an overloaded term. In terms of platforms, an interface to a
-            platform X is something really generic; it’s “the ways of interacting with platform X.”.
-          </p>
-          <p>
-            From the platform perspective, an interface can be much more than a technically
-            implemented REST interface. The central town square becomes a platform, with its
-            interface being the location and the time.
-          </p>
-          <p>
-            And the same is true of a self-serve data platform. The interface might consist of
-            practices and processes the organization’ve put into place to use, such as the central
-            Git repository to upload CSVs.
-          </p>
-          <p>
-            All of these make up the interfaces, not just the technical parts. All of these are
-            supposed to stay “mostly fixed.” That’s why they are so hard to spot and so important.
-          </p>
-          <p>
-            It is possible now easily point out the platform kernel —it’s everything hidden behind
-            the interfaces. The actual software running the DataHub and the data product
-            registration script are definitely parts of the platform kernel that It is possible to
-            easily exchange in order to create more.
-          </p>
-          <p>
-            And that is exactly what teams are going to do. will keep the interface fixed, and add a
-            new part to the interface by making the kernel more modular and exposing more parts of
-            it.
-          </p>
-        </section>
-        <section id="s24" class="study-section">
-          <h2>S24 - Self-Serve Platform Design</h2>
-          <p>
-            Team Gray essentially wants to be able to configure the data storage. This is an
-            advanced capability of the platform.
-          </p>
-          <p>
-            To deploy any kind of infrastructure, most technology teams today follow the
-            infrastructure-as-code pattern. The infrastructure—like a Docker container, a cluster,
-            some kind of load balancer, or a set of these together with operating systems and
-            all—are configured as code.
-          </p>
-          <p>
-            To do so, teams use an abstraction layer, and tooling that maps that abstraction into
-            reality. One of the most common tooling choices here is Terraform ( www.terraform.io ),
-            together with its easy-to-read language, HashiCorp Configuration Language (HCL).
-          </p>
-          <p>
-            To provide an infrastructure template, the Gray team can write a Terraform file in HCL
-            and make a couple of parameters configurable, like names, sizes, optional components,
-            and so on. Any team can then use the template, fill in the parameters, and deploy the.
-          </p>
-        </section>
-        <section id="s25" class="study-section">
-          <h2>S25 - Data Product Team Structure</h2>
-          <p>The data product plane for creating, finding, and discovering.</p>
-          <p>
-            The data storage plane for the internal creation of the default CSV storage, or the
-            option to create a Terraform template for using a suitable PostgreSQL instance that will
-            autoregister the data products’ storage location.
-          </p>
-          <p>
-            A lot of other options could satisfy the same requirement. Instead of creating a
-            Terraform template, teams could include an access policy and let data producers register
-            the data storage location.
-          </p>
-          <p>
-            But this does the job just fine. Team Gray creates its Advertise data product, using the
-            predefined Terraform template to create its PostgreSQL database, which automatically is
-            checked into the DataHub.
-          </p>
-          <p>
-            The new changes the data platform team makes are important. First of all, the easy
-            parts: a data product storage and port interface do the described Terraform magic.
-          </p>
-          <p>
-            However, this puts the infrastructure of the data ports largely into the hands of the
-            data-producing teams. They are now free to exchange their PostgreSQL instance for a new
-            one, should they have trouble with it.
-          </p>
-          <p>
-            The data product locator interface, depicted in, is used by the distributed data
-            products to register and update themselves. They specify their location, which usually
-            means the SQL endpoint for the PostgreSQL instance, as well as the location of the
-            datasets, which in.
-          </p>
-          <p>
-            The data product Locator then also checks the data product files, which are still hosted
-            in the central repository for the rest of the data products, and provides the unified
-            information to the DataHub.
-          </p>
-          <p>
-            Additionally, the data product Locator exposes its API externally. The analysts can keep
-            on working with DataHub, but the ML engineers could use the new interface to
-            programmatically keep track of the location of the data products Team Gray provides.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-09.png"
-              alt="Module 07 Figure 09"
-              class="zoomable"
-              data-caption="M07.09"
-            />
-            <figcaption>M07.09 - Data Product Team Structure</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-10.png"
-              alt="Module 07 Figure 10"
-              class="zoomable"
-              data-caption="M07.10"
-            />
-            <figcaption>M07.10 - Data Product Team Structure</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-11.png"
-              alt="Module 07 Figure 11"
-              class="zoomable"
-              data-caption="M07.11"
-            />
-            <figcaption>M07.11 - Data Product Team Structure</figcaption>
-          </figure>
-        </section>
-        <section id="s26" class="study-section">
-          <h2>S26 - Governance Model</h2>
-          <p>
-            Now that the data can be stored outside the central Git repository, the federated aspect
-            of governance becomes increasingly important. The Data team decides to provide some
-            small additional capabilities inside its Terraform template.
-          </p>
-          <p>
-            Storage outside the central Git repository also rips open another topic: access
-            policies. In a federated fashion, Messflix could simply decide to let the data producers
-            handle everything on their own.
-          </p>
-          <p>
-            However, the team chooses to provide a little bit more help to data-producing teams.
-            Right now, there are only two, so they choose to provide two default policies.
-          </p>
-          <p>
-            Finally, teams want to take another look at the data producers—this time, all of them.
-            Now that the flow on the data consumer side isn’t the bottleneck anymore, the focus
-            should be on enabling the data producers, as teams will see.
-          </p>
-        </section>
-        <section id="s27" class="study-section">
-          <h2>S27 - Self-Serve Platform Design</h2>
-          <p>
-            Messflix realizes that this ML suddenly takes off, together with its data mesh. The
-            company has a recommendation system running, automatically optimized its ad campaigns,
-            and has a bunch of forecasting systems in place.
-          </p>
-          <p>
-            The needed data products, however, are pretty intense in the sense that all three teams
-            (Green, Yellow, and Gray) start to complain about the amount of transformation work they
-            have to do. They feel like they don’t have the right tools to handle intense.
-          </p>
-          <p>
-            And they might be right. Data teams deploy data orchestrators, transformers, or parallel
-            computing frameworks to handle these kinds of things.
-          </p>
-          <div class="definition-box">
-            <strong>Definition</strong> Apache Airflow is an open source platform, a so-called data
-            orchestrator, to run, schedule, and monitor computational workloads. It runs on Python
-            and has a UI.
-          </div>
-          <p>
-            The Data team members choose to provide Airflow as a self-service, meaning they would
-            again provide a Terraform template together with an onboarding session. The beauty of
-            the Terraform template is that they are able to include configurations that allow them
-            to directly hook.
-          </p>
-        </section>
-        <section id="s28" class="study-section">
-          <h2>S28 - Self-Serve Platform Design</h2>
-          <p>
-            The data platform team members choose to provide an Airflow infrastructure template.
-            They do so because all the currently relevant Messflix teams are well educated in
-            DevOps.
-          </p>
-          <p>
-            The data platform team could have chosen to provide one hosted Airflow cluster
-            maintained by the data platform team (or a third party like Amazon Web Services), with a
-            reasonable separation between the compute environments per team.
-          </p>
-          <p>
-            Either option can be valid, depending on the circumstances. The question is simply, is
-            the combination of platform team + flow-aligned teams able to increase their throughput
-            with this option?
-          </p>
-          <p>
-            will now take a look at the final architecture of the self-serve data platform. Again,
-            what the data platform team does is modularize and extend another part of the
-            capabilities of the platform.
-          </p>
-          <p>A data product plane for creating, finding, and discovering.</p>
-          <p>
-            A data storage plane for the internal creation of the default CSV storage, or the option
-            to create a Terraform template for using a suitable PostgreSQL instance that will
-            autoregister the data products’ storage location.
-          </p>
-          <p>
-            A data transformation plane can be used optionally. In this case, it creates and links a
-            Terraform template for Airflow.
-          </p>
-          <p>
-            This new architecture plane means a lot of new possibilities for the data-producing
-            teams. zooms into a few relevant parts for the Gray team before turning to the complete
-            picture.
-          </p>
-          <p>
-            The Gray team members utilize the Terraform templates to create the PostgreSQL instance
-            for the data product storage and the SQL port. They also utilize the Airflow template to
-            create ingestions and transformation tooling.
-          </p>
-          <p>
-            The final architecture, shown in, now allows for each data-producing team to have
-            decently equipped data products.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-12.png"
-              alt="Module 07 Figure 12"
-              class="zoomable"
-              data-caption="M07.12"
-            />
-            <figcaption>M07.12 - Self-Serve Platform Design</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-13.png"
-              alt="Module 07 Figure 13"
-              class="zoomable"
-              data-caption="M07.13"
-            />
-            <figcaption>M07.13 - Self-Serve Platform Design</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-14.png"
-              alt="Module 07 Figure 14"
-              class="zoomable"
-              data-caption="M07.14"
-            />
-            <figcaption>M07.14 - Self-Serve Platform Design</figcaption>
-          </figure>
-        </section>
-        <section id="s29" class="study-section">
-          <h2>S29 - Data Product Interfaces</h2>
-          <p>An optional CSV output port.</p>
-          <p>An Airflow instance to easily manipulate data to prepare it for consumption.</p>
-        </section>
-        <section id="s30" class="study-section">
-          <h2>S30 - Data Product Interfaces</h2>
-          <p>
-            The data consumer stack consists of the DataHub and related tooling to mainly focus on
-            finding and understanding the right data.
-          </p>
-          <p>
-            The workflow for data producers changes a lot with this newly provided interface. Both
-            the Yellow and Gray teams decide to use the provided templates to start an Airflow
-            instance inside their team context.
-          </p>
-          <p>Team Gray is now using just the SQL ports.</p>
-          <p>
-            Team Yellow opts to use the SQL endpoints in addition to the CSV port as output ports
-            because the team is now free to create so many more valuable data products.
-          </p>
-          <p>
-            Team Green keeps on using the CSV dumps, as it doesn’t have the need for anything else
-            right now.
-          </p>
-          <p>
-            The data consumers, both the ML engineers as well as analysts, use the central DataHub
-            to locate datasets and then use their personal weapons to consume and combine them.
-          </p>
-        </section>
-        <section id="s31" class="study-section">
-          <h2>S31 - Governance Model</h2>
-          <p>
-            The Data team now realizes that the data products are becoming increasingly more
-            decentralized. For this iteration, they decide to do two things in terms of
-            computational governance.
-          </p>
-          <p>
-            Previously, the team members helped to calculate lineage based on the SQL script. With
-            the provisioning of Airflow as a service, it makes sense for them to extend that
-            calculation to the new way of modifying data.
-          </p>
-        </section>
-        <section id="s32" class="study-section">
-          <h2>S32 - Data Product Team Structure</h2>
-          <p>
-            In another iteration, the Data team could also enable the movement of the JSON files
-            with data product metadata into an endpoint residing inside the data products, which are
-            now also technically completely inside the teams’ contexts.
-          </p>
-          <p>
-            This would complete the architectural decoupling of the data products into one single
-            unit called the architectural quantum. (Teams could argue this would also have been
-            possible beforehand, depending on how the definition is ownership.).
-          </p>
-          <p>
-            But this decoupling would offer more freedom to the decentralized teams. In that setup,
-            they could provide the endpoint any way they want, following a standardized schema, and
-            simply register the URL of the endpoint at some central service.
-          </p>
-          <p>And teams’re done! Except, teams’re never done.</p>
-          <p>
-            Teams went through a long journey by first identifying the key concepts of the thin
-            platform teams began with. Teams then went on to do three iterations on it until teams
-            arrived at a platform for Messflix.
-          </p>
-          <p>
-            Teams’ve also covered a lot of ground with the self-serve data platform. shows a short
-            summary of the stages.
-          </p>
-        </section>
-        <section id="s33" class="study-section">
-          <h2>S33 - Self-Serve Platform Design</h2>
-          <p>Platforms are essentially mediating interactions between parties.</p>
-          <p>
-            The architecture of a platform consists of complements, the platform kernel, and the
-            interface.
-          </p>
-          <p>
-            X as a service is a great concept for understanding the interaction modes of platform
-            teams that maintain self-serve data platforms.
-          </p>
-          <p>
-            Platform thinking is an approach to thinking about products in terms of development flow
-            and speeding up development by providing shared tooling.
-          </p>
-          <p>
-            It is possible to build a self-serve data platform iteratively, starting with a small
-            seed, or MVP. But concepts like X as a service also can help the organization quickly
-            make the right decisions for the self-serve platform.
-          </p>
-          <p>
-            Combining tooling can create value with the data mesh, quickly leveraging the power of
-            the self-serve platform.
-          </p>
-        </section>
-        <section id="s34" class="study-section">
-          <h2>S34 - Governance Model</h2>
-          <p>6 Federated computational governance.</p>
-        </section>
-        <section id="s35" class="study-section">
-          <h2>S35 - Google Cloud Self-Service Platform Architecture</h2>
-          <p>
-            A self-service data platform in a data mesh is designed to increase domain team autonomy
-            while preserving shared governance and interoperability.
-          </p>
-          <p>
-            The architecture separates reusable platform capabilities from domain-owned data
-            products. Domain teams consume standardized building blocks instead of requesting
-            one-off implementations from a central team.
-          </p>
-          <p>
-            The model combines two capability families: composable platform solutions and common
-            services. Composable solutions accelerate provisioning and delivery workflows; common
-            services provide governance, trust, and operational consistency across domains.
-          </p>
-          <ul>
-            <li>
-              Platform solutions: reusable infrastructure and data patterns that teams can provision
-              in self-service mode.
-            </li>
-            <li>
-              Common services: metadata, policy enforcement, observability, and quality signals
-              shared across data products.
-            </li>
-            <li>
-              Consumption interfaces: stable access contracts that let consumers use products
-              without coupling to producer internals.
-            </li>
-            <li>
-              Template-driven delivery: vetted IaC templates improve security, repeatability, and
-              speed of adoption.
-            </li>
-          </ul>
-          <p>
-            This approach keeps platform ownership centralized for standards and guardrails, while
-            execution remains decentralized in domain teams.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              src="../assets/images/ch07/fig-15-self-service-platform.svg"
-              alt="Self-service data platform architecture in a data mesh"
-              class="zoomable"
-              data-caption="M07.15"
-            />
-            <figcaption>M07.15 - Self-Service Data Platform Components in a Data Mesh</figcaption>
-          </figure>
-          <div class="note-box">
-            <strong>Key point.</strong> Platform success is measured by faster domain delivery,
-            consistent governance outcomes, and high trust in discoverable data products.
-          </div>
-        </section>
-        <section class="key-takeaways">
-          <h2>Key takeaways</h2>
-          <ul>
-            <li>Why a self-serve platform reduces duplication and delivery bottlenecks.</li>
-            <li>How platform thinking applies to producer and consumer workflows.</li>
-            <li>Which minimum services the platform should expose to domain teams.</li>
-            <li>How platform architecture evolves as scale and needs increase.</li>
-            <li>
-              How Google Cloud reference architecture separates reusable platform services from
-              domain-owned data product execution.
-            </li>
-          </ul>
-        </section>
-      </article>
-    </main>
-    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
-      >Back to top</a
-    >
-    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <figure class="lightbox-inner">
-        <img id="lightbox-image" alt="Zoomed figure" />
-        <figcaption id="lightbox-caption"></figcaption>
-      </figure>
-    </div>
-  </body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   M07 - Self-Serve Platform Design
+  </title>
+  <link href="../assets/css/main.css" rel="stylesheet"/>
+  <script defer="" src="../assets/js/back-to-top.js">
+  </script>
+ </head>
+ <body>
+  <header class="hero" id="top">
+   <h1>
+    M07 - Self-Serve Platform Design
+   </h1>
+  </header>
+  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="chapter-06.html">
+    Previous module (M06)
+   </a>
+   <a aria-current="page" href="chapter-07.html">
+    M07 - Self-Serve Platform Design
+   </a>
+   <a href="chapter-08.html">
+    Next module (M08)
+   </a>
+  </nav>
+  <main class="content">
+   <article>
+    <section class="section-toc">
+     <h2>
+      Content Outline
+     </h2>
+     <ul>
+      <li>
+       1 Why a Self-Serve Platform Is Core to Data Mesh
+      </li>
+      <li>
+       1.1 Platform Parties and Interaction Flows
+      </li>
+      <li>
+       1.2 Platform Thinking Through Shared Capabilities
+      </li>
+      <li>
+       2 First Iteration: Consumer Enablement
+      </li>
+      <li>
+       2.1 X-as-a-Service for Data-Producing Teams
+      </li>
+      <li>
+       2.2 Second Iteration: Team-Oriented Tooling
+      </li>
+      <li>
+       3 Lineage and Governance Automation by Design
+      </li>
+      <li>
+       3.1 Platform Architecture Planes and Responsibilities
+      </li>
+      <li>
+       3.2 Kernel, Interface, and Complements Model
+      </li>
+      <li>
+       4 Third Iteration: Productive Producer Experience
+      </li>
+      <li>
+       4.1 Airflow-as-a-Service and Reusable Templates
+      </li>
+      <li>
+       4.2 Integrated Platform Blueprint for Scale
+      </li>
+     </ul>
+    </section>
+    <section class="study-section" id="s01">
+     <h2>
+      1 Why a Self-Serve Platform Is Core to Data Mesh
+     </h2>
+     <p>
+      The platform therefore becomes a core scaling mechanism: it reduces duplicate effort and increases delivery speed across producers and consumers.
+     </p>
+     <p>
+      A self-serve platform addresses this by centralizing reusable specialized capabilities while preserving domain team autonomy in delivery decisions.
+     </p>
+     <p>
+      As data mesh adoption grows, repeated implementation work across teams becomes a major bottleneck in ingestion, transformation, and exposure activities.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 01" class="zoomable" data-caption="M07.01" src="../assets/images/ch07/fig-01.png"/>
+      <figcaption>
+       M07.01 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s02">
+     <h2>
+      1.1 Platform Parties and Interaction Flows
+     </h2>
+     <p>
+      Well-designed interaction flows reduce friction by moving communication from ad hoc conversations to standardized product and metadata interfaces.
+     </p>
+     <p>
+      In practice, the platform should expose clear interaction paths for publishing, discovery, access, and context exchange.
+     </p>
+     <p>
+      A platform mediates interactions among producers, consumers, and data products to make collaboration faster and less dependent on manual coordination.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 02" class="zoomable" data-caption="M07.02" src="../assets/images/ch07/fig-02.png"/>
+      <figcaption>
+       M07.02 - Data Product Team Structure
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s03">
+     <h2>
+      1.2 Platform Thinking Through Shared Capabilities
+     </h2>
+     <p>
+      This approach is most effective when platform services are built iteratively from real workflow bottlenecks rather than from large upfront designs.
+     </p>
+     <p>
+      The objective is not to enforce one rigid path, but to provide modular services that teams can adopt without losing local flexibility.
+     </p>
+     <p>
+      Platform thinking focuses on improving delivery flow by offering shared capabilities that teams can consume on demand.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 03" class="zoomable" data-caption="M07.03" src="../assets/images/ch07/fig-03.png"/>
+      <figcaption>
+       M07.03 - Data Product Team Structure
+      </figcaption>
+     </figure>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 04" class="zoomable" data-caption="M07.04" src="../assets/images/ch07/fig-04.png"/>
+      <figcaption>
+       M07.04 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s04">
+     <h2>
+      2 First Iteration: Consumer Enablement
+     </h2>
+     <p>
+      Early consumer enablement also creates fast feedback loops that guide subsequent platform investment decisions.
+     </p>
+     <p>
+      Improving catalog usability and lineage visibility can immediately reduce time spent locating and validating datasets.
+     </p>
+     <p>
+      The first platform iteration should prioritize consumer pain points, typically discoverability, understanding, and initial data access efficiency.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 05" class="zoomable" data-caption="M07.05" src="../assets/images/ch07/fig-05.png"/>
+      <figcaption>
+       M07.05 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s05">
+     <h2>
+      2.1 X-as-a-Service for Data-Producing Teams
+     </h2>
+     <p>
+      The service contract must be explicit so teams can integrate predictably and platform teams can scale support across many domains.
+     </p>
+     <p>
+      For data-producing teams, this model enables rapid onboarding to shared capabilities without recurring dependency on platform engineers.
+     </p>
+     <p>
+      X-as-a-service means platform interactions should require minimal synchronous collaboration and feel operationally self-service.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 06" class="zoomable" data-caption="M07.06" src="../assets/images/ch07/fig-06.png"/>
+      <figcaption>
+       M07.06 - Data Product Interfaces
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s06">
+     <h2>
+      2.2 Second Iteration: Team-Oriented Tooling
+     </h2>
+     <p>
+      At this stage, platform quality is measured by reduced hand-holding and improved independent execution by product teams.
+     </p>
+     <p>
+      Tooling should be designed for consistency and fast adoption, with clear defaults and minimal mandatory complexity.
+     </p>
+     <p>
+      The second iteration extends platform value by packaging team-oriented tooling that reduces operational overhead in recurring data product tasks.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 07" class="zoomable" data-caption="M07.07" src="../assets/images/ch07/fig-07.png"/>
+      <figcaption>
+       M07.07 - Governance Model
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s07">
+     <h2>
+      3 Lineage and Governance Automation by Design
+     </h2>
+     <p>
+      Designing these capabilities early creates durable operating patterns that support both scalability and auditability.
+     </p>
+     <p>
+      Automation should integrate into normal product workflows, so compliance and traceability are produced continuously rather than retrofitted.
+     </p>
+     <p>
+      As usage grows, lineage and governance checks must be automated to avoid converting platform teams into manual support bottlenecks.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 08" class="zoomable" data-caption="M07.08" src="../assets/images/ch07/fig-08.png"/>
+      <figcaption>
+       M07.08 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 09" class="zoomable" data-caption="M07.09" src="../assets/images/ch07/fig-09.png"/>
+      <figcaption>
+       M07.09 - Data Product Team Structure
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s08">
+     <h2>
+      3.1 Platform Architecture Planes and Responsibilities
+     </h2>
+     <p>
+      Separating these concerns improves evolvability and allows targeted improvement without destabilizing the whole platform.
+     </p>
+     <p>
+      Typical planes include product registration/discovery, storage/location management, and transformation/orchestration support.
+     </p>
+     <p>
+      Platform architecture benefits from clear capability planes, each with explicit responsibilities and integration boundaries.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 10" class="zoomable" data-caption="M07.10" src="../assets/images/ch07/fig-10.png"/>
+      <figcaption>
+       M07.10 - Data Product Team Structure
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s09">
+     <h2>
+      3.2 Kernel, Interface, and Complements Model
+     </h2>
+     <p>
+      Kernel internals can evolve rapidly as long as interface contracts remain reliable and backward-compatible for existing teams.
+     </p>
+     <p>
+      Interfaces should remain stable because frequent interface changes degrade adoption and create migration costs for all participants.
+     </p>
+     <p>
+      A platform can be understood through three elements: kernel capabilities, exposed interfaces, and participating complements.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 11" class="zoomable" data-caption="M07.11" src="../assets/images/ch07/fig-11.png"/>
+      <figcaption>
+       M07.11 - Data Product Team Structure
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s10">
+     <h2>
+      4 Third Iteration: Productive Producer Experience
+     </h2>
+     <p>
+      Producer enablement at this level directly increases the number and quality of deliverable data products.
+     </p>
+     <p>
+      These capabilities should remain optional and composable, allowing teams to adopt only what matches their current complexity and maturity.
+     </p>
+     <p>
+      A mature iteration focuses on producer productivity by adding advanced capabilities for storage options, transformation workflows, and operational integration.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 12" class="zoomable" data-caption="M07.12" src="../assets/images/ch07/fig-12.png"/>
+      <figcaption>
+       M07.12 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 13" class="zoomable" data-caption="M07.13" src="../assets/images/ch07/fig-13.png"/>
+      <figcaption>
+       M07.13 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s11">
+     <h2>
+      4.1 Airflow-as-a-Service and Reusable Templates
+     </h2>
+     <p>
+      This approach increases consistency while still allowing domain teams to evolve workload-specific transformations.
+     </p>
+     <p>
+      Template-driven provisioning can include governance hooks, default controls, and registration logic to keep new products aligned with platform standards.
+     </p>
+     <p>
+      Reusable orchestration templates, such as Airflow-as-a-service, accelerate pipeline setup and reduce repeated infrastructure design work.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Module 07 Figure 14" class="zoomable" data-caption="M07.14" src="../assets/images/ch07/fig-14.png"/>
+      <figcaption>
+       M07.14 - Self-Serve Platform Design
+      </figcaption>
+     </figure>
+    </section>
+    <section class="study-section" id="s12">
+     <h2>
+      4.2 Integrated Platform Blueprint for Scale
+     </h2>
+     <p>
+      This structure enables continuous platform growth without forcing disruptive migrations for participating data product teams.
+     </p>
+     <p>
+      At scale, success depends on modular evolution: each capability can be improved independently while preserving stable interface contracts.
+     </p>
+     <p>
+      The integrated blueprint combines discovery, storage, and transformation capabilities into a coherent self-serve operating environment.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Self-service data platform architecture in a data mesh" class="zoomable" data-caption="M07.15" src="../assets/images/ch07/fig-15-self-service-platform.svg"/>
+      <figcaption>
+       M07.15 - Self-Service Data Platform Components in a Data Mesh
+      </figcaption>
+     </figure>
+    </section>
+    <section class="key-takeaways">
+     <h2>
+      Key takeaways
+     </h2>
+     <ul>
+      <li>
+       Self-serve platforms remove duplicated effort and are essential for scaling mesh delivery.
+      </li>
+      <li>
+       Platform value depends on clear producer-consumer-product interaction flows and stable interfaces.
+      </li>
+      <li>
+       X-as-a-service and reusable tooling reduce platform-team bottlenecks and improve autonomy.
+      </li>
+      <li>
+       Lineage and governance automation must be embedded in normal product workflows.
+      </li>
+      <li>
+       Modular platform planes enable iterative growth without disruptive architectural rewrites.
+      </li>
+     </ul>
+    </section>
+   </article>
+  </main>
+  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
+   Back to top
+  </a>
+  <noscript>
+   <a class="back-to-top-fallback" href="#top">
+    Back to top
+   </a>
+  </noscript>
+  <div aria-hidden="true" class="lightbox" id="lightbox">
+   <figure class="lightbox-inner">
+    <img alt="Zoomed figure" id="lightbox-image"/>
+    <figcaption id="lightbox-caption">
+    </figcaption>
+   </figure>
+  </div>
+ </body>
 </html>

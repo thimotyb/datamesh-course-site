@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M106 - Dataplex Catalog Operations and Metadata Enrichment</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M106 - Dataplex Catalog Operations and Metadata Enrichment</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-105.html">Previous module (M105)</a>
+      <a href="chapter-106.html" aria-current="page"
+        >M106 - Dataplex Catalog Operations and Metadata Enrichment</a
+      >
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>How Dataplex metadata management is organized in the catalog model.</li>
+            <li>How entries, entry groups, and aspect types define governance structure.</li>
+            <li>How metadata enrichment extends technical assets with business context.</li>
+            <li>How aspects and update masks support controlled metadata evolution.</li>
+            <li>How custom source ingestion expands catalog coverage beyond native systems.</li>
+            <li>How ingestion workflows and connectors support scalable metadata operations.</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>Metadata Management Model</h2>
+          <p>
+            Dataplex Universal Catalog provides a centralized metadata model to register, organize,
+            and govern data assets across environments.
+          </p>
+          <p>
+            The model separates asset identity, structural grouping, and descriptive metadata so
+            governance controls can evolve without redesigning physical storage systems.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Effective catalog operations depend on clear metadata
+            structure, not only on asset discovery.
+          </div>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>Entries and Entry Groups</h2>
+          <p>
+            Entries represent cataloged data assets, while entry groups provide logical organization
+            boundaries for governance and lifecycle operations.
+          </p>
+          <ul class="study-bullets">
+            <li>Entries map to discoverable resources and interfaces.</li>
+            <li>Entry groups help partition ownership and management scope.</li>
+            <li>Lookup and search operations enable consumer-facing discovery workflows.</li>
+            <li>Lifecycle actions include create, update, list, and delete operations.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Entry structures are foundational to consistent
+            discoverability and maintainable catalog governance.
+          </div>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>Aspect Types and Aspects</h2>
+          <p>
+            Aspect types define metadata schemas, and aspects attach typed metadata to entries as
+            governed descriptive extensions.
+          </p>
+          <p>
+            This mechanism supports evolution from traditional tag templates toward a more flexible,
+            schema-driven metadata model.
+          </p>
+          <ul class="study-bullets">
+            <li>Aspect types define reusable metadata templates.</li>
+            <li>Aspects carry entry-level metadata values and annotations.</li>
+            <li>Field-level updates can be controlled through selective masks.</li>
+            <li>Schema changes should follow compatibility and stewardship policy.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Typed aspects enable scalable metadata standardization
+            across domains and teams.
+          </div>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>Enriching Entries with Business Context</h2>
+          <p>
+            Metadata enrichment adds ownership, glossary, quality, and operational context to make
+            entries usable beyond technical identification.
+          </p>
+          <p>
+            Enrichment workflows should be designed for repeatability and selective updates to avoid
+            accidental metadata drift.
+          </p>
+          <ul class="study-bullets">
+            <li>Capture ownership and contact metadata for governance accountability.</li>
+            <li>Attach domain context and semantic definitions for interpretability.</li>
+            <li>Use controlled update patterns for partial metadata edits.</li>
+            <li>Align enrichment policy with catalog quality objectives.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Enrichment transforms raw catalog records into trusted,
+            reusable data product information.
+          </div>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>Managing Custom Sources</h2>
+          <p>
+            Custom source ingestion extends the catalog to systems not automatically harvested by
+            default connectors.
+          </p>
+          <p>
+            Organizations can ingest external metadata through managed workflows or custom connector
+            pipelines while preserving Dataplex governance semantics.
+          </p>
+          <ul class="study-bullets">
+            <li>Ingest non-native assets to reduce visibility gaps.</li>
+            <li>Map external metadata into entry and aspect structures.</li>
+            <li>Maintain consistency with central metadata quality standards.</li>
+            <li>Track source freshness and ingestion reliability.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Custom source ingestion is essential when enterprise
+            metadata spans heterogeneous platforms.
+          </div>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>Operational Patterns for Metadata Pipelines</h2>
+          <p>
+            Metadata operations should be implemented as repeatable pipelines with monitoring,
+            validation, and controlled rollout strategies.
+          </p>
+          <ul class="study-bullets">
+            <li>Automate ingestion jobs and metadata update workflows.</li>
+            <li>Validate payload quality before catalog writes.</li>
+            <li>Monitor failures, retries, and schema mismatch rates.</li>
+            <li>Use staged releases for metadata model changes.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Metadata reliability improves when catalog operations
+            are treated as production-grade data pipelines.
+          </div>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>Governance Outcomes and Migration Implications</h2>
+          <p>
+            Catalog modernization requires mapping legacy metadata constructs to Dataplex-native
+            structures and APIs.
+          </p>
+          <p>
+            Migration planning should focus on preserving semantic continuity, minimizing governance
+            regressions, and enforcing consistent operating standards.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Migration success depends on schema mapping clarity,
+            API-level alignment, and domain stewardship adoption.
+          </div>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Dataplex catalog operations rely on entries, entry groups, aspect types, and aspects.
+            </li>
+            <li>Metadata enrichment is required for trustworthy, reusable product discovery.</li>
+            <li>
+              Selective update controls reduce metadata drift and preserve governance integrity.
+            </li>
+            <li>Custom source ingestion broadens catalog coverage across heterogeneous systems.</li>
+            <li>
+              Operationalized metadata pipelines are necessary for scale, quality, and reliability.
+            </li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference pages:
+            <a
+              href="https://docs.cloud.google.com/dataplex/docs/catalog-overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/dataplex/docs/catalog-overview</a
+            >,
+            <a
+              href="https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata</a
+            >, and
+            <a
+              href="https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources</a
+            >.
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

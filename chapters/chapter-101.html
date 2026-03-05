@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M101 - Data Mesh Architecture and Functions</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M101 - Data Mesh Architecture and Functions</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-100.html">Previous module (M100)</a>
+      <a href="chapter-101.html" aria-current="page">M101 - Data Mesh Architecture and Functions</a>
+      <a href="chapter-102.html">Next module (M102)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>What a data mesh is and why it treats data as a product.</li>
+            <li>Which architecture components enable domain autonomy and shared standards.</li>
+            <li>How producer and consumer teams collaborate through product interfaces.</li>
+            <li>How central governance and platform functions reduce cross-domain friction.</li>
+            <li>How to define a minimum viable platform and launch an initial pilot.</li>
+            <li>
+              Which adoption constraints influence funding, coexistence, and rollout strategy.
+            </li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>Data Mesh Foundation</h2>
+          <p>
+            A data mesh is an architectural and organizational model where domain teams build and
+            operate data as reusable products.
+          </p>
+          <p>
+            The objective is to move from centralized, bottlenecked data delivery to distributed
+            ownership with explicit interoperability and governance.
+          </p>
+          <p>
+            In this model, data products are owned by teams closest to the business context and are
+            exposed through well-defined consumption interfaces.
+          </p>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Data mesh combines domain ownership, product thinking,
+            self-service platform capabilities, and federated governance.
+          </div>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>Core Architecture Components</h2>
+          <p>
+            The architecture includes domain data products, central discovery and policy services,
+            and platform capabilities that enable repeatable product delivery.
+          </p>
+          <ul class="study-bullets">
+            <li>
+              <strong>Data products</strong>: domain-owned assets exposed through stable interfaces.
+            </li>
+            <li>
+              <strong>Discovery mechanisms</strong>: catalog and metadata services for findability.
+            </li>
+            <li>
+              <strong>Central services</strong>: shared capabilities for governance and enablement.
+            </li>
+            <li><strong>Interface types</strong>: tables, views, files, topics, and streams.</li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch101/fig-01-data-mesh-architecture.svg"
+              alt="Data mesh architectural components and interactions"
+              class="zoomable"
+              data-caption="M101.01"
+            />
+            <figcaption>M101.01 - Data Mesh Architecture Components and Interactions</figcaption>
+          </figure>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> A data mesh architecture separates domain product
+            ownership from central enablement and policy enforcement.
+          </div>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>Producer Teams in Domains</h2>
+          <p>
+            Producer teams create and maintain domain data products across their lifecycle, from
+            initial design to deprecation.
+          </p>
+          <p>
+            They define product semantics, quality expectations, access rules, and versioning
+            policies while keeping interfaces stable for consumers.
+          </p>
+          <ul class="study-bullets">
+            <li>Design product boundaries aligned with domain meaning.</li>
+            <li>Publish documentation, metadata, and operating guarantees.</li>
+            <li>Manage schema evolution without breaking consumers.</li>
+            <li>Measure usage and product value through operational indicators.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Producer teams are accountable for value, quality,
+            continuity, and clarity of their data products.
+          </div>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>Consumer Teams and Product Reuse</h2>
+          <p>
+            Consumer teams discover and combine data products to serve analytical and operational
+            goals inside their own domains.
+          </p>
+          <p>
+            Consumption in a mesh is product-centric: teams select interfaces that match required
+            latency, scale, and semantic quality.
+          </p>
+          <ul class="study-bullets">
+            <li>Use catalogs to identify suitable products and contracts.</li>
+            <li>Adopt multiple products when cross-domain insight is required.</li>
+            <li>Build derived products by combining curated upstream inputs.</li>
+            <li>Feed usage and quality signals back to producers and central teams.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Consumer effectiveness depends on discoverability,
+            trustworthy metadata, and stable interfaces.
+          </div>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>Central Governance Function</h2>
+          <p>
+            Central governance defines organization-wide data policies and ensures that policy
+            enforcement is automated wherever possible.
+          </p>
+          <p>
+            Governance teams coordinate standards for metadata, controls, quality requirements, and
+            compliance obligations across all domains.
+          </p>
+          <ul class="study-bullets">
+            <li>Define and maintain policy frameworks and required controls.</li>
+            <li>Enable policy codification for machine-enforced checks.</li>
+            <li>Track compliance posture across published data products.</li>
+            <li>Support stewards and domains with guidance and escalation paths.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Governance scales when standards are explicit and
+            controls are embedded into platform and product workflows.
+          </div>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>Central Platform Function</h2>
+          <p>
+            The platform function builds self-service infrastructure components that domain teams
+            use to create and operate products with consistent guardrails.
+          </p>
+          <p>
+            The platform is itself a product with an internal roadmap, service levels, and adoption
+            metrics.
+          </p>
+          <ul class="study-bullets">
+            <li>Provide reusable templates and paved paths for product setup.</li>
+            <li>Integrate observability, policy checks, and operational tooling.</li>
+            <li>Lower technical barriers for new producer teams.</li>
+            <li>Continuously improve lead time to production for domains.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Platform teams increase autonomy by standardizing the
+            hard parts and reducing duplicated engineering effort.
+          </div>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>Shared Responsibility Model</h2>
+          <p>
+            A data mesh requires a clear allocation of responsibilities among domain teams,
+            governance, platform, and infrastructure functions.
+          </p>
+          <p>
+            Responsibility boundaries define which controls are mandatory, which are optional, and
+            which exceptions require explicit review.
+          </p>
+          <ul class="study-bullets">
+            <li>Domains own product semantics and lifecycle outcomes.</li>
+            <li>Governance owns policy definition and assurance model.</li>
+            <li>Platform owns self-service capabilities and central enablement.</li>
+            <li>Infrastructure owns foundational runtime reliability and security baselines.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Shared responsibility prevents control gaps and reduces
+            ambiguity during incident response and change management.
+          </div>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>Minimum Viable Platform Strategy</h2>
+          <p>
+            Initial rollout benefits from a minimum viable platform that supports one funded use
+            case end-to-end with measurable outcomes.
+          </p>
+          <p>
+            The first pilot validates both the business operating model (domains produce and
+            consume) and the technical operating model (self-service patterns and guardrails).
+          </p>
+          <ul class="study-bullets">
+            <li>Select a use case with clear business value and committed stakeholders.</li>
+            <li>Embed governance controls from the first iteration.</li>
+            <li>Prioritize reusable capabilities over one-off implementations.</li>
+            <li>Measure adoption, cycle time, and reliability from day one.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> A focused pilot de-risks adoption and creates reusable
+            assets for subsequent domains.
+          </div>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>Funding and Adoption Constraints</h2>
+          <p>
+            Early adopters often absorb the initial platform cost, so funding alignment between
+            domains and central teams is essential.
+          </p>
+          <p>
+            Adoption planning should connect platform investment to measurable business outcomes,
+            including faster delivery and improved cross-domain reuse.
+          </p>
+          <ul class="study-bullets">
+            <li>Align funding model with shared platform benefit.</li>
+            <li>Use staged milestones to justify incremental investment.</li>
+            <li>Track domain onboarding and production product growth.</li>
+            <li>Balance autonomy goals with risk and compliance obligations.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Sustainable funding depends on transparent outcomes and
+            a clear value narrative for both central and domain stakeholders.
+          </div>
+        </section>
+
+        <section id="s10" class="study-section">
+          <h2>Coexistence with Existing Platforms</h2>
+          <p>
+            Most organizations adopt data mesh while legacy warehouses, lakes, and reporting stacks
+            remain active.
+          </p>
+          <p>
+            Coexistence planning should define migration boundaries, interoperability patterns, and
+            transitional operating responsibilities.
+          </p>
+          <ul class="study-bullets">
+            <li>Support gradual migration of data and interfaces.</li>
+            <li>Maintain interoperability between legacy and domain-owned products.</li>
+            <li>Prevent duplicate governance models during transition.</li>
+            <li>Define retirement criteria for legacy data pathways.</li>
+          </ul>
+          <div class="note-box">
+            <strong>Key takeaways.</strong> Controlled coexistence avoids disruption while the new
+            mesh operating model reaches maturity.
+          </div>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Data mesh combines decentralized product ownership with shared interoperability rules.
+            </li>
+            <li>
+              Architecture success depends on coordinated producer, consumer, governance, and
+              platform functions.
+            </li>
+            <li>
+              Self-service platform capabilities are essential to scale domain autonomy sustainably.
+            </li>
+            <li>
+              Governance must be policy-driven, automatable, and embedded in delivery workflows.
+            </li>
+            <li>
+              Start with a minimum viable platform and expand through measurable domain adoption.
+            </li>
+          </ul>
+        </section>
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://docs.cloud.google.com/architecture/data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/architecture/data-mesh</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

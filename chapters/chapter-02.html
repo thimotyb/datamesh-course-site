@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   M02 - Adoption Drivers and Decision Criteria
+   M02 - Data Mesh Principles
   </title>
   <link href="../assets/css/main.css" rel="stylesheet"/>
   <script defer="" src="../assets/js/back-to-top.js">
@@ -13,7 +13,7 @@
  <body>
   <header class="hero" id="top">
    <h1>
-    M02 - Adoption Drivers and Decision Criteria
+    M02 - Data Mesh Principles
    </h1>
   </header>
   <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
@@ -24,7 +24,7 @@
     Previous module (M01)
    </a>
    <a aria-current="page" href="chapter-02.html">
-    M02 - Adoption Drivers and Decision Criteria
+    M02 - Data Mesh Principles
    </a>
    <a href="chapter-03.html">
     Next module (M03)
@@ -38,321 +38,310 @@
      </h2>
      <ul>
       <li>
-       1 Why Adoption Decisions Need Business Drivers
+       1 The Great Divide of Data
       </li>
       <li>
-       1.1 Business Cases and Organizational Readiness
+       1.1 Fragmented Analytical Planes: Warehouses and Lakes
       </li>
       <li>
-       1.2 Domain Complexity and Data Ownership Fit
+       2 Domain Ownership: Logical Architecture
       </li>
       <li>
-       2 Data Source Diversity and Harmonization Pressure
+       2.1 Domain-Oriented Data and Compute
       </li>
       <li>
-       2.1 Cultural and Leadership Preconditions
+       3 Data as a Product
       </li>
       <li>
-       2.2 Data Warehouse and Data Lake Baselines
+       3.1 The Role of the Domain Data Product Owner
       </li>
       <li>
-       3 Data Fabric and Data Mesh Positioning
+       4 Data Product as the Architectural Quantum
       </li>
       <li>
-       3.1 Adoption Roadmap and Transformation Scope
+       4.1 Structural Components: Code, Data, and Infrastructure
       </li>
       <li>
-       3.2 Development Lifecycle and Delivery Cadence
+       5 Self-Serve Data Platform
       </li>
       <li>
-       4 Governance Roles and Team Structure
+       5.1 A Multi-Plane Data Platform Architecture
       </li>
       <li>
-       4.1 Business Goals to Data Product Backlog
+       6 Federated Computational Governance
       </li>
       <li>
-       4.2 Feedback Loops and Continuous Improvement
+       6.1 Computational Policies Embedded in the Mesh
+      </li>
+      <li>
+       7 Logical Architecture of the Data Mesh Approach
       </li>
      </ul>
     </section>
+
     <section class="study-section" id="s01">
      <h2>
-      1 Why Adoption Decisions Need Business Drivers
+      1 The Great Divide of Data
      </h2>
      <p>
-      The core question is not whether data mesh is popular, but whether its benefits outweigh implementation effort in the specific organizational context.
-     </p>
-     <p>
-      A sound decision starts from measurable business outcomes and verifies whether current socio-technical architecture can deliver them with acceptable cost and speed.
-     </p>
-     <p>
-      Data mesh should be evaluated as a strategic option, not adopted as a trend, because architecture decisions create long-term operational commitments.
+      The data industry currently suffers from a fundamental friction: the <strong>divergence of two data planes</strong>—operational and analytical. These planes are integrated yet structurally separate. <strong>Operational data</strong> serves microservices and transactional needs (e.g., "Create a User"), while <strong>analytical data</strong> provides temporal, aggregated views for Machine Learning and Business Intelligence. The friction arises from the "labyrinth of data pipelines" (ETL) required to connect these planes, which often becomes fragile and difficult to maintain.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 01" class="zoomable" data-caption="M02.01" src="../assets/images/ch02/fig-01.png"/>
+      <img alt="The great divide of data planes" class="zoomable" data-caption="M02.01" src="../assets/images/ch02/data-planes.png"/>
       <figcaption>
-       M02.01 - Organizational Drivers
+       M02.01 - The divergence of operational and analytical data planes
       </figcaption>
      </figure>
+     <p>
+      Figure M02.01 illustrates this separation. On the left, the <strong>Operational Data Plane</strong> focuses on the current state of business transactions. On the right, the <strong>Analytical Data Plane</strong> stores historical and aggregated data. The "ETL Bridge" in the middle represents the complex and often broken process of syncing these two worlds. Data Mesh recognizes this divide but attempts to invert the model by embedding analytical data back into the domains.
+     </p>
     </section>
+
     <section class="study-section" id="s02">
      <h2>
-      1.1 Business Cases and Organizational Readiness
+      1.1 Fragmented Analytical Planes: Warehouses and Lakes
      </h2>
      <p>
-      Strong readiness signals include clearly defined objectives, quantifiable success criteria, and identifiable decision bottlenecks linked to current data operating models.
-     </p>
-     <p>
-      Business strategy and delivery goals should explicitly depend on data to justify structural change; otherwise, transformation risks becoming architecture-driven instead of value-driven.
-     </p>
-     <p>
-      A viable adoption path requires a concrete business case with complex data needs, typically involving multidimensional analytics across multiple data sources.
+      Even within the analytical plane, we often find further fragmentation. Organizations frequently maintain both <strong>Data Warehouses</strong> for BI/Analysts and <strong>Data Lakes</strong> for Data Science. Each stack has its own technology, access patterns, and specialized teams, creating additional silos and complexity.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 02" class="zoomable" data-caption="M02.02" src="../assets/images/ch02/fig-02.png"/>
+      <img alt="Further divide: data warehouse" class="zoomable" data-caption="M02.02" src="../assets/images/ch02/data-warehouse.png"/>
       <figcaption>
-       M02.02 - Organizational Drivers
+       M02.02 - The Analytical Plane: Data Warehouse for BI and reporting
       </figcaption>
      </figure>
+     <figure class="chapter-figure">
+      <img alt="Further divide: data lake" class="zoomable" data-caption="M02.03" src="../assets/images/ch02/data-lake.png"/>
+      <figcaption>
+       M02.03 - The Analytical Plane: Data Lake for data science and R&D
+      </figcaption>
+     </figure>
+     <p>
+      Figures M02.02 and M02.03 show these internal divides. The warehouse (M02.02) is typically optimized for structured SQL queries, while the lake (M02.03) handles raw, unstructured data. Data Mesh aims to unify these analytical needs by focusing on the <strong>domain meaning</strong> rather than the underlying storage technology.
+     </p>
     </section>
+
     <section class="study-section" id="s03">
      <h2>
-      1.2 Domain Complexity and Data Ownership Fit
+      2 Domain Ownership: Logical Architecture
      </h2>
      <p>
-      Domain complexity is a key fit indicator because decentralized ownership works best where local teams hold the business context required to model and evolve data correctly.
-     </p>
-     <p>
-      Data and software engineering maturity materially affect feasibility: CI/CD discipline, product thinking, and embedded security practices reduce transformation risk.
-     </p>
-     <p>
-      Organizational complexity becomes a primary driver when many teams, systems, and command chains interact through data but lack coherent ownership boundaries.
+      To support scale and continuous change, Data Mesh decentralizes ownership to the <strong>organizational units closest to the data</strong>. It follows the business domains as the axis of decomposition, localizing the impact of any change within a domain's bounded context.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 03" class="zoomable" data-caption="M02.03" src="../assets/images/ch02/fig-03.png"/>
+      <img alt="The great divide of data" class="zoomable" data-caption="M02.04" src="../assets/images/ch02/domains.png"/>
       <figcaption>
-       M02.03 - Warehouse and Central
+       M02.04 - Decomposing the architecture based on domain boundaries
       </figcaption>
      </figure>
+     <p>
+      Figure M02.04 illustrates the organizational shift. Instead of a centralized platform, data ownership is distributed across domains like Podcasts, Artists, and Users, each managing their own data lifecycle.
+     </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 04" class="zoomable" data-caption="M02.04" src="../assets/images/ch02/fig-04.png"/>
+      <img alt="Notation: domain, analytical data, and operational capabilities" class="zoomable" data-caption="M02.05" src="../assets/images/ch02/domain-notation.png"/>
       <figcaption>
-       M02.04 - Metadata Management
+       M02.05 - Notation for a domain exposing both operational and analytical endpoints
       </figcaption>
      </figure>
+     <p>
+      Figure M02.05 introduces the logical symbol for a domain. It is represented as a hexagon that exposes two types of endpoints: <strong>Operational APIs</strong> (for transactional work) and <strong>Analytical Data Endpoints</strong> (for historical and temporal analysis). This ensures the domain is responsible for the full lifecycle of its information.
+     </p>
     </section>
+
     <section class="study-section" id="s04">
      <h2>
-      2 Data Source Diversity and Harmonization Pressure
+      2.1 Domain-Oriented Data and Compute
      </h2>
      <p>
-      Decentralized product ownership reduces harmonization bottlenecks by making each domain accountable for data quality, semantics, and exposure interfaces.
-     </p>
-     <p>
-      In centralized models, each additional source or schema change increases coupling and maintenance overhead, often slowing delivery and reducing trust in shared datasets.
-     </p>
-     <p>
-      Data mesh is particularly relevant when organizations handle heterogeneous data formats, many producers, and rapidly changing integration requirements.
+      In this model, a domain (e.g., "Podcasts") owns its operational systems and serves its own analytical data products. This avoids the central bottleneck of a monolithic platform team.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 05" class="zoomable" data-caption="M02.05" src="../assets/images/ch02/fig-05.png"/>
+      <img alt="Example: domain oriented ownership" class="zoomable" data-caption="M02.06" src="../assets/images/ch02/data-product-example.png"/>
       <figcaption>
-       M02.05 - Governance Model
+       M02.06 - Domains consuming and producing analytical data products
       </figcaption>
      </figure>
+     <p>
+      Figure M02.06 demonstrates how domains interact. The "Podcasts" domain consumes analytical data from the "Users" domain to create a new, higher-order data product: "Podcast listeners demographics." Each domain maintains autonomy in its deployment and release while contributing to the overall mesh.
+     </p>
     </section>
+
     <section class="study-section" id="s05">
      <h2>
-      2.1 Cultural and Leadership Preconditions
+      3 Data as a Product
      </h2>
      <p>
-      Organizations should verify domain alignment in everyday work, including model-driven design habits and regular collaboration with subject-matter experts.
-     </p>
-     <p>
-      Cultural readiness includes cross-functional collaboration between business experts, software teams, and data practitioners, rather than isolated specialist silos.
-     </p>
-     <p>
-      Successful adoption depends on leadership support for federated decision-making, where standards are shared but domain teams remain accountable for execution.
+      Decentralization alone risks creating "dark data" silos. To prevent this, analytical data must be treated as a <strong>product</strong>, and consumers as <strong>customers</strong>. This shifts the accountability for data quality upstream to the source domain.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 06" class="zoomable" data-caption="M02.06" src="../assets/images/ch02/fig-06.png"/>
+      <img alt="Notation: domain, data product, and operational system" class="zoomable" data-caption="M02.07" src="../assets/images/ch02/data-product-notation.png"/>
       <figcaption>
-       M02.06 - Governance Model
+       M02.07 - Logical relationship between operational systems and data products
       </figcaption>
      </figure>
+     <p>
+      Figure M02.07 shows the internal structure of a domain. The <strong>Operational System</strong> feeds the <strong>Data Product</strong>, which is then exposed to the rest of the organization. This separation allows the internal database of a microservice to change without breaking downstream analytical consumers, as long as the data product's public contract is maintained.
+     </p>
     </section>
+
     <section class="study-section" id="s06">
      <h2>
-      2.2 Data Warehouse and Data Lake Baselines
+      3.1 The Role of the Domain Data Product Owner
      </h2>
      <p>
-      In data mesh initiatives, these technologies can still be used, but as domain-level implementation choices rather than a single enterprise bottleneck.
-     </p>
-     <p>
-      Their common limitation is socio-technical centralization: one core team becomes the coordination point for ingestion, harmonization, access, and policy decisions.
-     </p>
-     <p>
-      Enterprise data warehouses and data lakes remain valid architectural baselines, especially when use cases are stable and ownership centralization is still manageable.
+      Every data product is managed by a <strong>Domain Data Product Owner</strong>. This role is responsible for objective success measures: data quality, decreased lead time for consumption, and user satisfaction.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 07" class="zoomable" data-caption="M02.07" src="../assets/images/ch02/fig-07.png"/>
+      <img alt="Data products serving the domain-oriented analytical data" class="zoomable" data-caption="M02.08" src="../assets/images/ch02/card.png"/>
       <figcaption>
-       M02.07 - Complex and Summarized
+       M02.08 - Data products as autonomous nodes serving the mesh
       </figcaption>
      </figure>
+     <p>
+      Figure M02.08 highlights that these data products are not just "tables" but autonomous nodes. The product owner ensures that the data is discoverable, secure, and trustworthy, using "native methods" (like SQL or Spark) that analysts and scientists expect.
+     </p>
     </section>
+
     <section class="study-section" id="s07">
      <h2>
-      3 Data Fabric and Data Mesh Positioning
+      4 Data Product as the Architectural Quantum
      </h2>
      <p>
-      Positioning should therefore distinguish architecture pattern from tooling pattern: mesh defines the operating model, fabric can support its platform execution.
-     </p>
-     <p>
-      The two approaches are complementary when organizations need both advanced integration capabilities and domain-oriented responsibility boundaries.
-     </p>
-     <p>
-      Data fabric focuses on technology-enabled integration and automation, while data mesh adds an explicit operating model for ownership, accountability, and governance.
+      The <strong>architectural quantum</strong> is the smallest unit of architecture that can be independently deployed. In Data Mesh, this is the Data Product. It is a cohesive unit that bundles everything needed to fulfill its purpose.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 08" class="zoomable" data-caption="M02.08" src="../assets/images/ch02/fig-08.png"/>
+      <img alt="Data product components" class="zoomable" data-caption="M02.09" src="../assets/images/ch02/data-product-components.png"/>
       <figcaption>
-       M02.08 - Business Case and Drivers
+       M02.09 - Structural components: Code, Data/Metadata, and Infrastructure
       </figcaption>
      </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 02 Figure 09" class="zoomable" data-caption="M02.09" src="../assets/images/ch02/fig-09.png"/>
-      <figcaption>
-       M02.09 - Business Case and Drivers
-      </figcaption>
-     </figure>
+     <p>
+      Figure M02.09 visualizes the three components of this quantum:
+     </p>
+     <ul>
+      <li><strong>Code:</strong> Includes transformation pipelines, data access APIs, and policy enforcement logic (e.g., access control).</li>
+      <li><strong>Data & Metadata:</strong> The actual analytical data (events, batches, tables) plus semantic definitions, quality metrics, and lineage.</li>
+      <li><strong>Infrastructure:</strong> The underlying resources (storage, compute) required to run the code and host the data.</li>
+     </ul>
     </section>
+
     <section class="study-section" id="s08">
      <h2>
-      3.1 Adoption Roadmap and Transformation Scope
+      4.1 Structural Components: Code, Data, and Infrastructure
      </h2>
      <p>
-      When major socio-technical and data complexity are present, data mesh typically becomes the stronger long-term option for scalable value delivery.
+      By bundling these components, the Data Product becomes <strong>autonomous and independently evolvable</strong>. The domain team has full control over the internal implementation while providing a stable, versioned interface to the mesh.
      </p>
-     <p>
-      Comparison with alternatives is essential to avoid overreach: in lower-complexity contexts, simpler centralized models may still provide better cost-benefit balance.
-     </p>
-     <p>
-      Adoption should be scoped as an incremental transformation with clear boundaries, starting from one business goal and one or few high-value data products.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 02 Figure 10" class="zoomable" data-caption="M02.10" src="../assets/images/ch02/fig-10.png"/>
-      <figcaption>
-       M02.10 - Business Case and Drivers
-      </figcaption>
-     </figure>
     </section>
+
     <section class="study-section" id="s09">
      <h2>
-      3.2 Development Lifecycle and Delivery Cadence
+      5 Self-Serve Data Platform
      </h2>
      <p>
-      At cycle end, enabling structures such as governance and platform capabilities should be adjusted based on observed gaps before the next iteration starts.
-     </p>
-     <p>
-      Each cycle should begin with a measurable business target, then translate consumer needs into functional and non-functional requirements for specific data products.
-     </p>
-     <p>
-      Implementation is most effective when run in short iterative cycles, similar to product delivery, with rapid feedback and continuous correction.
+      To enable domain autonomy without requiring every team to be infrastructure experts, a <strong>self-serve data platform</strong> abstracts the complexity of provisioning and managing data products.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 11" class="zoomable" data-caption="M02.11" src="../assets/images/ch02/fig-11.png"/>
+      <img alt="Platform plane notation" class="zoomable" data-caption="M02.10" src="../assets/images/ch02/platform-notation.png"/>
       <figcaption>
-       M02.11 - Business Case and Drivers
+       M02.10 - A platform plane providing capabilities through self-serve interfaces
       </figcaption>
      </figure>
+     <p>
+      Figure M02.10 shows the platform as a horizontal plane that provides services to the data product nodes. It handles the "heavy lifting" of the underlying technology, allowing domain teams to focus on data logic.
+     </p>
     </section>
+
     <section class="study-section" id="s10">
      <h2>
-      4 Governance Roles and Team Structure
+      5.1 A Multi-Plane Data Platform Architecture
      </h2>
      <p>
-      Interdisciplinary collaboration is mandatory because data mesh spans business, architecture, software engineering, and data management responsibilities.
+      The platform is organized into three distinct planes:
      </p>
-     <p>
-      Role clarity is critical: governance defines guardrails, platform provides reusable capabilities, and product teams retain delivery ownership within agreed standards.
-     </p>
-     <p>
-      A practical transformation typically requires an enabling function that coordinates change management across domains, governance stakeholders, and platform teams.
-     </p>
+     <ul>
+      <li><strong>Data Infrastructure Plane:</strong> Handles low-level resources like distributed storage and query engines (e.g., S3, BigQuery, Spark).</li>
+      <li><strong>Data Product Experience Plane:</strong> Provides declarative interfaces for developers to manage the lifecycle of a data product (e.g., "Create a new product with these quality rules").</li>
+      <li><strong>Mesh Supervision Plane:</strong> Provides mesh-level capabilities like global discovery (catalog), data lineage, and cross-product correlation.</li>
+     </ul>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 12" class="zoomable" data-caption="M02.12" src="../assets/images/ch02/fig-12.png"/>
+      <img alt="Self-serve data platform capabilities" class="zoomable" data-caption="M02.11" src="../assets/images/ch02/platform.png"/>
       <figcaption>
-       M02.12 - Business Case and Drivers
+       M02.11 - The three planes supporting the data mesh nodes
       </figcaption>
      </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 02 Figure 13" class="zoomable" data-caption="M02.13" src="../assets/images/ch02/fig-13.png"/>
-      <figcaption>
-       M02.13 - Enabling and Support
-      </figcaption>
-     </figure>
+     <p>
+      Figure M02.11 visualizes these layers. The platform sits below the data products, providing a "self-serve" interface that masks the complexity of the big data technology stack.
+     </p>
     </section>
+
     <section class="study-section" id="s11">
      <h2>
-      4.1 Business Goals to Data Product Backlog
+      6 Federated Computational Governance
      </h2>
      <p>
-      This planning discipline prevents disconnected technical work and keeps delivery aligned with measurable outcomes.
-     </p>
-     <p>
-      Backlog design should connect problem statements, consumer expectations, governance constraints, and platform dependencies in a single delivery view.
-     </p>
-     <p>
-      Business goals must be decomposed into prioritized data product increments with explicit acceptance criteria and expected contribution to value metrics.
+      Data Mesh requires a model that balances <strong>domain autonomy</strong> with <strong>global interoperability</strong>. This is achieved through a federation of domain and platform owners who define global rules while leaving local concerns to the domains.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 14" class="zoomable" data-caption="M02.14" src="../assets/images/ch02/fig-14.png"/>
+      <img alt="Federated governance model" class="zoomable" data-caption="M02.12" src="../assets/images/ch02/governance-notation.png"/>
       <figcaption>
-       M02.14 - Data Product Team Structure
+       M02.12 - Notation for a federated computational governance model
       </figcaption>
      </figure>
+     <p>
+      Figure M02.12 represents this model. Instead of a central "gatekeeper," we have a <strong>Federated Team</strong> that sets global standards. These standards are then implemented as code and automatically enforced by the platform.
+     </p>
     </section>
+
     <section class="study-section" id="s12">
      <h2>
-      4.2 Feedback Loops and Continuous Improvement
+      6.1 Computational Policies Embedded in the Mesh
      </h2>
      <p>
-      Continuous improvement at this level is the mechanism that converts isolated pilots into a scalable data mesh operating model.
-     </p>
-     <p>
-      Operational evidence from early deliveries should drive policy adjustments, capability expansion, and team enablement priorities.
-     </p>
-     <p>
-      Feedback loops are a structural requirement, not an optional practice, because each iteration should refine products, governance, and platform capabilities together.
+      Policies such as access control, security, and data quality are "baked into" the infrastructure. This <strong>computational governance</strong> ensures that every data product automatically follows global rules (e.g., GDPR compliance) from the moment of creation.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 02 Figure 15" class="zoomable" data-caption="M02.15" src="../assets/images/ch02/fig-15.png"/>
+      <img alt="Elements of federated governance" class="zoomable" data-caption="M02.13" src="../assets/images/ch02/governance.png"/>
       <figcaption>
-       M02.15 - Maturity Assessment
+       M02.13 - Federated teams, incentives, and automated implementation
       </figcaption>
      </figure>
+     <p>
+      Figure M02.13 shows how these elements interact. The focus shifts from manual oversight to <strong>automated enforcement</strong>, where global standards (like common metadata or identity) are applied programmatically across all domains.
+     </p>
     </section>
+
+    <section class="study-section" id="s13">
+     <h2>
+      7 Logical Architecture of the Data Mesh Approach
+     </h2>
+     <p>
+      The final architecture brings analytical and operational data closer together within the domain. It creates a <strong>mesh of autonomous nodes</strong> that are discoverable, secure, and interoperable.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Logical architecture of data mesh" class="zoomable" data-caption="M02.14" src="../assets/images/ch02/architecture.png"/>
+      <figcaption>
+       M02.14 - The complete logical architecture: domains, products, platform, and governance
+      </figcaption>
+     </figure>
+     <p>
+      Figure M02.14 is the "big picture." It shows various domains (Podcasts, Artists, Users) each containing their own microservices and data products. These nodes are connected via the self-serve platform and governed by federated policies, forming a cohesive ecosystem that scales horizontally.
+     </p>
+     <p>
+      Source: <a href="https://martinfowler.com/articles/data-mesh-principles.html" target="_blank" rel="noopener noreferrer">Data Mesh Principles and Logical Architecture (Martin Fowler)</a>
+     </p>
+    </section>
+
     <section class="key-takeaways">
      <h2>
       Key takeaways
      </h2>
      <ul>
-      <li>
-       Adoption must be justified by measurable business outcomes, not by trend alignment.
-      </li>
-      <li>
-       Driver analysis should cover business, organizational, and domain-data complexity.
-      </li>
-      <li>
-       Centralized architectures remain useful, but often become bottlenecks at higher complexity.
-      </li>
-      <li>
-       Iterative delivery with enabling structures improves transformation speed and control.
-      </li>
-      <li>
-       Governance, platform, and domain teams must evolve together for sustainable scale.
-      </li>
+      <li>Data Mesh bridges the "great divide" by embedding analytical data within business domains.</li>
+      <li>Domain ownership decentralizes accountability to those with the best business context.</li>
+      <li>Data products are the "architectural quantum," bundling code, data, and infrastructure.</li>
+      <li>A multi-plane platform provides the "self-serve" interface needed to scale domain autonomy.</li>
+      <li>Federated governance uses automated computational policies to ensure global interoperability.</li>
      </ul>
     </section>
    </article>

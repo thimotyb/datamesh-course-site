@@ -1,28 +1,20 @@
 <!doctype html>
-
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>M08 - Data Mesh on Google Cloud</title>
-    <link href="../assets/css/main.css" rel="stylesheet" />
-    <script defer="" src="../assets/js/back-to-top.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M08 - Dataplex Universal Catalog Overview</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
   </head>
   <body>
-    <header class="hero" id="top">
-      <h1>M08 - Data Mesh on Google Cloud</h1>
+    <header id="top" class="hero">
+      <h1>M08 - Dataplex Universal Catalog Overview</h1>
     </header>
-    <nav
-      aria-label="Primary"
-      class="primary-nav"
-      id="primary-nav"
-      tabindex="-1"
-    >
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
       <a href="../index.html">Home</a>
       <a href="chapter-07.html">Previous module (M07)</a>
-      <a aria-current="page" href="chapter-08.html"
-        >M08 - Data Mesh on Google Cloud</a
-      >
+      <a href="chapter-08.html" aria-current="page">M08 - Dataplex Universal Catalog Overview</a>
       <a href="chapter-09.html">Next module (M09)</a>
     </nav>
     <main class="content">
@@ -30,296 +22,127 @@
         <section class="section-toc">
           <h2>Content Outline</h2>
           <ul>
-            <li>Platform Team Access</li>
-            <li>Pipeline Producers Products</li>
-            <li>Data Governance Metadata</li>
-            <li>Data Products Governance</li>
-            <li>Access Views Authorized</li>
-            <li>Consumer Producer Consumption</li>
+            <li>1 The Role of Dataplex Universal Catalog</li>
+            <li>2 Metadata Collection Mechanisms</li>
+            <li>2.1 Automated Harvesting vs. Manual Enrichment</li>
+            <li>3 Supported Resource Types: Data and AI</li>
+            <li>4 Advanced Data Discovery Features</li>
+            <li>5 Metadata Modeling: Entries and Aspects</li>
+            <li>5.1 Defining Metadata Standards with Entry Types</li>
+            <li>6 Enabling Data Mesh Governance</li>
           </ul>
         </section>
-        <section class="study-section" id="s01">
-          <h2>1 Platform Team Access</h2>
+
+        <section id="s01" class="study-section">
+          <h2>1 The Role of Dataplex Universal Catalog</h2>
           <p>
-            This module presents a practical Google Cloud architecture for a
-            self-serve data mesh platform. The design targets a middle ground
-            between quick onboarding and meaningful domain autonomy. The
-            operating model includes data-producing teams, a platform team, and
-            data-consuming roles. White team produces and consumes analytical
-            data products. Gray team owns the platform template and enablement
-            workflow. BigQuery provides scalable analytical storage and SQL
-            access. Cloud Storage enables object-based upload and file input
-            patterns. Service accounts enforce access boundaries at product
-            level. The platform interface is a versioned repository containing
-            documentation and reusable templates. The platform kernel is a
-            configurable Terraform template used to provision product stacks.
+            Dataplex Universal Catalog is a fully managed, automated metadata management service designed to create a single source of truth for distributed data and AI assets. Its primary purpose is to <strong>automate discovery</strong> and eliminate the need for manual data inventories.
           </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 01"
-              class="zoomable"
-              data-caption="M08.01"
-              src="../assets/images/ch08/fig-01.png"
-            />
-            <figcaption>
-              M08.01 - Google Cloud Data Mesh Technical Architecture
-            </figcaption>
-          </figure>
+          <p>
+            By providing a unified knowledge base, the catalog ensures that analytics and machine learning models are built on trusted, compliant information. It solves the "cold start" problem for data consumers, allowing them to find, understand, and verify the quality of data products without needing constant support from engineering teams.
+          </p>
         </section>
-        <section class="study-section" id="s02">
-          <h2>1.1 Pipeline Producers Products</h2>
+
+        <section id="s02" class="study-section">
+          <h2>2 Metadata Collection Mechanisms</h2>
           <p>
-            This baseline keeps maintenance overhead low while still giving
-            producers repeatable setup paths. Each data product is implemented
-            as a pipeline and an owned BigQuery dataset with controlled access.
-            A Dataflow pipeline can ingest from Pub/Sub, BigQuery, Cloud
-            Storage, or upstream products. Output permissions are scoped so each
-            consumer receives only the required data surfaces. The architecture
-            supports push ingestion through file uploads and pull ingestion
-            through pipelines. Push input can start from a Cloud Storage bucket
-            with validated schemas and transformation rules. Pull input can
-            combine upstream datasets and events to produce derived analytical
-            products.
+            The catalog operates on a hybrid model that combines the efficiency of automation with the richness of business context.
           </p>
-          <p>
-            Producers retrieve the latest template, provision a stack, and
-            configure pipeline sources. Producers define service-account
-            policies for approved consumers and systems. Consumers discover
-            products via SQL browsing and request additional access from owners.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 02"
-              class="zoomable"
-              data-caption="M08.02"
-              src="../assets/images/ch08/fig-02.png"
-            />
-            <figcaption>M08.02 - Black Team Data Product on GCP</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 03"
-              class="zoomable"
-              data-caption="M08.03"
-              src="../assets/images/ch08/fig-03.png"
-            />
-            <figcaption>
-              M08.03 - White Team Push Ingestion with Cloud Storage
-            </figcaption>
-          </figure>
         </section>
-        <section class="study-section" id="s03">
-          <h2>2 Data Governance Metadata</h2>
-          <p>
-            This flow enables fast delivery while keeping ownership and
-            authorization explicit. The baseline platform can be expanded
-            incrementally without replacing the core provisioning model. Catalog
-            integration can improve product discoverability and metadata
-            quality. Log-derived usage metrics can surface popular datasets and
-            frequent access patterns. Central quality checks can publish results
-            to improve trust in product consumption. A lightweight GUI can
-            simplify onboarding metadata and reduce manual errors. Dataplex is a
-            unified data management and governance service for distributed data
-            estates on Google Cloud. In a data mesh context, Dataplex helps
-            domain teams keep decentralized ownership while applying consistent
-            governance policies and metadata controls.
-          </p>
-          <p>
-            Cataloging and discovery: data assets are indexed and searchable
-            across storage and analytics systems. Governance at scale: policy
-            management and quality controls can be enforced consistently across
-            domains.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 04"
-              class="zoomable"
-              data-caption="M08.04"
-              src="../assets/images/ch08/fig-04.png"
-            />
-            <figcaption>
-              M08.04 - Recommendation Engine Data Product Interaction
-            </figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 05"
-              class="zoomable"
-              data-caption="M08.05"
-              src="../assets/images/ch08/fig-05.png"
-            />
-            <figcaption>M08.05 - Optional GCP Platform Extensions</figcaption>
-          </figure>
+
+        <section id="s03" class="study-section">
+          <h2>2.1 Automated Harvesting vs. Manual Enrichment</h2>
+          <ul class="study-bullets">
+            <li><strong>Automated Harvesting</strong>: Dataplex automatically ingests technical metadata, such as schemas, table names, and partition details, from Google Cloud sources like BigQuery, Cloud Storage, and Pub/Sub.</li>
+            <li><strong>Manual Enrichment</strong>: Data owners can manually add business context, such as data quality scores, ownership information (email, team name), and business glossary terms. This makes technical assets meaningful to non-technical users.</li>
+            <li><strong>Metadata Feeds</strong>: Near real-time change feeds allow organizations to trigger automated workflows, such as security audits, whenever a metadata change is detected.</li>
+          </ul>
         </section>
-        <section class="study-section" id="s04">
-          <h2>2.1 Data Products Governance</h2>
+
+        <section id="s04" class="study-section">
+          <h2>3 Supported Resource Types: Data and AI</h2>
           <p>
-            Operational visibility: metadata, lineage, and quality signals
-            improve trust and reuse of domain data products. Domain autonomy
-            with standards: each team can manage products independently while
-            complying with shared controls. A practical implementation path is
-            available in the Google reference repository
-            GoogleCloudPlatform/data-mesh-demo, which demonstrates
-            domain-oriented data products, shared platform services, and
-            governance automation patterns. The Google Cloud data mesh reference
-            architecture emphasizes decentralized ownership with standardized
-            interoperability. Domain-oriented ownership: each domain team owns
-            its data products end to end, including quality and lifecycle. Data
-            as a product: products must be discoverable, understandable,
-            accessible, and governed for reuse.
+            Dataplex indexes a vast array of resources across the Google Cloud ecosystem:
           </p>
-          <p>
-            Self-service platform: shared capabilities reduce repeated
-            engineering effort across domains. Federated governance: common
-            policies are centrally defined and computationally enforced. In
-            practice, Dataplex supports this model by combining cataloging,
-            governance, metadata management, and policy-driven controls.
-            Automated checks and catalog workflows provide a practical entry
-            point for federated governance.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 06"
-              class="zoomable"
-              data-caption="M08.06"
-              src="../assets/images/ch08/fig-06.png"
-            />
-            <figcaption>
-              M08.06 - Dataplex in a Google Cloud Data Mesh Architecture
-            </figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 07"
-              class="zoomable"
-              data-caption="M08.07"
-              src="../assets/images/ch08/fig-07.png"
-            />
-            <figcaption>
-              M08.07 - Dataplex-Centric Data Lifecycle and Governance Flow
-            </figcaption>
-          </figure>
+          <ul class="study-bullets">
+            <li><strong>Analytics</strong>: BigQuery datasets, tables, views, and BigLake tables.</li>
+            <li><strong>Databases</strong>: AlloyDB, Cloud SQL, Spanner, and Bigtable.</li>
+            <li><strong>AI/ML</strong>: Vertex AI models, datasets, and feature groups.</li>
+            <li><strong>Lakehouse</strong>: Dataproc Metastore services and files stored in Cloud Storage.</li>
+            <li><strong>Custom Sources</strong>: Metadata from third-party systems or on-premises databases can be imported using managed connectivity pipelines.</li>
+          </ul>
         </section>
-        <section class="study-section" id="s05">
-          <h2>3 Access Views Authorized</h2>
+
+        <section id="s05" class="study-section">
+          <h2>4 Advanced Data Discovery Features</h2>
           <p>
-            Ownership remains effective only if access control and policy
-            boundaries are enforceable. Governance automation should avoid
-            central bottlenecks and preserve team delivery flow. Strengths: low
-            maintenance, fast integration of native services, good team
-            autonomy. Tradeoffs: cloud lock-in risk and additional effort for
-            heterogeneous source integration. Best fit: small-to-medium
-            organizations needing fast platform enablement. BigQuery authorized
-            views are an effective interface pattern for exposing a governed
-            subset of data products to consumers. The producer keeps ownership
-            of base tables while consumers query only approved views, which
-            reduces accidental overexposure and simplifies access boundaries.
-            Separation of concerns: producers manage source tables and interface
-            contracts; consumers access stable SQL views.
+            Discovery is powered by a robust search engine that respects organizational security boundaries.
           </p>
-          <p>
-            Controlled access: authorized datasets and authorized views grant
-            query access without direct table permissions on producer assets.
-            Versioning strategy: interfaces can evolve through dataset
-            versioning or view versioning, depending on compatibility and
-            governance policy.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Module 08 Figure 08"
-              class="zoomable"
-              data-caption="M08.08"
-              src="../assets/images/ch08/fig-08.svg"
-            />
-            <figcaption>M08.08 - Dataplex Conceptual Overview</figcaption>
-          </figure>
-          <figure class="chapter-figure">
-            <img
-              alt="Authorized datasets and views as data product consumption interfaces"
-              class="zoomable"
-              data-caption="M08.09"
-              src="../assets/images/ch08/fig-09-authorized-datasets.png"
-            />
-            <figcaption>
-              M08.09 - Authorized Datasets and Views for Controlled Data Sharing
-            </figcaption>
-          </figure>
+          <ul class="study-bullets">
+            <li><strong>Faceted Search</strong>: Users can filter results by resource type, project, physical location, or custom metadata fields (e.g., "show all high-quality tables in the US region").</li>
+            <li><strong>Search Syntax</strong>: Supports advanced predicates (e.g., `type=table name:sales`) and logical operators for precise discovery.</li>
+            <li><strong>Security-Aware Search</strong>: Search results are strictly limited by **IAM roles** and **VPC Service Controls**. Users only see metadata for assets they are authorized to access.</li>
+          </ul>
         </section>
-        <section class="study-section" id="s06">
-          <h2>3.1 Consumer Producer Consumption</h2>
+
+        <section id="s06" class="study-section">
+          <h2>5 Metadata Modeling: Entries and Aspects</h2>
           <p>
-            Operational impact: this model supports independent producer
-            evolution while minimizing consumer disruption. The same interface
-            approach can be extended to externalized data through BigLake
-            tables, while maintaining SQL-based consumption contracts. Streaming
-            data products can be exposed through Pub/Sub topic s, where each
-            consumer creates independent subscriptions based on its own
-            processing needs. This interface pattern reduces coupling between
-            producer release cycles and consumer delivery pipelines, while
-            preserving product ownership boundaries. Decoupled consumption:
-            multiple consumers subscribe independently without requiring custom
-            producer-side endpoints. Filtering and routing: subscription-level
-            filtering supports consumer-specific streams from the same producer
-            topic. Schema discipline: explicit schemas improve compatibility
-            checks and reduce downstream parsing failures in high-volume flows.
+            Dataplex uses a flexible, typed metamodel to organize and standardize information across the organization.
           </p>
-          <p>
-            Version evolution: breaking message changes are handled through new
-            schemas and parallel subscriptions to limit disruption.
-          </p>
-          <figure class="chapter-figure">
-            <img
-              alt="Pub/Sub data streaming interface with filtering approach"
-              class="zoomable"
-              data-caption="M08.10"
-              src="../assets/images/ch08/fig-10-filtering-approach.png"
-            />
-            <figcaption>
-              M08.10 - Data as Streams and Subscription Filtering Approach
-            </figcaption>
-          </figure>
+          <ul class="study-bullets">
+            <li><strong>Entry</strong>: The atomic unit representing a specific data asset, such as a BigQuery table or a Vertex AI model.</li>
+            <li><strong>Aspect</strong>: A set of related metadata fields (e.g., "Contact Information") that can be attached to an entry to describe its characteristics.</li>
+            <li><strong>Aspect Type</strong>: A reusable template that defines the structure of an aspect, ensuring consistency across different domains.</li>
+          </ul>
         </section>
+
+        <section id="s07" class="study-section">
+          <h2>5.1 Defining Metadata Standards with Entry Types</h2>
+          <p>
+            Organizations can use <strong>Entry Types</strong> to enforce metadata standards. For example, a "Standard Data Product" type can be defined to require specific aspects, such as ownership and data quality metrics, before an asset can be published to the catalog. This ensures that the mesh remains trustworthy and governed.
+          </p>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>6 Enabling Data Mesh Governance</h2>
+          <p>
+            In a Data Mesh, Dataplex Universal Catalog acts as the <strong>Mesh Supervision Plane</strong>. It enables federated discovery by allowing domains to publish their products in a consistent format while maintaining local autonomy. It also tracks data lineage, helping organizations understand how data flows and transforms across domain boundaries, which is critical for audit and compliance.
+          </p>
+        </section>
+
         <section class="key-takeaways">
           <h2>Key takeaways</h2>
           <ul>
-            <li>
-              This module presents a practical Google Cloud architecture for a
-              self-serve data mesh platform.
-            </li>
-            <li>
-              This baseline keeps maintenance overhead low while still giving
-              producers repeatable setup paths.
-            </li>
-            <li>
-              This flow enables fast delivery while keeping ownership and
-              authorization explicit.
-            </li>
-            <li>
-              Operational visibility: metadata, lineage, and quality signals
-              improve trust and reuse of domain data products.
-            </li>
-            <li>
-              Ownership remains effective only if access control and policy
-              boundaries are enforceable.
-            </li>
+            <li>Dataplex Universal Catalog is the central discovery and governance engine for the data mesh.</li>
+            <li>It automatically harvests technical metadata while allowing manual business context enrichment.</li>
+            <li>Supports a wide range of assets, from BigQuery tables to Vertex AI machine learning models.</li>
+            <li>Metadata modeling using Entries and Aspects ensures consistent standards across domains.</li>
+            <li>Search functionality is secure-by-default, respecting IAM and VPC Service Controls.</li>
           </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://cloud.google.com/dataplex/docs/catalog-overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Dataplex Catalog overview - Google Cloud Documentation</a
+            >
+          </p>
         </section>
       </article>
     </main>
-    <a
-      aria-label="Back to top"
-      class="back-to-top"
-      data-back-to-top=""
-      href="#top"
-      title="Back to top"
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
       >Back to top</a
     >
-    <noscript
-      ><a class="back-to-top-fallback" href="#top">Back to top</a></noscript
-    >
-    <div aria-hidden="true" class="lightbox" id="lightbox">
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
       <figure class="lightbox-inner">
-        <img alt="Zoomed figure" id="lightbox-image" />
+        <img id="lightbox-image" alt="Zoomed figure" />
         <figcaption id="lightbox-caption"></figcaption>
       </figure>
     </div>

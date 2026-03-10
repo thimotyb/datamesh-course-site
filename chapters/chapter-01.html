@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   M01 - Data Mesh Fundamentals
+   M01 - Data Monolith to Mesh
   </title>
   <link href="../assets/css/main.css" rel="stylesheet"/>
   <script defer="" src="../assets/js/back-to-top.js">
@@ -13,7 +13,7 @@
  <body>
   <header class="hero" id="top">
    <h1>
-    M01 - Data Mesh Fundamentals
+    M01 - Data Monolith to Mesh
    </h1>
   </header>
   <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
@@ -21,7 +21,7 @@
     Home
    </a>
    <a aria-current="page" href="chapter-01.html">
-    M01 - Data Mesh Fundamentals
+    M01 - Data Monolith to Mesh
    </a>
    <a href="chapter-02.html">
     Next module (M02)
@@ -35,285 +35,234 @@
      </h2>
      <ul>
       <li>
-       1 Foundations and Paradigm Shift
+       1 The Current Enterprise Data Platform Architecture
       </li>
       <li>
-       1.1 Value Proposition and Four Principles
+       1.1 Architectural Failure Modes
       </li>
       <li>
-       1.2 Centralization Limits and Alternative Models
+       2 The Next Enterprise Data Platform Architecture
       </li>
       <li>
-       2 Business Value, Accessibility, and Decision-Making
+       2.1 Data and Distributed Domain Driven Architecture Convergence
       </li>
       <li>
-       2.1 Candace Scenario: Centralized Baseline
+       2.2 Data and Product Thinking Convergence
       </li>
       <li>
-       2.2 Candace Scenario: Distributed Responsibility
+       2.3 Data and Self-serve Platform Design Convergence
       </li>
       <li>
-       3 Principle 1: Domain Ownership
-      </li>
-      <li>
-       3.1 Principle 2: Data as a Product
-      </li>
-      <li>
-       3.2 Principle 3: Federated Computational Governance
-      </li>
-      <li>
-       4 Principle 4: Self-Serve Platform
-      </li>
-      <li>
-       4.1 Socio-Technical Design and Team Topologies
-      </li>
-      <li>
-       4.2 Adoption Challenges and Practical Guidance
+       3 The Paradigm Shift towards a Data Mesh
       </li>
      </ul>
     </section>
+
     <section class="study-section" id="s01">
      <h2>
-      1 Foundations and Paradigm Shift
+      1 The Current Enterprise Data Platform Architecture
      </h2>
      <p>
-      The model emphasizes people, responsibilities, and operating design, not only tools, because data quality and decision speed depend on organizational structure as much as on technology.
+      The evolution of data platforms has transitioned through three distinct generations, each attempting to solve the scaling challenges of the previous one. The <strong>first generation</strong> relied on proprietary enterprise data warehouses and business intelligence platforms. These solutions often left companies with massive technical debt in the form of unmaintainable ETL jobs and reports that only a small group of specialized people understood.
      </p>
      <p>
-      Its primary objective is to remove organizational and technical bottlenecks in the data value stream so business teams can turn data into decisions faster and with clearer accountability.
+      The <strong>second generation</strong> introduced the big data ecosystem with the <em>data lake</em> as a "silver bullet." While it enabled pockets of R&D analytics, it frequently created "data lake monsters" operated by central teams of hyper-specialized data engineers.
      </p>
      <p>
-      Data mesh is a socio-technical operating model that decentralizes ownership of data, data transformation, and data serving to domain teams.
+      The <strong>third and current generation</strong> has moved toward cloud-native managed services, real-time streaming (Kappa architecture), and unified batch/stream processing. However, despite these technical advances, it still suffers from the same underlying monolithic characteristics that led to the failures of the past. The data platform remains a centralized piece of architecture designed to ingest data from all corners of the enterprise, cleanse it, and serve it to a variety of consumers, creating a significant bottleneck as data sources proliferate.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 01 Figure 01" class="zoomable" data-caption="M01.01" src="../assets/images/ch01/fig-01.png"/>
+      <img alt="The 30,000 ft view of the monolithic data platform" class="zoomable" data-caption="M01.01" src="../assets/images/ch01/big-data-platform.png"/>
       <figcaption>
-       M01.01 - Centralized Data Ownership
+       M01.01 - The 30,000 ft view of the monolithic data platform
       </figcaption>
      </figure>
     </section>
+
     <section class="study-section" id="s02">
      <h2>
-      1.1 Value Proposition and Four Principles
+      1.1 Architectural Failure Modes
      </h2>
      <p>
-      In practice, successful adoption depends on balancing local autonomy with shared standards, so teams can move quickly without fragmenting the overall data ecosystem.
+      Modern centralized data platforms suffer from three primary failure modes that prevent them from scaling effectively:
      </p>
-     <p>
-      These principles are applied pragmatically: organizations can adopt them incrementally, but they must preserve the core goal of decentralized value creation from data.
-     </p>
-     <p>
-      The approach is implemented through four complementary principles: domain ownership, data as a product, federated computational governance, and a self-serve platform.
-     </p>
+     <ul>
+      <li>
+       <strong>Centralized and Monolithic:</strong> While we have successfully applied Domain-Driven Design (DDD) to operational systems, we have largely disregarded domain concepts in data platforms. We have moved away from domain-oriented ownership to centralized, domain-agnostic ownership. The assumption that we must ingest and store all data in one place to extract value constrains our ability to respond to the growing number of data sources.
+      </li>
+      <li>
+       <strong>Coupled Pipeline Decomposition:</strong> Most platforms are decomposed into a pipeline of data processing stages (ingestion, preparation, aggregation, serving). This functional cohesion around technical implementation creates high coupling. This decomposition is <em>orthogonal to the axis of change</em>; enabling a single new business feature requires synchronized changes across every stage of the pipeline, slowing down delivery significantly.
+      </li>
+      <li>
+       <strong>Siloed and Hyper-specialized Ownership:</strong> Data engineers are often siloed from the operational units where data originates or is consumed. They are grouped based on technical expertise in big data tooling, rather than business knowledge. This leads to a disconnect: source teams have no incentive to provide high-quality data, while frustrated consumers fight for a spot on the overstretched platform team's backlog.
+      </li>
+     </ul>
      <figure class="chapter-figure">
-      <img alt="Module 01 Figure 02" class="zoomable" data-caption="M01.02" src="../assets/images/ch01/fig-02.png"/>
+      <img alt="Centralized data platform with no clear data domain boundaries" class="zoomable" data-caption="M01.02" src="../assets/images/ch01/no-domain-data-platform.png"/>
       <figcaption>
-       M01.02 - Decentralized Data Ownership
+       M01.02 - Centralized data platform with no clear data domain boundaries
       </figcaption>
      </figure>
+     <figure class="chapter-figure">
+      <img alt="Functional decomposition of data platform" class="zoomable" data-caption="M01.03" src="../assets/images/ch01/functional-decomposition.png"/>
+      <figcaption>
+       M01.03 - Architectural decomposition of data platform
+      </figcaption>
+     </figure>
+     <figure class="chapter-figure">
+      <img alt="Coupling and slower delivery in orthogonal decomposition" class="zoomable" data-caption="M01.04" src="../assets/images/ch01/axis-of-change.png"/>
+      <figcaption>
+       M01.04 - Architecture decomposition is orthogonal to the axis of change
+      </figcaption>
+     </figure>
+     <p>
+      The functional decomposition of the platform—into ingestion, preparation, and serving layers—is <strong>orthogonal to the axis of business change</strong>. In a typical scenario, enabling a single new feature, such as "visibility to podcast play rates," requires a synchronized change in every component of the pipeline. Since the stages are owned by different technical specialists, this creates high coupling and forces the entire monolithic platform to be the smallest unit of change. The result is a system that resists agility because even minor domain-specific updates require a global coordinated effort.
+     </p>
+     <figure class="chapter-figure">
+      <img alt="Siloed hyper-specialized data platform team" class="zoomable" data-caption="M01.05" src="../assets/images/ch01/siloed-teams.png"/>
+      <figcaption>
+       M01.05 - Siloed hyper-specialized data platform team
+      </figcaption>
+     </figure>
+     <p>
+      The organizational structure often mirrors this technical silos. We find teams of hyper-specialized data engineers who are <strong>isolated from the operational domains</strong> where data originates or is consumed. These engineers are grouped based on their technical expertise in big data tooling, but they often lack the business context necessary to interpret the data they process. This creates a friction-filled dynamic: source teams have no incentive to provide meaningful data, while consumers struggle to get their needs prioritized in an overstretched central backlog.
+     </p>
     </section>
+
     <section class="study-section" id="s03">
      <h2>
-      1.2 Centralization Limits and Alternative Models
+      2 The Next Enterprise Data Platform Architecture
      </h2>
      <p>
-      Data mesh differs by aligning ownership with business domains, so each domain can evolve data products independently while still contributing to an interoperable ecosystem.
+      The next generation of data platforms lies in the convergence of <strong>Distributed Domain Driven Architecture</strong>, <strong>Self-serve Platform Design</strong>, and <strong>Product Thinking</strong> with data. We must move beyond the monolithic data lake toward an intentionally distributed <strong>Data Mesh</strong> architecture. This shift requires us to embrace the reality of the ubiquitous and distributed nature of data, applying the same techniques that modernized operational systems to the world of analytics.
      </p>
-     <p>
-      Alternative models that split work only by technical layers can improve throughput, yet they still separate data responsibilities from business ownership and value outcomes.
-     </p>
-     <p>
-      Centralized data teams and platforms are often effective at early scale, but they eventually create delivery bottlenecks, weak domain context, and slow response to local business changes.
-     </p>
+     <figure class="chapter-figure">
+      <img alt="The paradigm shift for building the next data platforms" class="zoomable" data-caption="M01.06" src="../assets/images/ch01/convergence.png"/>
+      <figcaption>
+       M01.06 - Convergence: the paradigm shift for building the next data platforms
+      </figcaption>
+     </figure>
     </section>
+
     <section class="study-section" id="s04">
      <h2>
-      2 Business Value, Accessibility, and Decision-Making
+      2.1 Data and Distributed Domain Driven Architecture Convergence
      </h2>
      <p>
-      This reduces delays in analytics and delivery because consumers can discover trusted data products with explicit context, interfaces, and quality expectations.
+      To decentralize the monolithic platform, we must reverse how we think about data ownership. Instead of flowing data from domains into a centrally owned lake, <strong>domains must host and serve their own datasets</strong> in an easily consumable way.
      </p>
      <p>
-      Domain-owned data products improve findability, interoperability, and decision quality by keeping data meaning close to the teams that generate and use it.
-     </p>
-     <p>
-      Business value emerges when data is accessible, understandable, and complete enough to support decisions, not when data is only stored in centralized repositories.
+      In this architecture, the <em>architectural quantum</em> is the domain itself, not a pipeline stage. Data processing pipelines (cleansing, aggregation) become internal implementation details of the domain. Source domains provide "facts" (immutable events), while consumer domains transform these into specialized structures (e.g., graphs) for specific use cases. The physical location of the data is secondary to the logical ownership by the domain.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 01 Figure 03" class="zoomable" data-caption="M01.03" src="../assets/images/ch01/fig-03.png"/>
+      <img alt="Decomposing architecture and teams based on domains" class="zoomable" data-caption="M01.07" src="../assets/images/ch01/data-domains.png"/>
       <figcaption>
-       M01.03 - Data Mesh and Central Storage Compatibility
+       M01.07 - Decomposing the architecture and teams based on domains
       </figcaption>
      </figure>
+     <figure class="chapter-figure">
+      <img alt="Distributed pipelines as domain internal implementation" class="zoomable" data-caption="M01.08" src="../assets/images/ch01/distributed-pipelines.png"/>
+      <figcaption>
+       M01.08 - Distribute the pipelines into the domains as internal implementation
+      </figcaption>
+     </figure>
+     <p>
+      In a Data Mesh architecture, the <strong>data pipeline is simply an internal complexity</strong> and an implementation detail of the data domain. This marks a radical shift: instead of having a central team responsible for every transformation stage across the entire enterprise, each domain handles its own internal data processing—cleansing, enrichment, and aggregation—independently. By distributing the pipelines, the domain team can ensure that the transformation logic is perfectly aligned with the business semantics they own, without waiting for a central platform team to implement their specific requirements.
+     </p>
     </section>
+
     <section class="study-section" id="s05">
      <h2>
-      2.1 Candace Scenario: Centralized Baseline
+      2.2 Data and Product Thinking Convergence
      </h2>
      <p>
-      This baseline highlights a typical anti-pattern: a central coordinator becomes the bottleneck for both information quality and business responsiveness.
+      Domain teams must apply product thinking to their data, treating data assets as products and the rest of the organization (data scientists, ML engineers) as their customers. To provide a high-quality experience, data products must have the following characteristics (**D.A.T.S.I.S.**):
      </p>
-     <p>
-      As data moves across multiple handoffs, context is weakened and decisions become dependent on one overloaded coordinator.
-     </p>
-     <p>
-      In the initial operating model, operational data flows through a single central decision point, creating delays and recurring mistakes in planning and procurement.
-     </p>
+     <ul>
+      <li><strong>Discoverable:</strong> Registered in a common data catalog with rich meta-information.</li>
+      <li><strong>Addressable:</strong> Accessible via a unique, global address using standard protocols.</li>
+      <li><strong>Trustworthy:</strong> Backed by explicit Service Level Objectives (SLOs) for truthfulness and quality.</li>
+      <li><strong>Self-describing:</strong> Accompanied by well-described semantics, syntax, and sample datasets.</li>
+      <li><strong>Interoperable:</strong> Following global standards for field formatting, metadata, and identity.</li>
+      <li><strong>Secure:</strong> Governed by global access control policies applied at the point of consumption.</li>
+     </ul>
      <figure class="chapter-figure">
-      <img alt="Module 01 Figure 04" class="zoomable" data-caption="M01.04" src="../assets/images/ch01/fig-04.png"/>
+      <img alt="Characteristics of domain datasets as product" class="zoomable" data-caption="M01.09" src="../assets/images/ch01/data-product.png"/>
       <figcaption>
-       M01.04 - Candace Scenario: Central vs Decentralized Flow
+       M01.09 - Characteristics of domain datasets as product (D.A.T.S.I.S.)
       </figcaption>
      </figure>
+     <p>
+      To satisfy the "data as a product" principle, every data product must exhibit six core characteristics, often summarized by the acronym <strong>D.A.T.S.I.S.</strong>:
+     </p>
+     <ul>
+      <li><strong>Discoverable:</strong> A data product must be easy to find. This is achieved by registering it in a common data catalog that includes rich metadata, such as its origin, lineage, sample data, and quality metrics. Without discoverability, data becomes "dark data," hidden within silos.</li>
+      <li><strong>Addressable:</strong> Once discovered, a data product must have a unique, global address that allows users to access it programmatically. These addresses must follow a standard convention across the organization to enable automated discovery and consumption.</li>
+      <li><strong>Trustworthy and Truthful:</strong> Consumers must be able to trust the data. This requires producers to define and adhere to explicit Service Level Objectives (SLOs) for data quality, freshness, and accuracy. Any deviations from these standards must be monitored and communicated automatically.</li>
+      <li><strong>Self-describing:</strong> A data product should be usable without needing to call the producer team. It must include well-defined schemas, clear semantics, syntax descriptions, and documentation that explains the business context and how to join it with other products.</li>
+      <li><strong>Interoperable:</strong> To extract value from multiple domains, data products must be able to work together. This is enabled by global standards for field formatting, common identification systems (e.g., a unified "Customer ID"), and standardized metadata formats.</li>
+      <li><strong>Secure:</strong> Access control must be strictly enforced at the point of consumption. While ownership is decentralized, security policies are defined globally by the federated governance team and applied consistently across all data products in the mesh.</li>
+     </ul>
+     <figure class="chapter-figure">
+      <img alt="Cross functional domain data teams" class="zoomable" data-caption="M01.10" src="../assets/images/ch01/data-team.png"/>
+      <figcaption>
+       M01.10 - Cross functional domain data teams with explicit data product ownership
+      </figcaption>
+     </figure>
+     <p>
+      To make the "data as a product" model successful, domain teams must be <strong>augmented with new roles</strong>: Data Product Owners and Data Engineers. The Data Product Owner is accountable for the product's success, ensuring it meets consumer needs while staying aligned with business goals. Data Engineers bring the technical expertise to build and maintain the internal pipelines and interfaces. This cross-functional setup ensures that the domain has full end-to-end ownership of its data assets—from the operational source to the analytical product—making them business-aligned, technically robust, and easy to consume by the rest of the organization.
+     </p>
     </section>
+
     <section class="study-section" id="s06">
      <h2>
-      2.2 Candace Scenario: Distributed Responsibility
+      2.3 Data and Self-serve Platform Design Convergence
      </h2>
      <p>
-      This shift demonstrates the practical effect of decentralization: improved autonomy at the edge while maintaining consistency across teams.
+      To avoid duplicating effort and complexity, a domain-agnostic infrastructure team provides a <strong>self-service data platform</strong>. This platform harvests the common infrastructure capabilities (storage, compute, streaming) and provides them as reusable components.
      </p>
      <p>
-      The same work can be coordinated through shared rules and interfaces while preserving domain-level execution speed.
+      The platform must remain domain-agnostic, hiding underlying complexity so domain teams can focus on data logic rather than infrastructure setup. A key success criterion for this platform is significantly lowering the "lead time" required to create and deploy a new data product.
      </p>
-     <p>
-      When ownership is delegated to domain actors, local teams manage their own operational data and decision loops with faster feedback and clearer responsibility.
-     </p>
+     <figure class="chapter-figure">
+      <img alt="Data infrastructure as a platform" class="zoomable" data-caption="M01.11" src="../assets/images/ch01/data-infra.png"/>
+      <figcaption>
+       M01.11 - Extracting data infrastructure into a separate platform
+      </figcaption>
+     </figure>
     </section>
+
     <section class="study-section" id="s07">
      <h2>
-      3 Principle 1: Domain Ownership
+      3 The Paradigm Shift towards a Data Mesh
      </h2>
      <p>
-      It also enables scalable growth: each domain evolves its own data assets without forcing every change through a single central queue.
+      The transition to a Data Mesh is a fundamental shift in how we approach data at scale. It requires moving from <em>ingesting</em> data into a central lake to <em>serving</em> data products from business domains. We shift from <em>extracting and loading</em> to <em>discovering and using</em>, and from <em>flowing data via centralized pipelines</em> to <em>publishing events as streams</em>.
      </p>
      <p>
-      Teams with direct domain knowledge can evolve datasets and semantics with less translation loss than central teams serving many unrelated domains.
-     </p>
-     <p>
-      Domain ownership assigns data responsibility to the teams closest to business context, so definitions, quality controls, and changes reflect real operational needs.
+      The Data Mesh is not just a technology change; it is an ecosystem of interoperable data products governed by global standards and enabled by a shared self-serve infrastructure.
      </p>
      <figure class="chapter-figure">
-      <img alt="Module 01 Figure 05" class="zoomable" data-caption="M01.05" src="../assets/images/ch01/fig-05.png"/>
+      <img alt="Data mesh architecture from 30,000 foot view" class="zoomable" data-caption="M01.12" src="../assets/images/ch01/data-mesh.png"/>
       <figcaption>
-       M01.05 - Candace Scenario: Central vs Decentralized Flow
+       M01.12 - Data mesh architecture from 30,000 foot view
       </figcaption>
      </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Principle 2: Data as a Product
-     </h2>
      <p>
-      This product mindset improves reuse and trust because consumers can evaluate fitness, availability, and contractual behavior before adoption.
-     </p>
-     <p>
-      A data product requires explicit ownership for lifecycle, reliability, and usability, including metadata, access patterns, and service expectations.
-     </p>
-     <p>
-      Treating data as a product means defining clear consumers, quality expectations, discoverability, and stable interfaces rather than exposing raw datasets without context.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 01 Figure 06" class="zoomable" data-caption="M01.06" src="../assets/images/ch01/fig-06.png"/>
-      <figcaption>
-       M01.06 - Candace Scenario: Central vs Decentralized Flow
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Principle 3: Federated Computational Governance
-     </h2>
-     <p>
-      Computational governance operationalizes these standards through automation, so policies are enforced consistently across products without excessive manual control.
-     </p>
-     <p>
-      Governance decisions are distributed across a central body and domain teams, with clear decision rights and accountability boundaries.
-     </p>
-     <p>
-      Federated governance balances central guardrails and local autonomy by defining shared standards for security, interoperability, and compliance.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 01 Figure 07" class="zoomable" data-caption="M01.07" src="../assets/images/ch01/fig-07.png"/>
-      <figcaption>
-       M01.07 - Candace Scenario: Central vs Decentralized Flow
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Principle 4: Self-Serve Platform
-     </h2>
-     <p>
-      This reduces onboarding friction, shortens delivery time, and lets product teams focus on domain value instead of rebuilding common infrastructure.
-     </p>
-     <p>
-      Typical capabilities include provisioning patterns, security controls, metadata and catalog workflows, and integration accelerators for producers and consumers.
-     </p>
-     <p>
-      A self-serve platform extracts repeated technical work from domain teams and provides reusable capabilities as services.
+      Source: <a href="https://martinfowler.com/articles/data-monolith-to-mesh.html" target="_blank" rel="noopener noreferrer">How to Move Beyond a Monolithic Data Lake to a Distributed Data Mesh (Martin Fowler)</a>
      </p>
     </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Socio-Technical Design and Team Topologies
-     </h2>
-     <p>
-      Applying socio-technical principles helps keep cognitive load manageable while aligning team interactions with system design.
-     </p>
-     <p>
-      When communication paths and ownership boundaries are explicit, delivery flow improves and operational ambiguity decreases.
-     </p>
-     <p>
-      Data architecture and organizational structure co-evolve; therefore platform and governance decisions must be designed together with team boundaries and responsibilities.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 01 Figure 08" class="zoomable" data-caption="M01.08" src="../assets/images/ch01/fig-08.png"/>
-      <figcaption>
-       M01.08 - Candace Scenario: Central vs Decentralized Flow
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Adoption Challenges and Practical Guidance
-     </h2>
-     <p>
-      Long-term success depends on iterative platform and governance evolution so teams can increase autonomy without losing operational coherence.
-     </p>
-     <p>
-      A practical rollout starts with constrained scope, validates measurable outcomes quickly, and then scales patterns that prove value.
-     </p>
-     <p>
-      Adoption requires explicit tradeoffs among autonomy, standardization, and control, especially in security, data quality, and cross-domain interoperability.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 01 Figure 09" class="zoomable" data-caption="M01.09" src="../assets/images/ch01/fig-09.png"/>
-      <figcaption>
-       M01.09 - Principle 1: Domain Ownership
-      </figcaption>
-     </figure>
-    </section>
+
     <section class="key-takeaways">
      <h2>
       Key takeaways
      </h2>
      <ul>
-      <li>
-       Data mesh is a socio-technical decentralization model focused on improving value flow from data.
-      </li>
-      <li>
-       The four principles must be applied together to balance autonomy, interoperability, and control.
-      </li>
-      <li>
-       Domain ownership and product thinking increase data quality, trust, and reuse at scale.
-      </li>
-      <li>
-       Federated computational governance enables enforceable shared standards without central bottlenecks.
-      </li>
-      <li>
-       A self-serve platform reduces repeated effort and accelerates delivery across data domains.
-      </li>
+      <li>Centralized monolithic platforms fail to scale due to organizational bottlenecks and technical coupling.</li>
+      <li>Data Mesh decentralizes data ownership, making business domains responsible for their own analytical data.</li>
+      <li>Data products must be D.A.T.S.I.S. (Discoverable, Addressable, Trustworthy, Self-describing, Interoperable, Secure).</li>
+      <li>The self-service platform abstracts infrastructure complexity, lowering the barrier for domains to produce data.</li>
+      <li>Federated governance ensures global consistency and interoperability without central bottlenecks.</li>
      </ul>
     </section>
    </article>

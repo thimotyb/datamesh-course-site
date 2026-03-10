@@ -1,364 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M05 - Data as a Product
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M05 - Data as a Product
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-04.html">
-    Previous module (M04)
-   </a>
-   <a aria-current="page" href="chapter-05.html">
-    M05 - Data as a Product
-   </a>
-   <a href="chapter-06.html">
-    Next module (M06)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 Why Data Must Be Treated as a Product
-      </li>
-      <li>
-       1.1 Product Thinking and the Data Product Canvas
-      </li>
-      <li>
-       1.2 Core Definition of a Data Product
-      </li>
-      <li>
-       2 Ownership Model and Team Setup
-      </li>
-      <li>
-       2.1 Responsibilities of the Data Product Owner
-      </li>
-      <li>
-       2.2 Interfaces, Ports, and Product Exposure
-      </li>
-      <li>
-       3 External and Internal Product Architecture
-      </li>
-      <li>
-       3.1 Metadata as a Core Product Capability
-      </li>
-      <li>
-       3.2 FAIR Principles and Immutability
-      </li>
-      <li>
-       4 Interoperability and Reuse by Design
-      </li>
-      <li>
-       4.1 Producer-Consumer Collaboration and Contracts
-      </li>
-      <li>
-       4.2 Operationalizing Contracts Across the Organization
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 Why Data Must Be Treated as a Product
-     </h2>
-     <p>
-      This shift is necessary because valuable datasets are often inaccessible or poorly documented, which prevents organizations from extracting decision value at scale.
-     </p>
-     <p>
-      A product perspective includes both data content and supporting capabilities such as description, access rules, quality controls, and lifecycle management.
-     </p>
-     <p>
-      Data becomes a product when it is intentionally designed for reuse, not when it is exposed as an accidental by-product of application operations.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 01" class="zoomable" data-caption="M05.01" src="../assets/images/ch05/fig-01.png"/>
-      <figcaption>
-       M05.01 - Product and Thinking
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 Product Thinking and the Data Product Canvas
-     </h2>
-     <p>
-      The data product canvas complements this process by structuring business purpose, ownership, interfaces, and technical characteristics in a single view.
-     </p>
-     <p>
-      For data mesh, this analysis validates whether a candidate dataset is worth productizing and helps prioritize implementation effort.
-     </p>
-     <p>
-      Product thinking starts from user problems and expected outcomes, then defines the data product required to solve those problems.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 02" class="zoomable" data-caption="M05.02" src="../assets/images/ch05/fig-02.png"/>
-      <figcaption>
-       M05.02 - Information and Cast
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Core Definition of a Data Product
-     </h2>
-     <p>
-      The definition emphasizes discoverability, stable access, and operational accountability as core characteristics, not optional extras.
-     </p>
-     <p>
-      Data exposed without intentional design, ownership, and usability guarantees does not satisfy this definition.
-     </p>
-     <p>
-      A data product is an autonomous, read-optimized, standardized data unit that contains at least one domain dataset and serves explicit user needs.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 03" class="zoomable" data-caption="M05.03" src="../assets/images/ch05/fig-03.png"/>
-      <figcaption>
-       M05.03 - Data Product Canvas
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 Ownership Model and Team Setup
-     </h2>
-     <p>
-      This model supports faster evolution because design, implementation, and operational feedback are handled within the same ownership boundary.
-     </p>
-     <p>
-      Teams should be organized around end-to-end delivery of data products instead of separating responsibilities across disconnected specialized silos.
-     </p>
-     <p>
-      Product ownership requires dedicated roles that combine domain understanding, product direction, and technical delivery accountability.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 04" class="zoomable" data-caption="M05.04" src="../assets/images/ch05/fig-04.png"/>
-      <figcaption>
-       M05.04 - Data Product Canvas
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 Responsibilities of the Data Product Owner
-     </h2>
-     <p>
-      Effective ownership is continuous: requirements are refined over time through usage feedback rather than treated as one-time project scope.
-     </p>
-     <p>
-      This role also enforces compliance with governance constraints, metadata quality, and service expectations such as SLA commitments.
-     </p>
-     <p>
-      The data product owner defines vision, aligns stakeholders, prioritizes backlog, and ensures that product evolution remains tied to measurable user value.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 05" class="zoomable" data-caption="M05.05" src="../assets/images/ch05/fig-05.png"/>
-      <figcaption>
-       M05.05 - Product and Definition
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Interfaces, Ports, and Product Exposure
-     </h2>
-     <p>
-      Standardized interfaces are essential for interoperability, because consumers must integrate products without reverse-engineering internal system logic.
-     </p>
-     <p>
-      Beyond raw exposure, interfaces should include supporting artifacts such as metadata, quality indicators, and operational metrics.
-     </p>
-     <p>
-      A data product should expose explicit ports tailored to different consumption modes, for example file export, API access, databases, or streams.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 06" class="zoomable" data-caption="M05.06" src="../assets/images/ch05/fig-06.png"/>
-      <figcaption>
-       M05.06 - Product and Definition
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 External and Internal Product Architecture
-     </h2>
-     <p>
-      Both views are required: one ensures usability for consumers, the other ensures maintainability and reliability for product teams.
-     </p>
-     <p>
-      Internal architecture defines how data is ingested, transformed, validated, and delivered using repeatable code and operational controls.
-     </p>
-     <p>
-      External architecture defines how consumers discover, access, and evaluate the product through communication, information, and configuration interfaces.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 07" class="zoomable" data-caption="M05.07" src="../assets/images/ch05/fig-07.png"/>
-      <figcaption>
-       M05.07 - Data Product Ownership
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 08" class="zoomable" data-caption="M05.08" src="../assets/images/ch05/fig-08.png"/>
-      <figcaption>
-       M05.08 - Data Product Ownership
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Metadata as a Core Product Capability
-     </h2>
-     <p>
-      Operational, semantic, lineage, and quality metadata together enable platform automation and informed consumer adoption.
-     </p>
-     <p>
-      Without rich metadata, data products may be technically accessible but practically unusable for discovery, integration, and trust.
-     </p>
-     <p>
-      Metadata is a primary capability of a data product because it provides business context, technical semantics, usage guidance, and governance signals.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 09" class="zoomable" data-caption="M05.09" src="../assets/images/ch05/fig-09.png"/>
-      <figcaption>
-       M05.09 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 FAIR Principles and Immutability
-     </h2>
-     <p>
-      Applying FAIR consistently increases long-term product composability and reduces friction in cross-domain analytical scenarios.
-     </p>
-     <p>
-      In implementation, these principles should be adapted to organizational context while preserving clear minimum standards.
-     </p>
-     <p>
-      FAIR principles provide a practical reference for improving discoverability, accessibility, interoperability, and reuse across products.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 10" class="zoomable" data-caption="M05.10" src="../assets/images/ch05/fig-10.png"/>
-      <figcaption>
-       M05.10 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Interoperability and Reuse by Design
-     </h2>
-     <p>
-      This design orientation turns isolated datasets into a connected ecosystem of data products that can support multiple business use cases.
-     </p>
-     <p>
-      Reuse emerges when products are independently useful but can also be combined without high integration overhead.
-     </p>
-     <p>
-      Interoperability must be designed from the beginning through shared vocabularies, stable identifiers, and consistent interface contracts.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 11" class="zoomable" data-caption="M05.11" src="../assets/images/ch05/fig-11.png"/>
-      <figcaption>
-       M05.11 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Producer-Consumer Collaboration and Contracts
-     </h2>
-     <p>
-      This reduces hidden dependency risk and helps both sides plan changes without breaking downstream analytical and operational workloads.
-     </p>
-     <p>
-      Contracts make assumptions visible: they define what is provided, under which conditions, and with which quality guarantees.
-     </p>
-     <p>
-      Producer-consumer collaboration should be continuous, with explicit feedback channels that drive product refinement and expectation alignment.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 12" class="zoomable" data-caption="M05.12" src="../assets/images/ch05/fig-12.png"/>
-      <figcaption>
-       M05.12 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Operationalizing Contracts Across the Organization
-     </h2>
-     <p>
-      When institutionalized, these mechanisms increase trust and reduce coordination cost across the growing mesh.
-     </p>
-     <p>
-      Operationalization requires governance support, tooling integration, and clear role accountability to keep agreements enforceable over time.
-     </p>
-     <p>
-      Contracts and sharing agreements should be introduced progressively, starting from high-impact products and expanding through repeatable patterns.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 05 Figure 13" class="zoomable" data-caption="M05.13" src="../assets/images/ch05/fig-13.png"/>
-      <figcaption>
-       M05.13 - Data Product Canvas
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       Data should be productized intentionally, with clear user value and lifecycle ownership.
-      </li>
-      <li>
-       Product thinking and canvas analysis help validate and prioritize data product candidates.
-      </li>
-      <li>
-       Interfaces, metadata, and quality signals are core product capabilities, not optional add-ons.
-      </li>
-      <li>
-       Ownership and delivery should be end-to-end within domain-aligned product teams.
-      </li>
-      <li>
-       Contracts and interoperability standards enable scalable cross-domain reuse in the mesh.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M05 - Self-Service Data Platform for Data Mesh</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M05 - Self-Service Data Platform for Data Mesh</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-04.html">Previous module (M04)</a>
+      <a href="chapter-05.html" aria-current="page">M05 - Self-Service Data Platform for Data Mesh</a>
+      <a href="chapter-06.html">Next module (M06)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 The Role and Value of a Self-Service Data Platform</li>
+            <li>2 The Multi-Plane Architecture</li>
+            <li>2.1 Data Infrastructure Plane (Platform Solutions)</li>
+            <li>2.2 Data Product Experience Plane (Common Services)</li>
+            <li>2.3 Mesh Supervision Plane (Governance & Observability)</li>
+            <li>3 Core Components of a Data Platform</li>
+            <li>3.1 Provisioning and Foundational Workspaces</li>
+            <li>3.2 Lifecycle Management and CI/CD</li>
+            <li>4 Building the Platform on Google Cloud</li>
+            <li>4.1 Using BigQuery, Dataplex, and Terraform</li>
+            <li>5 Reducing Cognitive Load for Domain Teams</li>
+            <li>6 The "Platform as a Product" Mindset</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 The Role and Value of a Self-Service Data Platform</h2>
+          <p>
+            The self-service data platform is the foundational layer that enables domain teams to autonomously build, share, and use data products. Its primary value lies in <strong>increasing the velocity of domain teams</strong> by removing the burden of building and sourcing their own infrastructure.
+          </p>
+          <p>
+            By leveraging a platform, organizations achieve high levels of <strong>autonomy</strong>, allowing data producers and consumers to operate without waiting for a central IT team to provision resources. This approach also ensures <strong>interoperability</strong>, as every data product follows standardized security and compliance guardrails by design.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch102/fig-01-self-service-platform.svg"
+              alt="Self-service data platform architecture"
+              class="zoomable"
+              data-caption="M05.01"
+            />
+            <figcaption>M05.01 - Interactions between domain teams and the self-service platform</figcaption>
+          </figure>
+          <p>
+            Figure M05.01 illustrates the relationship between domain teams and the platform. The platform team acts as a "curator," providing pre-vetted tools and templates that domain teams use to produce and consume data products efficiently.
+          </p>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>2 The Multi-Plane Architecture</h2>
+          <p>
+            To manage complexity, the platform is structured into distinct functional layers, or <strong>planes</strong>. Each plane focuses on a specific set of concerns, decoupling low-level infrastructure from the end-user experience.
+          </p>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>2.1 Data Infrastructure Plane (Platform Solutions)</h2>
+          <p>
+            The <strong>Data Infrastructure Plane</strong> handles the "how" of resource provisioning. It provides composable components, such as Infrastructure-as-Code (IaC) templates, for setting up Google Cloud projects, VPC networking, and security policies.
+          </p>
+          <p>
+            The goal is to provide <strong>foundational workspaces</strong> that are "secure and compliant by default." This allows domain teams to deploy storage and compute resources without needing to be security or networking experts.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>2.2 Data Product Experience Plane (Common Services)</h2>
+          <p>
+            The <strong>Data Product Experience Plane</strong> focuses on the "how" of building and consuming data. It provides common services like:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Metadata Catalog</strong>: A central registry (Dataplex) for finding and evaluating data products.</li>
+            <li><strong>Bootstrap Templates</strong>: Reference code for data pipelines, including standard libraries for authentication and logging.</li>
+            <li><strong>Data Marketplace</strong>: An interface to facilitate access requests and sharing between domains.</li>
+          </ul>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>2.3 Mesh Supervision Plane (Governance & Observability)</h2>
+          <p>
+            The <strong>Mesh Supervision Plane</strong> focuses on the "why" and the overall health of the mesh. It implements global <strong>computational policies</strong> and automated compliance checks.
+          </p>
+          <p>
+            This plane provides <strong>Product Scorecards</strong>—objective measurements of a data product's performance based on its uptime, quality, and freshness. These signals build the trust necessary for cross-domain data reuse.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch102/fig-03-data-mesh-observability.svg"
+              alt="Data mesh observability flow"
+              class="zoomable"
+              data-caption="M05.02"
+            />
+            <figcaption>M05.02 - Centralized monitoring and observability across the mesh</figcaption>
+          </figure>
+          <p>
+            Figure M05.02 shows the flow of observability. Data products emit custom metrics and health signals to a central monitoring project, which then provides dashboards and alerts for both producers and consumers.
+          </p>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>3 Core Components of a Data Platform</h2>
+          <p>
+            A robust platform must provide integrated components that cover the entire data product lifecycle, from initial provisioning to decommissioning.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>3.1 Provisioning and Foundational Workspaces</h2>
+          <p>
+            The platform provides <strong>IaC Templates</strong> (using Terraform) for BigQuery datasets, Cloud Storage buckets, and networking. This prevents "configuration drift" and ensures that every domain project follows organization-wide guardrails for logging and IAM.
+          </p>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>3.2 Lifecycle Management and CI/CD</h2>
+          <p>
+            Standardized <strong>CI/CD pipelines</strong> (via Cloud Build) automate the testing and deployment of data product code. This includes bootstrapping new data pipelines with reference code, reducing the technical effort required to go from a business idea to a published data product.
+          </p>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>4 Building the Platform on Google Cloud</h2>
+          <p>
+            Google Cloud services provide the building blocks for each plane. A key objective is to leverage <strong>managed services</strong> to reduce the operational overhead of the platform team.
+          </p>
+        </section>
+
+        <section id="s10" class="study-section">
+          <h2>4.1 Using BigQuery, Dataplex, and Terraform</h2>
+          <ul class="study-bullets">
+            <li><strong>BigQuery</strong>: The primary consumption interface, using <strong>Authorized Views</strong> to securely expose data without sharing raw table access.</li>
+            <li><strong>Dataplex</strong>: Provides unified governance and cataloging. <strong>Lakes</strong> and <strong>Zones</strong> allow for consistent policy application across projects.</li>
+            <li><strong>Terraform</strong>: Enables the creation of immutable, version-controlled infrastructure.</li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch102/fig-02-dataplex-governance.png"
+              alt="Dataplex logical organization"
+              class="zoomable"
+              data-caption="M05.03"
+            />
+            <figcaption>M05.03 - Logical organization of data assets using Dataplex</figcaption>
+          </figure>
+          <p>
+            Figure M05.03 illustrates how <strong>Dataplex</strong> logically groups assets (tables, buckets) into zones and lakes, ensuring that security policies are applied consistently regardless of where the data physically resides.
+          </p>
+        </section>
+
+        <section id="s11" class="study-section">
+          <h2>5 Reducing Cognitive Load for Domain Teams</h2>
+          <p>
+            The platform team acts as a <strong>curator</strong>, preventing domain teams from being overwhelmed by the vast number of cloud services. By providing pre-vetted "paved paths," the platform lowers the technical barrier to entry. Domain teams can focus on <strong>data logic</strong>—the transformation and meaning of the data—rather than infrastructure management.
+          </p>
+        </section>
+
+        <section id="s12" class="study-section">
+          <h2>6 The "Platform as a Product" Mindset</h2>
+          <p>
+            The platform is not a static piece of infrastructure; it is a <strong>product</strong> that must evolve based on consumer feedback. The platform team treats domain teams as their <strong>customers</strong>, identifying friction points and building automated solutions to solve them. This mindset ensures high adoption and long-term value for the organization.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>The platform enables domain autonomy by abstracting infrastructure complexity.</li>
+            <li>A multi-plane architecture separates provisioning, experience, and supervision.</li>
+            <li>Managed services like BigQuery and Dataplex are the "engines" of the platform.</li>
+            <li>Trust is built through automated governance and objective product scorecards.</li>
+            <li>A "Platform as a Product" mindset ensures the tools meet real domain needs.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://cloud.google.com/architecture/design-self-service-data-platform-data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Design a self-service data platform for a data mesh - Google Cloud Architecture Center</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>

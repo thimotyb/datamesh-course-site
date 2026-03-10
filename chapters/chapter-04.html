@@ -1,400 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M04 - Domain Ownership and Boundaries
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M04 - Domain Ownership and Boundaries
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-03.html">
-    Previous module (M03)
-   </a>
-   <a aria-current="page" href="chapter-04.html">
-    M04 - Domain Ownership and Boundaries
-   </a>
-   <a href="chapter-05.html">
-    Next module (M05)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 Domain Ownership in the Data Mesh Model
-      </li>
-      <li>
-       1.1 From Business Context to Domain Boundaries
-      </li>
-      <li>
-       1.2 Domain Storytelling as Discovery Technique
-      </li>
-      <li>
-       2 Applying Ownership Through Domain Decomposition
-      </li>
-      <li>
-       2.1 Subdomains, Capabilities, and Team Scope
-      </li>
-      <li>
-       2.2 Connecting Business Domains to Data Domains
-      </li>
-      <li>
-       3 Assigning Ownership to Data Products
-      </li>
-      <li>
-       3.1 Use Cases as Boundary Signals
-      </li>
-      <li>
-       3.2 Data Models and Product Contracts
-      </li>
-      <li>
-       4 Heuristics for Boundary Decisions
-      </li>
-      <li>
-       4.1 Validating Boundaries Across the Landscape
-      </li>
-      <li>
-       4.2 Final Mesh Design and Ownership Map
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 Domain Ownership in the Data Mesh Model
-     </h2>
-     <p>
-      In practice, decentralization means each domain is accountable not only for data production, but also for the way data is exposed and maintained over time.
-     </p>
-     <p>
-      This principle improves semantic accuracy because domain teams understand local processes, terminology, and quality expectations better than distant central functions.
-     </p>
-     <p>
-      Domain ownership shifts responsibility for data from a centralized team to the business-aligned teams that generate and use that data.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 01" class="zoomable" data-caption="M04.01" src="../assets/images/ch04/fig-01.png"/>
-      <figcaption>
-       M04.01 - Business Case and Drivers
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 From Business Context to Domain Boundaries
-     </h2>
-     <p>
-      The goal is to identify cohesive responsibility zones where one team can sustainably own data quality, interfaces, and delivery outcomes.
-     </p>
-     <p>
-      Boundary discovery should be treated as an iterative process, revisited whenever business capabilities evolve or new data products are introduced.
-     </p>
-     <p>
-      Defining boundaries starts with understanding business context, because ownership decisions are only effective when they mirror real operational responsibilities.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 02" class="zoomable" data-caption="M04.02" src="../assets/images/ch04/fig-02.png"/>
-      <figcaption>
-       M04.02 - Stories and Domain
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 03" class="zoomable" data-caption="M04.03" src="../assets/images/ch04/fig-03.png"/>
-      <figcaption>
-       M04.03 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Domain Storytelling as Discovery Technique
-     </h2>
-     <p>
-      This method is especially useful in early decomposition work, where misunderstandings about terms and process scope often block ownership decisions.
-     </p>
-     <p>
-      It makes domain interactions visible through concrete narratives, helping teams align language, actors, and information flows.
-     </p>
-     <p>
-      Domain storytelling is an effective workshop-based technique to capture shared understanding across business and technical participants.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 04" class="zoomable" data-caption="M04.04" src="../assets/images/ch04/fig-04.png"/>
-      <figcaption>
-       M04.04 - Domain and Subdomain
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 05" class="zoomable" data-caption="M04.05" src="../assets/images/ch04/fig-05.png"/>
-      <figcaption>
-       M04.05 - Domain and Subdomain
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 Applying Ownership Through Domain Decomposition
-     </h2>
-     <p>
-      The result should support independent evolution of data products while preserving cross-domain interoperability.
-     </p>
-     <p>
-      A practical decomposition must balance granularity and manageability so ownership is clear but operational fragmentation is avoided.
-     </p>
-     <p>
-      Domain decomposition translates broad business areas into smaller autonomous units that can own specific data responsibilities.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 06" class="zoomable" data-caption="M04.06" src="../assets/images/ch04/fig-06.png"/>
-      <figcaption>
-       M04.06 - Domain and Subdomain
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 Subdomains, Capabilities, and Team Scope
-     </h2>
-     <p>
-      When capability and team scope are aligned, communication overhead decreases and product evolution becomes faster and more reliable.
-     </p>
-     <p>
-      Subdomains derived from capabilities help define where teams should own datasets, interfaces, and transformation logic.
-     </p>
-     <p>
-      Business capabilities provide a stable structure for decomposition because they describe value-producing activities rather than temporary organizational arrangements.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 07" class="zoomable" data-caption="M04.07" src="../assets/images/ch04/fig-07.png"/>
-      <figcaption>
-       M04.07 - Business and Capabilities
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 08" class="zoomable" data-caption="M04.08" src="../assets/images/ch04/fig-08.png"/>
-      <figcaption>
-       M04.08 - Business and Capability
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Connecting Business Domains to Data Domains
-     </h2>
-     <p>
-      This connection ensures that data ownership remains anchored to business meaning rather than to purely technical system structures.
-     </p>
-     <p>
-      Mapping data flows between capabilities reveals natural boundaries for domain datasets and candidate product groupings.
-     </p>
-     <p>
-      Business domains and data domains are tightly linked: data is either produced as a by-product of capability execution or consumed as an input to another capability.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 09" class="zoomable" data-caption="M04.09" src="../assets/images/ch04/fig-09.png"/>
-      <figcaption>
-       M04.09 - Domain and Datasets
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 Assigning Ownership to Data Products
-     </h2>
-     <p>
-      Clear ownership reduces recurring pipeline failures and avoids the ambiguity that typically appears in centrally brokered integration models.
-     </p>
-     <p>
-      A product-owning team is responsible for data, transformation code, quality controls, and exposure interfaces required by consumers.
-     </p>
-     <p>
-      Ownership assignment should follow both domain accountability and product feasibility, not only current system boundaries.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 10" class="zoomable" data-caption="M04.10" src="../assets/images/ch04/fig-10.png"/>
-      <figcaption>
-       M04.10 - Data Product Team Structure
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 11" class="zoomable" data-caption="M04.11" src="../assets/images/ch04/fig-11.png"/>
-      <figcaption>
-       M04.11 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Use Cases as Boundary Signals
-     </h2>
-     <p>
-      These signals help prioritize product boundaries that maximize impact, not only those that reflect existing technical decomposition.
-     </p>
-     <p>
-      Use-case analysis clarifies who consumes data, for what purpose, and which datasets must be combined to deliver measurable business value.
-     </p>
-     <p>
-      Data use cases are a complementary method for identifying product boundaries, especially when cross-domain analytical needs are strong.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 12" class="zoomable" data-caption="M04.12" src="../assets/images/ch04/fig-12.png"/>
-      <figcaption>
-       M04.12 - Data Product Interfaces
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 13" class="zoomable" data-caption="M04.13" src="../assets/images/ch04/fig-13.png"/>
-      <figcaption>
-       M04.13 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Data Models and Product Contracts
-     </h2>
-     <p>
-      Product contracts should therefore expose stable, purpose-oriented views while allowing internal model evolution within ownership boundaries.
-     </p>
-     <p>
-      Different data use cases may require different models, even when they depend on overlapping source datasets.
-     </p>
-     <p>
-      A model is a purposeful abstraction, and bounded contexts define where that model is valid; both are essential for robust product design.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 14" class="zoomable" data-caption="M04.14" src="../assets/images/ch04/fig-14.png"/>
-      <figcaption>
-       M04.14 - Market and Analyze
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Heuristics for Boundary Decisions
-     </h2>
-     <p>
-      Applied systematically, heuristics improve decision quality and reduce costly boundary rework in later implementation stages.
-     </p>
-     <p>
-      Useful heuristics include coupling, cohesion, change frequency, consumer dependency patterns, and operational risk concentration.
-     </p>
-     <p>
-      Heuristics help compare multiple valid boundary options when direct decomposition signals are insufficient or conflicting.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 15" class="zoomable" data-caption="M04.15" src="../assets/images/ch04/fig-15.png"/>
-      <figcaption>
-       M04.15 - Model and Business
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 16" class="zoomable" data-caption="M04.16" src="../assets/images/ch04/fig-16.png"/>
-      <figcaption>
-       M04.16 - Tool and Dashboards
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Validating Boundaries Across the Landscape
-     </h2>
-     <p>
-      This step prevents local optimizations that create new bottlenecks or hidden coupling in adjacent domains.
-     </p>
-     <p>
-      Validation should test whether selected owners can realistically sustain data quality, interface stability, and change responsiveness.
-     </p>
-     <p>
-      Boundary candidates must be validated against the broader system landscape to ensure ownership decisions remain coherent across teams and integrations.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 17" class="zoomable" data-caption="M04.17" src="../assets/images/ch04/fig-17.png"/>
-      <figcaption>
-       M04.17 - Examines and Landscape
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 18" class="zoomable" data-caption="M04.18" src="../assets/images/ch04/fig-18.png"/>
-      <figcaption>
-       M04.18 - Examines and Landscape
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Final Mesh Design and Ownership Map
-     </h2>
-     <p>
-      A strong final map is actionable: it can guide delivery sequencing, governance checks, and platform support priorities.
-     </p>
-     <p>
-      Design choices must also account for security and privacy segmentation, so sensitive and non-sensitive data do not force unnecessary access constraints.
-     </p>
-     <p>
-      The final ownership map should express clear product boundaries, assigned teams, and expected interaction paths between products.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 04 Figure 19" class="zoomable" data-caption="M04.19" src="../assets/images/ch04/fig-19.png"/>
-      <figcaption>
-       M04.19 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       Domain ownership aligns data responsibility with business context and execution reality.
-      </li>
-      <li>
-       Domain decomposition and capability modeling provide practical boundaries for scalable ownership.
-      </li>
-      <li>
-       Use-case analysis complements decomposition by highlighting high-value integration needs.
-      </li>
-      <li>
-       Models and contracts must reflect bounded contexts to keep products stable and evolvable.
-      </li>
-      <li>
-       Boundary heuristics and landscape validation reduce long-term integration and governance risks.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M04 - Data Mesh Architecture and Functions</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M04 - Data Mesh Architecture and Functions</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-03.html">Previous module (M03)</a>
+      <a href="chapter-04.html" aria-current="page">M04 - Data Mesh Architecture and Functions</a>
+      <a href="chapter-05.html">Next module (M05)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 Data Mesh Foundation</li>
+            <li>2 Core Architecture Components and Layers</li>
+            <li>3 Producer Teams in Domains: Ownership and Support</li>
+            <li>4 Consumer Teams: Discovery and Feedback Loops</li>
+            <li>5 Central Governance vs. Local Stewardship</li>
+            <li>6 Central Platform Function: The Enabler</li>
+            <li>7 Shared Responsibility Model</li>
+            <li>8 Minimum Viable Platform (MVP) Strategy</li>
+            <li>9 Funding and Adoption Roadmap</li>
+            <li>10 Coexistence with Legacy Platforms</li>
+            <li>10.1 Participation and Interoperability</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 Data Mesh Foundation</h2>
+          <p>
+            A data mesh is an architectural and organizational model where domain teams build and
+            operate data as reusable products. The primary objective is to move from a centralized, bottlenecked data delivery model to <strong>distributed ownership</strong> with explicit interoperability and governance.
+          </p>
+          <p>
+            This foundation treats data as a first-class product with a defined lifecycle, rather than a mere byproduct of an application. By shifting the responsibility to the teams that know the data best, organizations can scale their data operations more effectively and respond to business needs with greater agility.
+          </p>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>2 Core Architecture Components and Layers</h2>
+          <p>
+            The architecture is structured into four distinct layers that decouple data ownership from infrastructure management:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Data Product Layer</strong>: The fundamental unit of the mesh. It groups related data assets (tables, views, streams) into a logical container with stable interfaces.</li>
+            <li><strong>Discovery Layer</strong>: Centrally provided via tools like Data Catalog, acting as the search engine for potential consumers to find relevant products.</li>
+            <li><strong>Governance Layer</strong>: Defines global policies (e.g., "mask all PII") that are implemented locally by each domain.</li>
+            <li><strong>Platform Layer</strong>: A self-service ecosystem that provides "pushed-button" infrastructure like Terraform templates and CI/CD pipelines.</li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch101/fig-01-data-mesh-architecture.svg"
+              alt="Data mesh architectural components"
+              class="zoomable"
+              data-caption="M04.01"
+            />
+            <figcaption>M04.01 - Data Mesh Architecture Components and Interactions</figcaption>
+          </figure>
+          <p>
+            Figure M04.01 visualizes the <strong>interplay between these layers</strong>. The domain data products sit at the center, supported by the self-service platform below and governed by central services above. Discovery mechanisms bridge the gap between producer domains (on the left) and consumer domains (on the right), ensuring that data flows securely and consistently across the entire mesh.
+          </p>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>3 Producer Teams in Domains: Ownership and Support</h2>
+          <p>
+            Producer teams are the "owners" of the data's value and technical integrity. Their responsibilities go beyond just creating a dataset; they must manage the <strong>Service Level Objectives (SLOs)</strong> and support consumers through the entire product lifecycle.
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Data Owners</strong>: Accountable for the business rules and semantic quality of the data products.</li>
+            <li><strong>Technical Leads</strong>: Implement and publish the "Product Interfaces" (e.g., Authorized Views in BigQuery) while ensuring that internal storage changes don't break consumer access.</li>
+            <li><strong>Product Support</strong>: Resolves consumer queries and maintains the declared reliability of the data interfaces.</li>
+          </ul>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>4 Consumer Teams: Discovery and Feedback Loops</h2>
+          <p>
+            Consumers drive the demand and evolution of the mesh. They are not passive receivers but active participants who "subscribe" to products that meet their specific analytical or operational needs.
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Self-Service Discovery</strong>: Data Analysts and Scientists use the central catalog to research and evaluate products without central mediation.</li>
+            <li><strong>Feedback Loops</strong>: Data Scientists provide critical feedback to producers regarding data selection, annotation techniques, and missing attributes.</li>
+            <li><strong>Product Derivation</strong>: Consumers often become "producers" themselves by aggregating data from multiple upstream domains to create new, derived data products.</li>
+          </ul>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>5 Central Governance vs. Local Stewardship</h2>
+          <p>
+            Data Mesh employs a <strong>Federated Governance</strong> model. The central governance team (Specialists) defines the "what"—the global policies for privacy, security, and compliance. The local stewardship team (Data Managers) within each domain defines the "how"—the actual implementation and codification of those policies into their specific data products.
+          </p>
+          <p>
+            This separation ensures that organizational compliance is maintained without stifling the speed and agility of individual business units.
+          </p>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>6 Central Platform Function: The Enabler</h2>
+          <p>
+            The platform team builds the "paved paths" that domain teams follow. They provide an ecosystem of data infrastructure components that are <strong>reusable and domain-agnostic</strong>. By providing templates for ingestion, storage, and orchestration, the platform team reduces the "cognitive load" on domain teams, allowing them to focus on business logic rather than infrastructure management.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>7 Shared Responsibility Model</h2>
+          <p>
+            The mesh operates on a tripartite responsibility model:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Central Platform Team</strong>: Responsible for the uptime of shared services and global observability.</li>
+            <li><strong>Domain Teams</strong>: Responsible for data logic, quality, security configuration of their products, and the associated costs.</li>
+            <li><strong>Infrastructure Team</strong>: Provides the underlying cloud resources (compute, network, storage) that the platform team abstracts.</li>
+          </ul>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>8 Minimum Viable Platform (MVP) Strategy</h2>
+          <p>
+            The goal of an MVP is to prove the <strong>operating model</strong>, not just the technology. Google recommends selecting a pilot with a "ready consumer" and a "funded producer" for a specific business case.
+          </p>
+          <p>
+            Following the <strong>"80/20 Rule"</strong>, organizations should initially implement only the features that meet 80% of business cases (e.g., basic ingestion and governed storage). This validates whether domains can successfully produce and consume data products before scaling to more complex requirements.
+          </p>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>9 Funding and Adoption Roadmap</h2>
+          <p>
+            Transitioning to a Data Mesh requires a shift in funding mindset. The platform must be funded as a <strong>product with an ongoing roadmap</strong>, rather than a project with a fixed endpoint. To ease the "First Adopter" burden, organizations often use a "trunk and branch" model to share knowledge and costs between the central team and the initial pilot domains.
+          </p>
+        </section>
+
+        <section id="s10" class="study-section">
+          <h2>10 Coexistence with Legacy Platforms</h2>
+          <p>
+            Most implementations are not greenfield. Organizations must plan for the coexistence of the new mesh with legacy warehouses and lakes.
+          </p>
+        </section>
+
+        <section id="s11" class="study-section">
+          <h2>10.1 Participation and Interoperability</h2>
+          <p>
+            Legacy data does not always need to be migrated. It can "participate" in the mesh by having a <strong>Data Mesh Interface</strong> (like a BigQuery view) wrapped around it. This allows legacy assets to be discoverable and governed as part of the mesh while the physical data remains in place, ensuring a controlled and evolutionary migration path.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Data mesh architecture decouples ownership from infrastructure through distinct layers.</li>
+            <li>Producer teams are accountable for the entire lifecycle, including SLOs and support.</li>
+            <li>Consumers drive the mesh through self-service discovery and active feedback loops.</li>
+            <li>Federated governance balances central policy-making with local implementation.</li>
+            <li>The MVP strategy focuses on proving the business operating model through high-value pilots.</li>
+            <li>Legacy systems can participate in the mesh via "interface wrapping" to ensure interoperability.</li>
+          </ul>
+        </section>
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://docs.cloud.google.com/architecture/data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://docs.cloud.google.com/architecture/data-mesh</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>

@@ -1,334 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M03 - MVP Kickstart and Initial Delivery
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M03 - MVP Kickstart and Initial Delivery
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-02.html">
-    Previous module (M02)
-   </a>
-   <a aria-current="page" href="chapter-03.html">
-    M03 - MVP Kickstart and Initial Delivery
-   </a>
-   <a href="chapter-04.html">
-    Next module (M04)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 MVP Goal and Minimal Mesh Scope
-      </li>
-      <li>
-       1.1 Staking the Initiative: Stakeholder Mapping
-      </li>
-      <li>
-       1.2 Choosing the MVP Delivery Team
-      </li>
-      <li>
-       2 Selecting Data Product Candidates
-      </li>
-      <li>
-       2.1 Governance Setup for the Pilot
-      </li>
-      <li>
-       2.2 Defining Value Hypotheses and Metrics
-      </li>
-      <li>
-       3 Building the Initial Governance Backbone
-      </li>
-      <li>
-       3.1 Data Product Boundaries and Interfaces
-      </li>
-      <li>
-       3.2 Delivery Plan for the First Product
-      </li>
-      <li>
-       4 Composing Products into a Working Mesh
-      </li>
-      <li>
-       4.1 Platform Decisions and Technical Baseline
-      </li>
-      <li>
-       4.2 Access, Consumption, and Validation
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 MVP Goal and Minimal Mesh Scope
-     </h2>
-     <p>
-      A successful MVP creates organizational momentum by demonstrating that decentralized data product delivery can solve a concrete business problem within a short timeframe.
-     </p>
-     <p>
-      The objective is not full maturity but validated outcomes: faster delivery, better interoperability, and clearer ownership boundaries in a controlled scope.
-     </p>
-     <p>
-      A data mesh MVP should prove business value quickly by implementing the smallest viable mesh, typically a minimal set of data products connected through shared platform capabilities.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 01" class="zoomable" data-caption="M03.01" src="../assets/images/ch03/fig-01.png"/>
-      <figcaption>
-       M03.01 - Systems and Whiteboard
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 Staking the Initiative: Stakeholder Mapping
-     </h2>
-     <p>
-      This visibility reduces execution risk and helps prioritize communication, governance engagement, and team alignment during the MVP window.
-     </p>
-     <p>
-      Stakeholder analysis should evaluate power, interest, and attitude to identify supporters, neutrals, and potential blockers before delivery begins.
-     </p>
-     <p>
-      The first step is mapping systems, actors, and responsible teams to understand dependencies, ownership, and candidate areas for early adoption.
-     </p>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Choosing the MVP Delivery Team
-     </h2>
-     <p>
-      The cooperation model can vary, but responsibilities must remain explicit so ownership, timelines, and decision rights are not diluted.
-     </p>
-     <p>
-      For an MVP, practical execution capacity matters more than theoretical perfection: teams must deliver good-enough solutions quickly and improve through feedback.
-     </p>
-     <p>
-      Team selection should prioritize domain proximity, delivery reliability, and willingness to iterate under uncertainty.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 02" class="zoomable" data-caption="M03.02" src="../assets/images/ch03/fig-02.png"/>
-      <figcaption>
-       M03.02 - Project and Chart
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 Selecting Data Product Candidates
-     </h2>
-     <p>
-      Selection should also consider future interoperability, so early products can become reusable nodes in a broader mesh rather than isolated outputs.
-     </p>
-     <p>
-      A strong candidate usually combines clear business relevance with manageable technical effort, enabling visible value within MVP constraints.
-     </p>
-     <p>
-      Candidate selection should focus on datasets that are domain-aligned, already partially structured, and close to product-ready exposure.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 03" class="zoomable" data-caption="M03.03" src="../assets/images/ch03/fig-03.png"/>
-      <figcaption>
-       M03.03 - Project and Chart
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 Governance Setup for the Pilot
-     </h2>
-     <p>
-      Early governance decisions must stay minimal and enforceable, avoiding heavy process overhead while still creating clear shared rules.
-     </p>
-     <p>
-      The governance body should include representatives from delivery teams, platform perspectives, and business stakeholders to balance feasibility and control.
-     </p>
-     <p>
-      Even at MVP scale, a lightweight governance group is needed to define initial policies for discoverability, access, and interoperability.
-     </p>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Defining Value Hypotheses and Metrics
-     </h2>
-     <p>
-      These measures provide the evidence needed to decide whether to scale, adjust scope, or redesign supporting structures.
-     </p>
-     <p>
-      Metrics should capture both business impact and delivery health, for example consumption uptake, cycle time, and policy compliance.
-     </p>
-     <p>
-      Each MVP increment should start from explicit value hypotheses tied to measurable business outcomes, not from tool or architecture preferences.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 04" class="zoomable" data-caption="M03.04" src="../assets/images/ch03/fig-04.png"/>
-      <figcaption>
-       M03.04 - Project and Chart
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 Building the Initial Governance Backbone
-     </h2>
-     <p>
-      A small, working governance model is preferable to a complete but impractical framework that blocks early delivery.
-     </p>
-     <p>
-      At this stage, governance value comes from clarity: who decides what, which policies are mandatory, and how conformance is validated.
-     </p>
-     <p>
-      The initial governance backbone should establish mandatory baseline standards while leaving room for domain-level adaptation.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 05" class="zoomable" data-caption="M03.05" src="../assets/images/ch03/fig-05.png"/>
-      <figcaption>
-       M03.05 - Stakeholders and Lead
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Data Product Boundaries and Interfaces
-     </h2>
-     <p>
-      Boundary and interface choices should be validated against real use cases to ensure both technical feasibility and business usefulness.
-     </p>
-     <p>
-      Interfaces must be explicit, consumer-oriented, and stable enough to support integration without exposing internal system complexity.
-     </p>
-     <p>
-      Data product boundaries should follow domain responsibilities and avoid spanning unrelated business areas.
-     </p>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Delivery Plan for the First Product
-     </h2>
-     <p>
-      A credible first delivery is the foundation for expanding the mesh because it proves end-to-end execution across roles.
-     </p>
-     <p>
-      Business and technical participants must collaborate early so domain semantics, quality expectations, and access requirements are aligned.
-     </p>
-     <p>
-      The first delivery plan should connect a concrete user need to a clearly scoped product increment with defined ownership and acceptance criteria.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 06" class="zoomable" data-caption="M03.06" src="../assets/images/ch03/fig-06.png"/>
-      <figcaption>
-       M03.06 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Composing Products into a Working Mesh
-     </h2>
-     <p>
-      This stage validates whether governance, interfaces, and platform support are sufficient for real interoperability.
-     </p>
-     <p>
-      Initial composition should target high-value integration scenarios that demonstrate cross-domain utility, not only isolated product completion.
-     </p>
-     <p>
-      A mesh emerges when independently owned products can be discovered, understood, and combined through shared conventions.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 07" class="zoomable" data-caption="M03.07" src="../assets/images/ch03/fig-07.png"/>
-      <figcaption>
-       M03.07 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Platform Decisions and Technical Baseline
-     </h2>
-     <p>
-      Platform decisions are successful when they accelerate product teams without forcing unnecessary complexity into early iterations.
-     </p>
-     <p>
-      Existing tools and team skills should be reused where possible to minimize setup time and reduce implementation risk.
-     </p>
-     <p>
-      The MVP platform baseline should prioritize repeatability, simple registration, and reliable product exposure over technical sophistication.
-     </p>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Access, Consumption, and Validation
-     </h2>
-     <p>
-      MVP completion requires evidence that data products can be consumed repeatedly through the platform with acceptable quality and governance conformance.
-     </p>
-     <p>
-      Validation should include policy checks, metadata completeness, and basic operational controls needed for safe adoption.
-     </p>
-     <p>
-      Access and consumption patterns must be validated with real users to confirm that exposed data products are usable and discoverable.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 03 Figure 08" class="zoomable" data-caption="M03.08" src="../assets/images/ch03/fig-08.png"/>
-      <figcaption>
-       M03.08 - Data Lineage
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       An MVP should validate business value with the smallest viable mesh footprint.
-      </li>
-      <li>
-       Stakeholder mapping and team selection are critical to reduce delivery risk early.
-      </li>
-      <li>
-       Candidate products should be domain-aligned, usable, and feasible within tight timelines.
-      </li>
-      <li>
-       Lightweight governance and explicit interfaces enable early interoperability.
-      </li>
-      <li>
-       Platform baseline choices should maximize repeatability and speed of product delivery.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M03 - Modern Distributed Data Mesh on Google Cloud</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M03 - Modern Distributed Data Mesh on Google Cloud</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-02.html">Previous module (M02)</a>
+      <a href="chapter-03.html" aria-current="page"
+        >M03 - Modern Distributed Data Mesh on Google Cloud</a
+      >
+      <a href="chapter-04.html">Next module (M04)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 Why a New Data Operating Model Is Needed</li>
+            <li>1.1 Centralization vs. Decentralization Bottlenecks</li>
+            <li>2 The Four Core Data Mesh Principles</li>
+            <li>2.1 Domain Ownership and Data as a Product</li>
+            <li>2.2 Self-Service Platform and Federated Governance</li>
+            <li>3 Discovery Through a Federated Data Marketplace</li>
+            <li>4 Data Products and Metadata Management</li>
+            <li>5 Team Topologies and Roles</li>
+            <li>6 Self-Service Platform as a Scaling Layer</li>
+            <li>7 Governance, Interoperability, and Standards</li>
+            <li>8 Google Cloud Data Mesh Reference Architecture</li>
+            <li>9 Anti-Patterns and Adoption Risks</li>
+            <li>10 Transition Strategy and Execution Roadmap</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 Why a New Data Operating Model Is Needed</h2>
+          <p>
+            The transition to a Data Mesh is driven by the need to overcome the scaling limitations of traditional centralized data architectures. Organizations usually start by centralizing data into a single platform to reduce silos and simplify cost management. However, over time, this <strong>centralized model creates delivery bottlenecks</strong> and reduces the responsiveness of business domains.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-01.jpeg"
+              alt="Organizing data assets logically"
+              class="zoomable"
+              data-caption="M03.01"
+            />
+            <figcaption>M03.01 - Organizing data assets logically</figcaption>
+          </figure>
+          <p>
+            The central data platform team often becomes a single point of failure. They are responsible for ingesting data from every corner of the enterprise, but they frequently lack the deep domain knowledge required to interpret and cleanse that data correctly. This leads to long lead times for new data requests and a decrease in overall data quality.
+          </p>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>1.1 Centralization vs. Decentralization Bottlenecks</h2>
+          <p>
+            The opposite extreme—full decentralization without shared standards—is equally problematic. It introduces duplicated pipelines, low trust in data, and inconsistent governance outcomes. The Data Mesh approach aims to strike the right balance by <strong>decentralizing ownership</strong> to the teams that best understand the data, while maintaining <strong>centralized standards</strong> for interoperability and governance.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-02.jpeg"
+              alt="Example Data Marketplace for searching data"
+              class="zoomable"
+              data-caption="M03.02"
+            />
+            <figcaption>M03.02 - Example Data Marketplace for searching data</figcaption>
+          </figure>
+          <p>
+            Figure M03.02 illustrates a <strong>Data Marketplace</strong>, where the tension between centralized control and decentralized autonomy is resolved. Instead of a "centralized bottleneck," domains are empowered to serve their own data through a shared, governed marketplace.
+          </p>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>2 The Four Core Data Mesh Principles</h2>
+          <p>
+            The Data Mesh framework is built on four foundational pillars that transform data from a simple byproduct of operations into a first-class strategic asset. These principles define the roles, workflows, and accountability across business and technology teams.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>2.1 Domain Ownership and Data as a Product</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Domain ownership</strong>: Accountability shifts to the teams closest to the business context. They are responsible for the entire lifecycle of the data.
+            </li>
+            <li>
+              <strong>Data as a product</strong>: Data is no longer "just a table." It must be discoverable, trustworthy, and usable, with explicit ownership.
+            </li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-03.jpeg"
+              alt="Example Data Card"
+              class="zoomable"
+              data-caption="M03.03"
+            />
+            <figcaption>M03.03 - Example Data Card</figcaption>
+          </figure>
+          <p>
+            Each domain team publishes data products, and metadata is managed through <strong>Data Cards</strong> (shown in M03.03) that provide clear definitions, quality metrics, and ownership details to build trust.
+          </p>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>2.2 Self-Service Platform and Federated Governance</h2>
+          <ul class="study-bullets">
+            <li>
+              <strong>Self-service platform</strong>: A central team provides reusable infrastructure (templates, blueprints, automation) to reduce the technical burden on domain teams.
+            </li>
+            <li>
+              <strong>Federated governance</strong>: A central body defines global policies, while domain-specific data stewards enforce them locally through automated tools.
+            </li>
+          </ul>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>3 Discovery Through a Federated Data Marketplace</h2>
+          <p>
+            In a Data Mesh, data products must be discoverable through a common search and access experience. A <strong>federated marketplace</strong> allows producers to publish their products and consumers to evaluate them without needing a central middleman to approve every transaction.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-04.jpeg"
+              alt="Data Mesh building blocks"
+              class="zoomable"
+              data-caption="M03.04"
+            />
+            <figcaption>
+              M03.04 - Data Mesh building blocks from data product point of view
+            </figcaption>
+          </figure>
+          <p>
+            Figure M03.04 shows the <strong>building blocks</strong> of a data product, including the interfaces, metadata, and quality signals that enable discovery and consumption in the marketplace.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-05.jpeg"
+              alt="Consumer as a curation domain pattern"
+              class="zoomable"
+              data-caption="M03.05"
+            />
+            <figcaption>M03.05 - Consumer as a curation domain pattern</figcaption>
+          </figure>
+          <p>
+            Figure M03.05 illustrates how consumers can become <strong>curation domains</strong>, aggregating data from multiple upstream domains to create new value.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>4 Data Products and Metadata Management</h2>
+          <p>
+            A data product definition is <strong>separated from its underlying data</strong>. This allows the producer to change the physical storage without breaking the consumer's interface. Metadata is managed through governed templates that ensure consistency.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-06.jpeg"
+              alt="Federated data controls"
+              class="zoomable"
+              data-caption="M03.06"
+            />
+            <figcaption>M03.06 - Federated data controls at consumption point</figcaption>
+          </figure>
+          <p>
+            Figure M03.06 shows how <strong>federated data controls</strong> are applied at the point of consumption, ensuring that policies are enforced regardless of the underlying storage.
+          </p>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>5 Team Topologies and Roles</h2>
+          <p>
+            Success in a Data Mesh depends on clear accountability. Google defines roles across four primary functions: Producers, Consumers, Governance, and Platform.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-08.jpeg"
+              alt="What a data product looks like"
+              class="zoomable"
+              data-caption="M03.07"
+            />
+            <figcaption>M03.07 - What a data product looks like</figcaption>
+          </figure>
+          <p>
+            Figure M03.07 visualizes the <strong>structure of a data product</strong>, including the code, data, and infrastructure managed by the domain team.
+          </p>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>6 Self-Service Platform as a Scaling Layer</h2>
+          <p>
+            The platform team builds the "paved paths" that domain teams follow. Their goal is to <strong>minimize collective technical debt</strong> by providing reusable templates for ingestion, storage, and processing.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-07.jpeg"
+              alt="Single pane of glass - Dataplex"
+              class="zoomable"
+              data-caption="M03.08"
+            />
+            <figcaption>M03.08 - Single pane of glass - Dataplex</figcaption>
+          </figure>
+          <p>
+            Figure M03.08 shows <strong>Dataplex</strong> as the "single pane of glass" for discovery and governance, enabling the self-service platform to scale domain autonomy.
+          </p>
+        </section>
+
+        <section id="s10" class="study-section">
+          <h2>7 Governance, Interoperability, and Standards</h2>
+          <p>
+            Interoperability is the "glue" that holds the mesh together. It ensures that data elements have common definitions and boundaries across all domains.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-09.jpeg"
+              alt="Data Mesh domains"
+              class="zoomable"
+              data-caption="M03.09"
+            />
+            <figcaption>M03.09 - Data Mesh domains</figcaption>
+          </figure>
+          <p>
+            Figure M03.09 illustrates how <strong>different domains</strong> interact while following shared governance standards for interoperability.
+          </p>
+        </section>
+
+        <section id="s11" class="study-section">
+          <h2>8 Google Cloud Data Mesh Reference Architecture</h2>
+          <p>
+            Google's reference architecture uses services like Dataplex, BigQuery, and Cloud IAM to implement the mesh. A key pattern is using BigQuery Authorized Views to expose data products.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch100/fig-10.jpeg"
+              alt="Data Mesh example architecture"
+              class="zoomable"
+              data-caption="M03.10"
+            />
+            <figcaption>M03.10 - Data Mesh example architecture</figcaption>
+          </figure>
+        </section>
+
+        <section id="s12" class="study-section">
+          <h2>9 Anti-Patterns and Adoption Risks</h2>
+          <p>
+            Adoption is an iterative transformation. Common risks include treating the platform as a project rather than a product, and ungoverned autonomy that leads to fragmentation.
+          </p>
+        </section>
+
+        <section id="s13" class="study-section">
+          <h2>10 Transition Strategy and Execution Roadmap</h2>
+          <p>
+            A practical transition starts with a <strong>Minimum Viable Platform (MVP)</strong>. Organizations should select a high-value pilot to validate the model before scaling.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Data mesh overcomes centralized bottlenecks by decentralizing ownership to domain experts.</li>
+            <li>Data products separate business meaning from physical storage through logical containers.</li>
+            <li>Self-service platforms and federated governance are the essential enablers of domain autonomy.</li>
+            <li>Success depends on organizational transformation as much as technical implementation.</li>
+            <li>Google Cloud provides integrated services (Dataplex, BigQuery) to implement these patterns at scale.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Resources</h2>
+          <p>
+            Whitepaper:
+            <a
+              href="https://services.google.com/fh/files/misc/build-a-modern-distributed-datamesh-with-google-cloud-whitepaper.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Build a modern, distributed Data Mesh with Google Cloud (PDF)</a
+            >
+          </p>
+          <p>
+            Architecture Guide:
+            <a
+              href="https://cloud.google.com/architecture/data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Data mesh architecture - Google Cloud Architecture Center</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>

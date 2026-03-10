@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M10 - Data Quality: Lineage and Data Quality Policies</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M10 - Data Quality: Lineage and Data Quality Policies</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-09.html">Previous module (M09)</a>
+      <a href="chapter-10.html" aria-current="page">M10 - Data Quality: Lineage and Data Quality Policies</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 Understanding Data Lineage in Dataplex</li>
+            <li>1.1 Core Benefits: Trust, Troubleshooting, and Compliance</li>
+            <li>2 Lineage Capture Mechanisms</li>
+            <li>2.1 Automated vs. Manual Capture Patterns</li>
+            <li>3 Visualizing the Data Journey</li>
+            <li>4 Auto Data Quality (Auto DQ) Overview</li>
+            <li>5 Data Quality Rule Types</li>
+            <li>5.1 Built-in Templates vs. Custom SQL Rules</li>
+            <li>6 Execution, Scorecards, and Alerting</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 Understanding Data Lineage in Dataplex</h2>
+          <p>
+            Data Lineage is a visual map that tracks the entire lifecycle of data across the enterprise. It illustrates where data originates (source), how it moves (destination), and any transformations or aggregations it undergoes. In a Data Mesh, lineage provides the essential transparency needed to trust decentralized data products.
+          </p>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>1.1 Core Benefits: Trust, Troubleshooting, and Compliance</h2>
+          <ul class="study-bullets">
+            <li><strong>Trust and Validation</strong>: Users can verify the reliability of a report by tracing it back to its original, trusted data sources.</li>
+            <li><strong>Troubleshooting</strong>: Data teams can quickly trace errors in a dashboard back to the specific transformation or source system that caused the root issue.</li>
+            <li><strong>Impact Analysis</strong>: Before modifying a table schema, teams can see which downstream reports or ML models will be affected, preventing breaking changes.</li>
+            <li><strong>Regulatory Compliance</strong>: Provides a clear audit trail of how sensitive data flows through the organization, satisfying legal requirements like GDPR.</li>
+          </ul>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>2 Lineage Capture Mechanisms</h2>
+          <p>
+            Dataplex automates the collection of lineage events across the Google Cloud ecosystem, while also supporting integration with external systems.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>2.1 Automated vs. Manual Capture Patterns</h2>
+          <ul class="study-bullets">
+            <li><strong>Automated Capture</strong>: Once the Data Lineage API is enabled, services like <strong>BigQuery</strong>, <strong>Dataflow</strong>, <strong>Cloud Composer</strong>, and <strong>Dataproc</strong> automatically report lineage. For example, BigQuery tracks every `CREATE TABLE AS SELECT` or `MERGE` operation.</li>
+            <li><strong>Manual Capture</strong>: For custom processing engines or on-premises tools, the **Data Lineage API** can be used to programmatically record events.</li>
+            <li><strong>OpenLineage Support</strong>: Dataplex can ingest metadata that follows the industry-standard OpenLineage format, ensuring compatibility with third-party tools.</li>
+          </ul>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>3 Visualizing the Data Journey</h2>
+          <p>
+            The lineage is presented as an interactive graph in the Google Cloud Console. 
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Nodes (Entities)</strong>: Represent assets like BigQuery tables, views, or Vertex AI models.</li>
+            <li><strong>Edges (Processes)</strong>: Represent the operations (e.g., a specific SQL job) that transform the data.</li>
+            <li><strong>Granularity</strong>: Supports both **Table-level** and **Column-level** views, allowing users to see exactly how a specific field was calculated.</li>
+          </ul>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>4 Auto Data Quality (Auto DQ) Overview</h2>
+          <p>
+            Auto Data Quality is a fully managed feature that automates the assessment of data integrity. Instead of writing manual validation scripts, domain teams define declarative rules that Dataplex executes against BigQuery or Cloud Storage assets. This automation ensures consistent quality monitoring across all data products in the mesh.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>5 Data Quality Rule Types</h2>
+          <p>
+            Rules define the "health" of a data product. Dataplex supports a mix of standardized templates and flexible custom logic.
+          </p>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>5.1 Built-in Templates vs. Custom SQL Rules</h2>
+          <ul class="study-bullets">
+            <li><strong>Built-in Rules</strong>: Pre-defined templates for <strong>Freshness</strong> (timely updates), <strong>Null checks</strong> (mandatory fields), <strong>Range checks</strong> (valid numeric boundaries), and <strong>Uniqueness</strong> (duplicate prevention).</li>
+            <li><strong>Custom SQL Rules</strong>: Allow domain experts to define complex validation logic using standard SQL syntax, tailored to specific business requirements.</li>
+          </ul>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>6 Execution, Scorecards, and Alerting</h2>
+          <p>
+            Quality checks are organized into <strong>Scans</strong> that can be scheduled to run periodically or triggered on-demand. The results are aggregated into <strong>Quality Scorecards</strong>, providing a clear visual indicator of a product's health over time.
+          </p>
+          <p>
+            These scorecards are integrated into the **Dataplex Catalog**, making quality transparent to potential consumers. Furthermore, integration with <strong>Cloud Monitoring</strong> allows teams to set up automated alerts (via email or PagerDuty) if a data product's quality score drops below a pre-defined threshold.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Data Lineage provides a visual map of the data lifecycle, essential for trust and troubleshooting.</li>
+            <li>Capture is automated for major Google Cloud services and extensible via the Lineage API.</li>
+            <li>Auto Data Quality replaces manual validation with declarative, automated rules.</li>
+            <li>Rule types include built-in templates for common checks and custom SQL for complex logic.</li>
+            <li>Quality health is transparently displayed in the Catalog and integrated with Cloud Monitoring alerts.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference pages:
+            <ul>
+              <li><a href="https://cloud.google.com/dataplex/docs/about-data-lineage" target="_blank" rel="noopener noreferrer">About Data Lineage - Google Cloud Documentation</a></li>
+              <li><a href="https://cloud.google.com/dataplex/docs/auto-data-quality-overview" target="_blank" rel="noopener noreferrer">Auto Data Quality Overview - Google Cloud Documentation</a></li>
+            </ul>
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

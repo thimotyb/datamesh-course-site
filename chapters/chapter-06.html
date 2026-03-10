@@ -1,340 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M06 - Federated Computational Governance
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M06 - Federated Computational Governance
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-05.html">
-    Previous module (M05)
-   </a>
-   <a aria-current="page" href="chapter-06.html">
-    M06 - Federated Computational Governance
-   </a>
-   <a href="chapter-07.html">
-    Next module (M07)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 Foundations of Federated Computational Governance
-      </li>
-      <li>
-       1.1 Why Federation Balances Control and Autonomy
-      </li>
-      <li>
-       1.2 Governance Value in Decision Quality
-      </li>
-      <li>
-       2 Measuring Governance Outcomes
-      </li>
-      <li>
-       2.1 Governance Policies and Decision Rights
-      </li>
-      <li>
-       2.2 Roles of the Central Governance Body
-      </li>
-      <li>
-       3 Domain Responsibilities in Governance
-      </li>
-      <li>
-       3.1 Governance Operating Models
-      </li>
-      <li>
-       3.2 Design Foundations for Computational Governance
-      </li>
-      <li>
-       4 Governance Team Competencies
-      </li>
-      <li>
-       4.1 Policy as Code and Automation Logic
-      </li>
-      <li>
-       4.2 Governance Automation Levels and Adoption Path
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 Foundations of Federated Computational Governance
-     </h2>
-     <p>
-      In data mesh, governance is not a one-time setup but a continuous operating mechanism linked to business outcomes and product evolution.
-     </p>
-     <p>
-      Its purpose is to combine governance rigor with delivery speed by turning high-level rules into operational practices that scale.
-     </p>
-     <p>
-      Federated computational governance defines how organizations coordinate data decisions across domains while preserving local execution autonomy.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 01" class="zoomable" data-caption="M06.01" src="../assets/images/ch06/fig-01.png"/>
-      <figcaption>
-       M06.01 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 Why Federation Balances Control and Autonomy
-     </h2>
-     <p>
-      Federation balances both sides by assigning enterprise-wide guardrails centrally and domain-level decisions locally within those guardrails.
-     </p>
-     <p>
-      Pure decentralization can accelerate local delivery but frequently fragments standards, accountability, and interoperability across teams.
-     </p>
-     <p>
-      Pure centralization often fails in heterogeneous domains because central bodies cannot maintain sufficient local context for every decision.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 02" class="zoomable" data-caption="M06.02" src="../assets/images/ch06/fig-02.png"/>
-      <figcaption>
-       M06.02 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Governance Value in Decision Quality
-     </h2>
-     <p>
-      With governed metadata, shared terminology, and quality controls, decision-makers gain clearer signals and lower analytical ambiguity.
-     </p>
-     <p>
-      Without governance, organizations face information overload, ambiguous semantics, and inconsistent assumptions that degrade planning accuracy.
-     </p>
-     <p>
-      Governance improves decision quality by ensuring that data is interpretable, timely, and fit for the decision context, not only abundant.
-     </p>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 Measuring Governance Outcomes
-     </h2>
-     <p>
-      A layered model from strategic intent to tactical rules to implementation checks helps convert governance into executable work.
-     </p>
-     <p>
-      Outcome planning aligns stakeholders on expected value, required controls, and practical delivery constraints before implementation begins.
-     </p>
-     <p>
-      Governance effectiveness should be measured through explicit outcomes rather than through the volume of policies or meetings.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 03" class="zoomable" data-caption="M06.03" src="../assets/images/ch06/fig-03.png"/>
-      <figcaption>
-       M06.03 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 Governance Policies and Decision Rights
-     </h2>
-     <p>
-      Value statements support policy coherence by linking governance actions to intended business impact and prioritization criteria.
-     </p>
-     <p>
-      Decision rights must be explicit so product teams know where they are autonomous and where centralized standards are mandatory.
-     </p>
-     <p>
-      Policies are the main governance instrument for translating strategic intent into enforceable operating rules.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 04" class="zoomable" data-caption="M06.04" src="../assets/images/ch06/fig-04.png"/>
-      <figcaption>
-       M06.04 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Roles of the Central Governance Body
-     </h2>
-     <p>
-      This body should also coordinate expertise for security, compliance, and cross-domain interoperability where economies of scale matter.
-     </p>
-     <p>
-      Its role is to define minimum common standards and oversee their evolution without absorbing every local implementation decision.
-     </p>
-     <p>
-      The central governance body is responsible for enterprise-level consistency, regulatory interpretation, and long-term data strategy alignment.
-     </p>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 Domain Responsibilities in Governance
-     </h2>
-     <p>
-      Effective federation requires local responsibility to be paired with transparent reporting and shared verification mechanisms.
-     </p>
-     <p>
-      This ownership model moves accountability to execution points where data is produced, transformed, and exposed.
-     </p>
-     <p>
-      Domain teams own implementation of governance rules within their products, including data quality controls, interface conformance, and policy evidence.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 05" class="zoomable" data-caption="M06.05" src="../assets/images/ch06/fig-05.png"/>
-      <figcaption>
-       M06.05 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Governance Operating Models
-     </h2>
-     <p>
-      A practical design uses clear responsibility boundaries by governance layer instead of ad hoc case-by-case negotiations.
-     </p>
-     <p>
-      The appropriate split depends on organizational scale, risk profile, team maturity, and regulatory exposure.
-     </p>
-     <p>
-      Governance operating models can be positioned along a spectrum from centralized to decentralized, with federation as a deliberate hybrid.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 06" class="zoomable" data-caption="M06.06" src="../assets/images/ch06/fig-06.png"/>
-      <figcaption>
-       M06.06 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Design Foundations for Computational Governance
-     </h2>
-     <p>
-      The design foundation is explicit policy semantics, measurable control objectives, and platform support for automated verification.
-     </p>
-     <p>
-      This approach reduces manual bottlenecks and improves consistency by enforcing repeatable rules across products and domains.
-     </p>
-     <p>
-      Computational governance extends federation by translating selected policies into automatable checks and control flows.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 07" class="zoomable" data-caption="M06.07" src="../assets/images/ch06/fig-07.png"/>
-      <figcaption>
-       M06.07 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Governance Team Competencies
-     </h2>
-     <p>
-      Strong collaboration capability is essential because governance quality depends on continuous interaction with domain and platform teams.
-     </p>
-     <p>
-      Competency coverage should include both policy design and implementation awareness so rules remain realistic and enforceable.
-     </p>
-     <p>
-      Governance teams need interdisciplinary competence spanning data management, architecture, security, legal constraints, and organizational change.
-     </p>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Policy as Code and Automation Logic
-     </h2>
-     <p>
-      The key is semantic traceability: automated checks must remain aligned with policy intent as rules and business context evolve.
-     </p>
-     <p>
-      Not every policy should be fully automated at once; automation depth should follow risk, feasibility, and maturity.
-     </p>
-     <p>
-      Policy as code converts written governance intent into executable logic that platforms and products can validate automatically.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 08" class="zoomable" data-caption="M06.08" src="../assets/images/ch06/fig-08.png"/>
-      <figcaption>
-       M06.08 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Governance Automation Levels and Adoption Path
-     </h2>
-     <p>
-      This incremental approach keeps governance adaptable while steadily increasing scalability, consistency, and auditability.
-     </p>
-     <p>
-      A maturity path allows organizations to move from advisory controls to partially automated enforcement and then to broader autonomous verification.
-     </p>
-     <p>
-      Automation should be introduced progressively, starting from high-value checks that remove repetitive manual effort and reduce operational risk.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 06 Figure 09" class="zoomable" data-caption="M06.09" src="../assets/images/ch06/fig-09.png"/>
-      <figcaption>
-       M06.09 - Data Product Ownership
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       Federated governance balances centralized standards with domain-level autonomy.
-      </li>
-      <li>
-       Governance quality must be measured through explicit outcomes and decision accountability.
-      </li>
-      <li>
-       Domain teams are responsible for applying governance rules in executable product operations.
-      </li>
-      <li>
-       Computational governance scales enforcement by translating policies into automation.
-      </li>
-      <li>
-       Incremental automation paths improve consistency without blocking early delivery progress.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M06 - Build Data Products in a Data Mesh</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M06 - Build Data Products in a Data Mesh</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-05.html">Previous module (M05)</a>
+      <a href="chapter-06.html" aria-current="page">M06 - Build Data Products in a Data Mesh</a>
+      <a href="chapter-07.html">Next module (M07)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 Definition and Components of a Data Product</li>
+            <li>2 Designing Data Product Boundaries</li>
+            <li>3 The "Product Interface" Concept</li>
+            <li>4 Consumption Interfaces on Google Cloud</li>
+            <li>4.1 BigQuery Authorized Datasets and Views</li>
+            <li>5 Data Product Lifecycle and Versioning</li>
+            <li>5.1 Versioning Strategies: Dataset vs. View</li>
+            <li>6 Filtering and Security Approaches</li>
+            <li>7 Common Use Cases and Patterns</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 Definition and Components of a Data Product</h2>
+          <p>
+            A data product is the fundamental unit of value in a Data Mesh. It is built on top of a datastore (such as a domain data warehouse or lake) and consists of three integrated components:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Code</strong>: Includes ingestion and enrichment pipelines, as well as the implementation of consumption interfaces (SQL views, Cloud Run APIs, or LookML models).</li>
+            <li><strong>Metadata</strong>: Encompasses technical schemas, business documentation (SLA/SLO), and discovery tags in Dataplex that explain how the data should be used.</li>
+            <li><strong>Infrastructure</strong>: Leverages the <strong>separation of storage and compute</strong>. Producers manage the storage, while consumers use their own compute resources to query the data via interfaces.</li>
+          </ul>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>2 Designing Data Product Boundaries</h2>
+          <p>
+            The design process starts by defining how consumers will use the data. Boundaries should align with business capabilities. A product should be large enough to provide business value but small enough to be managed by a single domain team. Producers are encouraged to offer multiple interface types (SQL, Streaming, APIs) based on the specific needs of their "customers."
+          </p>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>3 The "Product Interface" Concept</h2>
+          <p>
+            Crucially, a data product's interface is <strong>separated from its physical storage</strong>. This allows the producer to evolve the underlying technical implementation (e.g., migrating from Cloud Storage files to BigQuery native tables) without disrupting the consumer's queries, provided the public interface remains stable.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>4 Consumption Interfaces on Google Cloud</h2>
+          <p>
+            Google Cloud provides several patterns for exposing data product interfaces securely and efficiently.
+          </p>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>4.1 BigQuery Authorized Datasets and Views</h2>
+          <p>
+            Authorized datasets and views are the primary mechanism for security in the mesh. Producers create views in a dedicated "consumption" dataset and authorize that dataset to read from the "source" dataset.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-01-authorized-datasets.png"
+              alt="BigQuery Authorized Datasets implementation"
+              class="zoomable"
+              data-caption="M06.01"
+            />
+            <figcaption>M06.01 - Security boundary using Authorized Datasets and Views</figcaption>
+          </figure>
+          <p>
+            Figure M06.01 illustrates this pattern. The consumer project queries the <strong>Authorized Dataset</strong>. The views inside that dataset have been granted permission to access the <strong>Base Dataset</strong>, which remains hidden from the consumer. This ensures fine-grained access control without exposing raw data.
+          </p>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>5 Data Product Lifecycle and Versioning</h2>
+          <p>
+            Because data products cross organizational boundaries, the cost of breaking a change is high. A clear <strong>versioning strategy</strong> is required to manage the lifecycle from creation to decommissioning.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>5.1 Versioning Strategies: Dataset vs. View</h2>
+          <p>
+            Producers can choose between two main strategies for SQL interfaces:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Dataset Versioning</strong>: The entire dataset is versioned (e.g., `sales_v1`, `sales_v2`). This is best for major, breaking architectural changes.</li>
+            <li><strong>View Versioning</strong>: The dataset name remains stable, but individual views are versioned (e.g., `orders_v1`, `orders_v2`) within that dataset.</li>
+          </ul>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-02-primary-versioning.png"
+              alt="Versioning strategies for data products"
+              class="zoomable"
+              data-caption="M06.02"
+            />
+            <figcaption>M06.02 - Comparison between Dataset and View versioning approaches</figcaption>
+          </figure>
+          <p>
+            Figure M06.02 compares these approaches. Dataset versioning (on the top) provides a cleaner separation for major updates, while View versioning (on the bottom) allows for a more granular evolution of specific data assets.
+          </p>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>6 Filtering and Security Approaches</h2>
+          <p>
+            To protect privacy and reduce data transfer, producers should implement efficient filtering strategies.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-04-filtering-approach.png"
+              alt="Data product filtering methods"
+              class="zoomable"
+              data-caption="M06.03"
+            />
+            <figcaption>M06.03 - Approaches for data filtering and server-side pruning</figcaption>
+          </figure>
+          <p>
+            Figure M06.03 shows how consumers can use `WHERE` clauses on authorized views, while the **BigQuery Storage Read API** supports server-side filtering to prune data before it is transferred, significantly improving performance for ML and large-scale batch jobs.
+          </p>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>7 Common Use Cases and Patterns</h2>
+          <p>
+            Data products support diverse organizational patterns, from direct sharing to the creation of <strong>curation domains</strong>.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch103/fig-03-use-cases.png"
+              alt="Data product use cases"
+              class="zoomable"
+              data-caption="M06.04"
+            />
+            <figcaption>M06.04 - Use cases for direct sharing and derived curation products</figcaption>
+          </figure>
+          <p>
+            Figure M06.04 illustrates how raw data is ingested into curated zones (managed by Dataplex) where it is enriched and verified before being exposed. It also shows how <strong>Streaming Products</strong> can provide real-time business alerts and enriched events to multiple subscribers simultaneously.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>A data product bundles code, metadata, and infrastructure into a logical unit of value.</li>
+            <li>The "Product Interface" should be independent of the physical storage implementation.</li>
+            <li>Authorized Views and Datasets are the standard for secure SQL-based consumption.</li>
+            <li>Versioning strategies (Dataset vs. View) are essential for managing cross-domain dependencies.</li>
+            <li>Effective filtering (SQL `WHERE`, Storage Read API) optimizes performance and cost.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://cloud.google.com/architecture/build-data-products-data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Build data products in a data mesh - Google Cloud Architecture Center</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>

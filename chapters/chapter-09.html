@@ -1,484 +1,147 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M09 - Architecture Design for Data Products
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M09 - Architecture Design for Data Products
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-08.html">
-    Previous module (M08)
-   </a>
-   <a aria-current="page" href="chapter-09.html">
-    M09 - Architecture Design for Data Products
-   </a>
-   <a href="chapter-100.html">
-    Next module (M100)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 Capturing the Current Architecture Baseline
-      </li>
-      <li>
-       1.1 Using C4 for Shared Architecture Language
-      </li>
-      <li>
-       1.2 Architectural Drivers for Data Products
-      </li>
-      <li>
-       2 Translating Drivers into Quality Criteria
-      </li>
-      <li>
-       2.1 Stakeholder Alignment and Tradeoff Framing
-      </li>
-      <li>
-       2.2 Designing the Target Data Product Architecture
-      </li>
-      <li>
-       3 Platform Capabilities and Exposure Patterns
-      </li>
-      <li>
-       3.1 Event-Driven Data Product Integration
-      </li>
-      <li>
-       3.2 Evaluating Design Options and Tradeoffs
-      </li>
-      <li>
-       4 Relational Exposure Strategy
-      </li>
-      <li>
-       4.1 Stream and Batch Contract Patterns
-      </li>
-      <li>
-       4.2 Reference Architecture Synthesis
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 Capturing the Current Architecture Baseline
-     </h2>
-     <p>
-      Architecture design starts from an accurate representation of the current landscape: systems,
-      interfaces, dependencies, and data flows. Without this baseline, design discussions are driven
-      by assumptions and often produce unrealistic target states.
-     </p>
-     <p>
-      A baseline is not only technical inventory. It also records historical decisions that shaped the
-      existing structure, including constraints that cannot be changed quickly, such as integration
-      contracts, organizational boundaries, or operational responsibilities.
-     </p>
-     <p>
-      For data products, this preliminary analysis clarifies where source data originates, how it is
-      transformed today, and which teams are accountable for quality and change. This context is the
-      foundation for safe architecture evolution.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 01" class="zoomable" data-caption="M09.01" src="../assets/images/ch09/fig-01.png"/>
-      <figcaption>
-       M09.01 - Current Architecture Baseline Overview
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 Using C4 for Shared Architecture Language
-     </h2>
-     <p>
-      A shared notation is essential when multiple teams review the same architecture. The C4 model
-      provides a practical hierarchy of views that supports communication across technical and
-      non-technical stakeholders.
-     </p>
-     <p>
-      Context and container views describe system boundaries and runtime interactions. Component views
-      add internal structure where needed. This layering helps teams discuss strategy and implementation
-      without mixing abstraction levels.
-     </p>
-     <p>
-      Consistent diagrams reduce ambiguity during design reviews and make cross-team decisions easier
-      to validate. They also improve onboarding speed because architecture knowledge is expressed in a
-      predictable format.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 02" class="zoomable" data-caption="M09.02" src="../assets/images/ch09/fig-02.png"/>
-      <figcaption>
-       M09.02 - C4 Context and Container Perspective
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 03" class="zoomable" data-caption="M09.03" src="../assets/images/ch09/fig-03.png"/>
-      <figcaption>
-       M09.03 - C4 Component-Level Decomposition
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Architectural Drivers for Data Products
-     </h2>
-     <p>
-      Architecture decisions for data products are guided by explicit drivers: functional needs,
-      quality attributes, constraints, and principles. These drivers define what must be optimized and
-      where compromise is acceptable.
-     </p>
-     <p>
-      Functional needs describe consumer value and preferred access patterns. Quality attributes define
-      technical expectations such as privacy, auditability, resilience, or extensibility. Constraints
-      include limits on technology, cloud, or organizational policies.
-     </p>
-     <p>
-      Capturing drivers early prevents design drift. Teams can evaluate each option against the same
-      criteria and avoid solutions that look attractive technically but fail business or governance
-      requirements.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 04" class="zoomable" data-caption="M09.04" src="../assets/images/ch09/fig-04.png"/>
-      <figcaption>
-       M09.04 - Data Product Drivers Discovery Canvas
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 05" class="zoomable" data-caption="M09.05" src="../assets/images/ch09/fig-05.png"/>
-      <figcaption>
-       M09.05 - Consumer Needs and Access Expectations
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 Translating Drivers into Quality Criteria
-     </h2>
-     <p>
-      Drivers become actionable only when converted into measurable criteria. Generic goals such as
-      "secure" or "reliable" are insufficient for design validation and create inconsistent
-      interpretations across teams.
-     </p>
-     <p>
-      Each selected quality attribute should be paired with concrete thresholds, including worst
-      acceptable and target values. This approach defines decision boundaries and supports architecture
-      reviews based on evidence rather than preference.
-     </p>
-     <p>
-      Limiting the number of priority attributes is equally important. Over-optimizing all dimensions
-      simultaneously increases cost and complexity while reducing overall design clarity.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 06" class="zoomable" data-caption="M09.06" src="../assets/images/ch09/fig-06.png"/>
-      <figcaption>
-       M09.06 - Quality Attribute Prioritization Matrix
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 07" class="zoomable" data-caption="M09.07" src="../assets/images/ch09/fig-07.png"/>
-      <figcaption>
-       M09.07 - Metrics Proposal for Nonfunctional Goals
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 Stakeholder Alignment and Tradeoff Framing
-     </h2>
-     <p>
-      Alignment depends on making tradeoffs explicit. A useful technique is to present an intentionally
-      weak baseline proposal to trigger focused correction from stakeholders and clarify real
-      expectations.
-     </p>
-     <p>
-      This process surfaces hidden assumptions, especially around privacy scope, data retention,
-      acceptable latency, and ownership boundaries. The outcome is a refined and shared definition of
-      success criteria for the product.
-     </p>
-     <p>
-      Early alignment reduces expensive redesign later. It also improves accountability because design
-      choices can be traced to agreed priorities rather than individual preference.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 08" class="zoomable" data-caption="M09.08" src="../assets/images/ch09/fig-08.png"/>
-      <figcaption>
-       M09.08 - Stakeholder Alignment and Decision Inputs
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 09" class="zoomable" data-caption="M09.09" src="../assets/images/ch09/fig-09.png"/>
-      <figcaption>
-       M09.09 - Architecture Option Framing for Review
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Designing the Target Data Product Architecture
-     </h2>
-     <p>
-      Target architecture should emerge from collaborative design sessions involving architects,
-      developers, and product stakeholders. Inclusive sessions improve solution quality and increase
-      implementation ownership.
-     </p>
-     <p>
-      A practical flow is: review drivers, draft alternatives, compare pros and cons, identify
-      mitigations, and decide collectively. This sequence balances exploration with disciplined
-      convergence.
-     </p>
-     <p>
-      The selected design should remain simple enough for maintainability while still satisfying
-      mandatory drivers. Simplicity is a strategic choice when requirements do not justify additional
-      architectural complexity.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 10" class="zoomable" data-caption="M09.10" src="../assets/images/ch09/fig-10.png"/>
-      <figcaption>
-       M09.10 - Cost Statement Design Option A
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 11" class="zoomable" data-caption="M09.11" src="../assets/images/ch09/fig-11.png"/>
-      <figcaption>
-       M09.11 - Cost Statement Design Option B
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 Platform Capabilities and Exposure Patterns
-     </h2>
-     <p>
-      Platform capabilities accelerate delivery when reused as standard building blocks for ingestion,
-      orchestration, storage, and publication. Reuse reduces custom code, lowers operational risk, and
-      increases consistency across products.
-     </p>
-     <p>
-      For file-oriented sources, workflow engines and managed storage patterns often satisfy core needs
-      with minimal bespoke implementation. This is effective when data cadence is periodic and consumer
-      demand is moderate.
-     </p>
-     <p>
-      Platform-first choices should still be validated against product-specific drivers. Reuse is not a
-      goal by itself; it is valuable when it supports delivery speed, quality, and governance outcomes.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 12" class="zoomable" data-caption="M09.12" src="../assets/images/ch09/fig-12.png"/>
-      <figcaption>
-       M09.12 - Platform-Supported Data Product Pattern
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 13" class="zoomable" data-caption="M09.13" src="../assets/images/ch09/fig-13.png"/>
-      <figcaption>
-       M09.13 - Script and Cast Product Architecture Scope
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Event-Driven Data Product Integration
-     </h2>
-     <p>
-      Event-driven integration is useful when teams need loose coupling and near-real-time propagation
-      of changes. Producers publish stable event contracts that consumers process independently.
-     </p>
-     <p>
-      Patterns such as change data capture and transactional outbox improve consistency between state
-      changes and published events. They reduce the risk of missing or duplicated signals in distributed
-      systems.
-     </p>
-     <p>
-      Event schemas should be designed for external consumption rather than exposing raw internal
-      database structures. Contract discipline is critical for long-term interoperability.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 14" class="zoomable" data-caption="M09.14" src="../assets/images/ch09/fig-14.png"/>
-      <figcaption>
-       M09.14 - Event Streaming Integration Variant
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 15" class="zoomable" data-caption="M09.15" src="../assets/images/ch09/fig-15.png"/>
-      <figcaption>
-       M09.15 - Batch-Oriented Integration Variant
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Evaluating Design Options and Tradeoffs
-     </h2>
-     <p>
-      No architecture option is universally superior. Each option exchanges one quality attribute for
-      another, such as tighter coupling for faster implementation, or higher complexity for stronger
-      separation of responsibilities.
-     </p>
-     <p>
-      Tradeoff analysis makes these exchanges visible and testable against agreed drivers. Teams compare
-      options using explicit criteria instead of subjective preference.
-     </p>
-     <p>
-      A robust decision is the one that best matches priority outcomes and remains operable over time,
-      not necessarily the most technically elaborate solution.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 16" class="zoomable" data-caption="M09.16" src="../assets/images/ch09/fig-16.png"/>
-      <figcaption>
-       M09.16 - Script Product Option 1 (Facade Extension)
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 17" class="zoomable" data-caption="M09.17" src="../assets/images/ch09/fig-17.png"/>
-      <figcaption>
-       M09.17 - Script Product Option 2 (Service Split)
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Relational Exposure Strategy
-     </h2>
-     <p>
-      Relational exposure remains relevant when consumers require SQL-based analytics or stable
-      tabular interfaces. In these cases, read-optimized relational stores can complement event and API
-      access patterns.
-     </p>
-     <p>
-      Design choices range from extending existing services to creating dedicated query services with
-      separate persistence. The appropriate level of separation depends on data sensitivity, evolution
-      pace, and ownership boundaries.
-     </p>
-     <p>
-      Keeping the model simple is often beneficial when business cadence is low and requirements are
-      narrow. Complexity should be introduced only when it solves a concrete risk or scalability need.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 18" class="zoomable" data-caption="M09.18" src="../assets/images/ch09/fig-18.png"/>
-      <figcaption>
-       M09.18 - Script Product Option 3 (Independent Store)
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 19" class="zoomable" data-caption="M09.19" src="../assets/images/ch09/fig-19.png"/>
-      <figcaption>
-       M09.19 - Fraud Prediction Product Architecture
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Stream and Batch Contract Patterns
-     </h2>
-     <p>
-      Stream and batch contracts serve different operational goals. Stream contracts support low-latency
-      reactions, while batch contracts optimize large-scale periodic processing and broad analytical
-      workflows.
-     </p>
-     <p>
-      In practice, organizations frequently use both patterns in parallel for the same domain, exposing
-      events for operational workflows and files for analytical pipelines.
-     </p>
-     <p>
-      Contract quality depends on schema clarity, versioning discipline, and explicit semantics. These
-      factors determine whether downstream teams can adopt the product safely at scale.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 20" class="zoomable" data-caption="M09.20" src="../assets/images/ch09/fig-20.png"/>
-      <figcaption>
-       M09.20 - File-to-Event Publication Flow
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 21" class="zoomable" data-caption="M09.21" src="../assets/images/ch09/fig-21.png"/>
-      <figcaption>
-       M09.21 - Transactional Outbox Event Publication Pattern
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Reference Architecture Synthesis
-     </h2>
-     <p>
-      A reference architecture for data products combines platform reuse, explicit contracts, governance
-      controls, and domain ownership. The objective is to enable autonomous teams without losing
-      consistency across the ecosystem.
-     </p>
-     <p>
-      Data lakes can coexist with data mesh when ownership and responsibilities are clearly separated.
-      Platform teams operate shared infrastructure, while product teams own domain data areas,
-      transformations, and publication logic.
-     </p>
-     <p>
-      The resulting architecture supports multiple consumption modes and evolves through incremental
-      decisions grounded in measurable drivers. This makes long-term scalability and governance
-      compatibility achievable together.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 09 Figure 22" class="zoomable" data-caption="M09.22" src="../assets/images/ch09/fig-22.png"/>
-      <figcaption>
-       M09.22 - Data Lake and Data Product Coexistence Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       Data product architecture quality depends on accurate current-state mapping and explicit drivers.
-      </li>
-      <li>
-       C4 diagrams provide a shared language that improves review speed and decision clarity.
-      </li>
-      <li>
-       Quality attributes must be measurable and prioritized to avoid over-complex designs.
-      </li>
-      <li>
-       Collaborative design sessions and tradeoff analysis increase decision quality and team ownership.
-      </li>
-      <li>
-       Platform reuse, event contracts, and batch exposure can be combined to satisfy different consumer needs.
-      </li>
-      <li>
-       Data mesh can coexist with a data lake when ownership boundaries and responsibilities are explicit.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M09 - Dataplex Catalog Operations and Metadata Enrichment</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M09 - Dataplex Catalog Operations and Metadata Enrichment</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-08.html">Previous module (M08)</a>
+      <a href="chapter-09.html" aria-current="page">M09 - Dataplex Catalog Operations and Metadata Enrichment</a>
+      <a href="chapter-10.html">Next module (M10)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 Metadata Enrichment: Aspects and Aspect Types</li>
+            <li>1.1 Custom vs. System Aspect Types</li>
+            <li>2 The Process of Enriching Entries</li>
+            <li>2.1 Defining Metadata Fields and Complex Records</li>
+            <li>3 Entry Types: System vs. Custom</li>
+            <li>4 Ingesting Metadata from Custom Sources</li>
+            <li>4.1 Managed vs. Custom Connectivity Patterns</li>
+            <li>5 OpenLineage and Third-Party Integrations</li>
+            <li>6 Managing the Metadata Lifecycle</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 Metadata Enrichment: Aspects and Aspect Types</h2>
+          <p>
+            Metadata enrichment is the process of adding business context and operational details to technical data assets. In Dataplex, this is achieved through a structured model consisting of <strong>Aspect Types</strong> and <strong>Aspects</strong>.
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Aspect Type</strong>: A reusable JSON template that defines the structure of metadata fields. It acts as a schema for the information you want to capture (e.g., a "Data Compliance" template).</li>
+            <li><strong>Aspect</strong>: A specific instance of an Aspect Type attached to a data entry. It contains the actual values (e.g., "PII Classification: High").</li>
+          </ul>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>1.1 Custom vs. System Aspect Types</h2>
+          <p>
+            Dataplex provides two categories of templates:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>System Aspect Types</strong>: Pre-defined by Google to capture standard information like schemas, contact details, and data profiles. These are managed automatically.</li>
+            <li><strong>Custom Aspect Types</strong>: Defined by the organization to meet specific business needs. They can be <strong>Global</strong> (available across all regions) or <strong>Regional</strong> (restricted to specific geographical areas to comply with data residency rules).</li>
+          </ul>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>2 The Process of Enriching Entries</h2>
+          <p>
+            Enrichment allows domain teams to transform raw technical entries into discoverable business products. Aspects are considered integral parts of the <strong>Entry resource</strong>; modifying an aspect involves updating the entry itself.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>2.1 Defining Metadata Fields and Complex Records</h2>
+          <p>
+            Aspect Types support a variety of data types, including Text, Enum, Array, Map, and Record. For complex metadata, Dataplex uses <strong>Record references</strong>, allowing for nested objects and recursive definitions without duplicating field structures. Enrichment can be applied at the <strong>Entry-level</strong> (describing the whole table) or the <strong>Column-level</strong> (describing specific fields within the schema).
+          </p>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>3 Entry Types: System vs. Custom</h2>
+          <p>
+            Every asset in the catalog is governed by an <strong>Entry Type</strong> template that defines which aspects are required.
+          </p>
+          <ul class="study-bullets">
+            <li><strong>System Entry Types</strong>: Automatically created for Google Cloud resources (e.g., BigQuery tables). Required aspects like schemas are read-only for users.</li>
+            <li><strong>Custom Entry Types</strong>: Created for assets from external sources (e.g., on-premises databases). Users have full control over the required aspects, which must be populated when the entry is created.</li>
+          </ul>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>4 Ingesting Metadata from Custom Sources</h2>
+          <p>
+            To build a truly universal catalog, organizations must ingest metadata from sources outside of Google Cloud. Dataplex supports two main ingestion patterns to bring this data into the mesh.
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>4.1 Managed vs. Custom Connectivity Patterns</h2>
+          <ul class="study-bullets">
+            <li><strong>Managed Connectivity</strong>: Uses built-in Dataplex capabilities to automatically sync metadata from supported third-party environments.</li>
+            <li><strong>Custom Connectivity</strong>: Involves building custom pipelines or using <strong>Google Cloud Workflows</strong> to push metadata into the Universal Catalog via APIs. This is used for proprietary systems or sources without native connectors.</li>
+          </ul>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>5 OpenLineage and Third-Party Integrations</h2>
+          <p>
+            Dataplex integrates with the <strong>OpenLineage</strong> standard to track data movement and transformations across diverse systems. This enables organizations to maintain a unified view of lineage, integrating metadata from third-party tools like Informatica, Collibra, or custom-built processing engines into a single supervision plane.
+          </p>
+        </section>
+
+        <section id="s09" class="study-section">
+          <h2>6 Managing the Metadata Lifecycle</h2>
+          <p>
+            A healthy catalog requires automated lifecycle management. Organizations can use <strong>Metadata Change Feeds</strong> (via Pub/Sub) to receive real-time notifications when entries or aspects are modified. These feeds can trigger automated actions, such as re-running a data quality scan or synchronizing changes back to an external governance tool, ensuring the catalog remains accurate and trustworthy.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Aspect Types act as reusable schemas for capturing business and operational metadata.</li>
+            <li>Enrichment can be applied at both the entry level and the granular column level.</li>
+            <li>Custom Entry Types enable the cataloging of assets from any source, including on-premises.</li>
+            <li>OpenLineage support provides a standardized way to track data flow across the enterprise.</li>
+            <li>Automated lifecycle management via Change Feeds ensures metadata consistency and trust.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference pages:
+            <ul>
+              <li><a href="https://cloud.google.com/dataplex/docs/enrich-entries-metadata" target="_blank" rel="noopener noreferrer">Enrich entries with metadata - Google Cloud Documentation</a></li>
+              <li><a href="https://cloud.google.com/dataplex/docs/ingest-custom-sources" target="_blank" rel="noopener noreferrer">Ingest metadata from custom sources - Google Cloud Documentation</a></li>
+            </ul>
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>

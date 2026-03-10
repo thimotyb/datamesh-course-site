@@ -1,376 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   M07 - Self-Serve Platform Design
-  </title>
-  <link href="../assets/css/main.css" rel="stylesheet"/>
-  <script defer="" src="../assets/js/back-to-top.js">
-  </script>
- </head>
- <body>
-  <header class="hero" id="top">
-   <h1>
-    M07 - Self-Serve Platform Design
-   </h1>
-  </header>
-  <nav aria-label="Primary" class="primary-nav" id="primary-nav" tabindex="-1">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="chapter-06.html">
-    Previous module (M06)
-   </a>
-   <a aria-current="page" href="chapter-07.html">
-    M07 - Self-Serve Platform Design
-   </a>
-   <a href="chapter-08.html">
-    Next module (M08)
-   </a>
-  </nav>
-  <main class="content">
-   <article>
-    <section class="section-toc">
-     <h2>
-      Content Outline
-     </h2>
-     <ul>
-      <li>
-       1 Why a Self-Serve Platform Is Core to Data Mesh
-      </li>
-      <li>
-       1.1 Platform Parties and Interaction Flows
-      </li>
-      <li>
-       1.2 Platform Thinking Through Shared Capabilities
-      </li>
-      <li>
-       2 First Iteration: Consumer Enablement
-      </li>
-      <li>
-       2.1 X-as-a-Service for Data-Producing Teams
-      </li>
-      <li>
-       2.2 Second Iteration: Team-Oriented Tooling
-      </li>
-      <li>
-       3 Lineage and Governance Automation by Design
-      </li>
-      <li>
-       3.1 Platform Architecture Planes and Responsibilities
-      </li>
-      <li>
-       3.2 Kernel, Interface, and Complements Model
-      </li>
-      <li>
-       4 Third Iteration: Productive Producer Experience
-      </li>
-      <li>
-       4.1 Airflow-as-a-Service and Reusable Templates
-      </li>
-      <li>
-       4.2 Integrated Platform Blueprint for Scale
-      </li>
-     </ul>
-    </section>
-    <section class="study-section" id="s01">
-     <h2>
-      1 Why a Self-Serve Platform Is Core to Data Mesh
-     </h2>
-     <p>
-      The platform therefore becomes a core scaling mechanism: it reduces duplicate effort and increases delivery speed across producers and consumers.
-     </p>
-     <p>
-      A self-serve platform addresses this by centralizing reusable specialized capabilities while preserving domain team autonomy in delivery decisions.
-     </p>
-     <p>
-      As data mesh adoption grows, repeated implementation work across teams becomes a major bottleneck in ingestion, transformation, and exposure activities.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 01" class="zoomable" data-caption="M07.01" src="../assets/images/ch07/fig-01.png"/>
-      <figcaption>
-       M07.01 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s02">
-     <h2>
-      1.1 Platform Parties and Interaction Flows
-     </h2>
-     <p>
-      Well-designed interaction flows reduce friction by moving communication from ad hoc conversations to standardized product and metadata interfaces.
-     </p>
-     <p>
-      In practice, the platform should expose clear interaction paths for publishing, discovery, access, and context exchange.
-     </p>
-     <p>
-      A platform mediates interactions among producers, consumers, and data products to make collaboration faster and less dependent on manual coordination.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 02" class="zoomable" data-caption="M07.02" src="../assets/images/ch07/fig-02.png"/>
-      <figcaption>
-       M07.02 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s03">
-     <h2>
-      1.2 Platform Thinking Through Shared Capabilities
-     </h2>
-     <p>
-      This approach is most effective when platform services are built iteratively from real workflow bottlenecks rather than from large upfront designs.
-     </p>
-     <p>
-      The objective is not to enforce one rigid path, but to provide modular services that teams can adopt without losing local flexibility.
-     </p>
-     <p>
-      Platform thinking focuses on improving delivery flow by offering shared capabilities that teams can consume on demand.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 03" class="zoomable" data-caption="M07.03" src="../assets/images/ch07/fig-03.png"/>
-      <figcaption>
-       M07.03 - Data Product Team Structure
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 04" class="zoomable" data-caption="M07.04" src="../assets/images/ch07/fig-04.png"/>
-      <figcaption>
-       M07.04 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s04">
-     <h2>
-      2 First Iteration: Consumer Enablement
-     </h2>
-     <p>
-      Early consumer enablement also creates fast feedback loops that guide subsequent platform investment decisions.
-     </p>
-     <p>
-      Improving catalog usability and lineage visibility can immediately reduce time spent locating and validating datasets.
-     </p>
-     <p>
-      The first platform iteration should prioritize consumer pain points, typically discoverability, understanding, and initial data access efficiency.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 05" class="zoomable" data-caption="M07.05" src="../assets/images/ch07/fig-05.png"/>
-      <figcaption>
-       M07.05 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s05">
-     <h2>
-      2.1 X-as-a-Service for Data-Producing Teams
-     </h2>
-     <p>
-      The service contract must be explicit so teams can integrate predictably and platform teams can scale support across many domains.
-     </p>
-     <p>
-      For data-producing teams, this model enables rapid onboarding to shared capabilities without recurring dependency on platform engineers.
-     </p>
-     <p>
-      X-as-a-service means platform interactions should require minimal synchronous collaboration and feel operationally self-service.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 06" class="zoomable" data-caption="M07.06" src="../assets/images/ch07/fig-06.png"/>
-      <figcaption>
-       M07.06 - Data Product Interfaces
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s06">
-     <h2>
-      2.2 Second Iteration: Team-Oriented Tooling
-     </h2>
-     <p>
-      At this stage, platform quality is measured by reduced hand-holding and improved independent execution by product teams.
-     </p>
-     <p>
-      Tooling should be designed for consistency and fast adoption, with clear defaults and minimal mandatory complexity.
-     </p>
-     <p>
-      The second iteration extends platform value by packaging team-oriented tooling that reduces operational overhead in recurring data product tasks.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 07" class="zoomable" data-caption="M07.07" src="../assets/images/ch07/fig-07.png"/>
-      <figcaption>
-       M07.07 - Governance Model
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s07">
-     <h2>
-      3 Lineage and Governance Automation by Design
-     </h2>
-     <p>
-      Designing these capabilities early creates durable operating patterns that support both scalability and auditability.
-     </p>
-     <p>
-      Automation should integrate into normal product workflows, so compliance and traceability are produced continuously rather than retrofitted.
-     </p>
-     <p>
-      As usage grows, lineage and governance checks must be automated to avoid converting platform teams into manual support bottlenecks.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 08" class="zoomable" data-caption="M07.08" src="../assets/images/ch07/fig-08.png"/>
-      <figcaption>
-       M07.08 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 09" class="zoomable" data-caption="M07.09" src="../assets/images/ch07/fig-09.png"/>
-      <figcaption>
-       M07.09 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s08">
-     <h2>
-      3.1 Platform Architecture Planes and Responsibilities
-     </h2>
-     <p>
-      Separating these concerns improves evolvability and allows targeted improvement without destabilizing the whole platform.
-     </p>
-     <p>
-      Typical planes include product registration/discovery, storage/location management, and transformation/orchestration support.
-     </p>
-     <p>
-      Platform architecture benefits from clear capability planes, each with explicit responsibilities and integration boundaries.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 10" class="zoomable" data-caption="M07.10" src="../assets/images/ch07/fig-10.png"/>
-      <figcaption>
-       M07.10 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s09">
-     <h2>
-      3.2 Kernel, Interface, and Complements Model
-     </h2>
-     <p>
-      Kernel internals can evolve rapidly as long as interface contracts remain reliable and backward-compatible for existing teams.
-     </p>
-     <p>
-      Interfaces should remain stable because frequent interface changes degrade adoption and create migration costs for all participants.
-     </p>
-     <p>
-      A platform can be understood through three elements: kernel capabilities, exposed interfaces, and participating complements.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 11" class="zoomable" data-caption="M07.11" src="../assets/images/ch07/fig-11.png"/>
-      <figcaption>
-       M07.11 - Data Product Team Structure
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s10">
-     <h2>
-      4 Third Iteration: Productive Producer Experience
-     </h2>
-     <p>
-      Producer enablement at this level directly increases the number and quality of deliverable data products.
-     </p>
-     <p>
-      These capabilities should remain optional and composable, allowing teams to adopt only what matches their current complexity and maturity.
-     </p>
-     <p>
-      A mature iteration focuses on producer productivity by adding advanced capabilities for storage options, transformation workflows, and operational integration.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 12" class="zoomable" data-caption="M07.12" src="../assets/images/ch07/fig-12.png"/>
-      <figcaption>
-       M07.12 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 13" class="zoomable" data-caption="M07.13" src="../assets/images/ch07/fig-13.png"/>
-      <figcaption>
-       M07.13 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s11">
-     <h2>
-      4.1 Airflow-as-a-Service and Reusable Templates
-     </h2>
-     <p>
-      This approach increases consistency while still allowing domain teams to evolve workload-specific transformations.
-     </p>
-     <p>
-      Template-driven provisioning can include governance hooks, default controls, and registration logic to keep new products aligned with platform standards.
-     </p>
-     <p>
-      Reusable orchestration templates, such as Airflow-as-a-service, accelerate pipeline setup and reduce repeated infrastructure design work.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Module 07 Figure 14" class="zoomable" data-caption="M07.14" src="../assets/images/ch07/fig-14.png"/>
-      <figcaption>
-       M07.14 - Self-Serve Platform Design
-      </figcaption>
-     </figure>
-    </section>
-    <section class="study-section" id="s12">
-     <h2>
-      4.2 Integrated Platform Blueprint for Scale
-     </h2>
-     <p>
-      This structure enables continuous platform growth without forcing disruptive migrations for participating data product teams.
-     </p>
-     <p>
-      At scale, success depends on modular evolution: each capability can be improved independently while preserving stable interface contracts.
-     </p>
-     <p>
-      The integrated blueprint combines discovery, storage, and transformation capabilities into a coherent self-serve operating environment.
-     </p>
-     <figure class="chapter-figure">
-      <img alt="Self-service data platform architecture in a data mesh" class="zoomable" data-caption="M07.15" src="../assets/images/ch07/fig-15-self-service-platform.svg"/>
-      <figcaption>
-       M07.15 - Self-Service Data Platform Components in a Data Mesh
-      </figcaption>
-     </figure>
-    </section>
-    <section class="key-takeaways">
-     <h2>
-      Key takeaways
-     </h2>
-     <ul>
-      <li>
-       Self-serve platforms remove duplicated effort and are essential for scaling mesh delivery.
-      </li>
-      <li>
-       Platform value depends on clear producer-consumer-product interaction flows and stable interfaces.
-      </li>
-      <li>
-       X-as-a-service and reusable tooling reduce platform-team bottlenecks and improve autonomy.
-      </li>
-      <li>
-       Lineage and governance automation must be embedded in normal product workflows.
-      </li>
-      <li>
-       Modular platform planes enable iterative growth without disruptive architectural rewrites.
-      </li>
-     </ul>
-    </section>
-   </article>
-  </main>
-  <a aria-label="Back to top" class="back-to-top" data-back-to-top="" href="#top" title="Back to top">
-   Back to top
-  </a>
-  <noscript>
-   <a class="back-to-top-fallback" href="#top">
-    Back to top
-   </a>
-  </noscript>
-  <div aria-hidden="true" class="lightbox" id="lightbox">
-   <figure class="lightbox-inner">
-    <img alt="Zoomed figure" id="lightbox-image"/>
-    <figcaption id="lightbox-caption">
-    </figcaption>
-   </figure>
-  </div>
- </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M07 - Discover and Consume Data Products</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/back-to-top.js" defer></script>
+  </head>
+  <body>
+    <header id="top" class="hero">
+      <h1>M07 - Discover and Consume Data Products</h1>
+    </header>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" tabindex="-1">
+      <a href="../index.html">Home</a>
+      <a href="chapter-06.html">Previous module (M06)</a>
+      <a href="chapter-07.html" aria-current="page">M07 - Discover and Consume Data Products</a>
+      <a href="chapter-08.html">Next module (M08)</a>
+    </nav>
+    <main class="content">
+      <article>
+        <section class="section-toc">
+          <h2>Content Outline</h2>
+          <ul>
+            <li>1 The Consumer Journey: Find, Understand, and Use</li>
+            <li>2 Discovery Mechanisms: The Central Catalog</li>
+            <li>2.1 Role of Dataplex and Metadata Tags</li>
+            <li>3 Evaluating Data Products: The "Data Product Contract"</li>
+            <li>4 Access Control and Self-Service Workflows</li>
+            <li>5 Technical Consumption Patterns</li>
+            <li>5.1 Choosing the Right Interface: SQL vs. API vs. Streams</li>
+            <li>6 The Feedback Loop and Center of Excellence (COE)</li>
+          </ul>
+        </section>
+
+        <section id="s01" class="study-section">
+          <h2>1 The Consumer Journey: Find, Understand, and Use</h2>
+          <p>
+            The success of a Data Mesh is measured by how effectively consumers can reuse data across domain boundaries. This is achieved through a self-service journey consisting of three primary steps:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Find (Discovery)</strong>: Consumers perform declarative searches in a global catalog to find products that match their business requirements using metadata tags.</li>
+            <li><strong>Understand (Exploration)</strong>: Using interactive tools like BigQuery Studio or Jupyter Notebooks, consumers experiment with the data to ensure it meets their quality and production needs.</li>
+            <li><strong>Use (Consumption)</strong>: The final stage is programmatic integration into BI reports, AI/ML models, or real-time operational processes.</li>
+          </ul>
+        </section>
+
+        <section id="s02" class="study-section">
+          <h2>2 Discovery Mechanisms: The Central Catalog</h2>
+          <p>
+            A <strong>Central Data Catalog</strong> acts as the single source of truth for the mesh. It enables "declarative search," allowing consumers to find data based on business logic (e.g., "all mortgage-related products") rather than physical location or technical implementation.
+          </p>
+        </section>
+
+        <section id="s03" class="study-section">
+          <h2>2.1 Role of Dataplex and Metadata Tags</h2>
+          <p>
+            Dataplex facilitates this cataloging by associating rich metadata tags with each product. These tags include critical information such as the <strong>Data URI</strong> (direct access point), supported consumption modes, and instructions on how to request access. This metadata ensures that data remains discoverable without needing a central team to act as a gatekeeper.
+          </p>
+        </section>
+
+        <section id="s04" class="study-section">
+          <h2>3 Evaluating Data Products: The "Data Product Contract"</h2>
+          <p>
+            Before integrating a product, consumers must evaluate its "contract." This agreement between producer and consumer includes:
+          </p>
+          <ul class="study-bullets">
+            <li><strong>Documentation</strong>: Clear guidance on how to interpret and use the data correctly.</li>
+            <li><strong>Schemas</strong>: Explicit structures, particularly vital for event-based systems like Pub/Sub.</li>
+            <li><strong>SLOs/SLAs</strong>: The trustworthiness and reliability of the data. If the provided Service Level Agreements are insufficient, consumers use the feedback loop to request improvements.</li>
+          </ul>
+        </section>
+
+        <section id="s05" class="study-section">
+          <h2>4 Access Control and Self-Service Workflows</h2>
+          <p>
+            Access is managed via <strong>Identity and Access Management (IAM)</strong> and <strong>VPC Service Controls</strong>. A standard pattern is the use of BigQuery Authorized Views, which provide secure access to specific slices of data without exposing raw tables.
+          </p>
+          <p>
+            Ideally, the request process is a self-service workflow. Data product tags provide the necessary instructions, reducing the time required for a consumer to gain access to a new domain's data.
+          </p>
+        </section>
+
+        <section id="s06" class="study-section">
+          <h2>5 Technical Consumption Patterns</h2>
+          <p>
+            Data products are designed to support multiple technical patterns simultaneously, matching the specific needs of different consumer tools.
+          </p>
+          <figure class="chapter-figure">
+            <img
+              src="../assets/images/ch104/fig-01-interfaces.png"
+              alt="Data product consumption scenarios"
+              class="zoomable"
+              data-caption="M07.01"
+            />
+            <figcaption>M07.01 - Diverse consumption interfaces for a single data product</figcaption>
+          </figure>
+          <p>
+            Figure M07.01 illustrates this diversity. A single domain exposes four distinct interfaces: two via <strong>Authorized Datasets</strong> (for BI tools like Looker), one via the <strong>Storage Read API</strong> (for high-throughput ML training on Dataproc), and a custom <strong>Data Access API</strong> (for operational apps).
+          </p>
+        </section>
+
+        <section id="s07" class="study-section">
+          <h2>5.1 Choosing the Right Interface: SQL vs. API vs. Streams</h2>
+          <ul class="study-bullets">
+            <li><strong>BigQuery (SQL)</strong>: The primary choice for BI and analytical queries.</li>
+            <li><strong>BigLake</strong>: Unified access to data in Cloud Storage and other clouds with BigQuery security.</li>
+            <li><strong>Storage Read API</strong>: High-speed access for Data Science and large batch processing.</li>
+            <li><strong>Pub/Sub</strong>: Near-real-time event streams for reactive operational processes (e.g., fraud detection).</li>
+          </ul>
+        </section>
+
+        <section id="s08" class="study-section">
+          <h2>6 The Feedback Loop and Center of Excellence (COE)</h2>
+          <p>
+            Communication is vital for a healthy mesh. If a product is missing or its interface is insufficient, the consumer contacts the producer. If the responsible domain is unclear, the **Data Mesh Center of Excellence (COE)** helps determine the best domain to produce the required asset. This dynamic loop ensures the mesh evolves according to the organization's real business needs.
+          </p>
+        </section>
+
+        <section class="key-takeaways">
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Consumption is a self-service journey of discovery, exploration, and integration.</li>
+            <li>A global catalog with rich metadata tags is essential for finding relevant data products.</li>
+            <li>Consumers evaluate products based on explicit contracts (schemas, documentation, SLOs).</li>
+            <li>Standard patterns like Authorized Views and the Storage Read API ensure secure and efficient access.</li>
+            <li>A continuous feedback loop between consumers and producers drives the mesh's evolution.</li>
+          </ul>
+        </section>
+
+        <section class="study-section">
+          <h2>Web Source</h2>
+          <p>
+            Reference page:
+            <a
+              href="https://cloud.google.com/architecture/discover-consume-data-products-data-mesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Discover and consume data products in a data mesh - Google Cloud Architecture Center</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+    <a href="#top" class="back-to-top" data-back-to-top aria-label="Back to top" title="Back to top"
+      >Back to top</a
+    >
+    <noscript><a href="#top" class="back-to-top-fallback">Back to top</a></noscript>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <figure class="lightbox-inner">
+        <img id="lightbox-image" alt="Zoomed figure" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </body>
 </html>
